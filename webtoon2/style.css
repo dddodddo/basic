@@ -8,7 +8,6 @@
 
 /* Page */
 .Page{
-    height: 100vh;
 }
 
 /* web_pg */
@@ -26,7 +25,8 @@
     align-items: center;
 }
 .bar .time{
-font-size: 12px;
+/* font-size: 12px; */
+font-size: calc(18px - 1vw);
 color: #000;
 top: 0; left: 0;
 }
@@ -60,14 +60,14 @@ top: 0; left: 0;
     
 }
 .tittle .t_left .tt{
-    font-size: 23px;
+    font-size: 4.5vw;
     color: #1C1C1C;
     margin: 5px 10px 5px 0px;
     font-family: "Noto Sans KR";
     font-weight: 800;
 }
 .tittle .t_left .ts{
-    font-size: 12px;
+    font-size: 3vw;
     color: #6C6C6C;
     margin-top: 5px;
     font-family: "Noto Sans KR";
@@ -99,11 +99,13 @@ top: 0; left: 0;
     background: url(./img/표지.png) no-repeat center left/cover;
     margin-bottom: 18px;
     box-shadow: 4px 5px 6px 0px rgba(0, 0, 0, 0.25);
-    
+    height: calc(279px + 20vw);
 }
 
 /* .writer */
 .box .img .writer{
+    /* position: absolute; */
+    /* top: 0; left: 0; */
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(4px);
@@ -114,7 +116,10 @@ top: 0; left: 0;
     justify-content: space-between;
     align-items: center;
 }
-.box .img .writer .ww{}
+.box .img .writer .ww{
+    /* padding-right: 16px; */
+
+}
 .box .img .writer .ww .w1{
     font-weight: 800;
     color: #1C1C1C;
@@ -205,7 +210,7 @@ top: 0; left: 0;
     margin-top: 30px;
 }
 .b_tittle .b_right{
-    font-size: 20px;
+    font-size: 4.5vw;
     color: #1C1C1C;
     font-family: "Noto Sans KR";
     font-weight: 700;
@@ -235,6 +240,7 @@ top: 0; left: 0;
 .b_img .box1{
     position: relative;
     width: 196px; height: 235px;
+    min-width: 196px;
     border-radius: 20px;
     background: url(./img/1화.png) no-repeat center left/cover;
     background-position: -53px -20px;
@@ -262,9 +268,10 @@ top: 0; left: 0;
 .b_img .box2{
     position: relative;
     width: 196px; height: 235px;
+    min-width: 196px;
     border-radius: 20px;
-    background: url(./img/1화.png) no-repeat center left/cover;
-    background-position: -53px -20px;
+    background: url(./img/2화.png) no-repeat center left/cover;
+    background-position: -84px -59px;
     padding-bottom: 78px;
     background-clip: content-box;
     box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.2);  
@@ -272,9 +279,10 @@ top: 0; left: 0;
 .b_img .box3{
     position: relative;
     width: 196px; height: 235px;
+    min-width: 196px;
     border-radius: 20px;
-    background: url(./img/1화.png) no-repeat center left/cover;
-    background-position: -53px -20px;
+    background: url(./img/3화.png) no-repeat center left/cover;
+    background-position: -63px -20px;
     padding-bottom: 78px;
     background-clip: content-box;
     box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.2);  
@@ -282,9 +290,10 @@ top: 0; left: 0;
 .b_img .box4{
     position: relative;
     width: 196px; height: 235px;
+    min-width: 196px;
     border-radius: 20px;
-    background: url(./img/1화.png) no-repeat center left/cover;
-    background-position: -53px -20px;
+    background: url(./img/4화.png) no-repeat center left/cover;
+    background-position: -19px -1px;
     padding-bottom: 78px;
     background-clip: content-box;
     box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.2);  
