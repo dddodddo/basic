@@ -25,27 +25,15 @@
     align-items: center;
 }
 .bar .time{
-/* font-size: 12px; */
 font-size: calc(18px - 1vw);
 color: #000;
-top: 0; left: 0;
 }
 .bar .bar_right{
     display: flex;
 }
-.bar .bar_right .service{
+.bar .bar_right img{
+    inline-size: calc(53px - 9vw);
     margin-right: 5px;
-    width: 14.5px; height: 14px;
-    background: url(./img/수신호.png) no-repeat;
-}
-.bar .bar_right .wifi{
-    margin-right: 5px;
-    width: 14.5px; height: 14px;
-    background: url(./img/와이파이.png) no-repeat;
-}
-.bar .bar_right .battery{
-    width: 14.5px; height: 14px;
-    background: url(./img/배터리.png) no-repeat;
 }
 
 
@@ -99,13 +87,14 @@ top: 0; left: 0;
     background: url(./img/표지.png) no-repeat center left/cover;
     margin-bottom: 18px;
     box-shadow: 4px 5px 6px 0px rgba(0, 0, 0, 0.25);
+    width: 100%;
     height: calc(279px + 20vw);
 }
 
 /* .writer */
 .box .img .writer{
-    /* position: absolute; */
-    /* top: 0; left: 0; */
+    position: absolute;
+    bottom: 26px; left: 35px;
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(4px);
@@ -115,9 +104,9 @@ top: 0; left: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: calc(-106px + 100vw);
 }
 .box .img .writer .ww{
-    /* padding-right: 16px; */
 
 }
 .box .img .writer .ww .w1{
