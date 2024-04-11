@@ -14,7 +14,7 @@ $(document).ready(function () {
 //버튼.click(function(){}); --> 어떤 일은 함수 function(){}
 //버튼.hasClass('active'); --> 버튼이 active라는 class를 가지고 있는가? / 가지고 있다면 true, 가지고 있지 않다면 false
 
-$('.event_box2 .page_act .btn_stop').click(function(e) {
+$('.event_box2 .page_act .btn_stop').click(function (e) {
   e.preventDefault();
   if ($('.event_box2 .page_act').hasClass("on")) {
     $('.event_box2 .page_act').removeClass("on")
@@ -24,9 +24,9 @@ $('.event_box2 .page_act .btn_stop').click(function(e) {
 })
 
 
-$('.event_box2 .page_act .btn_play').click(function(e){
+$('.event_box2 .page_act .btn_play').click(function (e) {
   e.preventDefault();
-  if(!$('.event_box2 .page_act').hasClass("on")){
+  if (!$('.event_box2 .page_act').hasClass("on")) {
     // on을 가지고 있지 않아야 true
     // ! --> not, 부정 --> 아닐 때 true
     $('.event_box2 .page_act').addClass("on") //on추가
@@ -35,10 +35,14 @@ $('.event_box2 .page_act .btn_play').click(function(e){
 })
 
 
-  //card slider
-  
-  $(document).ready(function(){
-    $('.card').slick({
-      
-    });
+//card slider
+
+$(document).ready(function () {
+  $('.card').slick({
+    arrows: false,
+    dots: true,
+    autoplay: true,
+    pauseOnHover: false,
+    fade: true
   });
+});

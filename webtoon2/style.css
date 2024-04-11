@@ -32,8 +32,10 @@ color: #000;
     display: flex;
 }
 .bar .bar_right img{
-    inline-size: calc(53px - 9vw);
+    inline-size: calc(22px - 1vw);;
     margin-right: 5px;
+    padding-top: 2px;
+    padding-left: 2px;
 }
 
 

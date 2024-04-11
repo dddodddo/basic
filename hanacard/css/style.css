@@ -831,4 +831,34 @@ em(중요한 내용임을 명시) i(디자인적으로 글자를 기울림 표�
     background-color: #d7567e;
     color: #fff;
     width: 300px; height: 564px;
+    text-align: center;
+}
+
+.event_box3 img{
+    display: inline;
+}
+.event_box3 h4{
+    padding: 40px 0;
+    font-size: 22px;
+}
+
+
+.eb_slider2 ul.slick-dots{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    
+}
+.eb_slider2 ul.slick-dots li{
+    margin-right: 10px;
+    line-height: 0;
+}
+.eb_slider2 ul.slick-dots li button{
+    font-size: 0;
+    width: 10px; height: 10px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+}
+.eb_slider2 ul.slick-dots li:last-child{
+    margin-right: 0;
 }
