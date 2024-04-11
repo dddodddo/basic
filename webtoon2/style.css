@@ -6,6 +6,10 @@
 *{margin: 0;padding: 0; box-sizing: border-box;}
 .clearfix::after{content: ""; clear: both; display: block;}
 
+/* ************************************************************************ */
+
+/* <index> */
+
 /* Page */
 .Page{
 }
@@ -89,7 +93,7 @@ color: #000;
 /* .writer */
 .box .img .writer{
     position: absolute;
-    bottom: 26px; left: 35px;
+    bottom: 26px; left: 26.5px;
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(4px);
@@ -135,16 +139,16 @@ color: #000;
 }
 
 /* like */
-.box .img .like{}
-.box .img .like .bg_h{
+
+.box .img .bg_h{
     position: absolute;
     top: 21px;
     right: 35px;
     width: 30px; height: 30px;
-    border-radius: 20px;
+    border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.7);
 }
-.box .img .like .heart{
+.box .img .heart{
     position: absolute;
     top: 21px;
     right: 35px;
@@ -160,37 +164,40 @@ color: #000;
 }
 .box .pg_nv .nv1{
     width: 6px; height: 6px;
-    border-radius: 10px;
+    border-radius: 50%;
     background-color: #35E947;
     margin-right: 6px;
 }
 .box .pg_nv .nv2{
     width: 6px; height: 6px;
-    border-radius: 10px;
+    border-radius: 50%;
     background-color: #d9d9d9;
     margin-right: 6px;
 }
 .box .pg_nv .nv3{
     width: 6px; height: 6px;
-    border-radius: 10px;
+    border-radius: 50%;
     background-color: #d9d9d9;
     margin-right: 6px;
 }
 .box .pg_nv .nv4{
     width: 6px; height: 6px;
-    border-radius: 10px;
+    border-radius: 50%;
     background-color: #d9d9d9;
     margin-right: 6px;
 }
 .box .pg_nv .nv5{
     width: 6px; height: 6px;
-    border-radius: 10px;
+    border-radius: 50%;
     background-color: #d9d9d9;
 }
 
 
 /* bottom */
-.bottom{}
+.bottom{
+    position: relative;
+    padding-bottom: 20%;
+}
 
 /* b_tittle */
 .b_tittle{
@@ -210,17 +217,19 @@ color: #000;
     align-items: center;
 }
 .b_tittle .b_left .b_more{
-    font-size: 12px;
+    font-size: 2vw;
     color: #6C6C6C;
     font-family: "Noto Sans KR";
     font-weight: 400;
     padding-right: 5px;
 }
 .b_tittle .b_left .b_m_icon{
-    width: 11px; height: 12px;
-    background: url(./img/더보기.png) no-repeat;
+    line-height: 0;
+    padding-top: 3px;
 }
-
+.b_tittle .b_left img{
+    inline-size: 2vw;
+}
 /* b_img */
 .b_img{
     margin-top: 39px;
@@ -229,62 +238,102 @@ color: #000;
 }
 .b_img .box1{
     position: relative;
-    width: 196px; height: 235px;
+    width: 27vw;
+    height: calc(279px - 7vw);
     min-width: 196px;
     border-radius: 20px;
-    background: url(./img/1화.png) no-repeat center left/cover;
-    background-position: -53px -20px;
-    padding-bottom: 78px;
-    background-clip: content-box;
-    box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.2);  
+    background: #fff url(./img/1화.png) no-repeat center;
+    background-size: 126% 64%;
+    box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.2);
+    background-position: -23px 0px;
 }
 .b_img .boxtittle{
     position: absolute;
     bottom: 15px;left: 19px;
 }
 .b_img .box_t{
-    font-size: 12px;
+    font-size: calc(12px + 0.2vw);
     color: #1C1C1C;
     font-family: "Noto Sans KR";
     font-weight: 700;
     margin-bottom: 9px;
 }
 .b_img .box_s{
-    font-size: 9px;
+    font-size: calc(9px + 0.2vw);
     color: #6C6C6C;
     font-family: "Noto Sans KR";
     font-weight: 400;
 }
 .b_img .box2{
     position: relative;
-    width: 196px; height: 235px;
+    width: 27vw;
+    height: calc(279px - 7vw);
     min-width: 196px;
     border-radius: 20px;
-    background: url(./img/2화.png) no-repeat center left/cover;
-    background-position: -84px -59px;
-    padding-bottom: 78px;
-    background-clip: content-box;
-    box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.2);  
+    background: #fff url(./img/2화.png) no-repeat center;
+    background-size: 126% 64%;
+    box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.2);
+    background-position: -23px 0px;
 }
 .b_img .box3{
     position: relative;
-    width: 196px; height: 235px;
+    width: 27vw;
+    height: calc(279px - 7vw);
     min-width: 196px;
     border-radius: 20px;
-    background: url(./img/3화.png) no-repeat center left/cover;
-    background-position: -63px -20px;
-    padding-bottom: 78px;
-    background-clip: content-box;
-    box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.2);  
+    background: #fff url(./img/3화.png) no-repeat center;
+    background-size: 126% 64%;
+    box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.2);
+    background-position: -23px 0px;
 }
 .b_img .box4{
     position: relative;
-    width: 196px; height: 235px;
+    width: 27vw;
+    height: calc(279px - 7vw);
     min-width: 196px;
     border-radius: 20px;
-    background: url(./img/4화.png) no-repeat center left/cover;
-    background-position: -19px -1px;
-    padding-bottom: 78px;
-    background-clip: content-box;
-    box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.2);  
+    background: #fff url(./img/4화.png) no-repeat center;
+    background-size: 126% 64%;
+    box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.2);
+    background-position: -23px 0px;
 }
+
+/* bottom_bar */
+.bottom .bottom_bar{
+    margin: 8% auto 0;
+    width: 120px; height: 6px;
+    border-radius: 5px;
+    background-color: #000;
+}
+
+/* ************************************************************************ */
+
+/* <sign> */
+
+.sub_page{
+}
+.sub_page .s_box{
+    width: 100%;
+    height: 157px;
+    background-color: #35E947;
+    padding: 0 10px 0 10px;
+
+}
+.sub_page .s_box .more_icon{}
+.sub_page .s_box .more_icon img{
+    transform: scaleX(-1);
+    margin: 15px 0px 0px 10px;
+    inline-size: calc(19px - 0.5vw);;
+    margin-right: 5px;
+}
+.sub_page .s_box h2{
+    font-size: 4.5vw;
+    color: #1C1C1C;
+    margin-top: 45px;
+    font-family: "Noto Sans KR";
+    font-weight: 800;
+    padding: 10px;
+}
+.sub_page .s_box .list{}
+.sub_page .s_box .li_tt{}
+.sub_page .s_box .li_ts{}
