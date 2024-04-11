@@ -116,16 +116,20 @@ color: #000;
 }
 .box .img .good{
     display: flex;
+    align-items: center;
     padding: 5px 6px;
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 10px;
+}
+.box .img .good .좋아요{
+    line-height: 0;
 }
 .box .img .good img{
     inline-size: calc(22px - 0.5vw);
     margin-right: 5px;
 }
 .box .img .good .좋아요수{
-    font-size: 10px;
+    font-size: calc(13px - 0.5vw);
     font-weight: 600;
     color: #35E947;
 }

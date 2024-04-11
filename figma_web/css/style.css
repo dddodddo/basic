@@ -84,14 +84,6 @@ width: calc(100% - 50px);
 }
 
 
-
-
-
-
-
-
-
-
 /* 
 [attr] --> 'attr' 속성이 포함된 요소를 선택 
 [attr="val"] --> 'attr' 속성이 정확하게 val과 일치한 요소를 선택 
@@ -112,3 +104,13 @@ width: calc(100% - 50px);
 /* *은 단어에서 _(언더바)를 인식하지 않는다. */
 /* [class*="main"]{border: 5px solid rgb(17, 0, 255);} */
 /* [class|="sign"]{border: 5px solid red;} */
+
+
+/* ********************Sign Up******************** */
+.sign_up{
+    height: 100vh;
+    background: url(../images/sign_up_bg.jpg) no-repeat center;
+    background-size: cover;
+    padding-top: 92px;
+    box-sizing: border-box;
+}
