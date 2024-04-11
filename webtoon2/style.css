@@ -69,6 +69,13 @@ color: #000;
 .tittle .t_right{
     display: flex;
 }
+.tittle .t_right a i{
+    font-family: "Font Awesome 5 Free";
+    color: #1C1C1C;
+}
+.tittle .t_right a i:hover{
+    color: #6C6C6C;
+}
 .tittle .t_right img{
     inline-size: calc(22px - 0.5vw);
     margin: 10px;
