@@ -372,10 +372,9 @@ body{background-color: #fff;
 .sub_page .s_box h2{
     font-size: 4.5vw;
     color: #1C1C1C;
-    margin-top: 45px;
     font-family: "Noto Sans KR";
     font-weight: 800;
-    padding: 10px;
+    padding: 35px 10px 10px;
 }
 .sub_page .s_box .list{}
 .sub_page .s_box .list .li{
