@@ -1,0 +1,16 @@
+*{margin: 0;padding: 0; box-sizing: border-box;}
+a{color: #222; text-decoration: none;}
+li{list-style: none;}
+
+.wrap{display: flex; flex-wrap: wrap;}
+
+header{width: 100%; background-color: gray;
+display: flex; align-items: center;
+padding: 0 20px;}
+header .form{margin-left: auto;}
+.menu{width: 100%; display: flex;}
+.menu li{width: 25%; background-color: gold;
+text-align: center; padding: 15px 0;
+transition: 0.3s;}
+
+.menu li:hover{width: 35%; background-color: goldenrod;}
