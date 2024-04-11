@@ -1,0 +1,24 @@
+*{margin: 0;padding: 0;}
+li{list-style: none;}
+a{text-decoration: none; color: #666;}
+
+body{padding-top: 100px;}
+
+
+
+.aaa{
+    border: 3px solid blue;
+    width: 400px; margin: 0 auto;
+    ul{ /* .aaa ul */
+        border: 3px solid pink;
+        >li{ /* .aaa ul> li */
+            border-bottom: 1px solid black;
+            a{
+                &:hover{color: red;}
+            }
+            &:last-child{background-color: burlywood;}
+        }
+    }
+
+    &.active{background-color: cyan;} /* .aaa.active */
+}

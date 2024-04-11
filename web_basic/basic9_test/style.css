@@ -1,0 +1,102 @@
+*{margin: 0; padding: 0;}
+
+.약::after{content: ""; clear: both; display: block;}
+
+.wrap{
+padding-top: 100px;
+}
+
+.부모{
+background-color: gray;
+width: 1000px;
+padding: 20px;
+margin: auto;
+box-sizing: border-box;
+}
+
+.wrap .부모 .A{}
+.wrap .부모 .A .A1{
+    background-color: green;
+    width: 21.25%;
+    height: 200px;
+    margin-right: 5%;
+    float: left;
+}
+.wrap .부모 .A .A2{
+    background-color: green;
+    width: 21.25%;
+    height: 200px;
+    margin-right: 5%;
+    float: left;
+}
+.wrap .부모 .A .A3{
+    background-color: green;
+    width: 21.25%;
+    height: 200px;
+    margin-right: 5%;
+    float: left;
+}
+.wrap .부모 .A .A4{
+    background-color: green;
+    width: 21.25%;
+    height: 200px;
+    float: left;
+}
+
+.wrap .부모 .B{
+    background-color: burlywood;
+    width: 900px;
+    padding: 10px;
+    margin: 50px auto;
+    box-sizing: border-box;
+}
+.wrap .부모 .B .B1{
+    background-color: green;
+    width: 21.25%;
+    height: 200px;
+    float: left;
+    margin-right: 5%;
+}
+.wrap .부모 .B .B2{
+    background-color: green;
+    width: 21.25%;
+    height: 200px;
+    float: left;
+    margin-right: 5%;
+}
+.wrap .부모 .B .B3{
+    background-color: green;
+    width: 21.25%;
+    height: 200px;
+    float: left;
+    margin-right: 5%;
+}
+.wrap .부모 .B .B4{
+    background-color: green;
+    width: 21.25%;
+    height: 200px;
+    float: left;
+}
+.wrap .부모 .B .B5{
+    background-color: rgb(88, 221, 88);
+    margin-top: 10px;
+    float: left;
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.wrap .부모 .C{}
+.wrap .부모 .C1{
+    background-color: green;
+    width: 75%;
+    height: 200px;
+    float: left;
+    margin-right: 5%;
+}
+.wrap .부모 .C2{
+    background-color: green;
+    width: 20%;
+    height: 200px;
+    float: left;
+}
