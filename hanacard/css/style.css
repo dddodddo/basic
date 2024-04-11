@@ -826,3 +826,9 @@ em(중요한 내용임을 명시) i(디자인적으로 글자를 기울림 표�
     border-radius: 2px;
     padding: 3px 12px;
 }
+
+.event_box3{
+    background-color: #d7567e;
+    color: #fff;
+    width: 300px; height: 564px;
+}

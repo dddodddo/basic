@@ -33,3 +33,12 @@ $('.event_box2 .page_act .btn_play').click(function(e){
     $('.eb_slider_list').slick('slickPlay');
   }
 })
+
+
+  //card slider
+  
+  $(document).ready(function(){
+    $('.card').slick({
+      
+    });
+  });
