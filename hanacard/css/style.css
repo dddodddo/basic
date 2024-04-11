@@ -808,8 +808,11 @@ em(중요한 내용임을 명시) i(디자인적으로 글자를 기울림 표�
     border-radius: 3px;
     transition: 0.3s;
     padding: 9px 0;
+    transition: all 0.3s;
 }
-
+.event_box2 .eb_banner5 .money li a:hover{
+    background-color: #f4f4f4;
+}
 .event_box2 .eb_banner5 ul.money li.w100 a {
     width: 100px;
 }
