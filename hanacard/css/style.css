@@ -98,7 +98,9 @@ inline요소는 padding과 margin이 좌우만 적용됩니다. */
 
 /* banner */
 .ban_left {position: relative;}
-.ban_left .ob{position: absolute; left: -300px; top: 0;}
+.ban_left .ob{position: absolute; left: -300px; top: 0;
+    will-change: opacity, transform;/* //gpu에게 애니메이션이 일어날 것을 알려서 미리 준비하게 만듦, 그래서 gpu를 활성화 시켜서 애니메이션을 좀 더 부드럽게 실행할 수 있다. */
+}
 
 .ban_left .ob1{ /* 구름1 */
     left: 151px; top: 161px;
@@ -144,7 +146,43 @@ inline요소는 padding과 margin이 좌우만 적용됩니다. */
     left: 376px; top: 268px;
     animation: toBottom 0.3s 2.9s both;
 }
+.ban_left .ob8{/* 박스 */
+    left: 360px; top: 285px;
+    animation: toBottom 0.3s 3s both;
+}
+.ban_left .ob9{/* 가방 */
+    left: 415px; top: 275px;
+    animation: toBottom 0.3s 3.2s both;
+}
+.ban_left .ob10{/* 바람1 */
+    left: 501px; top: 370px;
+    animation: baram 2s 3.4s linear infinite both;
+    transform-origin: left top; /* 기준점, 시작점을 이동 */
+}
+.ban_left .ob11{/* 바람2 */
+    left: 501px; top: 370px;
+    animation: baram 2s 3.2s linear infinite both;
+    transform-origin: left top;
+}
+.ban_left .ob12{/* 원 */
+    left: 485px; top: 119px;
+    animation: rotate 3s linear infinite both;
+}
+.ban_left .ob13{/* 서프라이즈 */
+    left: 378px; top: 189px;
+    animation: baram 3s 4s both;
+    transform-origin: left center;
+}
 
+@keyframes rotate{
+    0%{transform: rotate(0deg); /* degree,각도 */}
+    100%{transform: rotate(359deg);}
+}
+@keyframes baram{
+    0%{transform: scale(0); opacity: 0;}
+    10%{transform: scale(1); opacity: 1;}
+    100%{transform: scale(1); opacity: 1;}
+}
 @keyframes toBoLeft{
     0%{opacity: 0; transform: translate(110px, -100px);}
     100%{opacity: 1; transform: translate(0,0);}
