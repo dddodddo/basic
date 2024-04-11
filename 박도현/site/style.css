@@ -13,12 +13,16 @@
 
 /* <index> */
 
+
+body::-webkit-scrollbar {
+    display: none;
+  }
 /* Page */
 
-.page::-webkit-scrollbar {
-    display: none;
+.Page{
     background-color: #fff;
 }
+
 /* web_pg */
 .web_pg{padding: 0 18px;}
 
@@ -56,7 +60,7 @@
 }
 /* tittle */
 .tittle{
-    margin-top: 20px;
+    margin-top: 15px;
     padding: 10px;
     display: flex;
     justify-content: space-between;
@@ -95,6 +99,9 @@
 .tittle .t_right i:hover{
     color: #1C1C1C;
 }
+.tittle .t_right .fa-angle-right{
+    margin-right: 0;
+}
 .tittle .t_right a i{
     font-family: "Font Awesome 5 Free";
     color: #6C6C6C;
@@ -108,7 +115,7 @@
 
 /* box */
 .box{
-    margin-top: 40px;
+    margin-top: 20px;
 }
 .box .img{
     position: relative;
@@ -331,7 +338,7 @@
 
 /* bottom_bar */
 .bottom .bottom_bar{
-    margin: 8% auto 0;
+    margin: 8% auto 2%;
     width: 120px; height: 6px;
     border-radius: 5px;
     background-color: #000;

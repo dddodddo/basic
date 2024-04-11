@@ -2,9 +2,7 @@
     margin: 0;
     padding: 0;
 }
-.wrap{
-    background-color: rgb(26, 233, 136);
-}
+
 .responsive {
     display: flex;
     justify-content: center;
@@ -30,11 +28,11 @@
     position: relative;
     width: 422px;
     height: 777px;
-    padding: 119px 13px 108px 28px;
+    padding: 119px 31px 108px 28px;
 }
 
 .responsive .tablet {
     position: relative;
     width: 859px; height: 1280px;
-    padding: 144px 50px 23px 41px;
+    padding: 145px 53px 33px 50px;
 }
