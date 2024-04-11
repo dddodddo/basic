@@ -25,17 +25,16 @@
     align-items: center;
 }
 .bar .time{
-font-size: calc(18px - 1vw);
+font-size: calc(18px - 0.5vw);
 color: #000;
 }
 .bar .bar_right{
     display: flex;
+    line-height: 0;
 }
 .bar .bar_right img{
-    inline-size: calc(22px - 1vw);;
+    inline-size: calc(19px - 0.5vw);;
     margin-right: 5px;
-    padding-top: 2px;
-    padding-left: 2px;
 }
 
 
@@ -66,15 +65,9 @@ color: #000;
 .tittle .t_right{
     display: flex;
 }
-.tittle .t_right .돋보기{
-    width: 18px; height: 19px;
+.tittle .t_right img{
+    inline-size: calc(22px - 0.5vw);
     margin: 10px;
-    background: url(./img/돋보기.png) no-repeat;
-}
-.tittle .t_right .로그인{
-    width: 18px; height: 20px;
-    margin: 10px;
-    background: url(./img/로그인.png) no-repeat;
 }
 
 
@@ -112,10 +105,12 @@ color: #000;
 
 }
 .box .img .writer .ww .w1{
+    font-size: calc(15px - 0.2vw);
     font-weight: 800;
     color: #1C1C1C;
 }
 .box .img .writer .ww .w2{
+    font-size: calc(15px - 0.2vw);
     font-weight: 400;
     color: #6C6C6C;
 }
@@ -125,9 +120,9 @@ color: #000;
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 10px;
 }
-.box .img .good .좋아요{
-    width: 16px; height: 16px;
-    background: url(./img/좋아요.png) no-repeat;
+.box .img .good img{
+    inline-size: calc(22px - 0.5vw);
+    margin-right: 5px;
 }
 .box .img .good .좋아요수{
     font-size: 10px;

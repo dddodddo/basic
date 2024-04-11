@@ -6,11 +6,44 @@ li{list-style: none;}
 
 header{width: 100%; background-color: gray;
 display: flex; align-items: center;
-padding: 0 20px;}
-header .form{margin-left: auto;}
+padding: 0 20px;
+height: 80px;
+}
+header .form{margin-left: auto;
+display: flex;}
+header .form input[type="search"]{
+    height: 30px; outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-right: 8px;
+}
+header .form input[type="submit"]{
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    width: 60px; height: 30px;
+    background-color: gold;
+}
 .menu{width: 100%; display: flex;}
 .menu li{width: 25%; background-color: gold;
-text-align: center; padding: 15px 0;
+text-align: center;
 transition: 0.3s;}
 
 .menu li:hover{width: 35%; background-color: goldenrod;}
+.menu li a{font-size: 20px; font-weight: bold;
+padding: 15px 0; display: block;}
+
+.primary{padding-top: 20px;}
+.primary .card-list{display: flex; flex-wrap: wrap;}
+.primary .card-list .card-item{
+    width: 33.3333%; margin-bottom: 30px;
+    padding: 0 15px;
+}
+.primary .card-list .card-item .card-image{
+    background: url(https://cdn.pixabay.com/photo/2024/04/04/03/08/ai-generated-8674235_1280.png) no-repeat center top;
+    padding-bottom: 62.52%;
+    background-size: cover;
+}
+.primary .card-list .card-item .card-desc{}
+
+.secondard{width: 300px;}
