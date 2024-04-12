@@ -114,3 +114,7 @@ width: calc(100% - 50px);
     padding-top: 92px;
     box-sizing: border-box;
 }
+
+.sign_up .main-tt{margin-bottom: 10px;}
+.sign_up form{margin-top: 60px;}
+.sign_up .signin_links{margin-top: 25px;}
