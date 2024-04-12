@@ -79,3 +79,39 @@ justify-content: flex-end;
 .hero_header{width: 80%; margin-bottom: 1rem;}
 
 .hero_intro{width: 40%; opacity: 0.8;}
+
+
+.carousel{overflow: hidden;
+    position: relative;
+}
+.carousel .left_carousel{
+    background-color: yellow;
+    width: 30%; height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.carousel .right_carousel{}
+.carousel .carousel_inner{display: flex; width: 200%;
+    animation: marque 10s linear infinite;
+}
+.carousel .carousel_inner .item{
+    width: 0;
+    flex-grow: 1; /* 늘어나도록 설정 */
+    /* flex-grow: 0; 기본값 (늘어나지 않게)*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel .carousel_inner .item img{
+    width: 60%;
+}
+@keyframes marque{
+    0%{transform: translateX(0);}
+    100%{transform: translateX(-50%);}
+}
+
+
+.bottom_div{
+    width: var(--width);
+}
