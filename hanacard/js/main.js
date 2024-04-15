@@ -48,6 +48,17 @@ card.slick({
 $('.event_box3 .page_act .btn_stop').click(function (e) {
   e.preventDefault();
   //.hasClass('on') --> 클래스명 on을 가지고 있으면 true / 없다면 false
-  if($('.event_box3 .page_act').hasClass('on')){}
+  if($('.event_box3 .page_act').hasClass('on')){
+    $('.event_box3 .page_act').removeClass('on')
+    card.slick('slickPause');
+  }
+})
 
+$('.event_box3 .page_act .btn_play').click(function(e){
+  //내장함수 --> 함수를 javaScript나 jQuery가 가지고 있어서 우리는 함수를 직접 만드는 것이 아니라 이미 있는 함수를 가져다 쓰는 것.
+  e.preventDefault()
+  if(!$('.event_box3 .page_act').hasClass('on')){
+    $('.event_box3 .page_act').removeClass('on')
+    card.slick('slickPause');
+  }
 })
