@@ -65,17 +65,24 @@ padding: 15px 0; display: block;}
 
 
 .secondard1 .user-list{}
-.secondard2 .user-list .user-item{}
-.secondard2 .user-list .user-item .user-photo{
+.secondard1 .user-list .user-item{}
+.secondard1 .user-list .user-item .user-photo{
     background: url(https://media1.giphy.com/media/H4DjXQXamtTiIuCcRU/200.gif?cid=6c09b95285q0havbyqwzx00gdzu2jakdercxcrsi5jqwjqv6&ep=v1_gifs_search&rid=200.gif&ct=g) no-repeat;
     background-size: cover;
 }
-.secondard2 .user-list .user-item .user-name{}
+.secondard1 .user-list .user-item .user-name{
+    /* 말 줄임말 */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    /* end 말 줄임말 */
+
+}
 
 
 .user-list{}
 .user-list .user-item{display: flex;
-    align-items: center; gap: 10px;}
+    align-items: center; gap: 7px;}
 /* flex --> 늘어나지 마라, 줄어들어라 */
 .user-item .user-photo{
     background: url(https://media.architecturaldigest.com/photos/58ff75920638dd3b70018ac9/16:9/w_1280,c_limit/cat-giphy.gif) no-repeat; 
@@ -86,3 +93,9 @@ padding: 15px 0; display: block;}
     border-radius: 50%;
 }
 .use-item .message-content{}
+
+
+/* order */
+.primary{}
+.secondard1{}
+.secondard2{}
