@@ -7,6 +7,18 @@ rem --> root의 단위에 따라가는 단위(html)
 em --> 내가 가진 단위에 따라가는 단위
 */
 
+
+
+
+/* header */
+header{background-color: #7e57c2; height: 50px;
+padding: 0 25px;box-sizing: border-box;
+display: flex; justify-content: space-between;align-items: center;}
+header h2{color: #fff; font-size: 17px; line-height: 50px; text-align: center;}
+
+
+
+/* welcome */
 .welcome{
     position: relative;
     height: 100vh;
@@ -118,3 +130,36 @@ width: calc(100% - 50px);
 .sign_up .main-tt{margin-bottom: 10px;}
 .sign_up form{margin-top: 60px;}
 .sign_up .signin_links{margin-top: 25px;}
+
+/* ********************Shop******************** */
+.shop{}
+
+.Top_Product{
+    position: relative;
+    padding: 25px 25px 0 0;}
+.Top_Product img{width: 100%;}
+
+.Top_Product .info{
+    position: absolute;
+    left: 50px;bottom: -37px;right: 0;
+    background-color: #fff;
+    padding: 10px 0 10px 20px;
+    /* 그림자
+    글자 text-shadow: ;
+    영역 box-shadow: x y blur spread color; blur spread는 생략가능*/
+    box-shadow: 0 0 8px rgba(0,0,0,0.25);
+    }
+.Top_Product .info h2{
+    color: #757575;
+    font-size: 18px;
+    line-height: 29px;
+}
+.Top_Product .info .desc{
+    display: flex;
+    color: #7E57C2;
+    justify-content: space-between;
+    align-items: center;
+}
+.Top_Product .info .desc .price{}
+.Top_Product .info .desc .rate{display: flex; gap: 5px; margin-right: 45px;}
+.Top_Product .info .desc .rate i{}
