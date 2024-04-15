@@ -37,17 +37,67 @@
         console.log(arrFunc(10,20))
 
 
-        //[3] 인자값이 하나일때
+        //[3] 인자값이 하나일때 --> ()를 줄일 수 있다. 단, 인자값이 2개 이상이거나 없거나 할 때는 줄일 수 없다.
 
-        let arrFunc2=function(name){
-            console.log(`반갑습니다. ${name} 회원님`)
-        }
+        // let arrFunc2=function(name){
+        //     console.log(`반갑습니다 ${name}회원님~`)
+        // }
+
+        // let arrFunc2=function(name){
+        //     console.log(`반갑습니다 ${name}회원님~`)
+        // }
+
+        // let arrFunc2=(name)=>{
+        //     console.log(`반갑습니다 ${name}회원님~`)
+        // }
+
+        //let arrFunc2=(name)=>console.log(`반갑습니다 ${name}회원님~`)
+
+        let arrFunc2=name=>console.log(`반갑습니다. ${name} 회원님`)
+        
         arrFunc2(`홍길동`)
 
-        let arrFunc3=(name)=>
-            console.log(`반갑습니다. ${name} 회원님`)
+
+        // let arrFunc3=function(num){
+        //     return num*2
+        // }
+
+        // let arrFunc3=(num)=>{
+        //     return num*2
+        // }
+
+        // let arrFunc3=(num)=>num*2
+
+        let arrFunc3=num=>num*2
+
+
+        let result3 =arrFunc3(10)
+        console.log(result3)
+
+
+
+        // let arrFunc4=function(a,b){
+        //     return a+b
+        // }
+
+        // let arrFunc4=(a,b)=>{
+        //     return a+b
+        // }
+
+        let arrFunc4=(a,b)=>a+b
+
+        let result4=arrFunc4(2,4)
+        console.log(result4)
+
+
+
+
+
+
+
         
-        arrFunc3(`홍길동`)
+
+
     </script>
 </body>
 </html>
