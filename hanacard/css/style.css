@@ -725,7 +725,7 @@ em(중요한 내용임을 명시) i(디자인적으로 글자를 기울림 표�
 
 .event_box2 .slick-dots li {}
 
-.event_box2 .slick-dots li button {
+.slick-dots li button {
     /* img태그와 button태그는 인라인요소이지만
         특이하게 공간을 인식한다.  */
     font-size: 0;
@@ -737,37 +737,37 @@ em(중요한 내용임을 명시) i(디자인적으로 글자를 기울림 표�
     cursor: pointer;
 }
 
-.event_box2 .slick-dots li.slick-active button {
+.slick-dots li.slick-active button {
     background-color: #d75e7e;
 }
 
 /* 정지/재생 버튼 */
-.event_box2 .page_act {
+.page_act {
     position: absolute;
     right: 104px;
     top: 60px;
     font-size: 0;
 }
 
-.event_box2 .page_act .btn_stop {
+.page_act .btn_stop {
     display: none;
     width: 8px;
     height: 8px;
     background: url(../img/btn_banner_stop.png) no-repeat;
 }
 
-.event_box2 .page_act .btn_play {
+.page_act .btn_play {
     display: block;
     width: 8px;
     height: 8px;
     background: url(../img/btn_banner_play.png) no-repeat;
 }
 
-.event_box2 .page_act.on .btn_stop {
+.page_act.on .btn_stop {
     display: block;
 }
 
-.event_box2 .page_act.on .btn_play {
+.page_act.on .btn_play {
     display: none;
 }
 
@@ -842,15 +842,16 @@ em(중요한 내용임을 명시) i(디자인적으로 글자를 기울림 표�
     font-size: 22px;
 }
 
+.event_box3 .eb_slider2{position: relative;}
 
 .eb_slider2 ul.slick-dots{
-    margin-top: 10px;
+    margin-top: 8px;
     display: flex;
     justify-content: center;
-    
+    gap: 10px;
+    padding-left: 20px;
 }
 .eb_slider2 ul.slick-dots li{
-    margin-right: 10px;
     line-height: 0;
 }
 .eb_slider2 ul.slick-dots li button{
@@ -861,4 +862,23 @@ em(중요한 내용임을 명시) i(디자인적으로 글자를 기울림 표�
 }
 .eb_slider2 ul.slick-dots li:last-child{
     margin-right: 0;
+}
+
+
+.event_box3 p{
+    font-size: 16px;
+    padding: 35px 0 15px;
+}
+.event_box3 .es2_btn{
+    background-color: #fff;
+    display: inline-block;
+    padding: 10px 50px;
+    border-radius: 3px;
+}
+
+.event_box3 .page_act{
+    top: 277px;
+    left: 117px; 
+    /* right보다 left 값이 강함, 만약 left값을 없애기 위해선 left:auto랑 같이 사용해야 함. (*bottom보단 top이 강함) */
+    right: auto;
 }

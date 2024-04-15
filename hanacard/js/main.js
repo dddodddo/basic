@@ -36,13 +36,18 @@ $('.event_box2 .page_act .btn_play').click(function (e) {
 
 
 //card slider
-
-$(document).ready(function () {
-  $('.card').slick({
-    arrows: false,
-    dots: true,
-    autoplay: true,
-    pauseOnHover: false,
-    fade: true
-  });
+let card = $('.card')
+card.slick({
+  arrows: false,
+  dots: true,
+  autoplay: true,
+  pauseOnHover: false,
+  fade: true
 });
+
+$('.event_box3 .page_act .btn_stop').click(function (e) {
+  e.preventDefault();
+  //.hasClass('on') --> 클래스명 on을 가지고 있으면 true / 없다면 false
+  if($('.event_box3 .page_act').hasClass('on')){}
+
+})
