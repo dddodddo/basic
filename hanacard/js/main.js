@@ -62,3 +62,5 @@ $('.event_box3 .page_act .btn_play').click(function(e){
     card.slick('slickPlay');
   }
 })
+
+//life btn

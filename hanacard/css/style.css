@@ -921,4 +921,5 @@ transition: 0.3s;}
     만일 포토샵에 시안을 받게 된다면 letter-spacing 계산
     ex) 포토샵 자간 1000 -> 1em, 100 -> 0.1em, 500 -> 0.5em, 5000 -> 5em, 25 -> 0.025em 
     letter-spacing: 0.025em */
+    color: #000;
 }
