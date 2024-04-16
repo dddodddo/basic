@@ -132,7 +132,7 @@ width: calc(100% - 50px);
 .sign_up .signin_links{margin-top: 25px;}
 
 /* ********************Shop******************** */
-.shop{}
+.shop{background-color: #fff;}
 
 .Top_Product{
     position: relative;
@@ -153,6 +153,7 @@ width: calc(100% - 50px);
     color: #757575;
     font-size: 18px;
     line-height: 29px;
+    margin-bottom: 5px;
 }
 .Top_Product .info .desc{
     display: flex;
@@ -160,6 +161,6 @@ width: calc(100% - 50px);
     justify-content: space-between;
     align-items: center;
 }
-.Top_Product .info .desc .price{}
+.Top_Product .info .desc .price{font-size: 13px;}
 .Top_Product .info .desc .rate{display: flex; gap: 5px; margin-right: 45px;}
 .Top_Product .info .desc .rate i{}
