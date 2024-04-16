@@ -18,15 +18,9 @@
 
 
 /* contents layout */
-#cont1 {
-    height: 940px;
-    background-color: #f5f6f8;
-}
+#cont1 {height: 940px; background-color: #f5f6f8;}
 
-#cont2 {
-    height: 555px;
-    background-color: #efefef;
-}
+#cont2 {height: 555px; background-color: #efefef;}
 
 
 /* 중심 영역 */
@@ -881,4 +875,50 @@ em(중요한 내용임을 명시) i(디자인적으로 글자를 기울림 표�
     left: 117px; 
     /* right보다 left 값이 강함, 만약 left값을 없애기 위해선 left:auto랑 같이 사용해야 함. (*bottom보단 top이 강함) */
     right: auto;
+}
+
+/* life */
+#life{position: relative; height: 330px;}
+#life .life_menu{position: absolute; left: 50%; top: 60px; z-index: 10;}
+#life .life_menu ul{display: flex; gap: 45px;}
+#life .life_menu ul li{}
+#life .life_menu ul li a{width: 100px;height: 100px; border-radius: 50%; background-color: #ddd; display: flex; justify-content: center;; align-items: center;
+transition: 0.3s;}
+#life .life_menu ul li a:hover{
+    background-color: #cc3b63;
+    color: #fff;
+}
+#life .life_style{}
+#life .life_style ul{}
+#life .life_style ul li{
+    position: absolute;
+    /* left: 0;top: 0; right: 0;bottom: 0; -> 4개를 줄인 것이 inset*/
+    inset: 0;
+}
+#life .life_style ul li:nth-child(1){
+   background: url(../img/mc_service_bg02.png)no-repeat;}
+
+#life .life_style ul li:nth-child(2){
+   background: url(../img/mc_service_bg03.png)no-repeat;}
+
+#life .life_style ul li:nth-child(3){
+   background: url(../img/mc_service_bg04.png)no-repeat;}
+
+#life .life_style ul li:nth-child(4){
+   background: url(../img/mc_service_bg05.png)no-repeat;}
+
+#life .life_style ul li .text{}
+#life .life_style ul li .text a{
+    display: block;
+    width: 50%; font-size: 50px;
+    padding: 60px 0 0 30px;
+}
+#life .life_style ul li .text a em{
+    font-size: 18px;
+    display: block;
+    letter-spacing: 1px;
+    /* em -> 현재 위치의 태그가 가지는 font-size
+    만일 포토샵에 시안을 받게 된다면 letter-spacing 계산
+    ex) 포토샵 자간 1000 -> 1em, 100 -> 0.1em, 500 -> 0.5em, 5000 -> 5em, 25 -> 0.025em 
+    letter-spacing: 0.025em */
 }
