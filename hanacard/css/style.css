@@ -964,8 +964,24 @@ transition: 0.3s;}
 #app .app_left{width: 49%; height: 200px;
     background: #fff;
 }
-#app .app_left ul{}
-#app .app_left ul li{}
-#app .app_left ul li a{}
 #app .app_right{width: 50%; height: 200px;
     background: #ddd;}
+
+#app .app_left{
+    background: #fff url(../img/mc_service_banner01_img.jpg) no-repeat;
+    background-position: 45px 45px;
+    padding: 44px 0 0 278px;
+    box-sizing: border-box;
+}    
+.app_left ul{display: flex; gap: 20px;}
+.app_left ul li{border: 1px solid #eaeaea;
+border-radius: 10px; overflow: hidden;
+width: 48px; height: 48px;
+}
+.app_left ul li a{}
+.app_left ul li a img{width: 100%;}
+
+.app_left .al_text{margin-top: 12px;}
+.app_left .al_text a{font-size: 16px; color: #666;}
+.app_left .al_text a strong{display: block;
+font-size: 20px; color: #000; line-height: 34px;}
