@@ -117,4 +117,13 @@ footer{order: 4; width: 100%;
 
 @media (max-width:1024px){/* 화면이 1024px보다 작다면 */
     .primary .card-list .card-item{width: 50%;}
+    .primary .card-list .card-item:last-child{display: none;}
+}
+
+@media (max-width:820px){/* 화면이 820px보다 작다면 */
+    .secondard{width: 100%;}
+}
+@media (max-width:600px){
+    .secondard1{order: 2;}
+    .primary .card-list .card-item {width: 100%;}
 }
