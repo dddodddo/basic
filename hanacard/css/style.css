@@ -923,3 +923,49 @@ transition: 0.3s;}
     letter-spacing: 0.025em */
     color: #000;
 }
+
+
+#life .life_btn{
+    bottom: 86px;
+    position: absolute;
+    width: 100%; left: 0;
+    text-align: center;
+    background-color: #fff;
+}
+#life .life_btn ul{
+    display: flex;
+    }
+#life .life_btn ul li{
+    width: 16.6666%; position: relative;
+}
+#life .life_btn ul li::after{
+    content: ""; 
+    position: absolute; 
+    left: 0;  top: 20px;
+    width: 1px; height: 14px;
+    background-color: #ccc;
+}
+/* #life .life_btn ul li:first-child::after{width: 0;height: 0;} */
+/* 6개의 li중 자손중 .first를 가지고 있는 li */
+#life .life_btn ul li:has(.first)::after{width: 0; height: 0;}
+#life .life_btn ul li a{
+    padding: 13px 0; font-size: 16px; color: #333;
+    display: block;
+}
+#life .life_btn ul li a:hover{
+    color: #00907f;
+}
+
+
+#app{
+    display: flex;
+    justify-content: space-between;
+}
+#app .app_left{width: 49%; height: 200px;
+    background: #fff;
+}
+#app .app_left ul{}
+#app .app_left ul li{}
+#app .app_left ul li a{}
+#app .app_right{width: 50%; height: 200px;
+    background: #ddd;}

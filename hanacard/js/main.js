@@ -63,4 +63,14 @@ $('.event_box3 .page_act .btn_play').click(function(e){
   }
 })
 
-//life btn
+//life 버튼
+let tab = $('.life_menu ul li')
+let style = $('.life_style ul li')
+
+tab.mouseover(function(){
+  let tartget=$(this) //버튼 4개 중에서 사용자가 마우스를 올린 버튼 그것
+  let index=tartget.index()//사용자가 마우스를 올린 버튼 그것의 index번호를 추출
+  //console.log(index)
+  style.css({opacity:0})//1)모두 안보이기
+  style.eq(index).css({opacity:1})//2)사용자가 마우스를 올린 버튼의 index번호에 해당하는 style의 .life_style ul li요소를 보이게 한다.
+})
