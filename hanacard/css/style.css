@@ -15,12 +15,24 @@
 }
 
 #contents {}
+#footer {}
 
 
 /* contents layout */
 #cont1 {height: 940px; background-color: #f5f6f8;}
-
 #cont2 {height: 555px; background-color: #efefef;}
+
+
+
+/* footer layout */
+.footer_notice{
+    background-color: #fff; border-bottom: 1px solid #e6e6e6;
+    height: 71px;
+}
+.footer_info{
+    height: 242px; background-color: #f7f8f9;
+}
+
 
 
 /* 중심 영역 */
@@ -1019,3 +1031,16 @@ padding-top: 130px; box-sizing: border-box;
     font-size: 16px;
     padding-top: 10px;
 }
+
+/* footer */
+#footer .container{height: 100%;}
+.notice{
+    display: flex; gap: 30px;
+    align-items: center; height: 100%;
+}
+.notice h3{font-size: 15px;}
+.notice h3 i{border: 1px solid #ccc; padding: 4px;}
+.notice ul{}
+.notice ul li{}
+.notice ul li a{}
+.notice a{}
