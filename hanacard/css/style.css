@@ -1035,12 +1035,44 @@ padding-top: 130px; box-sizing: border-box;
 /* footer */
 #footer .container{height: 100%;}
 .notice{
+    position: relative;
     display: flex; gap: 30px;
     align-items: center; height: 100%;
 }
 .notice h3{font-size: 15px;}
-.notice h3 i{border: 1px solid #ccc; padding: 4px;}
-.notice ul{}
-.notice ul li{}
-.notice ul li a{}
-.notice a{}
+.notice h3 i{border: 1px solid #ccc; padding: 4px;
+vertical-align: 3px;/* inline요소의 수직 정렬 */
+font-size: 10px;
+}
+.notice ul{display: flex; gap: 50px;}
+.notice ul li{
+    position: relative;
+    width: 400px;
+    /* 말 줄임말 */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-left: 8px;
+}
+
+.notice ul li::before{
+    content: "";
+    width: 3px; height: 3px;
+    background-color: #333;
+    position: absolute;
+    left: 0; top: 11px;
+}
+.notice ul li a{
+    color: #666;font-size: 15px;
+}
+.notice .notice_btn{
+    font-size: 14px; border: 1px solid #e6e6e6;
+    padding: 6px 20px;
+    border-radius: 3px;
+    position: absolute;
+    right: 0;top: 18px;
+}
+.notice .notice_btn:hover{
+    border-color: #000;
+    transition: 0.3s;
+}
