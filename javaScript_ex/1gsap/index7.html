@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        .wrap>div{height: 100vh;}
+        .div1{background-color: #317bf4;}
+        .div2{background-color: #9df6b5;padding-top: 50px;}
+        .div2>div{width: 150px;height: 150px;margin-bottom: 150px;}
+        .square1{background-color: firebrick;}
+        .square2{background-color: rgb(250, 143, 37);}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="div1"></div>
+        <div class="div2">
+            <div class="square1"></div>
+            <div class="square2"></div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger)
+        gsap.to(".square1",{
+            x:700,
+            duration:3,
+            scrollTrigger:{
+                trigger:".div2",
+                start:.div2의 포지션 화면의 포지션,//trigger의 시작점
+                end:.div2의 포지션 화면의 포지션,//trigger의 종료점
+            }
+        })
+
+
+    //     <script>
+    //     gsap.registerPlugin(ScrollTrigger)
+    //     gsap.to(".square1",{
+    //         x:700,
+    //         duration:3,
+    //         scrollTrigger:{
+    //             trigger:".div2",
+    //             start:.div2의 포지션 화면의 포지션,//trigger의 시작점
+    //             end:.div2의 포지션 화면의 포지션,//trigger의 종료점
+    //         }
+    //     })
+    // </script>
+</body>
+</html>

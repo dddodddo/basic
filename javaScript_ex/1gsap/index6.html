@@ -39,7 +39,30 @@
     let tl=gsap.timeline()
     //autoAlpha --> opacity, visibility 
 
-    tl.to(".stage",{autoAlpha:1,duration:1})
+    tl
+    .to(".stage",{autoAlpha:1,duration:1.5})
+    .to(".item",{
+        // keyframes:{
+        //     "0%":{x:0,y:0},
+        //     "25%":{x:20,y:0,ease: "sine.out",},
+        //     "50%":{x:250,y:-100,ease: "sine.in",},
+        //     "75%":{x:400,y:0,ease: "sine.out",},
+        //     "100%":{x:500,y:0,},
+        // },
+        keyframes:{
+            x:[0,20,250,400,500],
+            y:[0,0,-100,0,0],
+            ease: "sine.out"
+        },
+        duration:2,
+        stagger:0.2
+    })
+
+
+
+
+
+
     </script>
 </body>
 </html>
