@@ -985,3 +985,37 @@ width: 48px; height: 48px;
 .app_left .al_text a{font-size: 16px; color: #666;}
 .app_left .al_text a strong{display: block;
 font-size: 20px; color: #000; line-height: 34px;}
+
+
+/* app_right */
+.app_right{display: flex;}
+.app_right>div{height: 200px; text-align: center;
+color: #fff; font-size: 16px;}
+.app_right .ar_ban1{width: 25%;
+background: #2f4359 url(../img/service_ban01.png) no-repeat center top 50px;
+padding-top: 130px; box-sizing: border-box;
+}
+.app_right .ar_ban2{width: 25%;
+    background: #00907f url(../img/service_ban02.png) no-repeat center top 50px;
+    padding-top: 130px; box-sizing: border-box;
+}
+.app_right .ar_ban3{width: 50%;
+    background: #fff; padding: 20px 20px 19px;
+    box-sizing: border-box;
+}
+.app_right .ar_ban3 .ban3_text{
+    color: #666;
+    background: url(../img/service_ban03.png) no-repeat 10px 40px;
+    font-size: 15px;
+    padding: 20px 20px 30px 75px;
+    border-bottom: 1px solid #ddd;
+}
+.app_right .ar_ban3 .ban3_text h5{
+    font-size: 20px; color: #000;
+    padding-bottom: 5px;
+}
+.app_right .ar_ban3 .ban3_slide{
+    color: #000;
+    font-size: 16px;
+    padding-top: 10px;
+}
