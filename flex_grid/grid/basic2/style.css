@@ -16,5 +16,17 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-columns: 300px 200px 100px;
     grid-template-columns: 300px 1fr 100px;
+    grid-template-columns: 1fr 300px 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(5,1fr); /* 1fr를 5번 반복한다는 의미 */
+    grid-template-columns: repeat(3,1fr 2fr 1fr);
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 200px 200px;/* 1줄과 2줄은 200px적용, 나머지 행은 auto */
+    grid-template-rows: 200px 200px auto;
+    grid-template-rows: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr) 300px;
+
+    height: 80vh;
 }
+
 .container .item{}
