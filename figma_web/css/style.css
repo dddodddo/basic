@@ -132,11 +132,15 @@ width: calc(100% - 50px);
 .sign_up .signin_links{margin-top: 25px;}
 
 /* ********************Shop******************** */
-.shop{background-color: #fff;}
+.shop{
+    background-color: #fff;
+    overflow: hidden;
+    height: 100vh;
+}
 
 .Top_Product{
     position: relative;
-    padding: 25px 25px 0 0;}
+    padding: 25px 12vw 0 0;}
 .Top_Product img{width: 100%;}
 
 .Top_Product .info{
@@ -147,7 +151,7 @@ width: calc(100% - 50px);
     /* 그림자
     글자 text-shadow: ;
     영역 box-shadow: x y blur spread color; blur spread는 생략가능*/
-    box-shadow: 0 0 8px rgba(0,0,0,0.25);
+    box-shadow: 0 0 8px rgba(0,0,0,.25);
     }
 .Top_Product .info h2{
     color: #757575;
@@ -160,11 +164,22 @@ width: calc(100% - 50px);
 .Top_Product .info .desc .rate{display: flex; gap: 5px; margin-right: 45px;}
 .Top_Product .info .desc .rate i{color: #7e57c2;}
 
-.shop_product{margin-top: 74px;}
+.shop_product{
+    position: relative; margin-top: 74px; left: 25px;
+    width: 120%;
+}
 .shop_product .product_list{}
 .shop_product .product_list img{width: 100%;}
-.shop_product .product_list .slick-slide{padding-left: 25px;}
+.shop_product .product_list .slick-slide{padding-right: 25px;}
 .shop_product .product_list .slick-track{}
 .shop_product .product_list h3{font-size: 15px; line-height: 25px;padding-top: 15px;color: #757575;}
 .shop_product .product_list h4{font-size: 13px; line-height: 21px; padding-top: 5px; color: #7e57c2;}
-.shop .page{}
+.shop .page{color: #222;
+    left: 10px; top: 10px;
+    position: relative;
+     font-size: 20px;
+    }
+
+
+
+/* ********************shop_Categories******************** */
