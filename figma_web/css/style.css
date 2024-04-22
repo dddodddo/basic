@@ -22,7 +22,8 @@ header h2{color: #fff; font-size: 17px; line-height: 50px; text-align: center;}
 .welcome{
     position: relative;
     height: 100vh;
-    background: url(../images/welcome_bg.png) no-repeat center top/cover;
+    background: url(../images/welcome_bg.png) no-repeat center top;
+    background-size: cover;
     padding-top: 134px; /* 큰영역 안으로 넣을 땐 padding 첫째한테 margin 줄 수 없음 */
     box-sizing: border-box;
     /* background-size: cover; */
@@ -71,11 +72,11 @@ width: calc(100% - 50px);
 [class^="sign"] form input{
     width: 100%;
     height: 50px;
-    background-color: rgba(238, 238, 238, 40%);
+    background-color: rgba(238, 238, 238, .4);
     box-sizing: border-box;
     padding: 0 20px;
     border: none;
-    outline: 0;
+    outline: none;
     font-size: 16px;
     line-height: 50px;
 }
@@ -161,19 +162,19 @@ width: calc(100% - 50px);
 }
 .Top_Product .info .desc{display: flex; justify-content: space-between;}
 .Top_Product .info .desc .price{color: #7e57c2;}
-.Top_Product .info .desc .rate{display: flex; gap: 5px; margin-right: 45px;}
+.Top_Product .info .desc .rate{display: flex; gap: 5px; padding-right: 45px;}
 .Top_Product .info .desc .rate i{color: #7e57c2;}
 
 .shop_product{
     position: relative; margin-top: 74px; left: 25px;
-    width: 120%;
+    width: 120%; height: 330px;
 }
 .shop_product .product_list{}
 .shop_product .product_list img{width: 100%;}
 .shop_product .product_list .slick-slide{padding-right: 25px;}
 .shop_product .product_list .slick-track{}
 .shop_product .product_list h3{font-size: 15px; line-height: 25px;padding-top: 15px;color: #757575;}
-.shop_product .product_list h4{font-size: 13px; line-height: 21px; padding-top: 5px; color: #7e57c2;}
+.shop_product .product_list h4{font-size: 13px; line-height: 25px; padding-top: 5px; color: #7e57c2;}
 .shop .page{color: #222;
     left: 10px; top: 10px;
     position: relative;
@@ -182,4 +183,39 @@ width: calc(100% - 50px);
 
 
 
-/* ********************shop_Categories******************** */
+/* ********************shopCategories******************** */
+.shopCategories{
+    height: 100vh;}
+.shop_Categories .slick-slide{height: 50vw;
+    min-height: 200px; max-height: 400px;
+}
+.shop_Categories .slick-slide img{width: 100%; min-width: 200px;
+min-width: 375px;}
+
+
+.shop_Categories .slick-dots{
+    position: absolute;
+    left: 0; width: 100%;
+    bottom: 15px;
+    text-align: center;
+    
+}
+.shop_Categories .slick-dots li{
+    display: inline-block;
+    margin-right: 10px;
+}
+.shop_Categories .slick-dots li:last-child{
+    margin-right: 0px;
+}
+.shop_Categories .slick-dots li button{
+    width: 13px; height: 13px;
+    border:3px solid #7E57C2;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background: none;
+    font-size: 0;
+
+}
+.shop_Categories .slick-dots li.slick-active button{
+    background-color: #7e57c2;
+}
