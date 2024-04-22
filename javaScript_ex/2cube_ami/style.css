@@ -11,7 +11,9 @@ perspective: 1500px;
     transform-style: preserve-3d;
     width: 400px;height: 400px;
     transition: 0.5s;
-    transform: rotateX(0deg) rotateY(0deg);
+    transform: rotateX(0deg) rotateY(0deg) translateZ(-200px);
+    perspective: 1500px;
+
 }
 .box-area .box{position: absolute;
     width: 400px; height: 400px;
