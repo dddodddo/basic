@@ -176,15 +176,18 @@ width: calc(100% - 50px);
 .shop_product .product_list h3{font-size: 15px; line-height: 25px;padding-top: 15px;color: #757575;}
 .shop_product .product_list h4{font-size: 13px; line-height: 25px; padding-top: 5px; color: #7e57c2;}
 .shop .page{color: #222;
-    left: 10px; top: 10px;
-    position: relative;
+    right: 10px; top: 55px;
+    position: absolute;
      font-size: 20px;
+     z-index: 100;
     }
 
 
 
 /* ********************shopCategories******************** */
 .shopCategories{
+    background-color: #fff;
+    position: relative;
     height: 100vh;}
 .shop_Categories .slick-slide{height: 50vw;
     min-height: 200px; max-height: 400px;
@@ -218,4 +221,16 @@ min-width: 375px;}
 }
 .shop_Categories .slick-dots li.slick-active button{
     background-color: #7e57c2;
+}
+
+.shopCategories .shop_wrap{padding: 25px 25px 0;}
+.shopCategories .shop_wrap ul{display: flex;
+    gap: 25px; flex-wrap: wrap;}
+.shopCategories .shop_wrap ul li{width: 45%; flex-grow: 1;}
+.shopCategories .shop_wrap img{width: 100%; display: block;}
+.shopCategories .shop_wrap ul li h4{color: #757575; font-size: 18px; line-height: 25px; margin-top: 15px;}
+.shopCategories .shop_wrap ul li p{color: #757575; font-size: 13px; line-height: 21px; margin-top: 1px;}
+
+.shopCategories .page{position: absolute;
+top: 55px; left: 10px;
 }
