@@ -59,14 +59,23 @@
         let tl=gsap.timeline({paused:true})//애니메이션 멈춤
         tl.from('.몸',{duration:0.8, x:100, y:-100, opacity: 0, ease: "back.out(0.8)",})
         tl.from('.머리',{duration:0.8, x:0, y:100, opacity: 0, ease: "back.out(0.7)",},"-=0.3")
+        tl.add('test')
         tl.from('.왼팔',{duration:0.8, x:100, y:100, opacity: 0, ease: "back.out(0.7)",},"-=0.5")
         tl.from('.오른팔',{duration:0.8, x:-100, y:-100, opacity: 0, ease: "back.out(0.7)",},"-=0.6")
         tl.from('.왼발',{duration:0.8, x:0, y:-100, opacity: 0, ease: "back.out(0.7)",},"-=0.6")
         tl.from('.오른발',{duration:0.8, x:0, y:-100, opacity: 0, ease: "back.out(0.7)",},"-=0.7")
 
         document.addEventListener('click',function(e){
-            let check=e.target //가장 끝에 있는 노드, 객체
+            let check=e.target.classList //가장 끝에 있는 노드, 객체
             console.log(check)
+
+            //check.contains("play")//true/false
+            if(check.contains("play")){tl.play()}//재생
+            if(check.contains("pause")){tl.pause();}//멈춤
+            if(check.contains("reverse")){tl.reverse();}//거꾸로
+            if(check.contains("restart")){tl.restart();}//다시 실행
+            //if(check.contains("test")){tl.play('test')}//tl.add('test')이후 부터 실행
+            //if(check.contains("test")){tl.kill('test')}//tl.add('test')이후 부터 실행
         })
 
 
