@@ -12,8 +12,8 @@ body{font-family: "Jersey 10", sans-serif;}
     width: 300px;padding: 20px 0;
 }
 .clock .time_box{}
-.clock .time_box .txt_lg{font-size: 50px;}
-.clock .time_box .txt_sm{font-size: 40px;}
+.clock .time_box .txt_lg{font-size: 50px; width: 47px; display: inline-block;}
+.clock .time_box .txt_sm{font-size: 40px; width: 31px; display: inline-block;}
 .clock .time_box .mark,
 .clock .time_box .mark02{
     font-family: "Rampart One", sans-serif;
@@ -24,5 +24,4 @@ body{font-family: "Jersey 10", sans-serif;}
 .clock .date_box .day{display: block;}
 .clock .date_box .point{
     font-family: "Rampart One", sans-serif;
-    font-size: 14px;
 }
