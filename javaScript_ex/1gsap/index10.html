@@ -11,6 +11,9 @@
         .imgs{position: relative; width: 520px; height: 607px; margin: 5vh auto 0;}
         .imgs>img{position: absolute;left: 0; right: 0;top: 0;bottom: 0;}
 
+        .square{position: absolute; top: 100px; left: 200px;
+            background-color: khaki; width: 100px; height: 300px;
+        }
         
     </style>
 </head>
@@ -26,6 +29,8 @@
             <img src="./img/05.png" alt="머리" class="머리">
             <img src="./img/06.png" alt="몸" class="몸">
         </div>
+
+        <div class="square">사각형</div>
     </div>
     <div class="bottom" style="height: 100vh; background-color: gray;"></div>
 
@@ -37,20 +42,23 @@
 
     <script>
         gsap.registerPlugin(ScrollTrigger)
+        // let value=document.querySelector('.square').offsetWidth 영역의 넓이
+        let value=document.querySelector('.square').offsetHeight
+        console.log(value)
+
+        let num=3
+        num+=4//num=num+4
 
         let tl=gsap.timeline({
             scrollTrigger:{
-                trigger:".main",
-                start:"center 100%",
-                end:"top top",
+                trigger:".square",
+                start:"top 60%",
+                //end:()=>`+=${document.querySelector('.square').offsetHeight}`,
+                //start지점에서 square의 높이만큼 스크롤이 이동되면 애니메이션이 끝난다
+                end:()=>`+=50%`,
+                //%의 기준이 화면이다
                 markers:true,
-                //scrub:true,
-                //toggleActions:"진입시 떠났을때 백으로진입 백으로진입시떠났을때"
-                //toggleActions:"onEnter onLeave onEnterBack onLeaveBack"
-                // toggleActions:"play none none none"
-                // toggleActions:"play none restart none"//백으로 진입했을 때 다시 실행
-                // toggleActions:"play reverse restart none"
-                toggleActions:"play pause resume none"//resume 멈춘 상태에서 다시 시작
+                scrub:true,
             }
         })
         tl.from('.몸',{duration:0.8, x:100, y:-100, opacity: 0, ease: "back.out(0.8)",})
