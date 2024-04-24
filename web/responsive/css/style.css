@@ -1,2 +1,70 @@
+@charset "UTF-8";
 /* font-family: "Nanum Gothic", sans-serif;
 font-family: "Nanum Brush Script", cursive; */
+
+/* 레이아웃 */
+body{background: url(https://cdn.pixabay.com/photo/2024/01/30/21/23/desert-8542838_1280.jpg) repeat-x center top;
+background-size: 100% 327px;
+}
+#header{height: 327px;}
+
+
+
+/* container 가운데(중앙)영역 */
+.container{width: 1200px; margin: 0 auto;}
+
+
+
+/* header */
+.header{}
+.header_menu{
+    padding-top: 8px;
+    display: flex; gap: 10px; justify-content: flex-end;}
+.header_menu a{color: #fff;}
+.header_menu a:hover{color: #ccc;}
+
+.header_tit{text-align: center;}
+.header_tit h1{
+    color: #fff;
+    background-color: #968576;
+    font-size: 25px;
+    font-weight: 800;
+    display: inline-block;
+    padding: 5px 30px;
+    margin-top: 55px;
+    transition: 0.3s ease-in-out;
+}
+.header_tit h1:hover{
+    box-shadow: inset 175px 0px #5c5249,
+                inset -175px 0px #5c5249;
+}
+.header_tit a{color: #fff;
+    background-color: #cdb39c;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    transition: 0.3s;
+    margin-top: -7px;
+}
+.header_tit a:hover{
+    box-shadow: inset 84px 0px #877362,
+                inset -84px 0px #877362;
+}
+.header_icon{margin-top: 40px;}
+.header_icon ul{display: flex; justify-content: center; gap: 10px;}
+.header_icon ul li{position: relative;}
+.header_icon ul li a{color: #fff; font-size: 35px;
+    background-color: #3192bf; display: inline-block;
+    width: 60px; height: 60px; border-radius: 50%;
+    text-align: center;
+    line-height: 60px;
+}
+.header_icon ul li a i{}
+.header_icon ul li a span{position: absolute; top: -30px;left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    background-color: #3192bf;
+    line-height: 1.2;
+    padding: 3px 9px;
+    border-radius: 6px 0;
+}
