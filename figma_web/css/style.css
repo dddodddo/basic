@@ -234,3 +234,96 @@ min-width: 375px;}
 .shopCategories .page{position: absolute;
 top: 55px; left: 10px;
 }
+
+/* ********************singleProduct******************** */
+.singleProduct{
+    height: 100vh;
+    overflow: hidden;
+}
+
+.singleProduct main{
+    padding: 25px 25px 0;
+}
+.singleProduct main h2{
+    font-size: 18px;
+    line-height: 29px;
+    color: #757575;
+}
+.singleProduct main .rate{
+    font-size: 13px;
+    line-height: 21px;
+    color: #7E57C2;
+    padding-bottom: 20px;
+}
+
+.single_Product{
+    position: relative;
+    width: 190%;}
+.single_Product img{
+    display: block;
+    width: 100%;
+}
+
+.single_Product .slick-slide{padding-right: 25px; display: block;}
+
+.single_Product .slick-dots{
+    position: absolute;
+    right: 0;bottom: -17px;
+    width: 100%;
+    text-align: center;
+    line-height: 0;
+}
+.single_Product .slick-dots li{
+    display: inline-block;
+    margin-right: 5.38px;
+}
+.single_Product .slick-dots li:last-child{
+    margin-right: 0;
+}
+.single_Product .slick-dots li button{
+    width: 7px; height: 7px;
+    border:1px solid #7E57C2;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background: none;
+    font-size: 0;
+}
+.single_Product .slick-dots li.slick-active button{
+    background-color: #7e57c2;
+}
+
+.singl_Product .details_info{}
+.singleProduct .details_info h3{
+    font-size: 26px;
+    line-height: 26px;
+    color: #757575;
+    padding-top: 18px;
+}
+.singleProduct .details_info p{
+    font-size: 13px;
+    line-height: 21px;
+    color: #757575;
+    padding-top: 10px;
+}
+.singleProduct .details_info form{
+    margin-top: 20px;
+}
+.singleProduct .details_info form label{
+    display: none;
+}
+.singleProduct .details_info form select{
+    border: 1px solid #999;
+    width: 100px; height: 25px;
+    color: #757575;
+    font-size: 10px;
+    line-height: 23px;
+    margin-right: 23px;
+    padding-left: 10px;
+    text-transform: capitalize;
+}
+
+.singleProduct .btn{
+    outline: none;
+    border: none;
+    margin-top: 25px;
+}
