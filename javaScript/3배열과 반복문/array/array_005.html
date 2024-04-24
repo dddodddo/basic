@@ -13,6 +13,54 @@
 
     
     <script>
+        //배열 사용시 몰라서는 안되는 유용한 메서드(함수)
+
+        //배열은 여러가지 타입을 넣을 수 있다.
+        //let array=["하늘",100, true]
+        //여러가지 넣을 순 있지만 일반적으로 같은 타입끼리 묶어 사용한다.
+
+        //배열과 객체는 동적할당(메모리 공간이 정해져 있지 않음, 언제든지 추가/제거 하며 메모리 공간을 변화시킬 수 있음)을 받는다.
+
+        let arr=[]
+        arr.push('한국')
+        arr.push('미국')
+        arr.push('중국')
+
+        console.log(arr)
+
+        let 동물=['사자','호랑이','늑대','코끼리','개','고양이','양','하마']
+        console.log(동물[0])//사자
+        console.log(동물[3])//코끼리
+        //배열 중 가장 끝에 있는 아이템
+        console.log(동물[동물.length - 1])//하마
+
+        //index 범위를 벗어나는 경우에는 undefined(false, error는 아님)
+        console.log(동물[22])
+
+        //반복 (1️⃣for 2️⃣for..in, for..of 3️⃣배열명.forEach()-제일 많이 사용)
+
+        //1 for
+        console.clear()
+        console.log("-----------for")
+        // for(초기값1️⃣; 조건문2️⃣; 증가감식4️⃣){
+        //     3️⃣조건문이 참일 때 실행문
+        // }
+
+        for(let i=0; i<동물.length; i++){
+            document.write(동물[i])
+        }
+
+
+
+
+
+        let result=['*','**','***','****','*****']
+
+        for(let n=0; n<result.length; n++){
+            document.write(result[n])
+
+            }document.write("<br>")
+        
 
 
 
