@@ -7,6 +7,7 @@ body{background: url(https://cdn.pixabay.com/photo/2024/01/30/21/23/desert-85428
 background-size: 100% 327px;
 }
 #header{height: 327px;}
+#nav{background-color: #f6fdff;}
 
 
 
@@ -85,3 +86,37 @@ background-size: 100% 327px;
     border-right: 5px solid transparent;
     border-bottom: 5px solid transparent;
 }
+
+/* nav */
+.nav{display: flex; padding: 25px 0;}
+.nav>div{width: 40%;}
+.nav>div:last-child{width: 20%;}
+.nav>div h3{
+    font-size: 18px;
+    color: #25a2d0; font-weight: bold;
+    margin-bottom: 4px;
+}
+.nav>div ul{display: flex; flex-wrap: wrap;}
+
+.nav>div ul li{width: 50%; position: relative;
+    padding-left: 8px; box-sizing: border-box;
+}
+.nav>div ul li::before{
+    content: "";
+    position: absolute;
+    top: 9px; left: 0;
+    width: 3px; height: 3px;
+    background-color: #25a2d0;
+}
+.nav>div ul li a{position: relative;}
+.nav>div ul li a::after{
+    content: "";
+    position: absolute;
+    left: 0; width: 0%; bottom: 0;
+    height: 1px; background: #25a2d0;
+    transition: 0.2s;
+}
+.nav>div ul li:hover a::after{
+    width: 100%;
+}
+.nav>div:last-child ul li{width: 100%;}
