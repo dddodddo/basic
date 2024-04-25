@@ -60,6 +60,78 @@
                 
             }document.write("<br>")
         }
+        
+        // for..in
+        console.clear()
+        console.log("---------for..in")
+        for(let i in 동물){
+            console.log(i)//index--> 0,1,2...
+        }
+
+        //for..of
+        console.clear()
+        console.log("---------for..of")
+        for(let i of 동물){
+            console.log(i)//value --> '사자','호랑이'...
+        }
+
+        //forEach
+        console.clear()
+        console.log("---------for..forEach")
+        //동물.forEach(function(요소,idex번호,원본배열))
+        동물.forEach(function(item,idx,oriarr){
+            console.log(item,idx,oriarr)
+        })
+        //화살표함수
+        동물.forEach((item,idx,oriarr)=>console.log(item,idx,oriarr))
+
+        //Spread Operator(펼침 연산자) => 배열내의 요소들을 하나씩 나열해 줍니다.(이 자체로 배열이 아님)
+        console.clear()
+        console.log("---------Spread Operator")
+        console.log(동물)
+        console.log(...동물)
+        console.log([...동물])
+
+        //split() 메서드
+        //기능 --> 문자열을 배열로 리턴 즉, 문자열에서 특정한 구분자를 기준으로 잘라내서 '새로운 배열'로 리턴
+        //사용방법 --> 문자열.split(separator(구분자),limit(한정값))
+
+        let someSt="고기도 먹어 본 사람이 더 잘 먹는다"
+        let splitted=someSt.split(" ",3)
+        console.log(splitted)// ['고기도', '먹어', '본']
+
+        let someSt2="고기도,먹어,본,사람이,더,잘,먹는다"
+        let splitted2=someSt2.split(",",3)
+        console.log(splitted2)// ['고기도', '먹어', '본']
+
+        let splitted3=someSt2.split(",")//분할 갯수 옵션이 지정되지 않으면 문자열 전부를 잘라서 배열로 리턴
+        console.log(splitted3)// ['고기도', '먹어', '본', '사람이', '더', '잘', '먹는다']
+
+        console.log(splitted3[splitted3.length - 1])
+
+
+        let array=['딸기','포도','복숭아','바나나','수박']
+        //slice() 메서드('원본배열 손상안됨')
+        //slice(start,[,end]) //end는 생략가능
+        //end => 지정한 end전까지 잘라냄
+        //let slice1 = array.slice(1) //index 1포함해서 그 뒤로는 모두 잘라냄
+        //let slice1 = array.slice(1,4) //index 1부터 4이전(3번까지) 잘라냄
+        let slice1 = array.slice(1) //index 1포함해서 그 뒤로는 모두 잘라냄
+        console.log(slice1)
+        console.log(array)
+
+        //splice() 메서드
+
+
+
+
+
+
+
+
+
+
+
 
 
 
