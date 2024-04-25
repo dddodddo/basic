@@ -237,6 +237,7 @@ top: 55px; left: 10px;
 
 /* ********************singleProduct******************** */
 .singleProduct{
+    background-color: #fff;
     height: 100vh;
     overflow: hidden;
 }
@@ -325,5 +326,7 @@ top: 55px; left: 10px;
 .singleProduct .btn{
     outline: none;
     border: none;
-    margin-top: 25px;
+    position: absolute;
+    bottom: 0px; left: 25px;
+    width: calc(100% - 50px);
 }
