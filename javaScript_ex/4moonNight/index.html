@@ -34,6 +34,10 @@
             console.log(value)
             // transform: translate(20px,20px);
             moon.style.transform=`translate(-${value*0.2}px,${value*0.35}px)`
+            bg.style.transform=`translate(0px,${value*0.5}px)`
+            mountain.style.transform=`translate(0px,-${value*0.15}px)`
+            road.style.transform=`translate(0px,${value*0.15}px)`
+            text.style.transform=`translate(0px,${value}px)`
         })
     </script>
 </body>
