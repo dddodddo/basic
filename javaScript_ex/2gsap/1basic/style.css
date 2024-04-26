@@ -36,8 +36,14 @@ color: #fff; display: flex; justify-content: center; align-items: center;
     border-radius: 20px;
     font-size: 28px;
     font-weight: bold;
-    display: flex; justify-content: center; align-items: center;
     color: rgb(53, 70, 148); font-family: 30px;
+    /* 가운데 정렬
+    display: flex; justify-content: center; align-items: center;
+    */
+    
+    /* grid 가운데 정렬 */
+    display: grid;
+    place-items: center;
 }
 .sec03 span.a{transform: translate(-50%,-50%) rotate(-12deg);}
 .sec03 span.b{
