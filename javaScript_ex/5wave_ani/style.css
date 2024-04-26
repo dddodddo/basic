@@ -26,8 +26,16 @@ body{background-color: #141414;}
     background-position: center;
     cursor: pointer;
     filter: grayscale(1) brightness(0.5);
-    transition: transform 1.25s var(--transition), filter 3s var(--transition), width 1.25s var(--transition);
+    transition: transfrom 1.25s var(--transition), filter 3s var(--transition), width 1.25s var(--transition);
 }
+.item::before,
+.item::after{
+    content: "";
+    position: absolute;
+    width: 20px; height: 100%;
+    right: calc(var(--index) * -1);
+}
+
 .item:hover{
     transform: translateZ(100px);
     filter: grayscale(0) brightness(1);

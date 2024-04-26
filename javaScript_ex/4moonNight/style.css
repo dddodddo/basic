@@ -24,6 +24,11 @@ section h2{
 }
 #road{z-index: 50;}
 
+section:nth-child(2){
+    flex-direction: column;
+}
+
+
 section::before{
     content: "";
     position: absolute;
@@ -32,6 +37,3 @@ section::before{
     background: linear-gradient(0deg, #0a2a43, transparent);
 }
 
-section:nth-child(2) {
-    flex-direction: column;
-}
