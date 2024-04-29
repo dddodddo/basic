@@ -162,5 +162,45 @@ background-size: 100% 327px;
 
 /* /////////////////////////////////// */
 @media(max-width:1220px){ /* //화면의 넓이가 1220px보다 작을때 */
-
+    .container {width: 100%;}
+    .row{padding: 0 15px;}
+    .header_menu{padding-right: 15px;}
+    .tit .btn{right:5px;}
 }
+@media (max-width:1024px){}
+@media (max-width:960px){
+    .nav>div {
+    width: 100%;
+    float: none;   
+    }
+    .nav>div:last-child {
+    width: 100%;
+    }
+    .nav>div ul li{
+        width: 33.3333%;
+    }
+    .nav>div:last-child ul li{
+        width: 33.3333%;
+    }
+}
+@media (max-width:768px){}
+@media (max-width:600px){
+    #header {
+    height: auto;
+    }
+    .header_tit {
+        display: none;
+    }
+    .header_icon{
+        display: none;
+    }
+    .tit .btn{
+        display: none;
+    }
+}
+@media (max-width:480px){
+    .tit h2{
+        font-size: 10vw;
+    }
+}
+@media (max-width:320px){}
