@@ -169,6 +169,25 @@
 
         console.log(위인.indexOf('강감찬'))//2
         console.log(위인.indexOf('세종대왕'))//1
+        console.log(위인.indexOf('임꺽정'))//-1 --> 없는 값을 indexof( )메서드로 찾으면 -1이 리런
+
+        let abcArr1="ABCD EFGHIJKLMN"
+        console.log(abcArr1.indexOf("H")) //8
+        console.log(abcArr1.lastIndexOf("H")) //8
+        console.log(abcArr1.indexOf("h")) //-1 --> 대소문자 구분
+
+        //indexOf(찾을 특정 값, 시작할 위치)
+        let abcArr2=['k',' o', 'r', 'e', 'a', 'u', 's', 'a']
+        console.log(abcArr2.indexOf('a')) //4
+        console.log(abcArr2.indexOf('a',6)) //7
+
+        let abcArr3="Hello, World~!!"
+        console.log(abcArr3.indexOf('o'))//4
+        console.log(abcArr3.indexOf('o',5)) //8
+        console.log(abcArr3.indexOf('o',9)) //-1
+
+        
+
 
 
 
