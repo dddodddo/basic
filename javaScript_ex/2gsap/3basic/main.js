@@ -22,7 +22,24 @@ let imgBox=document.querySelectorAll('.imgBox')
 imgBox.forEach(function(imgBox){
     gsap.timeline({
         scrollTrigger:{
-            
+            trigger:imgBox,
+            start:"50% 100%",
+            toggleClass:{targets:imgBox,className:'active'},
+            scrub:1,
+
+        }
+    })
+})
+
+let textBox=document.querySelectorAll('.textBox')
+textBox.forEach(function(textBox){
+    gsap.timeline({
+        scrollTrigger:{
+            trigger:textBox,
+            start:"50% 100%",
+            toggleClass:{targets:textBox,className:'active'},
+            scrub:1,
+
         }
     })
 })
