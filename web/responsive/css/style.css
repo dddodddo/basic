@@ -3,12 +3,32 @@
 font-family: "Nanum Brush Script", cursive; */
 
 /* 레이아웃 */
-body{background: url(https://cdn.pixabay.com/photo/2024/01/30/21/23/desert-8542838_1280.jpg) repeat-x center top;
-background-size: 100% 327px;
+body{
+    background: url(https://cdn.pixabay.com/photo/2024/01/30/21/23/desert-8542838_1280.jpg) repeat-x center top;
+    background-size: 100% 327px;
 }
 #header{height: 327px;}
 #nav{background-color: #f6fdff;}
 #title{background-color: #eaf7fd;}
+main{}
+
+
+/* contents */
+#contents{}
+#contents .container{
+    display: flex;
+    border-left: 1px solid #dbdbdb;
+    border-right: 1px solid #dbdbdb;
+    box-sizing: border-box;
+}
+#contents #cont_left{width: 250px;}
+#contents #cont_center{
+    width: calc(100% - 500px);
+    border-left: 1px solid #dbdbdb;
+    border-right: 1px solid #dbdbdb;
+    box-sizing: border-box;
+}
+#contents #cont_right{width: 250px;}
 
 
 
@@ -151,6 +171,24 @@ background-size: 100% 327px;
 
     line-height: 60px;
 }
+
+
+/* contents */
+.column{
+    border-bottom: 1px solid #dbdbdb;
+    padding: 15px;
+}
+.column .col_tit{
+    font-size: 20px; color: #2f7fa6;
+    padding: 5px;
+}
+.column .col_desc{
+    color: #878787;
+    border-bottom: 1px dashed #dbdbdb;
+}
+.column.col3,
+.column.col6,
+.column.col9{border-bottom: none;}
 
 
 
