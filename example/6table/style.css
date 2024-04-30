@@ -1,0 +1,23 @@
+*{margin: 0;padding: 0;}
+.wrap{width: 900px; margin: 0 auto;
+    padding: 10% 0;
+}
+.wrap>div{
+    margin-top: 50px;
+    border-top: 1px solid #ccc;
+}
+h1{text-align: center;}
+.wrap>div h1{text-align: center; margin: 10px 0;}
+table{width: 100%; text-align: center; border-collapse: collapse;}
+table tr{}
+table tr th{border: 1px solid #ccc;}
+table tr td{border: 1px solid #ccc;}
+
+.table3{}
+.table3 table{
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.table3 table tr th{border: none}
+.table3 table tr td{border: none}
