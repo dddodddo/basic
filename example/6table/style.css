@@ -19,5 +19,5 @@ table tr td{border: 1px solid #ccc;}
     border-bottom: 1px solid #ccc;
 }
 
-.table3 table tr th{border: none}
+.table3 table tr th{border: 1px solid #ccc}
 .table3 table tr td{border: none}

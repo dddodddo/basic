@@ -33,7 +33,9 @@ height: 7%;
 
 #main{overflow: hidden;}
 #main #page,
-#main #page1{
+#main #page1,
+#main #page2,
+#main #page3{
     height: 100vh;
     width: 100vw;
     background-color: #f1f1f1;
@@ -70,24 +72,26 @@ height: 7%;
 .section-inner{
     margin-top: 70px;
     width: 90%;
-    min-width: 1400px;
+    max-width: 1400px;
     display: flex;
     justify-content: space-between;
-    
 }
-.section-inner-con{width: 38%;}
+.section-inner-con{
+    width: 38%;
+}
 .t-left{}
 .t-right{text-align: right;}
 .s-tit{padding: 0.3em 0;}
 .t-bold{font-weight: 800;}
 .main-key-wrap{font-size: 2.7rem; line-height: 1.2em;}
+.main-con-wrap{font-size: 4rem; line-height: 1.2em;}
 .section-con p{margin: 0.7rem 0;}
 .top-plus{margin-top: 12rem;}
 
-#main #page #myCanvas{
-    max-width: 100vw;
-    max-height: 100vh;
+#main #page canvas{
+    max-width:100vw;
+    max-height:100vh;
     position: fixed;
-    top: 0;
+    top: 0; 
     z-index: 100;
 }
