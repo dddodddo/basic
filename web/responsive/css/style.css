@@ -237,14 +237,14 @@ main{}
 }
 .notice1 ul li a{}
 .more{
-    position: absolute; top: 5px; right: 0; 
+    position: absolute; top: 6px; right: 0; 
     color: #878787; font-size: 10px;
 }
 .more i{}
 
 
 /* 게시판2 */
-.notice2{}
+.notice2{position: relative;}
 .notice2 h5{}
 .notice2 ul{}
 .notice2 ul li{
