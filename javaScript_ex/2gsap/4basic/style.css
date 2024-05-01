@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+*{margin: 0;padding: 0; box-sizing: border-box;}
+li{list-style: none;}
+
+body{
+    background-color: #222;
+}
+.wrap{color: #fff; position: relative;
+    margin-bottom: 1000px;
+}
+.visual{padding-top: 150px; height: 100vh;}
+.visual .inner{
+    width: 70%; margin: 0 auto;
+    display: flex; justify-content: space-between;
+}
+.visual .textBox{}
+.visual .textBox .title{font-size: 220px;}
+.visual .textBox .subtitle{font-size: 30px; margin: 30px 0;}
+.visual .textBox .text{}
+.visual .aniBox{
+    flex-shrink: 0;
+    position: relative;
+    width: 350px;height: 350px; margin-top: 300px;
+}
+.visual .aniBox img{position: absolute; width: 100%;}
+.visual .aniBox .spin{}
+.visual .aniBox .arrow{}

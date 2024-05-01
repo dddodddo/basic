@@ -53,10 +53,15 @@ section .inner{width: 80%; margin: 0 auto;}
 /* concept */
 .concept{padding-bottom: 100px;}
 .concept .inner{}
-.concept .inner ul{display: flex; justify-content: space-between;}
-.concept .inner ul li{width: 28%; margin-top: 200px;}
-.concept .inner ul li:nth-child(2){ margin-top: 0;}
+.concept .inner ul{display: flex; justify-content: space-between; flex-wrap: wrap;}
+.concept .inner ul li{width: 28%; margin-top: 200px; flex-shrink: 0;}
+.concept .inner ul li:nth-child(2n){ margin-top: 0;}
 .concept .inner ul li img{width: 100%;}
+.concept .inner ul.size{margin-top: 150px;}
+.concept .inner ul.size li{width: 100%;height: 100%;}
+.concept .inner ul.size li:nth-child(1){width: 32%; margin-left: 20%;}
+.concept .inner ul.size li:nth-child(2){width: 40%; margin-top: -50px;}
+.concept .inner ul.size li:nth-child(3){width: 65%; margin-left: 10%;}
 
 .concept .inner .textBox{
     position: relative;
@@ -71,7 +76,9 @@ section .inner{width: 80%; margin: 0 auto;}
     left: 10%; top: -30%;
 }
 
-.concept .inner .textBox .text{}
+.concept .inner .textBox.size .title{
+    font-size: 4.5vw; line-height: 1; left: 0;
+}
 
 
 
@@ -86,6 +93,7 @@ section .inner{width: 80%; margin: 0 auto;}
     background-color: #111606; position: absolute;
     left: 0; top: 0; transition: 0.8s; z-index: 3;    
 }
+.imgBox.active img{filter: brightness(1); transition: 0.3s 1s;}
 .imgBox.active:before{height: 0;}
 .imgBox.active:after{height: 0;}
 
