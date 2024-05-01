@@ -190,6 +190,84 @@ main{}
 .column.col6,
 .column.col9{border-bottom: none;}
 
+/* menu */
+.col1 .menu{}
+.col1 .menu ul{}
+.col1 .menu ul li{}
+.col1 .menu ul li a{
+    display: block; font-size: 16px;
+    color: #878787; text-transform: uppercase;
+    border-bottom: 1px solid #dbdbdb;
+    display: flex; justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    transition: 0.5s;
+}
+.col1 .menu ul li a:hover{
+    box-shadow: inset 180px 0px rgba(13, 101, 139, 0.9);
+    color: #fff;
+    background-color: rgba(26, 130, 174, 0.9);
+}
+.col1 .menu ul li a i{}
+
+
+/* 게시판1 */
+.notice1{position: relative;}
+.col2 h5{
+    font-size: 14px; color: #2f7fa6;
+    padding-bottom: 5px;
+}
+.notice1 ul{}
+.notice1 ul li{
+    /* 한줄 말줄임말 */
+    overflow: hidden; /* (글자 끝이 보이지 않도록 하는 효과) */
+    text-overflow: ellipsis; /* (글자가 길때 끝에 ... 효과) */
+    white-space: nowrap; /* (글자가 아래로 떨어지지 않도록 하는 효과) */
+    /* 한줄 말줄임말 */
+    padding-left: 8px;
+    position: relative;
+}
+.notice1 ul li::before{
+    content: "";
+    background-color: #4492e2;
+    width: 3px;height: 3px;
+    position: absolute;
+    display: block;
+    left: 0;top: 8px;
+}
+.notice1 ul li a{}
+.more{
+    position: absolute; top: 5px; right: 0; 
+    color: #878787; font-size: 10px;
+}
+.more i{}
+
+
+/* 게시판2 */
+.notice2{}
+.notice2 h5{}
+.notice2 ul{}
+.notice2 ul li{
+    /* 2줄 이상 말줄임말 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    /* 2줄 이상 말줄임말 */
+    position: relative;
+    padding-left: 8px;
+    margin-bottom: 5px;
+}
+.notice2 ul li::before{
+    content: "";
+    width: 3px;height: 3px;
+    background-color: #449ce2;
+    position: absolute;
+    top: 8px;left: 0;
+}
+.notice2 ul li a{}
+
 
 
 
