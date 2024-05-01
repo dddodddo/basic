@@ -16,7 +16,60 @@
             disease:"감기",
         }
         console.log(환자)
+        console.log(환자.name) //홍길동
+        console.log(환자["name"]) //홍길동
+        환자.name="김말동"
+        console.log(환자)//{name: '김말동', age: '18', disease: '감기'}
 
+        환자.age="25"
+        console.log(환자)//{name: '김말동', age: '25', disease: '감기'}
+
+        
+        let 환자리스트=[
+            {name:"김놀부",age:15},
+            {name:"김흥부",age:13},
+            {name:"박제비",age:30},
+        ]
+        console.log(환자리스트)
+        console.log(환자리스트[0].name) //김놀부
+        console.log(환자리스트[0]["name"]) //김놀부
+        console.log(환자리스트[2].age) //30
+
+
+
+        //-------------------------------------------------------------
+        // let name="홍길동"
+        // let age=18
+
+        // let 사람={
+        //     name:name,age:age
+        // }
+        // console.log(사람)
+
+
+        //객체를 분해하는 과정 --> 구조분해문법, 구조분해할당
+
+        let 우리반여학생={
+            name:"김미인",
+            age:24
+        }
+        //객체를 변수로 분리함
+        //let name=우리반여학생.name
+        //let age=우리반여학생.age
+
+        let {name,age}=우리반여학생
+        console.log(`이름:${name},나이:${age}`)
+
+
+        //배열을 변수에 담기 --> 구조분해문법, 구조분해할당
+        let array=[1,2,3]
+        // let one=array[0]
+        // let two=array[1]
+        // let three=array[2]
+
+        let [one,two,three]=array
+        console.log(one,two,three) //1 2 3
+        
 
 
 
