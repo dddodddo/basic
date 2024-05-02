@@ -1,4 +1,1 @@
-AOS.init({
-    duration: 1200,
-  })
-  
+gsap.to(".green", {y: -100, duration: 1});

@@ -1,14 +1,16 @@
-* {
-    box-sizing: border-box;
-  }
-  
-  .item {
-    width: 200px;
-    height: 200px;
-    margin: 50px auto;
-    padding-top: 75px;
-    background: #ccc;
-    text-align: center;
-    color: #FFF;
-    font-size: 3em;
-  }
+
+*{margin: 0;padding: 0;}
+
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.box {
+ width: 30px; height: 30px;
+ background-color: aqua;
+}
