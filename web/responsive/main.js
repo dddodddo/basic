@@ -14,3 +14,11 @@ $('.tit .btn').click(function (e) {
 
     }
 })
+
+//이미지 슬라이드
+$(document).ready(function(){
+    $('.slider').slick({
+    
+    });
+  });
+      
