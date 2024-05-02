@@ -351,7 +351,7 @@ function canvas(){
      ./img/male0299.png
      ./img/male0300.png`;
 
-     return data.split("\n")[index]
+     return data.split("\n")[index] //enter
  }
 
  let frameCount=300 //이미지 전체 갯수
@@ -360,6 +360,29 @@ function canvas(){
     //키:값,
     frame:0
  }
+
+ for(let i=0; i<frameCount; i++){
+    let img=new Image() //img 태그 만들기
+    img.src=files(i)
+    images.push(img)
+ }
+// console.log(images)
+gsap.to(imageSeq,{
+    frame:frameCount - 1 , //마지막 프레임의 index 번호
+    snap:"frame", //"frame"은 프레임 단위로 값을 맞추겠다는 의미
+    ease:"none",
+    scrollTrigger:{
+        trigger:"#page canvas",
+        start:"top top",
+        end:'+=600%',
+        scroller:"#main",
+    },
+    onUpdate:render //gsap.to가 변할 때마다 업데이트가 일어남
+})
+function render(){
+    
+}
+
 
 
 }

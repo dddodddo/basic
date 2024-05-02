@@ -275,6 +275,36 @@ main{}
 .blog2 p{}
 
 
+/* 이미지 슬라이드 col4 */
+.slider{}
+.slider .slick-slide{}
+.slider .slick-slide figure{position: relative;}
+.slider .slick-slide figure img{}
+.slider .slick-slide figure figcaption{
+    position: absolute;
+    left: 0; bottom: 0; width: 100%; padding: 20px;
+    box-sizing: border-box; color: #fff;
+    background-color: rgba(0, 0, 0, .5);
+    font-size: 18px;
+}
+.slider .slick-slide figure figcaption em{
+    display: block;
+    transform: translateX(50px);
+    transition: 0.9s 0.2s;
+}
+.slider .slick-slide.slick-active figure figcaption em{
+    transform: translateX(0px);
+    
+}
+.slider .slick-slide figure figcaption span{
+    /* 말 줄임말이 안될 경우 영역을 인식할 수 있도록 속성을 바꿔준다. */
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 16px;
+}
+
 
 
 
