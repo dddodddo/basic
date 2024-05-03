@@ -37,7 +37,7 @@ body{
 
 .work{height: 100vh;}
 .work ul{display: flex; padding: 3% 30%; }
-.work ul li{width: 700px; padding: 100px; flex-shrink: 0;}
+.work ul li{width: 700px; padding: 100px; flex-shrink: 0!important;}
 .work ul li a{display: block; position: relative;}
 
 .work ul li a .imgBox{}
@@ -86,3 +86,4 @@ body{
 
 /* inset을 활용해서 imgBox를 잘라냄 */
 .work ul li a .imgBox{clip-path: inset(30%);}
+.work ul li a .textBox{opacity: 0;}
