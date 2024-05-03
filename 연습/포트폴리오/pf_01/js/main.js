@@ -1,4 +1,8 @@
 
-gsap.from(".topimg1",{
-  y:50 ,opacity:0, ease:"expo.out", duration:1, delay:0.5
-})
+
+gsap.from(".topimg1", {
+  y: 600,
+  duration: 1.5,
+  ease: "power4.out",
+  opacity:0,
+});
