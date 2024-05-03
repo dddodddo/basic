@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <button id="button">버튼</button>
     <script>
         //객체 : 관련된 정보를 묶어서 하나의 데이터로 저장함.
         let 환자={
@@ -145,6 +145,41 @@
             //c --> 원배열(사람들) 자체
             console.log(`아이템:${a},아이템의 index:${b},원배열:${c}`)
         })
+
+        let 함수=function(a,b,c){
+            console.log(`아이템:${a},아이템의 index:${b},원배열:${c}`)
+        }
+        사람들.forEach(함수)
+
+
+        //////////////////////////////////
+        let button=document.querySelector('#button')
+        function 이름(){console.log("이름")}
+
+        // button.addEventListener("click",function(){
+        //     이름()
+        // })
+        function 이름(){console.log("이름")}
+        //위의 함수와 아래 이름 없는 함수는 같다.
+        let 이름=function(){console.log("이름")}
+        button.addEventListener("click",이름)
+        button.addEventListener("click",function(){console.log("이름")})
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
