@@ -380,9 +380,12 @@ gsap.to(imageSeq,{
     onUpdate:render //gsap.to가 변할 때마다 업데이트가 일어남
 })
 function render(){
-    
+    scaleImage(images[imageSeq.frame],context)
 }
-
+function scaleImage(img,ctx){
+    // let canvas =ctx.
+    console.log(ctx)
+}
 
 
 }
