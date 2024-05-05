@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webd-c3</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+
+        #wrap{width: 1000px; height: 650px; display: flex;}
+        #wrap #wrap_left{width: 20%;}
+        #wrap #wrap_right{width: 80%;}
+
+        #aside{height: 100%;}
+        #aside .logo{height: 20%; background-color: pink;}
+        #aside .nav{height: 80%; background-color: honeydew;}
+
+        #slider{height: 350px; background-color: darkolivegreen;}
+
+        #main{ display: flex;}
+        #main .content1{width: 33.3333%; height: 200px; background-color: #659626;}
+        #main .content2{width: 33.3333%; height: 200px; background-color: #81c331;}
+        #main .content3{width: 33.3333%; height: 200px; background-color: #189b55;}
+
+        #footer{height: 100px;display: flex;}
+        #footer .f_left{width: 20%; background-color: darkseagreen;}
+        #footer .f_right{width: 80%;}
+        #footer .f_right .fr1{height: 50px; background-color: forestgreen;}
+        #footer .f_right .fr2{height: 50px; background-color: rgb(55, 129, 55);}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="wrap_left">
+            <aside id="aside">
+                <h1 class="logo"></h1>
+                <nav class="nav"></nav>
+            </aside>
+        </div>
+        <div id="wrap_right">
+            <article id="slider"></article>
+            <main id="main">
+                <section class="content1"></section>
+                <section class="content2"></section>
+                <section class="content3"></section>
+            </main>
+            <footer id="footer">
+                <div class="f_left"></div>
+                <div class="f_right">
+                    <div class="fr1"></div>
+                    <div class="fr2"></div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

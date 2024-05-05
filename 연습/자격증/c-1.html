@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webd-c1</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+
+        #wrap{width: 1000px; display: flex;}
+        #wrapleft{width: 20%; height: 650px; background-color: #222;}
+        #wrapright{width: 80%; height: 650px; background-color: red;}
+
+        #aside{width: 100%; height: 100%;}
+        #aside .logo{width: 100%;height: 20%; background-color: pink;}
+        #aside .nav{width: 100%;height: 80%; background-color: hotpink;}
+
+        #slider{width: 100%; height: 350px; background-color: burlywood;}
+
+        #main{width: 100%; display: flex;}
+        #main .content1{width: 33.3333%; height: 200px; background-color: #454545;}
+        #main .content2{width: 33.3333%; height: 200px; background-color: #1c5e8e;}
+        #main .content3{width: 33.3333%; height: 200px; background-color: #1c0e3d;}
+
+        #footer{width: 100%; display: flex;}
+        #footer .fl{width: 20%; height: 100px; background-color: palevioletred;}
+        #footer .fr{width: 80%;}
+        #footer .fr .fr-1{width: 100%; height: 50px; background-color: darkcyan;}
+        #footer .fr .fr-2{width: 100%; height: 50px; background-color: coral;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="wrapleft">
+            <aside id="aside">
+                <h1 class="logo"></h1>
+                <nav class="nav"></nav>
+            </aside>
+        </div>
+
+        <div id="wrapright">
+    
+            <article id="slider"></article>
+    
+            <main id="main">
+                <section class="content1"></section>
+                <section class="content2"></section>
+                <section class="content3"></section>
+            </main>
+    
+            <div id="footer">
+                <div class="fl"></div>
+                <div class="fr">
+                    <div class="fr-1"></div>
+                    <div class="fr-2"></div>
+                </div>
+            </div>
+</div>
+    </div>
+</body>
+</html>

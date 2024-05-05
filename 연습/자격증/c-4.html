@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webd-c4</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+
+        #wrap{width: 1000px; display: flex; height: 650px;}
+        #wrap #wrap_left{width: 20%;}
+        #wrap #wrap_right{width: 80%;}
+
+        #aside{height: 100%;}
+        #aside .logo{height: 20%; background-color: pink;}
+        #aside .nav{height: 80%; background-color: palevioletred;}
+
+        #slider{height: 350px; background-color: deeppink;}
+
+        #main{display: flex;}
+        #main .content1{width: 33.3333%; background-color: #444;height: 200px; }
+        #main .content2{width: 33.3333%; background-color: #743939;height: 200px; }
+        #main .content3{width: 33.3333%; background-color: #392222;height: 200px; }
+
+        #footer{height: 100px; display: flex;}
+        #footer .f_left{width: 20%; background-color: aquamarine;}
+        #footer .f_center{width: 60%; background-color: #643939;}
+        #footer .f_right{width: 20%; background-color: rebeccapurple;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="wrap_left">
+            <aside id="aside">
+                <h1 class="logo"></h1>
+                <nav class="nav"></nav>
+            </aside>
+        </div>
+        <div id="wrap_right">
+            <article id="slider"></article>
+            <main id="main">
+                <section class="content1"></section>
+                <section class="content2"></section>
+                <section class="content3"></section>
+            </main>
+            <footer id="footer">
+                <div class="f_left"></div>
+                <div class="f_center"></div>
+                <div class="f_right"></div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
