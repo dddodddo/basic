@@ -179,6 +179,12 @@ $(".nav > ul > li").hover(function(){
 },function(){
     $(".submenu").stop().slideUp()
 })
+
+$('.nav>ul>li').hover(function(){
+    $('.submenu').stop().slideDown()
+}, function(){
+    $('.submenu').stop().slideUp()
+})
     </script>
 </body>
 </html>
