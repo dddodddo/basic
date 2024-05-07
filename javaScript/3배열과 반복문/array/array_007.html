@@ -1,21 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
 
     <script>
         //배열 최신문법
 
-        let 시민들=[
-            {name:'박일동',age:16,gender:"남"},
-            {name:'박이동',age:17,gender:"여"},
-            {name:'박삼동',age:18,gender:"남"},
-            {name:'박사동',age:19,gender:"여"},
-            {name:'박이동',age:20,gender:"남"},
+        let 시민들 = [{
+                name: '박일동',
+                age: 16,
+                gender: "남"
+            },
+            {
+                name: '박이동',
+                age: 17,
+                gender: "여"
+            },
+            {
+                name: '박삼동',
+                age: 18,
+                gender: "남"
+            },
+            {
+                name: '박사동',
+                age: 19,
+                gender: "여"
+            },
+            {
+                name: '박이동',
+                age: 20,
+                gender: "남"
+            },
         ]
         //name만 배열로 출력하고 싶다면
         // let item=시민들[0]
@@ -24,38 +45,59 @@
         //     return item.name
         // })
 
-        let namePrint=시민들.map(item=>item.name)
-        console.log(namePrint)// ['박일동', '박이동', '박삼동', '박사동', '박이동']
+        let namePrint = 시민들.map(item => item.name)
+        console.log(namePrint) // ['박일동', '박이동', '박삼동', '박사동', '박이동']
 
-        let agePrint=시민들.map(item=>item.age)
-        console.log(agePrint)// [16, 17, 18, 19, 20]
+        let agePrint = 시민들.map(item => item.age)
+        console.log(agePrint) // [16, 17, 18, 19, 20]
 
-        let arrayPrint=시민들.map(item=>item)
+        let arrayPrint = 시민들.map(item => item)
         console.log(arrayPrint)
-        
 
-        if(시민들===arrayPrint){
+
+        if (시민들 === arrayPrint) { //다름
             console.log("같음")
-        }else{
+        } else {
             console.log("다름")
         }
 
-        let 아들=20
-        let 딸=20
-        if(아들===딸){
+        let 시민들2 = 시민들
+        if (시민들 === 시민들) { //같음
             console.log("같음")
-        }else{
+        } else {
             console.log("다름")
         }
+
+        let 아들 = 20
+        let 딸 = 20
+        if (아들 === 딸) {
+            console.log("같음")
+        } else {
+            console.log("다름")
+        }
+
+
 
         //객체 --> 참조형(주소)
         //변수 --> 기본형(값)
         //==> 그래서 다름
 
+        let result = 시민들.filter(function (item) {
+            return item.name === "박삼동"
+        })
+        console.log(result)
+
+        let result2 = 시민들.filter(function (item) {
+            return item.age >= 17
+        })
+        console.log(result2)
 
 
-
-
+        let result3 = 시민들.filter(function (item) {
+            return item.age >= 17 && item.name !== "박삼동"
+        })
+        console.log(result3)
     </script>
 </body>
+
 </html>
