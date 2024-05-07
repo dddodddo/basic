@@ -276,6 +276,7 @@ main{}
 
 
 /* 이미지 슬라이드 col4 */
+.col4{padding-bottom: 30px;}
 .slider{}
 .slider .slick-slide{}
 .slider .slick-slide figure{position: relative;}
@@ -289,10 +290,12 @@ main{}
 }
 .slider .slick-slide figure figcaption em{
     display: block;
+    opacity: 0;
     transform: translateX(50px);
     transition: 0.9s 0.2s;
 }
 .slider .slick-slide.slick-active figure figcaption em{
+    opacity: 1;
     transform: translateX(0px);
     
 }
@@ -303,8 +306,46 @@ main{}
     text-overflow: ellipsis;
     white-space: nowrap;
     font-size: 16px;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: 0.9s 0.4s;
 }
 
+.slider .slick-slide.slick-active figure figcaption span{
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+.slider .slick-arrow{
+    position: absolute;
+    z-index: 20;
+    bottom: -35px;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 0;
+    background: none;
+    color: #5dbdef;
+}
+.slider .slick-prev{left: 0;}
+.slider .slick-prev::before{content: "\f0a8"; font-size: 30px;}
+.slider .slick-next{right: 0;}
+.slider .slick-next::before{content: "\f0a9"; font-size: 30px;}
+.slider .slick-dots{
+    position: absolute; left: 0;bottom: -19px;
+    width: 100%; display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.slider .slick-dots button{
+    font-size: 0; width: 15px; height: 15px;
+    background-color: #5dbfeb;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+.slider .slick-dots .slick-active button{
+    background-color: #2b91c8;
+    width: 25px; border-radius: 10px;
+}
 
 
 
