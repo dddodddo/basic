@@ -383,8 +383,26 @@ function render(){
     scaleImage(images[imageSeq.frame],context)
 }
 function scaleImage(img,ctx){
-    // let canvas =ctx.
-    console.log(ctx)
+    let canvas = ctx.canvas
+    let hRatio = canvas.width/img.width
+    let vRatio = canvas.height/img.height
+    let ratio = Math.max(hRatio,vRatio) 
+    //max(값1,값2) 값1과 값2 중 큰 값을 찾아냄. / min(값1, 값2)둘 중 작은 값 찾아냄.
+    let centershift_x = (canvas.width - img.width * ratio) / 2
+    let centershift_y = (canvas.height - img.height * ratio) / 2
+
+    ctx.drawImage(
+        img,
+        0,
+        0,
+        img.width,
+        img.height,
+        centershift_x,
+        centershift_y,
+        img.width*ratio,
+        img.height*ratio,
+        
+    )
 }
 
 
