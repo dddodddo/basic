@@ -18,7 +18,14 @@ $('.tit .btn').click(function (e) {
 //이미지 슬라이드 col4
 $('.slider').slick({
     dots:true,
-    // autoplay:true,
+    autoplay:true,
+});
+$('.slider').slick('setPosition');
+
+//lightGallery
+lightGallery(document.getElementById('lightGallery'), {
+    thumbnail: true,
+    plugins: [lgThumbnail],
 });
 
       
