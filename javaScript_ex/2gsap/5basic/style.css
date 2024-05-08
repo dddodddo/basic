@@ -7,7 +7,7 @@ body{font-family: PPMori;} */
 font-family: "Poppins", sans-serif;
 font-family: "Noto Sans KR", sans-serif; */
 
-*{margin: 0;padding: 0;box-sizing: border-box;}
+*{margin: 0;padding: 0;}
 li{list-style: none;}
 a{text-decoration: none; color: inherit;}
 
@@ -25,13 +25,100 @@ header{
     backdrop-filter: blur(5px);
     z-index: 100;
     padding: 20px;
+    box-sizing: border-box;
 }
-header h1{}
-header h1 em{}
+header h1{
+    font-size: 26px; text-align: center;
+    text-transform: uppercase; line-height: 1.2;
+}
+header h1 em{
+    display: block;
+    font-size: 10px; color: #8a8a8a;
+}
 header nav{}
 header nav ul{display: flex;}
 header nav ul li{}
 header nav ul li a{
     font-size: 14px; padding: 14px;
     text-transform: uppercase;display: block;
+}
+
+#section1{height: 100vh; padding-top: 20vh;}
+
+.about_title{margin-bottom: 20px;}
+.about_title .split{
+    font-size: 8vw;
+    line-height: 0.83;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.about_lines{}
+.about_lines>div{
+    background-color: #000;
+    margin-bottom: 10px;
+}
+.about_lines .line1{height: 1px;}
+.about_lines .line2{height: 3px;}
+.about_lines .line3{height: 6px;}
+.about_lines .line4{height: 9px;}
+.about_lines .line5{height: 12px;}
+.about_lines .line6{height: 15px;}
+.about_lines .line7{height: 18px;}
+.about_lines .line8{height: 21px;}
+
+.about_intro{
+    position: relative;
+    background-color: #cbc0b3;
+    display: grid;
+    place-items: center;
+    padding: 15vw 0;
+}
+.about_intro .text{
+    z-index: 20;
+}
+.about_intro .text div{
+    font-size: 3.2vw; line-height: 1; font-weight: 700;
+    text-transform: uppercase; text-decoration: underline;
+    text-align: center;
+    color: #5f5953;
+}
+
+.wrap_3d{
+    width: 100vw; height: 40vw;
+    max-width: 1000px; max-height: 600px;
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%,-50%);
+    background-color: tomato;
+}
+.wrap_3d .cover{}
+
+
+/* section2 */
+#section2{margin-top: 15vw;}
+#section2 .intro_wrap{
+    display: flex; justify-content: space-between;
+}
+#section2 .intro_wrap .intro_title{
+    width: 45%;
+    font-size: 3vw; line-height: 1;
+    border-bottom: 1px solid #5f5953;
+    color: #2b2b2b;
+}
+#section2 .intro_wrap .intro_desc{
+    width: 45%;
+}
+#section2 .intro_wrap .intro_desc h3{
+    font-size: 10vw;
+    line-height: 1;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #000;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #5f5953;
+}
+#section2 .intro_wrap .intro_desc p{
+    font-size: 20px;
+    padding: 5% 5% 30% 0;
 }
