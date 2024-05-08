@@ -425,7 +425,25 @@ canvas();
 
 gsap.to("#page1",{
     scrollTrigger:{
-        trigger:"#page1",
+        trigger:"#page1",//애니메이션이 시작될 요소
+        scroller:"#main",//스크롤이 발생하는 요소
+        pin:true,//스크롤하는 동안 트리거 요소 고정시킴
+        start:"top top",//애니메이션 시작
+        end:"bottom top",//애니메이션 종료
+    }
+})
+gsap.to("#page2",{
+    scrollTrigger:{
+        trigger:"#page2",
+        scroller:"#main",
+        pin:true,
+        start:"top top",
+        end:"bottom top",
+    }
+})
+gsap.to("#page3",{
+    scrollTrigger:{
+        trigger:"#page3",
         scroller:"#main",
         pin:true,
         start:"top top",
