@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //이미지노드
+        //1. 이미지 태그 만들기
+        //2. 속성 추가 ==> 2가지 방식 1) .  2) setAttribute()
+        //3. 객체의 자식요소로 추가하기
+
+        window.onload=function(){ //window는 한번만 작성하면 됨 / onload 문서를 전체 읽어라
+            //img 엘리먼트 생성
+            let imgNode=document.createElement("img")
+
+            //생성된 이미지 태그(엘리먼트)에 속성 추가
+            imgNode.src="https://1734811051.rsc.cdn77.org/data/images/full/391740/google-doodle-launches-latest-sketch-featuring-first-day-of-school-2021.jpg?w=820"
+            imgNode.width=700
+            imgNode.height=300
+            imgNode.alt="이미지"
+            console.log(imgNode)
+
+            //바디에 자식으로 첨부하기
+            document.body.appendChild(imgNode)
+        }
+
+
+        window.onload=function(){
+            //setAttribute()메서드를 이용하여 속성을 추가함 --> 장점 : 사용자 정의 속성을 직접 만들어서 추가할 수 있다.
+
+            //이미지 태그(엘리먼트) 생성
+            let imgNode=document.createElement("img") 
+
+            //이미지 태그에 속성 추가하기
+            imgNode.setAttribute("src","https://img3.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202404/30/ned/20240430135135369ywjj.jpg")
+            imgNode.setAttribute("width",600)
+            imgNode.setAttribute("height",380)
+            imgNode.setAttribute("green","학원")
+            console.log(imgNode)
+            //바디에 첨부하기
+            document.body.appendChild(imgNode)
+        }
+    </script>
+</body>
+</html>

@@ -35,6 +35,11 @@
             let eleNode=document.createElement("p")
             //텍스트 노드 생성 createTextNode("Hello") --> 텍스트 생성
             let txtNode=document.createTextNode("Hello")
+            //<p>Hello</p>
+            //붙이기
+            eleNode.appendChild(txtNode)
+            console.log(eleNode)
+            document.body.appendChild(eleNode)
         }
     </script>
 </body>

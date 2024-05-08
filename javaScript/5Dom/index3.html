@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let strHtml=""
+        // strHtml += "<h1>제목:제목글입니다</h1>"
+        // strHtml += '<img src="https://img3.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202404/30/ned/20240430135135369ywjj.jpg" alt="이미지설명" width="600" height="380">'
+
+        strHtml += "<h1>제목:제목글입니다</h1>"
+        strHtml += '<img src="https://img3.daumcdn.net/thumb/R658x0.q70'
+        strHtml += '/?fname=https://t1.daumcdn.net/news/202404/30/ned/20240430135135369ywjj.jpg"'
+        strHtml += ' alt="이미지설명" width="600" height="380">'
+        
+
+        //백틱사용(`)
+        strHtml=
+        `<h1>제목:제목글입니다</h1>
+        <img src="https://img3.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202404/30/ned/20240430135135369ywjj.jpg" alt="이미지설명" width="600" height="380">`
+
+        /* (태그까지 포함해서 작성하려면 innerHtml 사용) */
+        //innerHTML => 태그포함
+        //innerText, textContent => 텍스트만
+        document.body.innerHTML=strHtml
+    </script>
+</body>
+</html>
