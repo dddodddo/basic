@@ -47,6 +47,7 @@ function canvas(){
  window.addEventListener("resize",function(){//화면의 size가 달라질때 할일
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+    render()
  })
 
  function files(index){
@@ -379,6 +380,8 @@ gsap.to(imageSeq,{
     },
     onUpdate:render //gsap.to가 변할 때마다 업데이트가 일어남
 })
+images[0].onload=render
+
 function render(){
     scaleImage(images[imageSeq.frame],context)
 }
@@ -388,23 +391,43 @@ function scaleImage(img,ctx){
     let vRatio = canvas.height/img.height
     let ratio = Math.max(hRatio,vRatio) 
     //max(값1,값2) 값1과 값2 중 큰 값을 찾아냄. / min(값1, 값2)둘 중 작은 값 찾아냄.
-    let centershift_x = (canvas.width - img.width * ratio) / 2
-    let centershift_y = (canvas.height - img.height * ratio) / 2
+    let centershiftX = (canvas.width - img.width * ratio) / 2
+    let centershiftY = (canvas.height - img.height * ratio) / 2
 
-    ctx.drawImage(
+    ctx.clearRect(0,0,canvas.width,canvas.height) //이미지 지우기
+    ctx.drawImage( //이미지 그리기
         img,
         0,
         0,
         img.width,
         img.height,
-        centershift_x,
-        centershift_y,
+        centershiftX,
+        centershiftY,
         img.width*ratio,
         img.height*ratio,
         
     )
 }
 
+ScrollTrigger.create({ //밖에 scrolltrigger 만들땐 S가 대문자
+    trigger:"#page canvas",
+    scroller:"#main",
+    pin:true,
+    start:"top top",
+    end:"600% top",
+})
 
 }
+
 canvas();
+////////////////////////////////
+
+gsap.to("#page1",{
+    scrollTrigger:{
+        trigger:"#page1",
+        scroller:"#main",
+        pin:true,
+        start:"top top",
+        end:"bottom top",
+    }
+})
