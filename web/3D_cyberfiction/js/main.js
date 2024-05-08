@@ -373,6 +373,7 @@ gsap.to(imageSeq,{
     snap:"frame", //"frame"은 프레임 단위로 값을 맞추겠다는 의미
     ease:"none",
     scrollTrigger:{
+        scrub:0.15,
         trigger:"#page canvas",
         start:"top top",
         end:'+=600%',
