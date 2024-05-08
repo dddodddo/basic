@@ -47,7 +47,7 @@ padding-bottom: 200vh;}
 }
 .box2>div{transform: translateX(-100%);
 transition: 0.5s;
-transition-timing-function: cubic-bezier(0.25, 1.35, 0.62, 1.35);;
+transition-timing-function: cubic-bezier(0.25, 1.35, 0.62, 1.35);
 }
 .box2:hover>div{
     transform: translateX(0%);
