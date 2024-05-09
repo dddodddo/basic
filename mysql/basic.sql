@@ -4,6 +4,7 @@
 -- 1. 데이터베이스 만들기
 create database member;
 
+-- 데이터베이스 사용하기
 use member;
 
 -- 데이터베이스 지우기
