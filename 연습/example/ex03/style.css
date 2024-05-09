@@ -111,3 +111,23 @@ body{
     padding: 20px 30px;
     transform: translateZ(200px) rotateY(45deg);
 }
+.box5 .c2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 45px;
+    perspective: 600px;
+}
+.box5 .c2 .top{transform-style: preserve-3d;}
+.box5 .c2 .top div{
+    transform-style: preserve-3d;
+    transform: translateY(100%) rotateX(-90deg);
+    opacity: 0;
+    transition: 0.8s 0.8s cubic-bezier(0.55,-0.72,  0.54,   2);
+}
+.box5 .c2:hover .top div{
+    transform: translateY(0)    rotateX(0deg);
+    opacity: 1;
+}
