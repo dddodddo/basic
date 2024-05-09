@@ -85,3 +85,29 @@ body{
     transform: translate(100px, 100px);
     animation: box-ani2 4s linear 1s infinite both;
 }
+@keyframes box-ani2{
+    0%{transform: translate(0,0);}
+    25%{transform: translate(200px,0);}
+    50%{transform: translate(200px,200px);}
+    75%{transform: translate(0,200px);}
+    100%{transform: translate(0,0);}
+}
+
+.box5{display: flex; gap: 2%; margin-top: 300px; perspective: 600px;}
+.box5>div{
+    width: 49%; height: 300px;
+    background-color: #ffdcdc;
+    position: relative;
+}
+.box5 .c1{
+    transform-style: preserve-3d;
+}
+.box5 .c1 .ro{
+    font-size: 40px;
+    position: absolute;
+    left: 50%; top: 30%;
+    background-color: #4f86db;
+    color: #fff;
+    padding: 20px 30px;
+    transform: translateZ(200px) rotateY(45deg);
+}
