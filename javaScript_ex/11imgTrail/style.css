@@ -1,0 +1,25 @@
+*{margin: 0;padding: 0;box-sizing: border-box;}
+
+@font-face{
+    font-family: PPMori;
+    src: url("./PPMori-SemiBold.woff");
+}
+
+.main{
+    position: relative;
+    width: 100vw; height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: palevioletred;
+}
+.main .items{
+    position: absolute;
+    left: 0; top: 0;
+    width: 100vw; height: 100vh;
+}
+.main h1{
+    font-family: PPMori;
+    font-size: 40px;
+    text-transform: uppercase;
+    text-align: center;
+}

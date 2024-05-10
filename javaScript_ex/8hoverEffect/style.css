@@ -49,12 +49,13 @@ line-height: 1;
     position: absolute; top: 0; left: 0;
     width: 225px; height: 275px;
     z-index: 10;
+    pointer-events: none;
 }
 .preview .preview-img{
     position: absolute; top: 0;left: 0;
     width: 100%; height: 100%;
-    border: 1px solid red;
 }
-.preview .preview-img-2{
-    top: 20px; left: 20px;
+.preview .preview-img-2{top: 20px; left: 20px;}
+.preview-img img{
+    position: absolute; top: 0; left: 0;
 }
