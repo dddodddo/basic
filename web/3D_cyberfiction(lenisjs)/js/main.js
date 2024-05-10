@@ -1,3 +1,30 @@
+// preload
+let imgLoaded=0
+let imgTotal=1000
+let current=0
+let preogressTimer
+let topValue 
+
+//매 시간마다마다 할 일
+//setInterval(할일,시간)
+//setInterval(function(){},1000) //매 1초마다마다 할 일
+
+//setInterval을 멈추고 싶을 때
+//1) 변수에 setInterval을 할당한다.
+//2) clearInterval(변수)
+
+preogressTimer=setInterval(updateProgress,1000/60)
+//만약 updateProgress뒤에 ()를 넣는다면 결과값을 받는다는 뜻
+function updateProgress(){
+    imgLoaded++
+    // console.log(imgLoaded)
+    let target=(imgLoaded/imgTotal)*100
+    console.log(target)
+    current+=(target - current)*0.01
+    // === current=current+(target-current)*0.01
+}
+// = let updateProgress =function(){}
+
 gsap.registerPlugin(ScrollTrigger);
 let smoothScrolling=function(){
     const lenis = new Lenis({
@@ -515,21 +542,25 @@ function canvas(){
     frame:0
  }
 
- for(let i=0; i<frameCount; i++){
+ for(let i=0; i<(frameCount + 150); i++){
     let img=new Image() //img 태그 만들기
-    img.src=files(i)
+    if(i>=(frameCount - 1)){
+        img.src=files(frameCount - 1)
+    }else{
+        img.src=files(i)
+    }
     images.push(img)
  }
 // console.log(images)
 gsap.to(imageSeq,{
-    frame:frameCount - 1 , //마지막 프레임의 index 번호
+    frame:images.length - 1 , //마지막 프레임의 index 번호
     snap:"frame", //"frame"은 프레임 단위로 값을 맞추겠다는 의미
     ease:"none",
     scrollTrigger:{
         scrub:0.15,
         trigger:"#page>canvas",
         start:"top top",
-        end:'600% top',
+        end:'700% top',
         // scroller:"#main",
     },
     onUpdate:render //gsap.to가 변할 때마다 업데이트가 일어남
@@ -568,7 +599,7 @@ ScrollTrigger.create({ //밖에 scrolltrigger 만들땐 S가 대문자
     // scroller:"#main",
     pin:true,
     start:"top top",
-    end:"600% top",
+    end:"700% top",
 })
 
 }
