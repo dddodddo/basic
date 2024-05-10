@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <button id="btn">Click</button>
 
@@ -13,19 +15,25 @@
         <p id="p2">놀부</p>
         <p id="p3">흥부</p>
     </div>
+
+
     <script>
+        // Dom 삭제
+
+        //[1] 첫번째 방법
+        // document.querySelector("#btn").addEventListener("click", function () {
+        //     let memberList = document.querySelector("#memberList")
+        //     let p1 = document.querySelector("#p1")
+        //     memberList.removeChild(p1)
+        // })
 
 
-
-
-
-
-
-
-
-
-
-
+        //[2] 두번째 방법
+        document.querySelector("#btn").addEventListener("click", function () {
+            let p1 = document.querySelector("#p1")
+            p1.parentNode.removeChild(p1) //parentNode 부모
+        })
     </script>
 </body>
+
 </html>
