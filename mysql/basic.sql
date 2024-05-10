@@ -8,7 +8,7 @@ create database member;
 use member;
 
 -- 데이터베이스 지우기
-drop database green;
+drop database member;
 
 -- 2. 테이블 만들기
 CREATE TABLE member_table(
@@ -29,3 +29,19 @@ PRIMARY KEY(seq) -- 데이터베이스끼리 연결할 때 사용되는 수단
 drop table member_table;
 
 select * from member_table;
+
+-- 데이터 입력
+INSERT INTO member.member_table VALUES(NULL,"240510_1","12345","박도현","부산시 진구 부전동 221-1","051","11111111",163,3200000,3);
+INSERT INTO member.member_table VALUES(NULL,"240510_2","67890","박이번","경상북도 영주시 부석면 영부로120번길 59","054","22223333",165,300000,12);
+
+INSERT INTO member.member_table VALUES(NULL,"240510_1","12345","박도현","부산시 진구 부전동 221-1","051","11111111",163,3200000,3),
+                                      (NULL,"240510_2","67890","박이번","경상북도 영주시 부석면 영부로120번길 59","054","22223333",165,300000,12);
+
+
+
+
+
+
+
+
+
