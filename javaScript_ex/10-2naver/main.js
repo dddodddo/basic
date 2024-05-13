@@ -8,4 +8,5 @@ id.addEventListener('focusout',checkId)
 
 function checkId(){
     let idPattern=/^[a-zA-Z0-9_-]{5,20}$/
+    if(id.value==="")
 }
