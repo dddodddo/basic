@@ -47,6 +47,21 @@ backColor.forEach(function(item,index){
   })
 })
 
+// 수평슬라이드
+let horSection=document.querySelectorAll('.port_desc .port');
+
+gsap.to(horSection,{
+  xPercent:-97 * (horSection.length - 1),
+  scrollTrigger:{
+    trigger:".port_desc",
+    start:"top 20%",
+    end:"+=5000",
+    scrub:1,
+    pin:true
+  }
+})
+
+
 
 
 

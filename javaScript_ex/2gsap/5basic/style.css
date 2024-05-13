@@ -20,7 +20,7 @@ header{
     display: flex; align-items: center;
     justify-content: space-between;
     position: fixed;
-    left: 0;top: 0;right: 0;
+    left: 0;top: 0;width: 100%;;
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
     z-index: 100;
@@ -204,3 +204,144 @@ header nav ul li a{
 #section3 .pic_wrap .pic_desc .pic.p2 .info a.link{background-color: #515985;}
 #section3 .pic_wrap .pic_desc .pic.p3 .info a.link{background-color: #b18b5a;}
 #section3 .pic_wrap .pic_desc .pic.p4 .info a.link{background-color: #bb7fc3;}
+
+/* section4 */
+#section4{margin-top: 15vw;}
+#section4 .port_wrap .port_title{
+    top: 100px;
+    position: sticky;
+    left: 0; width: 100%;
+    height: 3.5vw; font-size: 3vw;
+    line-height: 1;
+    font-weight: 900;text-transform: uppercase;
+    color: #2b2b2b;
+    border-bottom: 1px solid #5f5953;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 10px;
+}
+#section4 .port_wrap .port_title a{
+    font-size: 14px; font-weight: 500;}
+
+#section4 .port_wrap .port_desc{display: flex; width: 700%; gap:20px;  margin-top: 20px;}
+#section4 .port_wrap .port_desc .port{
+    width: 500px; background-color: #afa7a2;
+    padding: 40px ;padding-bottom: 60px;
+}
+#section4 .port_wrap .port_desc .port .img{
+    width: 100%; height: 300px; background-color: #000;
+    border-radius: 10px; display: block;
+    background-size: cover;
+    background-position: center;
+}
+#section4 .port_wrap .port_desc .port1 .img{
+    background-image: url(https://tympanus.net/codrops/wp-content/uploads/2023/07/gridflow_featured-1.jpg);}
+#section4 .port_wrap .port_desc .port2 .img{background-image: url(https://tympanus.net/codrops/wp-content/uploads/2023/09/griditemhover.gif?x34677);}
+#section4 .port_wrap .port_desc .port3 .img{background-image: url(https://tympanus.net/codrops/wp-content/uploads/2023/07/onscrollfilter_feat-2.jpg);}
+#section4 .port_wrap .port_desc .port4 .img{background-image: url(https://tympanus.net/codrops/wp-content/uploads/2023/06/gooeycursor_2.2023-06-07-10_54_11.gif?x34677);}
+#section4 .port_wrap .port_desc .port5 .img{background-image: url(https://tympanus.net/codrops/wp-content/uploads/2023/05/pixelloading-768x576.jpg);}
+#section4 .port_wrap .port_desc .port6 .img{background-image: url(	https://tympanus.net/codrops/wp-content/uploads/2023/05/gridtoslider_feat-768x576.jpg);}
+#section4 .port_wrap .port_desc .port7 .img{background-image: url(https://tympanus.net/codrops/wp-content/uploads/2023/04/viewswitch_feat-768x576.jpg);}
+#section4 .port_wrap .port_desc .port8 .img{background-image: url(	https://tympanus.net/codrops/wp-content/uploads/2023/03/ClipAnimation_featured-768x576.jpg);}
+#section4 .port_wrap .port_desc .port9 .img{background-image: url(https://tympanus.net/codrops/wp-content/uploads/2023/07/gridflow_featured-1.jpg);}
+#section4 .port_wrap .port_desc .port10 .img{
+    background-image: url(https://tympanus.net/codrops/wp-content/uploads/2023/03/clippath-768x576.jpg);
+}
+#section4 .port_wrap .port_desc .port11 .img{background-image: url(https://tympanus.net/codrops/wp-content/uploads/2023/01/circulartext.jpg?x34677);}
+#section4 .port_wrap .port_desc .port12 .img{background-image: url(	https://tympanus.net/codrops/wp-content/uploads/2022/11/inlinelayoutswitch_feat-768x576.jpg);}
+#section4 .port_wrap .port_desc .port13 .img{background-image: url(	https://tympanus.net/codrops/wp-content/uploads/2022/10/UnrevealEffects_feat-768x576.jpg);}
+#section4 .port_wrap .port_desc .port14 .img{background-image: url(https://tympanus.net/codrops/wp-content/uploads/2022/10/ScrollAnim_feat.jpg?x34677);}
+#section4 .port_wrap .port_desc .port15 .img{background-image: url(https://tympanus.net/codrops/wp-content/uploads/2022/09/GlitchPers_feat-768x576.jpg);}
+#section4 .port_wrap .port_desc .port16 .img{background-image: url(https://tympanus.net/codrops/wp-content/uploads/2022/08/fullscreenscroll_feat-400x300.jpg);}
+#section4 .port_wrap .port_desc .port17 .img{background-image: url(	https://tympanus.net/codrops/wp-content/uploads/2022/08/ImageToContent_feat-768x576.jpg);}
+#section4 .port_wrap .port_desc .port18 .img{background-image: url(https://tympanus.net/codrops/wp-content/uploads/2022/06/MakeWay_feat-400x300.jpg);}
+#section4 .port_wrap .port_desc .port19 .img{background-image: url(	https://tympanus.net/codrops/wp-content/uploads/2022/05/ImageToGridTransition-768x576.jpg);}
+#section4 .port_wrap .port_desc .port20 .img{background-image: url(https://tympanus.net/codrops/wp-content/uploads/2022/05/StackLayoutTransition_featured-768x576.jpg);}
+
+
+/* section5 */
+#section5{margin-top: 15vw;}
+#section5 .interview_wrap{}
+#section5 .interview_title{
+    position: sticky;
+    top: 100px;
+    left: 0; width: 100%;
+    height: 3.5vw; font-size: 3vw; line-height: 1;
+    text-transform: uppercase;
+    color: #2b2b2b;
+    border-bottom: 1px solid #5f5953;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 10px;
+    font-weight: 900;
+}
+#section5 .interview_title a{font-size: 14px; font-weight: 500;}
+#section5 .interview_desc{
+    position: sticky ; left: 0;
+    height: 700px; margin-top: 20px;
+padding: 2%; display: flex; justify-content: space-between;
+background-color: #b7b7b7;
+border: 1px solid #000;  
+}
+#section5 .interview_desc .left{
+    width: 67%;
+    position: relative;
+}
+#section5 .interview_desc .left::before{
+    content: "인터뷰 보기";
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%,-50%) scale(1);
+    opacity: 1;
+    width: 250px; height: 250px; 
+   
+    background-size: cover;
+    /* background-color: #000; */
+    transition: 0.4s;
+    z-index: 20;
+    font-size: 40px;
+    font-family: 'Noto Sans KR', sans-serif;
+    border-radius: 50%;
+    border: 1px solid #2b2b2b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#section5 .interview_desc .left::after{
+    content: "";
+    width: 100%; height: 100%;
+    position: absolute;
+    left: 0; top: 0;
+    background-color: #b7b7b7;
+    transition: 0.6s;
+    margin: auto; transform:scale(1);
+    opacity: 1;
+}
+
+#section5 .interview_desc .left:hover::before{
+    transform: translate(-50%,-50%) scale(0);
+    opacity: 0;
+}
+#section5 .interview_desc .left:hover::after{
+     opacity: 0;
+     transform:scale(0);
+}
+
+#section5 .interview_desc .left iframe{
+    width: 100%; height: 100%;
+}
+
+
+#section5 .interview_desc .right{
+    width: 30%;
+}
+
+
+#section6{height: 100vh;}
+#section7{height: 100vh;}
+#section8{height: 100vh;}
+#section9{height: 100vh;}

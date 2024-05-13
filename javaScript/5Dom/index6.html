@@ -27,6 +27,17 @@
 
         function removeElemByText(text){
             let li=document.querySelectorAll("#memberList li")
+
+            //li는 유사배열 --> 배열
+            let li2=[...document.querySelectorAll('#memberList li')]
+            console.log(li2)
+
+            li.forEach((item)=>{
+                //console.log(item.innerHTML)
+                if(item.innerHTML===text){
+                    item.parentNode.removeChild(item)
+                }
+            })
         }
 
 
