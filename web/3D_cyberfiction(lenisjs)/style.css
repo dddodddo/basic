@@ -106,7 +106,7 @@ height: 7%;
     z-index: 200;
     background-color: #92e3f5;
     color: #fff;
-    transition: 0.5s cubic-bezier(0.85, 0.15, 0.25, 1);
+    /* transition: 0.5s cubic-bezier(0.85, 0.15, 0.25, 1); */
 }
 #progress .progress-bar{
     border-top: 1px solid #3397ae;

@@ -1,4 +1,7 @@
 // preload
+let container=document.querySelector("#progress")
+let progressBar=document.querySelector(".progress-bar")
+let progressText=document.querySelector(".progress-text")
 let imgLoaded=0
 let imgTotal=1000
 let current=0
@@ -10,7 +13,7 @@ let topValue
 //setInterval(function(){},1000) //매 1초마다마다 할 일
 
 //setInterval을 멈추고 싶을 때
-//1) 변수에 setInterval을 할당한다.
+//1) 변수에 setInterval을 할당한다. let 변수 = setInterval
 //2) clearInterval(변수)
 
 preogressTimer=setInterval(updateProgress,1000/60)
@@ -19,11 +22,27 @@ function updateProgress(){
     imgLoaded++
     // console.log(imgLoaded)
     let target=(imgLoaded/imgTotal)*100
-    console.log(target)
     current+=(target - current)*0.01
     // === current=current+(target-current)*0.01
+    progressBar.style.width=current + "%"
+    progressText.innerHTML=Math.floor(current) + "%"
+    //Math.ceil() 소수점 이하 올림 / Math.floor() 소수점 이하 버림
+    console.log(current)
+    if(current>99.9){
+        clearInterval(preogressTimer)
+        container.classList.add('progress-complete')
+        progressBar.style.width="100%"
+        gsap.to(container,{
+            duration:0.5,
+            yPercent:-100,
+            ease:"none",
+        })
+    }
+
 }
 // = let updateProgress =function(){}
+
+
 
 gsap.registerPlugin(ScrollTrigger);
 let smoothScrolling=function(){
