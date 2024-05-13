@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+/* font-family: 'HandelGothic TL', sans-serif; 
+font-family: "Dancing Script", cursive;
+font-family: "Noto Sans KR", sans-serif;
+*/
+                                                
+
+body{
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+.en{font-family: 'HandelGothic TL', sans-serif; }
+.en_s{font-family: "Dancing Script", cursive;}
+
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* header */
+header{}
+header .innerheader{
+    max-width: 1720px; margin: 0 auto;
+    height: 110px; line-height: 110px;
+    display: flex;
+    justify-content: space-between;
+
+}
+header .innerheader .logo{}
+header .innerheader .logo a{}
+header .innerheader .logo a img{}
+
+header .mainmenu{
+    display: flex;
+    justify-content: space-between;
+    gap: 300px;
+    position: relative;
+}
+header .mainmenu .bar{
+    position: absolute;
+    left: 0;bottom: 40px;
+    width: 0; height: 3px; background-color: #e7e7e7;
+    transition: 0.2s;
+}
+
+header .mainmenu .gnb{display: flex; gap: 20px;}
+header .mainmenu .gnb a{display: block; color: #555;}
+
+header .mainmenu .sns{display: flex; gap: 20px;}
+header .mainmenu .sns li{
+    display: block; padding: 0 10px;
+}
+header .mainmenu .sns li a{}
