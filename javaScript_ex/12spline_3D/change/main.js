@@ -3,7 +3,7 @@ function lenis(){
     const lenis = new Lenis()
     
     lenis.on('scroll', (e) => {
-      console.log(e)
+      // console.log(e)
     })
     
     lenis.on('scroll', ScrollTrigger.update)
@@ -41,6 +41,13 @@ app
         gsap.to(object.scale,0.3,{x:scale, y:scale, z:scale, delay:0.5, ease:"expo.inOut"},0)
     }
 
+    function reduceObjectNo(duration){
+      objects.forEach((object)=>{
+        gsap.to(object.scale,duration,{x:0,y:0,z:0},0)
+        gsap.to(Plate.scale,duration,{x:1,y:1,z:1},0)
+    })
+    }
+
     objects.forEach((object)=>{
         gsap.set(object.scale,{x:0,y:0,z:0})
         gsap.to(object.rotation,10,{y:Math.PI*2,repeat:-1,ease:"none"})
@@ -54,7 +61,7 @@ app
             trigger:".first",
             start:"top top",
             end:"90% top",
-            scrub:1
+            scrub:2
         }
     })
     .to(Pretzel.position,{x:0,y:0,z:0},0)
@@ -74,7 +81,7 @@ app
             trigger:".second",
             start:"top top",
             end:"100% top",
-            scrub:1
+            scrub:2
         }
     })
     .to(Hamburger.scale,{x:1,y:1,z:1},0)
@@ -85,7 +92,7 @@ app
             trigger:".third",
             start:"top top",
             end:"100% top",
-            scrub:1
+            scrub:2
         }
     })
     .to(Hamburger.scale,{x:0,y:0,z:0},0)
@@ -97,7 +104,7 @@ app
             trigger:".four",
             start:"top top",
             end:"100% top",
-            scrub:1
+            scrub:2
         }
     })
     .to(Cake.scale,{x:0,y:0,z:0},0)
@@ -108,8 +115,12 @@ app
         scrollTrigger:{
             trigger:".five",
             start:"top top",
-            end:"100% top",
-            scrub:1
+            end:"95% top",
+            scrub:2,
+            onEnterBack:()=>{reduceObjectNo(0)},
+            onLeaveBack:()=>{
+              reduceObjectNo(0)
+            }
         }
     })
     .to(Donut.scale,{x:0,y:0,z:0},0)
