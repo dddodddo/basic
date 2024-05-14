@@ -112,8 +112,8 @@ app
             scrub:1,
         }
     })
-    .to(car.rotation,{x:Math.PI*2.2,y:-Math.PI*1.4,z:0},0)
-    .to(car.position,{x:500,y:-150,z:0},0)
+    .to(car.rotation,{x:Math.PI*2.2,y:-Math.PI*3,z:0},0)
+    .to(car.position,{x:300,y:-150,z:0},0)
     .to(car.scale,{x:2,y:2,z:2},0)
 }) 
 
