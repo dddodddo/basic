@@ -1,0 +1,9 @@
+
+@charset "UTF-8";
+*{margin: 0; padding: 0;}
+li{list-style: none;}
+
+.pic-box{width: 50%; margin: 100px auto 0; }
+.pic-box ul{display: flex; gap:10px;}
+.pic-box ul li{width: 25%;}
+.pic-box  img{width: 100%;}

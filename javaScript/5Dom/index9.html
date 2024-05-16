@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #btn1{border: 2px solid salmon; padding: 10px;}
+        #child_btn{border: 2px solid darksalmon;}
+    </style>
+</head>
+<body>
+    <div id="btn1">
+        btn1
+        <div id="child_btn">btn</div>
+    </div>
+    <script>
+        //버블링, 캡처링
+        let childBtn = document.querySelector("#child_btn")
+
+        childBtn.addEventListener('click',function(){})
+        childBtn.addEventListener(이벤트,할일,false)
+    </script>
+</body>
+</html>
