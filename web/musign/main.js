@@ -17,3 +17,5 @@ $('.animate').scrolla({
     once: false, // 애니메이션 한번 실행할건지
     animateCssVersion: 4 // 버전
   });
+
+// menuOpen

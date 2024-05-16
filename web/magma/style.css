@@ -4,3 +4,29 @@
     src: url(jost-variable.woff2);
 }
 *{margin: 0;padding: 0;box-sizing: border-box;}
+html{font-size: 0.6vw;}
+
+body{font-family: jost, sans-serif;}
+ul,ol,li{list-style: none;}
+a{text-decoration: none;}
+
+button{
+    border: none;
+    background: none;
+    position: relative;
+    display: inline-block;
+    font-family: inherit;
+}
+
+#main{
+    position: relative;
+    overflow: hidden;
+    background-color: #0c36c4;
+}
+#page1{
+    height: 100vh;
+    width: 100vw;
+}
+#page1 nav{}
+#page1 nav .logo{}
+#page1 nav #right-nav{}
