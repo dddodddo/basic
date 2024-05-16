@@ -54,6 +54,13 @@ h3{
     font-size: 15px;
     color: #8e8e8e;
 }
+.paswdImg{
+    position: absolute;
+    right: 13px;
+    top: 16px;
+    font-size: 15px;
+    color: #8e8e8e;
+}
 
 /* 에러메시지 */
 .error_next_box{
@@ -61,4 +68,10 @@ h3{
     color: red;
     font-size: 12px;
     margin-top: 9px;
+}
+#alertTxt{
+    color: red;
+    position: absolute;
+    top: 19px; right: 40px;
+    font-size: 12px;
 }

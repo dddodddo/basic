@@ -41,13 +41,27 @@ function startAnimation(){
         duration:0.5,
         stagger:0.025,
         onComplete:function(){//위의 애니메이션이 끝나고 나면 할일
+            currentlyPlaying=false
         }
     })
 }
 
 
-
-container.addEventListener("mousemove",function(){
-    // console.log(event)
-    // addNewItem(event.clientX,event.clinetY)
+container.addEventListener("mousemove",function(event){
+    //console.log(event)
+    clearTimeout(animationTimeoust)
+    addNewItem(event.clientX,event.clientY)
+    animationTimeoust=setTimeout(startAnimation,100)
 })
+
+
+
+// setInterval(할일, 시간) //시간마다 할일
+// setTimeout(할일, 시간) //시간후에 할일
+
+//멈추게 하기
+// let stopInterval=setInterval(할일,시간)
+// clearInterval(stopInterval) ==> setInterval 멈추기
+
+// let stopTimeout=setTimeout(할일, 시간)
+// clearTimeout(stopTimeout) ==> setTimeout 멈추기
