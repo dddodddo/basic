@@ -16,7 +16,7 @@ seq INT Not Null AUTO_INCREMENT, -- 정수 + 비워두지 말기 + 자동으로 
 mb_id VARCHAR(20) not null UNIQUE, -- 비워두지 말기 + 유일한 이름
 mb_pw VARCHAR(50) not null, -- 비워두지 말기
 mb_name VARCHAR(10) not null, -- 비워두지 말기
-abbress VARCHAR(100),
+address VARCHAR(100),
 phone1 VARCHAR(3),
 phone2 VARCHAR(10),
 height int,
@@ -57,6 +57,7 @@ insert into member.member_table values(null,"220729_1","12345","박일자","부�
       
       
       select * from member_table;
+      -- 이름만 부를 때
       select mb_name from member_table;
       
       
@@ -66,9 +67,33 @@ insert into member.member_table values(null,"220729_1","12345","박일자","부�
       select * from member_table where salary > 3500000;
       
       -- 입사일이 1년이 넘은 사람, 사람 이름 검색
-      select mb_name from member_table where month >= 12;
+      select mb_name from member_table WHERE month >= 12;
+      -- 별칭사용하기
+      select mb_name "이름" from member_table WHERE month >= 12;
+      
       select * from member_table where mb_name like '김%'; -- 김씨만 검색
+      
       select * from member_table where mb_name like '김%' or mb_name like '박%';
+      
+      
+      select * from member_table WHERE mb_name like "박%자"; -- '박'과 '일' 사이에 글자 갯수가 많아도 선택됨
+      
+      select * from member_table WHERE mb_name like "박_자"; -- '박'과 '일' 사이에 글자가 하나일 경우 선택 (ex 만약 2개를 원하면 _ _ 두개")
+      
+      select * from member_table WHERE mb_name in ("강꾸준", "이합격");
+      
+      select * from member_table WHERE height order by height DESC; -- DESC가 맨뒤로 올땐 내림차순
+      select * from member_table WHERE height order by height ASC; -- ASC 오름차순
+      DESC member_table; -- DESC가 앞으로 올땐 member_table 테이블 자체의 구조 확인
+      
+      -- 월급이 3500000이상인 사람의 mb_id, mb_name, salary 월급의 기준으로 내림차순
+      select mb_id, mb_name,salary from member_table where salary >= 3500000 order by salary DESC, mb_name ASC;
+      
+      
+      select * from member_table;
+      -- 수정하기
+      UPDATE member_table set address="전라북도 정읍시 수성1로 32(수정동)" where mb_name="이합격";
+      -- 정열심의 키는 174로 수정하기
       
 
 
