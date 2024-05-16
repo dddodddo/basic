@@ -19,6 +19,58 @@ body{
     display: block;
     clear: both;
 }
+/* menuOpen */
+.menuOpen{}
+.menuOpen .open{
+    position: fixed;
+    top: 50%; right: 0;
+    transform: translateY(-50%);
+    background: none;
+    border: 0;
+    padding: 30px 22px;
+    z-index: 100;
+}
+.menuOpen .open::before{
+    content: "";
+    position: absolute;
+    top: 0; right: -100%;
+    width: 100%; height: 100%;
+    background-color: #f5f5f5;
+    z-index: -1;
+    transition: 0.3s;
+}
+.menuOpen .open:hover::before{
+    right: 0;
+}
+.menuOpen .open img{}
+
+.menuWrap{
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 100;
+    background-color: #eee;
+}
+.menuWrap a{}
+.menuWrap a img{}
+.menuWrap .tit{
+    position: absolute;
+    top: 50%; left: 25%;
+    transform: translateY(-50%);
+    font-size: 60px;
+    color: #ccc;
+}
+.menuWrap .tit li{}
+.menuWrap .tit li a{
+    transition: 0.3s;
+    display: inline-block;
+    position: relative;
+}
+.menuWrap .tit li a::after{
+    content: "";
+    
+}
+
 
 /* header */
 header{}
@@ -69,10 +121,89 @@ header .mainmenu .sns li a{}
 .visual .mainImg img{
     width: 90%;
 }
-.visual .mainText{}
-.visual .mainText .tit{}
-.visual .mainText .tit span{}
-.visual .mainText .tit span.gray{}
-.visual .mainText .txt{}
+.visual .mainText{
+    padding-top: 180px;
+}
+.visual .mainText .tit{font-size: 72px;}
+.visual .mainText .tit span.gray{color: #ccc;}
+.visual .mainText .txt{padding: 50px 0 0 70px;}
 .visual .mainText .txt p{}
 .visual .mainText .txt p .moreBtn{}
+
+
+/* 타이틀, 텍스트 */
+.tit{}
+.tit span{display: block;}
+.tit span b{font-weight: normal;}
+.tit .en_s{
+    font-size: 22px; font-weight: normal;
+}
+
+/* i태그 vs em태그 (기울림체)
+    i태그는 그냥 기울림체이지만 em태그는 강조하는 역할을 한다.
+
+    b태그 vs strong태그 (굵은체)
+    b태그는 그냥 굵게만 만들지만 strong태그는 강조하는 역할을 한다. */
+.txt p{
+    color: #888;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+/* 텍스트 애니메이션*/
+.tit.animate__motion span{overflow: hidden;}
+.tit.animate__motion span b{
+    display: block; /* transform을 주었을때 적용이 안되었을 땐 display:block */
+    animation: textAni 1.3s;
+    transform-origin: top left; /* 애니메이션 중심 변경 */
+}
+@keyframes textAni{
+    0%{opacity: 0;}
+    30%{opacity: 1; transform: translate(0,40px) skewY(8deg);}
+    100%{opacity: 1; transform: none;}
+}
+
+
+/* read more */
+.moreBtn{
+    display: inline-block;
+    margin-top: 20px;
+    color: #333;
+    padding-left: 45px;
+    transform: skewX(-15deg) translateX(5px); /* 기울기 */
+    transition: 0.2s;
+    position: relative;
+}
+.moreBtn:hover{
+    /* transform: skewX(0deg) translateX(0px); */
+    transform: none;
+    font-weight: bold;
+}
+.moreBtn::before{
+    content: "";
+    width: 42px; height: 1px;
+    background-color: #333;
+    position: absolute;
+    left: 0; top: 53%;
+}
+
+/* 이미지 애니메이션*/
+.img.animate__motion{
+    position: relative;
+    animation: imgAni 1s;
+}
+@keyframes imgAni{
+    0%{transform: translateY(50px);}
+    100%{transform: none;}
+}
+.img.animate__motion::after{
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 0;
+    background-color: #fff;
+    animation: mask 1.2s;
+}
+@keyframes mask{
+    0%{height: 90%;}
+    100%{height: 0;}
+}
