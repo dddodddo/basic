@@ -4,6 +4,7 @@
 #page4{
     width: 100vw;
     height: 100vh;
+    position: relative;
 }
 nav,.foot{
     position: absolute;
@@ -20,7 +21,7 @@ nav{top: 0;}
 .preview-img { 
     position: absolute;
     top: 50%; left: 50%;
-    transform: translate (-50%, -50%);
+    transform: translate(-50%, -50%);
     width: 300px;
     height: 200px;
     z-index: 0;
@@ -50,10 +51,13 @@ img{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate (-50%, -50%);
+    /* transform: translate(-50%, -50%); */
     width: 45px;
     height: 60px;
     margin: 10px;
     transform-style: preserve-3d;
     background:#b0b0b0;
+    transform: translate(-50%, -50%) rotateY(90deg) rotateZ(0deg);
+    transform-origin: 50% 400px;
+
 }
