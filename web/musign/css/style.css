@@ -90,6 +90,19 @@ body{
     color: #888;
 }
 
+
+/* 메뉴화면 열기 */
+.menuWrap{
+    width: 0; opacity: 0;
+    transform: skewY(-40deg);
+}
+.menuWrap.on{
+    width: 100%; opacity: 1;
+    transform: skewY(0deg);
+    transition: 0.5s;
+}
+
+
 /* 원그리기 */
 .menuWrap.on::before{
     content: "";
@@ -170,6 +183,19 @@ header .mainmenu .sns li a{}
 .visual .mainText .txt p .moreBtn{}
 
 
+
+/* jurnal */
+.jurnal{
+    padding: 190px 0 120px;
+    position: relative;
+}
+.jurnal .scroll{}
+
+
+
+
+
+
 /* 타이틀, 텍스트 */
 .tit{}
 .tit span{display: block;}
@@ -245,4 +271,19 @@ header .mainmenu .sns li a{}
 @keyframes mask{
     0%{height: 90%;}
     100%{height: 0;}
+}
+
+/* svg ani 3575*/
+.jurnal{}
+.jurnal .circleBox{
+    width: 700px;
+    position: absolute;
+    right: 13%; top: 100px;
+    z-index: -1;
+}
+.jurnal .circleBox svg{
+    width: 100%;
+}
+.jurnal .circleBox .svgAni path{
+    stroke-dasharray: 50px;
 }

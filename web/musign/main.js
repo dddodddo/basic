@@ -19,3 +19,18 @@ $('.animate').scrolla({
   });
 
 // menuOpen
+let open=$('.menuOpen .open')
+let menuWrap=$('.menuWrap')
+let close=$('.menuWrap .close')
+
+open.click(function(){
+    menuWrap.addClass('on')
+})
+close.click(function(){
+    menuWrap.removeClass('on')
+})
+
+//path의 총 길이를 구하는 방법
+let path=document.querySelector('.path1')
+let pathHeight=path.getTotalLength()
+console.log(pathHeight)
