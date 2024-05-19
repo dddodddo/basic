@@ -14,6 +14,20 @@ body{
 
 }
 
+.canvas-cont{
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+}
+#canvas3d {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
 
 /* header */
 #wrap{}
@@ -74,7 +88,7 @@ body{
     position: relative;
     top: 0;
     overflow: hidden;
-    z-index: 20;
+    z-index: 2;
 }
 #section1 .text{
 }
