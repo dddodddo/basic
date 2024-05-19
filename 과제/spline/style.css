@@ -1,12 +1,22 @@
 @charset "UTF-8";
 *{margin: 0;padding: 0;box-sizing: border-box;}
 
-/* background : radial-gradient(circle, #2C4F46, #1B3C34); */
+/* background : radial-gradient(circle, #2C4F46, #1B3C34); 
+font-family: "Noto Sans KR", sans-serif;
+*/
+body{
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 16px;
+    line-height: 1;
+    width: 100%; height: 100%;
+    color: #2d2d2d;
+    overflow: hidden;
 
-#main{width: 100%; height: 100%;}
+}
 
 
 /* header */
+#wrap{}
 #header{
     width: 100%;
     height: 100px;
@@ -14,25 +24,92 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
+    justify-content: space-around;
     padding: 20px 66px;
+    position: fixed;
+    left: 0; top: 0;
+    z-index: 100;
 }
 
-#header .logo{
-    margin-top: 6px;
+#header .logo{}
+
+#header .nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 86px;
+}
+#header .nav ul{}
+#header .nav ul li{}
+#header .nav ul li a{}
+
+#header .join{
+    width: 140px; height: 50px;
+    padding: 14px 30px;
+    background-color: #00754a;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+}
+#header .join:hover{
+    background-color: #003e27;
 }
 
-#header .nav{}
-#header .nav .nav_starbucks{}
-#header .nav .nav_menu{}
-#header .nav .nav_store{}
-#header .nav .nav_whatsnew{}
-
-#header .join{}
-#header .join .icon{}
-#header .join .icon .user{}
-#header .join .icon .seaarch{}
-#header .join .icon .heart{}
+#header .icon{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 23px;
+}
+#header .icon .user{}
+#header .icon .seaarch{}
+#header .icon .heart{}
 
 
 
 /* section1 */
+#section1{
+    width: 100vw; height: 100vh;
+    background: url(img/page1.jpg) no-repeat center center/cover;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    overflow: hidden;
+}
+#section1 .text{
+}
+#section1 .text .s1_title{
+    font-size: 8vw;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    left: 50%;top: 50%;
+    transform: translate(-50%, -50%);
+}
+#section1 .text .s1_sub_title{
+    font-size: 2.3vw;
+    font-weight: 500;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    left: 50%;top: 85%;
+    transform: translate(-50%, -50%);
+}
+#section1 .text .s1_sub_icon{
+    font-size: 2.3vw;
+    font-weight: 500;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    left: 50%;top: 93%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* section2 */
+#section2{
+    width: 100%; height: 100vh;
+    background: url(img/page2.jpg) no-repeat center center/cover;
+    transition: 0.3s;
+}

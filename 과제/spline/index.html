@@ -1,43 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Starbucks</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Starbucks</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <main id="main">
-        <!-- header -->
-        <header id="header">
-            <h1 class="logo">
-                <img src="img/logo.png" alt="logo">
-            </h1>
-            <nav class="nav">
-                <div class="nav_starbucks">STARBUCKS</div>
-                <div class="nav_menu">MENU</div>
-                <div class="nav_store">STORE</div>
-                <div class="nav_whatsnew">WHAT'S NEW</div>
-            </nav>
-            <button class="join">JOIN NOW</button>
-            <div class="icon">
-                <div class="user"><i class="fas fa-user"></i></div>
-                <div class="search"><i class="fas fa-search"></i></div>
-                <div class="heart"><i class="fas fa-heart"></i></div>
-            </div>
-        </header><!-- end header -->
+  <!-- header -->
+  <header id="header">
+    <h1 class="logo">
+      <img src="img/logo.png" alt="logo">
+    </h1>
+    <nav class="nav">
+      <ul>
+        <li><a href="#">STARBUCKS</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">MENU</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">STORE</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">WHAT'S NEW</a></li>
+      </ul>
+      <button class="join">JOIN NOW</button>
+      <div class="icon">
+        <div class="user"><i class="fas fa-user"></i></div>
+        <div class="search"><i class="fas fa-search"></i></div>
+        <div class="heart"><i class="fas fa-heart"></i></div>
+      </div>
+    </nav>
+  </header><!-- end header -->
 
-        <!-- section1 -->
-        <section class="section1">
-            <h1 class="s1_title">STARBUCKS</h1>
-            <h4 class="s1_sub_title">Let's talk about our coffee</h4>
-        </section><!-- end section1 -->
+  <main id="main">
+    <!-- section1 -->
+    <section id="section1">
+      <div class="text">
+        <div class="s1_title">STARBUCKS</div>
+        <div class="s1_sub_title">Let's talk about our coffee</div>
+        <div class="s1_sub_icon"><i class="fas fa-angle-double-down"></i></div>
+      </div>
+    </section><!-- end section1 -->
 
-    </main>
-    <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script type="module" src="main.js"></script>
+    <section id="section2"></section>
+
+  </main>
+  <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script type="module" src="main.js"></script>
 </body>
+
 </html>

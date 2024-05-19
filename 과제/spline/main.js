@@ -1,21 +1,3 @@
-// gsap.registerPlugin(ScrollTrigger)
-// function lenis(){
-//     const lenis = new Lenis()
-    
-//     lenis.on('scroll', (e) => {
-//       // console.log(e)
-//     })
-    
-//     lenis.on('scroll', ScrollTrigger.update)
-    
-//     gsap.ticker.add((time)=>{
-//       lenis.raf(time * 1000)
-//     })
-    
-//     gsap.ticker.lagSmoothing(0)
-
-// }
-// lenis()
 
 // import { Application } from 'https://unpkg.com/@splinetool/runtime';
 
@@ -26,3 +8,32 @@
 // .then(()=>{
   
 // })
+
+gsap.registerPlugin(ScrollTrigger)
+
+
+const lenis = new Lenis()
+
+lenis.on('scroll', (e) => {
+  console.log(e)
+})
+
+lenis.on('scroll', ScrollTrigger.update)
+
+gsap.ticker.add((time)=>{
+  lenis.raf(time * 1000)
+})
+
+gsap.ticker.lagSmoothing(0)
+
+
+/////////////////////////////////
+gsap.to("#section1",{
+  scrollTrigger:{
+    trigger:'#section1',
+    start:"top",
+    end:"bottom",
+    scrub:1,
+    markers:true,
+  }
+})
