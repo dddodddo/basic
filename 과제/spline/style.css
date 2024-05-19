@@ -71,10 +71,10 @@ body{
 #section1{
     width: 100vw; height: 100vh;
     background: url(img/page1.jpg) no-repeat center center/cover;
-    position: fixed;
+    position: relative;
     top: 0;
-    z-index: 10;
     overflow: hidden;
+    z-index: 20;
 }
 #section1 .text{
 }
@@ -109,7 +109,136 @@ body{
 
 /* section2 */
 #section2{
-    width: 100%; height: 100vh;
+    width: 100vw; height: 100vh;
     background: url(img/page2.jpg) no-repeat center center/cover;
     transition: 0.3s;
+    position: relative;
+}
+#section2 .text .s2_title{
+    position: absolute;
+    font-size: 6vw;
+    font-weight: 700;
+    color: #fff;
+    position: absolute;
+    left: 8%;top: 25%;
+    line-height: 1.2;
+}
+#section2 .text .s2_sub_title{
+    position: absolute;
+    font-size: 1vw;
+    font-weight: 500;
+    color: #fff;
+    position: absolute;
+    left: 8%;top: 65%;
+    line-height: 1.2;
+}
+
+
+
+/* section3 */
+#section3{
+    width: 100vw; height: 100vh;
+    background: url(img/page3.jpg) no-repeat center center/cover;
+    transition: 0.3s;
+    position: relative;
+}
+#section3 .text .s3_title{
+    position: absolute;
+    font-size: 6vw;
+    font-weight: 700;
+    color: #fff;
+    position: absolute;
+    left: 8%;top: 25%;
+    line-height: 1.2;
+}
+#section3 .text .s3_sub_title{
+    position: absolute;
+    font-size: 1vw;
+    font-weight: 500;
+    color: #fff;
+    position: absolute;
+    left: 8%;top: 65%;
+    line-height: 1.2;
+}
+
+
+
+/* section4 */
+#section4{
+    width: 100vw; height: 100vh;
+    background: url(img/page4.jpg) no-repeat center center/cover;
+    transition: 0.3s;
+    position: relative;
+}
+#section4 .text .s4_title{
+    position: absolute;
+    font-size: 6vw;
+    font-weight: 700;
+    color: #fff;
+    position: absolute;
+    left: 8%;top: 25%;
+    line-height: 1.2;
+}
+#section4 .text .s4_sub_title{
+    position: absolute;
+    font-size: 1vw;
+    font-weight: 500;
+    color: #fff;
+    position: absolute;
+    left: 8%;top: 65%;
+    line-height: 1.2;
+}
+
+
+
+/* section5 */
+#section5{
+    width: 100vw; height: 100vh;
+    background: url(img/page5.jpg) no-repeat center center/cover;
+    transition: 0.3s;
+    position: relative;
+}
+#section5 .text .s5_title{
+    font-size: 8vw;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    left: 50%;top: 40%;
+    transform: translate(-50%, -50%);
+}
+
+/* section6 */
+#section6{
+    width: 100vw; height: 100vh;
+    background : radial-gradient(circle, #2C4F46, #1B3C34);
+}
+
+/* section7 */
+#section7{
+    width: 100vw; height: 100vh;
+    background : radial-gradient(circle, #2C4F46, #1B3C34);
+}
+
+/* section8 */
+#section8{
+    width: 100vw; height: 100vh;
+    background : radial-gradient(circle, #2C4F46, #1B3C34);
+}
+
+/* section9 */
+#section9{
+    width: 100vw; height: 100vh;
+    background : radial-gradient(circle, #2C4F46, #1B3C34);
+}
+
+/* section10 */
+#section10{
+    width: 100vw; height: 100vh;
+    background : radial-gradient(circle, #2C4F46, #1B3C34);
+}
+
+/* section11 */
+#section11{
+    width: 100vw; height: 100vh;
 }
