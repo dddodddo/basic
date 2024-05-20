@@ -29,7 +29,8 @@ const app = new Application(canvas);
 app
   .load('https://prod.spline.design/opY0wfhQp3VV3FNV/scene.splinecode')
   .then(() => {
-    let coffeebean = app.findObjectByName('coffee_bean')
+    let coffeebean = app.findObjectByName('coffeebean')
+    console.log(app)
     let icecoffee = app.findObjectByName('icecoffee')
     let cappuccino = app.findObjectByName('cappuccino')
     let javachip = app.findObjectByName('javachip')
@@ -37,13 +38,9 @@ app
     let tea = app.findObjectByName('tea')
 
     let objects=[coffeebean,icecoffee,cappuccino,javachip,blended,tea]
+// console.log(objects)
+//     objects.forEach(function(object){
+//       gsap.to(object.rotation,10,{y:Math.PI*1,repeat:-1,ease:"none"})
+//     })
 
-    objects.forEach((object)=>{
-      gsap.set(object.scale,{x:0,y:0,z:0})
-      gsap.to(object.rotation,10,{y:Math.PI*2,repeat:-1,ease:"none"})
-    })
-    console.log(coffeebean)
-    gsap.set(coffeebean.scale,{x:200,y:200,z:200})
-    gsap.set(coffeebean.position,{x:300,y:0,z:0})
-    
 })
