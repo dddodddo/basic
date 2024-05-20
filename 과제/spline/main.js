@@ -58,18 +58,20 @@ gsap.timeline({
 })
 // .to(bean.position,{x:0,y:0,z:0})
 .to(bean.scale,{x:1,y:1,z:1})
-
-gsap.timeline({
-	scrollTrigger: {
-    	trigger: '#section3',
-        start: 'top 40%',
-        end: 'bottom 80%',
-        markers:true,
-        scrub:1,
-    }
-})
 .to(bean.position,{x:500,y:0,z:0})
 .to(bean.rotation,{x:0,y:10,z:0})
+
+// gsap.timeline({
+// 	scrollTrigger: {
+//     	trigger: '#section3',
+//         start: 'top 40%',
+//         end: 'bottom 80%',
+//         markers:true,
+//         scrub:1,
+//     }
+// })
+// .to(bean.position,{x:500,y:0,z:0})
+// .to(bean.rotation,{x:0,y:10,z:0})
 
 gsap.timeline({
 	scrollTrigger: {
