@@ -16,7 +16,7 @@ body{
 
 .canvas-cont{
     position: fixed;
-    z-index: 20;
+    z-index: 2;
     top: 0;
     left: 0;
     width: 100vw;
@@ -88,7 +88,7 @@ body{
     position: relative;
     top: 0;
     overflow: hidden;
-    z-index: 2;
+    z-index: 20;
 }
 #section1 .text{
 }
@@ -127,6 +127,7 @@ body{
     background: url(img/page2.jpg) no-repeat center center/cover;
     transition: 0.3s;
     position: relative;
+    z-index: 21;
 }
 #section2 .text .s2_title{
     position: absolute;

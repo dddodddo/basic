@@ -44,16 +44,15 @@ app
         gsap.set(bean.position,{x:300,y:0,z:0})
 
 ///////////////////////////////////////////////
-const tl2 = gsap.timeline({
+
+gsap.timeline({
 	scrollTrigger: {
-    	trigger: '.main',
+    	trigger: '#section3',
         start: 'top 20%',
-        end: 'top 80%'
+        end: 'bottom 80%',
+        markers:true,
     }
 })
-//////////////////////////////////////////////
-tl2.to('.div1', {x: 500, duration: 2})
-   .to('.div2', {y: 200, duration: 3})
 
 
 

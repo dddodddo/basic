@@ -6,11 +6,21 @@ let pw1 = document.querySelector('#psw1')
 let pwImg1 = document.querySelector('#psw1_img1')
 let pwMsg = document.querySelector('#alertTxt')
 
+let pw2 = document.querySelector('#psw2')
+let pwImg2 = document.querySelector('#pswd2_img1')
+
+let username = document.querySelector('#name')
+
 // id.addEventListener('focusout',function(){
 //     checkId()
 // })
 id.addEventListener('focusout', checkId)
 pw1.addEventListener('focusout', checkPw)
+pw2.addEventListener('focusout', comparePw)
+username.addEventListener('focusout', checkName)
+
+
+
 
 function checkId() {
     let idPattern = /^[a-zA-Z0-9_-]{5,20}$/
@@ -52,4 +62,25 @@ function checkPw() {
         pwMsg.style.color= "#03c75a"
         pwImg1.src="img/m_icon_safe.png"
     }
+}
+
+function comparePw(){
+    if(pw1.value === pw2.value && pw2.value !== ""){
+        pwImg2.src="./img/m_icon_check_enable.png"
+        error[2].style.display="none"
+    }else if(pw1.value !== pw2.value){
+        pwImg2.src="./img/m_icon_check_disable.png"
+        error[2].style.display="block"
+        error[2].innerHTML="비밀번호가 일치하지 않습니다."
+    }
+    if(pw2.value === ""){
+        error[2].style.display="block"
+        error[2].innerHTML="필수 정보입니다."
+    }
+}
+
+
+function checkName(){
+    let namePattern = /^[a-zA-Z가-힣]*$/
+    console.log(namePattern.test(username.value))
 }
