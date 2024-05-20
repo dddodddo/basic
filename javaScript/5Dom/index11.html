@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .memberList{}
+        .memberList li{width: 100px;  list-style: none; border: 10px solid transparent;}
+        .memberList li:hover{border: 10px solid red;}
+        .memberList li img{width: 100%; display: block;}
+    </style>
+</head>
+<body>
+    <h1>동물원 동물 현황 리스트</h1>
+    <ul class="memberList">
+        <li><img id="치타" class="aaa" src="https://cdn.pixabay.com/photo/2023/09/09/09/03/cheetah-8242729_1280.png" alt=""></li>
+        <li><img id="호랑이" class="bbb" src="https://cdn.pixabay.com/photo/2018/03/26/20/49/tiger-3264048_1280.jpg" alt=""></li>
+        <li><img id="늑대" class="ccc" src="https://cdn.pixabay.com/photo/2022/11/13/18/44/grey-wolf-7589920_1280.jpg" alt=""></li>
+    </ul>
+
+    <script>
+        // 이벤트 위임과 활용(Event Delegation(업무, 권리를 넘김))
+
+        let list=document.querySelector('.memberList')
+        let lists=list.querySelectorAll('li')
+        // console.log(lists)
+
+
+        // //li 태그 만들기
+        let liNode=document.createElement('li')
+
+
+        // //img 태그 만들기
+        let imgNode=document.createElement('img')
+        imgNode.src="https://cdn.pixabay.com/photo/2019/04/10/05/10/fox-4116218_1280.jpg"
+        imgNode.id="북극여우"
+        imgNode.className="ddd"
+        console.log(imgNode)
+
+        liNode.appendChild(imgNode)
+        list.appendChild(liNode)
+        
+        // //이벤트
+        // lists.forEach(function(ele){
+        //     ele.addEventListener("click",function(event){
+        //         // console.log("클릭")
+        //         console.log(event.target) //클릭한 것의 가장 자식요소
+        //         console.log(event.currentTarget) //클릭한 것의 부모요소
+        //     })
+        // })
+
+
+        //💛이벤트 위임
+        list.addEventListener('click',function(event){
+            console.log(event.target)
+            event.target.parentNode.style.borderColor="blue"
+        })
+
+
+
+    </script>
+</body>
+</html>

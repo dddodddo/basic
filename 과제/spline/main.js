@@ -69,7 +69,7 @@ gsap.timeline({
     }
 })
 .to(bean.position,{x:500,y:0,z:0})
-.to(bean.rotation,{x:50,y:0,z:0})
+.to(bean.rotation,{x:3,y:0,z:0})
 
 
 

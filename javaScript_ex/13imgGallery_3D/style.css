@@ -57,7 +57,7 @@ img{
     margin: 10px;
     transform-style: preserve-3d;
     background:#b0b0b0;
-    transform: translate(-50%, -50%) rotateY(90deg) rotateZ(0deg);
+    transform: translate(-50%, -50%) rotateY(0deg) rotateZ(0deg);
     transform-origin: 50% 400px;
 
 }
