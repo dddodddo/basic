@@ -17,8 +17,6 @@ function lenis() {
 
 }
 lenis()
-
-
 /////////////////////////////////
 import {
   Application
@@ -27,20 +25,37 @@ import {
 const canvas = document.getElementById('canvas3d');
 const app = new Application(canvas);
 app
-  .load('https://prod.spline.design/opY0wfhQp3VV3FNV/scene.splinecode')
+  .load('https://prod.spline.design/7oLggwHQax4cYbuk/scene.splinecode')
   .then(() => {
-    let coffeebean = app.findObjectByName('coffeebean')
-    console.log(app)
+    let bean = app.findObjectByName('bean')
+    console.log(bean)
     let icecoffee = app.findObjectByName('icecoffee')
     let cappuccino = app.findObjectByName('cappuccino')
     let javachip = app.findObjectByName('javachip')
     let blended = app.findObjectByName('blended')
     let tea = app.findObjectByName('tea')
 
-    let objects=[coffeebean,icecoffee,cappuccino,javachip,blended,tea]
-// console.log(objects)
-//     objects.forEach(function(object){
-//       gsap.to(object.rotation,10,{y:Math.PI*1,repeat:-1,ease:"none"})
-//     })
+    let objects = [bean, icecoffee, cappuccino, javachip, blended, tea]
+        objects.forEach(function(object){
+          gsap.set(object.scale,{x:0,y:0,z:0})
+          gsap.to(object?.rotation,10,{y:Math.PI*2,repeat:-1,ease:"none"})
+        })
+        gsap.set(bean.scale,{x:1,y:1,z:1})
+        gsap.set(bean.position,{x:300,y:0,z:0})
+
+///////////////////////////////////////////////
+const tl2 = gsap.timeline({
+	scrollTrigger: {
+    	trigger: '.main',
+        start: 'top 20%',
+        end: 'top 80%'
+    }
+})
+//////////////////////////////////////////////
+tl2.to('.div1', {x: 500, duration: 2})
+   .to('.div2', {y: 200, duration: 3})
+
+
+
 
 })
