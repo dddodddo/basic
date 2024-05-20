@@ -50,56 +50,83 @@ insert into member.member_table values(null,"220729_1","12345","박일자","부�
       (null,"220729_11","45871","김석진","충청남도 서천군 화양면 화한로61번길 21","041","11223344",165,4000000,10),
       (null,"220729_12","78541","박이자","충청북도 옥천군 청산면 청산관기로 549-2","043","99887766",165,3100000,3);
       
-      -- insert into 테이블 (열이름1, 열이름2...) VALUES(값1, 값2...)
+-- insert into 테이블 (열이름1, 열이름2...) VALUES(값1, 값2...)
       
-      INSERT into.member_table (mb_id,mb_pw,mb_name)values("220729_13","78424","박십삼");
-      
-      
-      
-      select * from member_table;
-      -- 이름만 부를 때
-      select mb_name from member_table;
+INSERT into.member_table (mb_id,mb_pw,mb_name)values("220729_13","78424","박십삼");
       
       
-      -- where 조건문
-      select * from member_table where height <= 165;
-      select * from member_table where height >= 165 and height <= 180;
-      select * from member_table where salary > 3500000;
       
-      -- 입사일이 1년이 넘은 사람, 사람 이름 검색
-      select mb_name from member_table WHERE month >= 12;
-      -- 별칭사용하기
-      select mb_name "이름" from member_table WHERE month >= 12;
-      
-      select * from member_table where mb_name like '김%'; -- 김씨만 검색
-      
-      select * from member_table where mb_name like '김%' or mb_name like '박%';
+select * from member_table;
+-- 이름만 부를 때
+select mb_name from member_table;
       
       
-      select * from member_table WHERE mb_name like "박%자"; -- '박'과 '일' 사이에 글자 갯수가 많아도 선택됨
+-- where 조건문
+select * from member_table where height <= 165;
+select * from member_table where height >= 165 and height <= 180;
+select * from member_table where salary > 3500000;
       
-      select * from member_table WHERE mb_name like "박_자"; -- '박'과 '일' 사이에 글자가 하나일 경우 선택 (ex 만약 2개를 원하면 _ _ 두개")
+-- 입사일이 1년이 넘은 사람, 사람 이름 검색
+select mb_name from member_table WHERE month >= 12;
+-- 별칭사용하기
+select mb_name "이름" from member_table WHERE month >= 12;
       
-      select * from member_table WHERE mb_name in ("강꾸준", "이합격");
+select * from member_table where mb_name like '김%'; -- 김씨만 검색
       
-      select * from member_table WHERE height order by height DESC; -- DESC가 맨뒤로 올땐 내림차순
-      select * from member_table WHERE height order by height ASC; -- ASC 오름차순
-      DESC member_table; -- DESC가 앞으로 올땐 member_table 테이블 자체의 구조 확인
-      
-      -- 월급이 3500000이상인 사람의 mb_id, mb_name, salary 월급의 기준으로 내림차순
-      select mb_id, mb_name,salary from member_table where salary >= 3500000 order by salary DESC, mb_name ASC;
+select * from member_table where mb_name like '김%' or mb_name like '박%';
       
       
-      select * from member_table;
-      -- 수정하기
-      UPDATE member_table set address="전라북도 정읍시 수성1로 32(수정동)" where mb_name="이합격";
-      -- 정열심의 키는 174로 수정하기
+select * from member_table WHERE mb_name like "박%자"; -- '박'과 '일' 사이에 글자 갯수가 많아도 선택됨
       
+select * from member_table WHERE mb_name like "박_자"; -- '박'과 '일' 사이에 글자가 하나일 경우 선택 (ex 만약 2개를 원하면 _ _ 두개")
+      
+select * from member_table WHERE mb_name in ("강꾸준", "이합격");
+      
+select * from member_table WHERE height order by height DESC; -- DESC가 맨뒤로 올땐 내림차순
+select * from member_table WHERE height order by height ASC; -- ASC 오름차순
+DESC member_table; -- DESC가 앞으로 올땐 member_table 테이블 자체의 구조 확인
+      
+-- 월급이 3500000이상인 사람의 mb_id, mb_name, salary 월급의 기준으로 내림차순
+select mb_id, mb_name,salary from member_table where salary >= 3500000 order by salary DESC, mb_name ASC;
+      
+      
+select * from member_table;
+-- 수정하기
+UPDATE member_table set address="전라북도 정읍시 수성1로 32(수정동)" where mb_name="이합격";
+-- 정열심의 키는 174로 수정하기
+UPDATE member_table set height="174" where mb_name = "정열심";
+      
+-- 월급이 2백오십이상 3백오십이하인 행을 선택하시오    
+select * from member_table where salary >= 2500000 and salary <= 3500000 order by salary asc;
+
+-- 지역이 경상북도 또는 충청북도인 행을 선택하시오
+select * from member_table where address like "경상북도%" or address like "충청북도%";
+
+-- 이름이 강꾸준 또는 박일자 행을 선택하시오
+select * from member_table where mb_name in("강꾸준", "박일자");
+
+-- 전체임금의 평균보다 높은 행을 모두 찾으시오
+select avg(salary) from member_table; -- 평균값
+select * from member_table where salary>(select avg(salary) from member_table);
+
+-- 임금이 가장 높은 사람과 가장 낮은 사람의 차는 얼마인가
+select max(salary) from member_table;
+select min(salary) from member_table;
+
+select max(salary) - min(salary) from member_table;
+
+-- 강꾸준의 정보만 보려면
+select * from member_table where mb_name like "강꾸준";
 
 
+-- 강꾸준 한 줄만 지우기
+delete from member_table where mb_name like "강꾸준";
 
+-- 테이블 삭제
+drop table member_table;
 
-
+-- 데이터 베이스 삭제
+drop database member;
 
 
 
