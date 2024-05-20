@@ -69,8 +69,19 @@ gsap.timeline({
     }
 })
 .to(bean.position,{x:500,y:0,z:0})
-.to(bean.rotation,{x:3,y:0,z:0})
+.to(bean.rotation,{x:0,y:10,z:0})
 
+gsap.timeline({
+	scrollTrigger: {
+    	trigger: '#section3',
+        start: 'top 5%',
+        end: 'bottom 80%',
+        markers:true,
+        scrub:1,
+    }
+})
+.to(bean.position,{x:100,y:0,z:0})
+.to(bean.rotation,{x:3,y:0,z:0})
 
 
 })
