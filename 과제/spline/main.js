@@ -38,22 +38,38 @@ app
     let objects = [bean, icecoffee, cappuccino, javachip, blended, tea]
         objects.forEach(function(object){
           gsap.set(object.scale,{x:0,y:0,z:0})
-          gsap.to(object?.rotation,10,{y:Math.PI*2,repeat:-1,ease:"none"})
+          gsap.to(object?.rotation,5,{y:Math.PI*2,repeat:-1,ease:"none"})
         })
-        gsap.set(bean.scale,{x:1,y:1,z:1})
-        gsap.set(bean.position,{x:300,y:0,z:0})
+        // gsap.set(bean.scale,{x:1,y:1,z:1})
+        gsap.set(bean.position,{x:-500,y:0,z:0})
 
 ///////////////////////////////////////////////
+
+//bean
+gsap.timeline({
+	scrollTrigger: {
+    	trigger: '#section3',
+        start: 'top 45%',
+        end: 'bottom 80%',
+        scrub:1,
+        markers:true,
+        duration:0.2
+    }
+})
+// .to(bean.position,{x:0,y:0,z:0})
+.to(bean.scale,{x:1,y:1,z:1})
 
 gsap.timeline({
 	scrollTrigger: {
     	trigger: '#section3',
-        start: 'top 20%',
+        start: 'top 40%',
         end: 'bottom 80%',
         markers:true,
+        scrub:1,
     }
 })
-
+.to(bean.position,{x:500,y:0,z:0})
+.to(bean.rotation,{x:50,y:0,z:0})
 
 
 

@@ -61,7 +61,8 @@ app
             trigger:".first",
             start:"top top",
             end:"90% top",
-            scrub:2
+            scrub:2,
+            markers:true,
         }
     })
     .to(Pretzel.position,{x:0,y:0,z:0},0)
