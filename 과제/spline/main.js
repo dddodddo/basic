@@ -49,7 +49,7 @@ app
 gsap.timeline({
 	scrollTrigger: {
     	trigger: '#section3',
-        start: 'top 45%',
+        start: 'top 55%',
         end: 'bottom 80%',
         scrub:1,
         markers:true,
@@ -58,32 +58,29 @@ gsap.timeline({
 })
 // .to(bean.position,{x:0,y:0,z:0})
 .to(bean.scale,{x:1,y:1,z:1})
-.to(bean.position,{x:500,y:0,z:0})
-.to(bean.rotation,{x:0,y:10,z:0})
-
-// gsap.timeline({
-// 	scrollTrigger: {
-//     	trigger: '#section3',
-//         start: 'top 40%',
-//         end: 'bottom 80%',
-//         markers:true,
-//         scrub:1,
-//     }
-// })
-// .to(bean.position,{x:500,y:0,z:0})
-// .to(bean.rotation,{x:0,y:10,z:0})
 
 gsap.timeline({
 	scrollTrigger: {
     	trigger: '#section3',
-        start: 'top 5%',
+        start: 'top 50%',
         end: 'bottom 80%',
         markers:true,
         scrub:1,
     }
 })
-.to(bean.position,{x:100,y:0,z:0})
-.to(bean.rotation,{x:3,y:0,z:0})
+.to(bean.position,{x:500,y:0,z:0})
+.to(bean.rotation,{x:0,y:0,z:Math.PI * 2})
+
+gsap.timeline({
+	scrollTrigger: {
+    	trigger: '#section3',
+        start: 'top top',
+        end: 'bottom 90%',
+        markers:true,
+        scrub:1,
+    }
+})
+.to(bean.position,{x:0,y:-50,z:0})
 
 
 })
