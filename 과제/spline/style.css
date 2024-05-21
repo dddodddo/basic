@@ -282,56 +282,89 @@ body{
 }
 #section6 .text{
     position: absolute;
-    left: 50%; top: 148px;
+    left: 50%; top: 15%;
 }
 #section6 .text .s6_cold{
     padding: 10px 16px;
     border: 1px solid #fff;
-    width: 119px; height: 42px;
+    width: 6vw; height: 2vw;
     border-radius: 50px;
     text-align: center;
     color: #64b3ec;
-    font-weight: 700;
+    font-size: 0.8vw;
+    line-height: 1vw;
+    min-width: 105px;
+    min-height: 34px;
 }
 #section6 .text .s6tit{
     display: flex;
     align-items: flex-end;
 }
 #section6 .text .s6tit .s6_title{
-    font-size: 60px;
+    font-size: 4vw;
+    margin: 30px 24px 0px 0px;
     font-weight: 700;
-    margin: 30px 24px 18px 0px;
 }
 #section6 .text .s6tit .fa-heart{
     cursor: pointer;
+    font-size: 1.2vw;
 }
 #section6 .text .s6_size{
-
+    margin: 18px 0 68px;
+    font-size: 0.9vw;
 }
-
-
+#section6 .text .s6_cb{
+    line-height: 1.5;
+    margin-bottom: 100px;
+    font-size: 0.9vw;
+}
+#section6 .text .s6_menu{}
+.s6_menu .s6_menu_tit{
+    font-size: 0.9vw;
+}
+.box{
+    display: flex;
+    margin-top: 30px;
+    gap: 53px;
+}
+.box1{
+    width: 150px; height: 150px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+.box2{
+    width: 150px; height: 150px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+.s6_slide_tit{
+    position: absolute;
+    left: 0; bottom: 0;
+    font-size: 0.9vw;
+    margin-bottom: 5%;
+}
 /* section7 */
 #section7{
     width: 100vw; height: 100vh;
-    background : radial-gradient(circle, #2C4F46, #1B3C34);
+    /* background : radial-gradient(circle, #2C4F46, #1B3C34); */
 }
 
 /* section8 */
 #section8{
     width: 100vw; height: 100vh;
-    background : radial-gradient(circle, #2C4F46, #1B3C34);
+    /* background : radial-gradient(circle, #2C4F46, #1B3C34); */
 }
 
 /* section9 */
 #section9{
     width: 100vw; height: 100vh;
-    background : radial-gradient(circle, #2C4F46, #1B3C34);
+    /* background : radial-gradient(circle, #2C4F46, #1B3C34); */
 }
 
 /* section10 */
 #section10{
     width: 100vw; height: 100vh;
-    background : radial-gradient(circle, #2C4F46, #1B3C34);
+    /* background : radial-gradient(circle, #2C4F46, #1B3C34); */
 }
 
 /* section11 */
