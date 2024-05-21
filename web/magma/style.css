@@ -24,6 +24,7 @@ button{
     background-color: #0c36c4;
 }
 #page1{
+    position: relative;
     height: 100vh;
     width: 100vw;
 }
@@ -132,3 +133,23 @@ button{
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 4.8rem;
 }
+
+
+
+/* bottom-page1 */
+#page1 .mg-hero-scene{
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+}
+#page1 video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.bottom-page1{}
+.bottom-page1 h1{}
+.bottom-page1-inner{}
+.bottom-page1-inner h4{}
+.bottom-page1-inner button{}
