@@ -224,3 +224,36 @@ nav {
     font-weight: 700;
     line-height: .9;
 }
+
+
+/* 두번째 section */
+.website-content{
+    padding: 20px; box-sizing: border-box;
+    width: 100vw;
+}
+.section-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+}
+.section-header h1 {
+    font-family: Humane Bold, sans-serif;
+    font-size: 10vw;
+    font-weight: 400;
+    color: #fff;
+    line-height: 100%;
+    text-transform: uppercase;
+
+
+}
+
+
+.section-header p {
+    color: #fff;
+    font-size: 13px;
+    text-transform: uppercase;
+    text-align: right;
+    width: 25%;
+
+}
