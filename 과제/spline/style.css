@@ -56,11 +56,17 @@ body{
     align-items: center;
     justify-content: center;
     gap: 86px;
-    padding: 42px 22px;
 }
 #header .nav>ul>li{position: relative;}
 #header .nav>ul>li>a{
     display: inline-block;
+    padding: 42px 22px;
+    width: 170px;
+    text-align: center;
+
+}
+#header .nav>ul>li>a:hover{
+    background-color: rgba(0, 0, 0, 0.2);
 }
 #header .nav>ul>li>a.lm{
     min-width: 97px;
@@ -70,11 +76,12 @@ body{
     position: absolute;
     top: 100px;
     text-align: center;
+    width: 170px;
 }
 
 #header .nav>ul>li>ul>li>a{
     display: inline-block;
-    padding: 10px;
+    padding: 15px;
 }
 /* -----------nav------------------------ */
 #header .join{
