@@ -35,10 +35,11 @@ button{
     width: 100vw;
     position: absolute;
     z-index: 5;
+    padding: 0 3rem;
+    box-sizing: border-box;
 }
 #page1 nav .logo{
     width: 6rem;
-    margin-left: 3rem;
 }
 #page1 nav .logo img{
     width: 100%;
@@ -54,7 +55,20 @@ button{
     line-height: 4.5rem;
     text-align: center;
 }
-.mg-btn_menu{}
+.mg-btn_menu{
+    width: 6rem;
+    height: 4.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4.8rem;
+    font-size: 15px;
+    color: #fff;
+    transition: 0.4s;
+}
+.mg-btn_menu:hover{
+    border-color: #fff;
+}
+
+
 .mg-btn .mg-btn_rounded-stoke{
     position: absolute;
     top: 0;left: 0;

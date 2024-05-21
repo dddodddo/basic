@@ -19,6 +19,18 @@ body{
     display: block;
     clear: both;
 }
+
+
+/* inner - 넓이데 대한 가이드 */
+.inner{
+    display: flex;
+    width: 1320px;
+    margin: 0 auto;
+}
+.inner .box{width: 50%;}
+
+
+
 /* menuOpen */
 .menuOpen{}
 .menuOpen .open{
@@ -189,20 +201,41 @@ header .mainmenu .sns li a{}
     padding: 190px 0 120px;
     position: relative;
 }
-.jurnal .scroll{}
+.jurnal .scroll{
+    position: absolute;
+    left: 50%; top: 0;
+    transform: translateX(-50%);
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    padding-top: 90px;
+}
+.jurnal .scroll::before{
+    content: "";
+    position: absolute;
+    height: 75px; width: 1px;
+    background-color: #333;
+    top: 0; left: 4px;
 
+}
 
+.jurnal .box img{padding-top: 100px;}
+.jurnal .box .tit{margin-bottom: 40px;}
+.jurnal .box ul li{display: flex; margin-bottom: 30px;}
+.jurnal .box ul li h3{width: 22%;}
+.jurnal .box ul li p{width: 78%; color: #888; line-height: 1.4;}
+
+.jurnal .box .moreBtn{margin-left: 22%;}
 
 
 
 
 /* 타이틀, 텍스트 */
-.tit{}
+.tit{font-size: 50px; line-height: 1.1; /* 기본값 1 ~ 1.2 */ font-weight: normal;}
 .tit span{display: block;}
 .tit span b{font-weight: normal;}
-.tit .en_s{
-    font-size: 22px; font-weight: normal;
-}
+.tit .en_s{font-size: 22px; font-weight: normal;}
 
 /* i태그 vs em태그 (기울림체)
     i태그는 그냥 기울림체이지만 em태그는 강조하는 역할을 한다.
@@ -280,10 +313,19 @@ header .mainmenu .sns li a{}
     position: absolute;
     right: 13%; top: 100px;
     z-index: -1;
+    transform: rotate(90deg);
 }
-.jurnal .circleBox svg{
+.circleBox svg{
     width: 100%;
 }
-.jurnal .circleBox .svgAni path{
-    stroke-dasharray: 50px;
+.circleBox .svgAni path{
+    stroke-dasharray: 3575px;
+    stroke-dashoffset: 0px;
+}
+.circleBox.animate__motion  .svgAni path{
+    animation: dash 1.5s linear;
+}
+@keyframes dash{
+    0%{stroke-dashoffset: 3575px;}
+    100%{stroke-dashoffset: 0px;}
 }

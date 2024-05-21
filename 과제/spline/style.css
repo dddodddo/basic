@@ -46,18 +46,24 @@ body{
 }
 
 #header .logo{}
-
-#header .nav{display: flex;}
+/* -------------nav---------------------- */
+#header .nav{
+    display: flex;
+    align-items: center;
+}
 #header .nav>ul{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 86px;
+    padding: 42px 22px;
 }
 #header .nav>ul>li{position: relative;}
 #header .nav>ul>li>a{
     display: inline-block;
-    padding: 15px 55px;
+}
+#header .nav>ul>li>a.lm{
+    min-width: 97px;
 }
 
 #header .nav>ul>li>ul{
@@ -69,9 +75,8 @@ body{
 #header .nav>ul>li>ul>li>a{
     display: inline-block;
     padding: 10px;
-    width: 100%;
 }
-
+/* -----------nav------------------------ */
 #header .join{
     width: 140px; height: 50px;
     padding: 14px 30px;
