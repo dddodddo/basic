@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //객체(Object) - 객체 만들기
+
+        //[1] 사람 객체 만들기
+            // 1) 원시 타입으로 person을 만든다면
+            let person_name = "홍길동"
+            let person_age = 25
+            let person_power = 900
+            let person_nationality = "한국"
+
+            // 2) 객체 타입으로 person을 만든다면
+            // let 객체이름 = {
+            //     key(멤버)1:value1,
+            //     key(멤버)2:value2,
+            //     key(멤버)3:value3,
+            // }
+            // .cls{color:#fff; background:fff}
+            let person = {
+                name:"홍길동",
+                age:25,
+                power:900,
+                nationality:"한국",
+            }
+
+            console.log(person.name) //홍길동
+            console.log(`나의 이름은 ${person.name} 입니다.`) //홍길동
+    </script>
+</body>
+</html>

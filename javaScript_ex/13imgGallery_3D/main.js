@@ -10,13 +10,17 @@ window.onload = function () {
         let centerX = window.innerWidth / 2; //window.innerWidth 화면의 넓이
         let centerY = window.innerHeight / 2; //window.innerHeight 화면의 높이
 
-        let percentX = (x - centerX) / centerX;
+        let percentX = (x - centerX) / centerX; //중앙을 기준으로 오(0.2 0.4) 왼(-0.2 -0.4)
+        let percentY = (y - centerY) / centerY; //중앙을 기준으로 아래(0.2 0.4) 위(-0.2 -0.4)
         
+        let rotateX = 55 + percentY
+        let rotateY = -percentX * 2
+
         gsap.to(gallery,{
             duration:1,
             ease:"power2.out",
-            rotateX:x,
-            rotateY:y
+            rotateX:rotateX,
+            rotateY:rotateY
         })
     })
 
