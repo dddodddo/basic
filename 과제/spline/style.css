@@ -279,6 +279,13 @@ body{
     background : radial-gradient(circle, #2C4F46, #1B3C34);
     color: #fff;
 }
+#section6 .text{}
+#section6 .text .s6_cold{}
+#section6 .text .s6tit{}
+#section6 .text .s6tit .s6_title{}
+#section6 .text .s6tit .fa-heart{}
+#section6 .text .s6tit{}
+
 
 
 /* section7 */
