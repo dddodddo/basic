@@ -11,6 +11,10 @@ let pwImg2 = document.querySelector('#pswd2_img1')
 
 let username = document.querySelector('#name')
 
+let yy = document.querySelector('#yy')
+let mm = document.querySelector('#mm')
+let dd = document.querySelector('#dd')
+
 // id.addEventListener('focusout',function(){
 //     checkId()
 // })
@@ -83,4 +87,13 @@ function comparePw(){
 function checkName(){
     let namePattern = /^[a-zA-Z가-힣]*$/
     console.log(namePattern.test(username.value))
+    if(username.value === ""){
+        error[3].style.display="block"
+        error[3].innerHTML = "필수 정보입니다."
+    }else if(!namePattern.test(username.value) || username.value.indexOf(" ")>-1){
+        error[3].style.display="block"
+        error[3].innerHTML = "한글과 영문 대소문자를 이용하세요. (특수기호, 공백 사용 불가)"
+    }else{
+        error[3].style.display="none"
+    }
 }

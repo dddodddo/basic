@@ -44,6 +44,14 @@ body{
     left: 0; top: 0;
     z-index: 100;
 }
+#header::after{
+    content: "";
+    position: absolute;
+    left: 0; top: 100px;
+    width: 100%; height: 200px;
+    background-color: #fff;
+    z-index: -1;
+}
 
 #header .logo{}
 /* -------------nav---------------------- */
@@ -55,7 +63,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 86px;
 }
 #header .nav>ul>li{position: relative;}
 #header .nav>ul>li>a{
@@ -75,13 +82,16 @@ body{
 #header .nav>ul>li>ul{
     position: absolute;
     top: 100px;
-    text-align: center;
-    width: 170px;
 }
 
 #header .nav>ul>li>ul>li>a{
     display: inline-block;
     padding: 15px;
+    text-align: center;
+    width: 170px;
+}
+#header .nav>ul>li>ul>li>a:hover{
+    
 }
 /* -----------nav------------------------ */
 #header .join{

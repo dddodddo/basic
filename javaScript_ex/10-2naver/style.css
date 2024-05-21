@@ -62,6 +62,25 @@ h3{
     width: 18px; height: 20px;
 }
 
+#bir_wrap{display: flex; justify-content: space-between;}
+#bir_yy{width: 147px;}
+#bir_mm{width: 147px;}
+#bir_dd{width: 147px;}
+
+select.sel{
+    border: none;
+    width: 100%;
+    font-size: 15px;
+    appearance: none; /* down 화살표 아이콘 삭제 */
+    outline: none; /* input때문에 생성되는 밖 공간 선 삭제 */
+    background: url(img/sel_arr_2x.gif) no-repeat 100% 50%;
+    background-size: 20px 8px;
+}
+
+
+
+
+
 /* 에러메시지 */
 .error_next_box{
     display: none;
