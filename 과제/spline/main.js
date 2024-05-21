@@ -29,6 +29,12 @@ $(function(){
   })
 })
 /////////////////////////////////
+$(document).ready(function(){
+  $(".heart").click(function(){
+      $(this).toggleClass("far fas");
+  });
+});
+/////////////////////////////////
 import {
   Application
 } from 'https://unpkg.com/@splinetool/runtime';
