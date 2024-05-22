@@ -275,14 +275,14 @@ body{
 
 /* section6, section8 */
 #section6,
-#section8{
+#section8,
+#section10{
     width: 100vw; height: 100vh;
     background : radial-gradient(circle, #2C4F46, #1B3C34);
     color: #fff;
     position: relative;
 }
-#section6 .text,
-#section8 .text{
+.text{
     position: absolute;
     left: 50%; top: 13%;
 }
@@ -299,18 +299,19 @@ body{
     min-height: 34px;
 }
 #section6 .text .s6tit,
-#section8 .text .s8tit{
+#section8 .text .s8tit,
+#section10 .text .s10tit{
     display: flex;
     align-items: flex-end;
 }
 #section6 .text .s6tit .s6_title,
-#section8 .text .s8tit .s8_title{
+#section8 .text .s8tit .s8_title,
+#section10 .text .s10tit .s10_title{
     font-size: 4vw;
     margin: 30px 24px 0px 0px;
     font-weight: 700;
 }
-#section6 .text .s6tit .fa-heart,
-#section8 .text .s8tit .fa-heart{
+.fa-heart{
     cursor: pointer;
     font-size: 1.2vw;
 }
