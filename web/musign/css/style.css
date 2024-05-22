@@ -228,6 +228,43 @@ header .mainmenu .sns li a{}
 
 .jurnal .box .moreBtn{margin-left: 22%;}
 
+/* service */
+.service{padding: 190px 0;}
+.service .inner{flex-wrap: wrap;}
+.service .box{}
+.service .box.design{
+    width: 45%;
+    border-top: 1px solid #c4e5ea;
+    padding-top: 60px;
+    margin-top: -40%;
+}
+.service .box .img{margin-top: 60px;}
+.service .box .img.animate__motion::after{
+    background-color: #e8fcff;
+}
+.service .box .img img{width: 100%;}
+
+/* service 영역이 화면에 보일 시 body 전체 배경색 바꾸기 */
+body{transition: 0.4s;}
+body.on{background-color: #e8fcff;}
+
+/* customer */
+.customer{
+    padding: 160px 0;
+    background: url(../img/img_04.jpg) no-repeat center;
+    background-size: cover;
+    text-align: center;
+    background-attachment: fixed; /* 화면에 고정된 것처럼 붙이기 */
+}
+.customer .tit{
+    color: #fff;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+.customer .txt{
+    color: #777;
+}
+
 
 
 

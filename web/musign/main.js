@@ -33,4 +33,20 @@ close.click(function(){
 //path의 총 길이를 구하는 방법
 let path=document.querySelector('.path1')
 let pathHeight=path.getTotalLength()
-console.log(pathHeight)
+// console.log(pathHeight)
+
+//service 영역시 배경 색상 바꾸기
+
+//스크롤을 움직이면 어떤 일이 일어난다.
+$(window).scroll(function(){
+    // $(this) --> $(window)
+    let scrollTop = $(this).scrollTop()
+    //offset().top : 전체 문서의 top에서 service영역의 top까지의 거리
+    let offset = $('.service').offset().top
+    //offset 선택한 요소의 좌표를 가져오거나 특정 좌표로 이동
+    if(scrollTop > offset){
+        $("body").addClass("on")
+    }else{
+        $("body").removeClass("on")
+    }
+})
