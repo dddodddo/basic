@@ -95,9 +95,52 @@ gsap.fromTo(conScale,{
   ease:"power3.out"
 })
 
+//두번째 영역의 각각의 이미지 애니
+let secImgs=document.querySelector(".section-images")
+
+let imgs=secImgs.querySelectorAll("img")
+
+imgs.forEach(function(img,index){
+  let imgDey=index * 0.8
+  gsap.set(img,{y:400})
+  gsap.timeline({
+    scrollTrigger:{
+      trigger:".con-scale",
+      start:"top 60%",
+      end:"top top",
+      scrub:2,
+    }
+  })
+  .to(img,{
+    y:0,
+    duration:2,
+    delay:imgDey,
+    ease:"power3.out"
+  })
+})
+
+//세번째 페이지
+//글자 자르기
 
 
+let splitTypes = document.querySelectorAll(".heading-large")
+splitTypes.forEach(function(char,i){
+  let parent=char.parentNode.parentNode //할아버지
+  const text = new SplitType(char, { types: 'chars' })
+  console.log(text)
 
+  gsap.from(text.chars,{
+    opacity:0,
+    yPercent:100,
+    duration:0.3,
+    stagger:0.2,
+    scrollTrigger:{
+      trigger:parent,
+      start:"top 60%",
+      end:"top 20%"
+    }
+  })
+})
 
 
 // wrapper.addEventListener('mousemove',function(){moveEvent()})
