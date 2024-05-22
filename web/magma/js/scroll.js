@@ -20,5 +20,14 @@ function loco(){
     ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
     ScrollTrigger.refresh(); 
 }
-loco()/////////////
+loco()
+
+/////////////////////////
+//page2
+let clutter=""
+//textContent --> 텍스트만 추출하는 방법
+let page2_h2=document.querySelector('#page2>h2').textContent
+console.log(page2_h2)
+
+/////////////////////////
   

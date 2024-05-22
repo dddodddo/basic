@@ -282,7 +282,7 @@ body{
 }
 #section6 .text{
     position: absolute;
-    left: 50%; top: 15%;
+    left: 50%; top: 13%;
 }
 #section6 .text .s6_cold{
     padding: 10px 16px;
@@ -341,7 +341,16 @@ body{
     position: absolute;
     left: 0; bottom: 0;
     font-size: 0.9vw;
-    margin-bottom: 5%;
+    margin-bottom: 4.3%;
+    display: flex;
+}
+.s6_slide_tit p{
+    flex-shrink: 0;
+    animation: ani 15s linear infinite;
+}
+@keyframes ani{
+    0%{transform: translateX(0%);}
+    100%{transform: translateX(-100%);}
 }
 /* section7 */
 #section7{
