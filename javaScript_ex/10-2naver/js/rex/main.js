@@ -22,7 +22,9 @@ id.addEventListener('focusout', checkId)
 pw1.addEventListener('focusout', checkPw)
 pw2.addEventListener('focusout', comparePw)
 username.addEventListener('focusout', checkName)
-
+yy.addEventListener('focusout', isBirthCompleted)
+mm.addEventListener('focusout', isBirthCompleted)
+dd.addEventListener('focusout', isBirthCompleted)
 
 
 
@@ -95,5 +97,64 @@ function checkName(){
         error[3].innerHTML = "한글과 영문 대소문자를 이용하세요. (특수기호, 공백 사용 불가)"
     }else{
         error[3].style.display="none"
+    }
+}
+
+function isBirthCompleted(){
+    let yearPattern=/[0-9]{4}/
+    if(!yearPattern.test(yy.value)){
+        error[4].style.display='block'
+        error[4].innerHTML="태어난 년도 4자리를 정확하게 입력하세요."
+    }else{
+        error[4].style.display='none'
+        //년도가 맞다면 월 체크 함수
+        isMonthCompleted()
+    }
+    function isMonthCompleted(){
+        if(mm.value === '월'){
+            error[4].style.display='block'
+        error[4].innerHTML="태어난 월을 선택하세요."
+        }else{
+            //년도와 월을 제대로 선택했다면 생일을 체크하는 함수
+            isDateCompleted()
+        }
+    }
+
+    function isDateCompleted(){
+        if(dd.value === ""){
+            error[4].style.display='block'
+            error[4].innerHTML="태어난 일(날짜) 2자리를 정확하게 입력하세요."
+        }else{
+            //생일 날짜를 적을때 1 ~ 31일 사이에 오도록 체크 함수
+            isBirthRight()
+        }
+    }
+    
+    function isBirthRight(){
+        let datePattern = /\d{1,2}/
+        if(!datePattern.test(dd.value) || Number(dd.value) < 1 || Number(dd.value) > 31){
+            error[4].style.display='block'
+            error[4].innerHTML="생년월일을 다시 확인해 주세요."
+        }else{
+            //미성년자 구분, 나이 체크 함수
+            checkAge()
+        }
+    }
+
+    function checkAge(){
+        if(Number(yy.value)<1910){
+            error[4].style.display="block";
+            error[4].innerHTML="년도를 다시입력하세요"   
+        }else if(Number(yy.value)>2024){
+            error[4].style.display="block";
+            error[4].innerHTML="년도를 다시입력하세요"    
+        }else{
+            error[4].style.display="none"; 
+        }
+
+        if(Number(yy.value)>2011  &&  Number(yy.value)<=2024 ){
+            error[4].style.display="block";
+            error[4].innerHTML="만 14세 미만의 어린이는 보호자 동의가 필요합니다."  
+        }
     }
 }

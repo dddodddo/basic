@@ -62,7 +62,12 @@ h3{
     width: 18px; height: 20px;
 }
 
-#bir_wrap{display: flex; justify-content: space-between;}
+#bir_wrap{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
 #bir_yy{width: 147px;}
 #bir_mm{width: 147px;}
 #bir_dd{width: 147px;}
