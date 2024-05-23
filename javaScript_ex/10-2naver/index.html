@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naver</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div id="header">
         <a href="#">
@@ -20,7 +22,7 @@
                     <label for="id">아이디</label>
                 </h3>
                 <span class="box int_id">
-                    <input type="text" id="id" class="int"  maxlength="20">
+                    <input type="text" id="id" class="int" maxlength="20">
                     <span class="step_url">@naver.com</span>
                 </span>
                 <span class="error_next_box e1">에러출력</span>
@@ -105,8 +107,54 @@
                 </div>
             </div>
             <!-- end생년월일 -->
+            <!-- 성별 -->
+            <div>
+                <h3 class="join_title">
+                    <label for="gender">성별</label>
+                </h3>
+                <span class="box gender_code">
+                    <select id="gender" class="sel">
+                        <option>성별</option>
+                        <option value="M">남자</option>
+                        <option value="F">여자</option>
+                    </select>
+                </span>
+                <span class="error_next_box e6">필수 정보입니다.</span>
+            </div>
+            <!-- end 성별 -->
+            <!-- 이메일 -->
+            <div>
+                <h3 class="join_title">
+                    <label for="email">본인확인 이메일 <span class="optional">(선택)</span></label>
+                </h3>
+                <span class="box int_email">
+                    <input type="text" id="email" class="int" maxlength="100" placeholder="선택입력">
+                </span>
+                <span class="error_next_box e7">이메일 주소를 다시 확인해 주세요.</span>
+            </div>
+            <!-- end 이메일 -->
+            <!-- 모바일 -->
+            <div>
+                <h3 class="join_title">
+                    <label for="phoneNo">휴대전화</label>
+                </h3>
+                <span class="box int_mobile">
+                    <input type="text" id="phoneNo" class="int" maxlength="100" placeholder="전화번호입력">
+                </span>
+                <span class="error_next_box e8">에러출력</span>
+            </div>
+            <!-- end 모바일 -->
+
+            <!-- 버튼 -->
+            <div class="btn_area">
+                <button type="button" id="btnJoin">
+                    <span>가입하기</span>
+                </button>
+            </div>
+            <!-- end 버튼 -->
         </div>
     </div>
     <script src="./js/rex/main.js"></script>
 </body>
+
 </html>

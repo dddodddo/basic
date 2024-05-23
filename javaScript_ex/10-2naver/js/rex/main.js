@@ -15,6 +15,12 @@ let yy = document.querySelector('#yy')
 let mm = document.querySelector('#mm')
 let dd = document.querySelector('#dd')
 
+let gender=document.querySelector('#gender')
+
+let email=document.querySelector('#email')
+
+let mobile=document.querySelector('#phoneNo')
+
 // id.addEventListener('focusout',function(){
 //     checkId()
 // })
@@ -25,6 +31,16 @@ username.addEventListener('focusout', checkName)
 yy.addEventListener('focusout', isBirthCompleted)
 mm.addEventListener('focusout', isBirthCompleted)
 dd.addEventListener('focusout', isBirthCompleted)
+gender.addEventListener('focusout',function(){
+    if(gender.value === "성별"){
+        error[5].style.display="block"
+    }else{
+        error[5].style.display="none"
+    }
+})
+email.addEventListener('focusout',isEmailCorrect)
+
+mobile.addEventListener('focusout',checkPhoneNum)
 
 
 
@@ -84,7 +100,6 @@ function comparePw(){
         error[2].innerHTML="필수 정보입니다."
     }
 }
-
 
 function checkName(){
     let namePattern = /^[a-zA-Z가-힣]*$/
@@ -156,5 +171,35 @@ function isBirthCompleted(){
             error[4].style.display="block";
             error[4].innerHTML="만 14세 미만의 어린이는 보호자 동의가 필요합니다."  
         }
+    }
+}
+
+function isEmailCorrect(){
+    //dkdkdk@gmail.com
+    //dkdkdk@naver.com
+    let emailPattern=/[a-zA-Z0-9_]{2,}@[a-zA-Z]{2,}\.[a-zA-Z]{2,}/
+    // .은 모든 글자를 의미하므로 \.로 하면 문자 . 하나를 의미한다.
+    if(email.value === ""){
+        error[6].style.display="none"
+    }else if(!emailPattern.test(email.value)){
+        error[6].style.display="block"
+        email.value=null
+        email.focus()
+    }else{
+        error[6].style.display="none"
+    }
+}
+
+function checkPhoneNum(){
+    //01055556666
+    let isPhoneNum=/^([01]{2})([01679]{1})([0-9]{3,4})([0-9]{4})$/
+    if(mobile.value === ""){
+        error[7].style.display="block"
+        error[7].innerHTML="필수정보입니다."
+    }else if(!isPhoneNum.test(mobile.value)){
+        error[7].style.display="block"
+        error[7].innerHTML="형식에 맞지 않는 번호입니다."
+    }else{
+        error[7].style.display="none"
     }
 }
