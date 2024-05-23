@@ -99,5 +99,16 @@ gsap.timeline({
 })
 .to(bean.position,{x:0,y:-50,z:0})
 
+gsap.timeline({
+	scrollTrigger: {
+    	trigger: '#section4',
+        start: 'top 60%',
+        end: 'bottom 90%',
+        markers:true,
+        scrub:1,
+    }
+})
+.to(bean.rotation,{x:0,y:0,z:Math.PI * 2})
+
 
 })

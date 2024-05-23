@@ -132,15 +132,74 @@ splitTypes.forEach(function(char,i){
   gsap.from(text.chars,{
     opacity:0,
     yPercent:100,
-    duration:0.3,
-    stagger:0.2,
+    duration:0.4,
+    stagger:0.04,
     scrollTrigger:{
       trigger:parent,
       start:"top 60%",
-      end:"top 20%"
+      end:"top 20%",
+      ease:"power3.out"
     }
   })
 })
+
+//텍스트의 사라지는 방향 애니
+gsap.to("[data-direct]",{ //속성 중에 [data-direct]이 있는 것들 모두 다 호출됨
+  // i => index번호, el => [data-direct] 요소 하나하나 // javascript랑 반대
+  x:(i,el)=> - (el.getAttribute("data-direct")) * 400,
+  ease:"none",
+  scrollTrigger:{
+    trigger:".text_wrap",
+    start:"top 20%",
+    end:"top top",
+    duration:2,
+    scrub:2
+  }
+})
+//둥근 얼굴들 애니
+gsap.to("[data-speed]",{
+  y:(i,el)=>(el.getAttribute("data-speed") - 1) * 230,
+  ease:"none",
+  scrollTrigger:{
+    start:0, //scrollTrigger가 시작되는 스크롤 위치를 알아서 잡음
+    end:"max", //scrollTrigger가 끝나는 위치되는 스크롤 위치
+    scrub:2,
+  }
+})
+
+let rarr=document.querySelectorAll("[data-speed]")
+
+gsap.from(rarr[0],{
+  scrollTrigger:{
+    trigger:".website-content2",
+    start:"top 100%",
+    end:"top top",
+    scrub:2
+  },
+  rotation:45
+})
+
+gsap.from(rarr[1],{
+  scrollTrigger:{
+    trigger:".text-black",
+    start:"top 100%",
+    end:"top top",
+    scrub:2
+  },
+  rotation:-45
+})
+
+gsap.from(rarr[2],{
+  scrollTrigger:{
+    trigger:".website-content2",
+    start:"80% 100%",
+    end:"bottom top",
+    scrub:2
+  },
+  rotation:45
+})
+//end 둥근 얼굴들 애니
+
 
 
 // wrapper.addEventListener('mousemove',function(){moveEvent()})

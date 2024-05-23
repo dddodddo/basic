@@ -338,7 +338,11 @@ body{
     margin: 30px 24px 0px 0px;
     font-weight: 700;
 }
-.fa-heart{
+#section6 .fa-heart,
+#section7 .fa-heart,
+#section8 .fa-heart,
+#section9 .fa-heart,
+#section10 .fa-heart{
     cursor: pointer;
     font-size: 1.5vw;
 }
@@ -443,7 +447,16 @@ body{
     line-height: 1.3;
 }
 #section9 .s_text.r{
-    left: 6%;
+    left: 10%;
+}
+#section9 .s_title{
+    margin: 30px 24px 0px 0px;
+}
+#section9 .s_menu_r {
+    text-align: left;
+}
+#section9 .box{
+    justify-content: flex-end;
 }
 #section9 .box1 img{
     position: absolute;
@@ -457,13 +470,6 @@ body{
     left: 40px;
     top: 10px;
 }
-#section9 .s_menu_r {
-    position: absolute;
-    left: 422px;
-    top: 493px;
-    text-align: left;
-}
-#section9 
 /* section10 */
 #section10 .s_cb {
     margin-bottom: 80px;
