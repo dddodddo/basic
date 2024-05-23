@@ -69,8 +69,7 @@ gsap.timeline({
         start: 'top 55%',
         end: 'bottom 80%',
         scrub:1,
-        markers:true,
-        duration:0.2
+        duration:0.2,
     }
 })
 // .to(bean.position,{x:0,y:0,z:0})
@@ -81,7 +80,6 @@ gsap.timeline({
     	trigger: '#section3',
         start: 'top 50%',
         end: 'bottom 80%',
-        markers:true,
         scrub:1,
     }
 })
@@ -93,22 +91,24 @@ gsap.timeline({
     	trigger: '#section3',
         start: 'top top',
         end: 'bottom 90%',
-        markers:true,
         scrub:1,
+        markers:true,
+
     }
 })
 .to(bean.position,{x:0,y:-50,z:0})
+.to(bean.rotation,{x:0,y:10,z:5})
 
-gsap.timeline({
-	scrollTrigger: {
-    	trigger: '#section4',
-        start: 'top 60%',
-        end: 'bottom 90%',
-        markers:true,
-        scrub:1,
-    }
-})
-.to(bean.rotation,{x:0,y:0,z:Math.PI * 2})
+// gsap.timeline({
+// 	scrollTrigger: {
+//     	trigger: '#section3',
+//         start: '85% 85%',
+//         end: 'bottom 90%',
+//         markers:true,
+//         scrub:1,
+//     }
+// })
+// .to(bean.rotation,{x:0,y:2,z:5})
 
 
 })
