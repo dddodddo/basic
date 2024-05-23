@@ -477,7 +477,7 @@ body{
 
 /* section11 */
 #section11{
-    width: 100vw; height: 100vh;
+    width: 100vw; height: 90vh;
     position: relative;
 }
 #section11 .text .s11_title{
@@ -492,16 +492,54 @@ body{
 }
 
 /* footer */
-.footer{
+#footer{
     width: 100%;
-    position: absolute;
     background-color: #2C2A29;
     height: 200px;
     bottom: 0;
     color: #fff;
+    padding: 20px;
+    font-weight: 400;
+    font-size: 13px;
 }
-.footer .f1{display: flex;}
-.footer .f1.g{}
-.footer .f2{display: flex;}
-.footer .f3{display: flex;}
-.footer .f4{display: flex;}
+#footer .f1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+#footer .f1 a{
+    border-right: 1px solid #393939;
+    padding: 0 10px;
+}
+#footer .f1 .f1_g{
+    color: #019861;
+}
+#footer .f2{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+#footer .f2 .f2_bor{
+    padding: 10px 20px;
+    border: 2px solid #fff;
+    border-radius: 3px;
+    font-weight: 500;
+}
+#footer .f3{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    color: #999;
+}
+#footer .f4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #999;
+}
