@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //객체 만들기
+        let 고양이={
+            type:"길고양이",
+            personality:"사나움",
+            age:2,
+            female:true,
+        }
+        // 점(.)연산자 vs []연산자
+        // console.log(`길에서 만난 길고양이는 사나움, 나이는 2`)
+        console.log(`길에서 만난 ${고양이.type}는 ${고양이.personality}, 나이는 ${고양이.age}`)
+        console.log(`길에서 만난 ${고양이["type"]}는 ${고양이["personality"]}, 나이는 ${고양이["age"]}`)
+    </script>
+</body>
+</html>

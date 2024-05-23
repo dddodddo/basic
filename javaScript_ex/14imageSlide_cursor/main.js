@@ -1,11 +1,12 @@
-let imagesSliders=document.querySelectorAll('.image-slider')
-//[item, item]
-imagesSliders.forEach(function(imagesSlider){
-    let prev=imagesSlider.querySelector('.prev-slide')
-    let next=imagesSlider.querySelector('.next-slide')
-    let slideNum=imagesSlider.querySelector('.slide-num')
-    let tracker=imagesSlider.querySelector('.tracker')
-    let images=imagesSlider.querySelectorAll('.image-slider img')
+let imageSliders=document.querySelectorAll(".image-slider")
+//[item,item]
+imageSliders.forEach(function(imageSlider){
+   let prev=imageSlider.querySelector(".prev-slide");
+   let next=imageSlider.querySelector(".next-slide");
+   let slideNum=imageSlider.querySelector(".slide-num");
+   let tracker=imageSlider.querySelector(".tracker");
+   let images=imageSlider.querySelectorAll(".image-slider img");
+
 
     let slideId=0 //슬라이드 번호
     prev.addEventListener("click",function(){
@@ -44,9 +45,27 @@ imagesSliders.forEach(function(imagesSlider){
         images[slideId].style.right="0"
     })//click함수
 
-    let scrllAmmount=0
+    let scrollAmmount=0
     let yPos=imagesSlider.offsetTop// 문서의 top에서 선택한 영역의 top까지의 높이값
+    // console.log(yPos) 477 1906
+    let xPos=0
 
+    function mouseTracker(){
+        scrollAmmount=window.scrollY + yPos
+
+        tracker.style.top=`${scrollAmmount}px`
+        tracker.style.left=`${xPos}px`
+    }
+
+    window.addEventListener("mousemove",function(e){
+        yPos=(e.clientY - tracker.offsetHeight/2) - imageSliders.offsetTop
+        xPos=(e.clientX - tracker.offsetWidth/2) - imageSliders.offsetLeft
+        mouseTracker()
+    })
+
+    window.addEventListener("scroll",function(){
+        mouseTracker()
+    })
 
 
 })//forEach문
