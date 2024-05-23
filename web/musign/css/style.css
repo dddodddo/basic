@@ -265,6 +265,41 @@ body.on{background-color: #e8fcff;}
     color: #777;
 }
 
+/* team */
+.team{
+    position: relative;
+    padding: 190px 0;
+}
+.team .box.left{
+    text-align: right;
+    padding-right: 80px;
+    box-sizing: border-box;
+}
+.team .box .tit{margin-bottom: 40px;}
+.team .box .txt{margin: 30px 0;}
+.team .box img{margin-top: 100px;}
+
+/* footer */
+footer{width: 1320px; margin: 0 atuo;}
+footer .top .tit{
+    color: #e6e6e6;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+footer .bottom{
+    border-top: 1px solid #e6e6e6;
+    padding: 40px 0 100px;
+}
+footer .bottom ul{display: flex;}
+footer .bottom ul li{
+    width: 23%; color: #aaa;
+    font-size: 12px; line-height: 2;
+}
+footer .bottom ul li:first-child{
+    width: 31%; font-size: 28px; color: #000;
+}
+footer .bottom ul li b{color: #333;}
 
 
 
@@ -328,7 +363,7 @@ body.on{background-color: #e8fcff;}
 }
 @keyframes imgAni{
     0%{transform: translateY(50px);}
-    100%{transform: none;}
+    100%{transform: translateY(0);}
 }
 .img.animate__motion::after{
     content: "";
@@ -338,6 +373,7 @@ body.on{background-color: #e8fcff;}
     background-color: #fff;
     animation: mask 1.2s;
 }
+.team .img.animate__motion::after{display: none;}
 @keyframes mask{
     0%{height: 90%;}
     100%{height: 0;}
@@ -352,6 +388,12 @@ body.on{background-color: #e8fcff;}
     z-index: -1;
     transform: rotate(90deg);
 }
+.team .circleBox{
+    width: 700px;
+    position: absolute;
+    left: 20%; top: -50px;
+    z-index: -1;
+}
 .circleBox svg{
     width: 100%;
 }
@@ -365,4 +407,88 @@ body.on{background-color: #e8fcff;}
 @keyframes dash{
     0%{stroke-dashoffset: 3575px;}
     100%{stroke-dashoffset: 0px;}
+}
+/* /////////////////////////////////////////////////////////////////// */
+/* 💛💛미디어쿼리 */
+/* pc(1401~1720) */
+@media(max-width:1720px){
+    header .innerheader{
+        max-width:100%;
+        padding: 0 30px;
+        box-sizing: border-box;
+    }
+    header .mainmenu{
+        gap: 200px;
+    }
+    .visual .mainText {
+        padding-top: 150px;
+    }
+    .visual .mainText .tit {
+        font-size: 62px;
+    }
+}
+/* 노트북, 태블릿(1025~1400) */
+@media(max-width:1400px){
+    header .mainmenu .sns {
+        display: flex;
+        gap: 10px;
+    }
+    .visual .mainImg img {
+        width: 100%;
+    }
+    .visual .mainText {
+        padding-top: 100px;
+    }
+    .visual .mainText .tit {
+        font-size: 46px;
+    }
+    .visual .mainText .txt {
+        padding: 20px 0 0 0px;
+    }
+    .inner {
+        display: flex;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 30px;
+        box-sizing: border-box;
+    }
+    .jurnal .scroll{
+        display: none;
+    }
+    .jurnal .circleBox {
+        right: -10%;
+        top: 0px;
+    }
+    .jurnal {
+        overflow: clip;
+    }
+    .jurnal .box img{
+        width: 90%;
+    }
+    .service {
+        padding: 80px 0;
+    }
+    .service .box .txt{
+        margin-top: 20px;
+    }
+    .service .box .img img{
+        width: 70%;
+        margin: 0 auto;
+        display: block;
+    }
+    .service .box .img {
+        margin-top: 50px;
+    }
+}
+/* 태블릿(768~1024) */
+@media(max-width:1024px){
+    
+}
+/* 태블릿(321~767) */
+@media(max-width:767px){
+    
+}
+/* 모바일(0~320) */
+@media(max-width:320px){
+    
 }
