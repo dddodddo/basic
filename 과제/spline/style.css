@@ -460,7 +460,8 @@ body{
 }
 .s_menu_r{
     position: absolute;
-    left: 0;top: 0;
+    left: 96px;
+    top: 382px;
 }
 .s_menu_tit_r{
     font-size: 0.9vw;
@@ -493,12 +494,23 @@ body{
 #section6 .box1 img{
     position: absolute;
     height: 79%;
-    left: 35px;
-    top: 17px;
+    left: 37px;
+    top: 18px;
 }
 
 /* section7 */
-
+#section7 .box1_r img{
+    position: absolute;
+    height: 79%;
+    left: 37px;
+    top: 18px;
+}
+#section7 .box2_r img{
+    position: absolute;
+    height: 85%;
+    left: 40px;
+    top: 10px;
+}
 
 /* section8 */
 #section8 .box1 img{

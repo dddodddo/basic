@@ -1,33 +1,165 @@
-function loco(){
+function loco() {
     gsap.registerPlugin(ScrollTrigger)
     const locoScroll = new LocomotiveScroll({
         el: document.querySelector("#main"),
         smooth: true,
     });
-    
+
     locoScroll.on("scroll", ScrollTrigger.update);
     ScrollTrigger.scrollerProxy("#main", {
         scrollTop(value) {
             return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-        }, 
+        },
         getBoundingClientRect() {
-            return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+            return {
+                top: 0,
+                left: 0,
+                width: window.innerWidth,
+                height: window.innerHeight
+            };
         },
         pinType: document.querySelector("#main").style.transform ? "transform" : "fixed"
     });
-    
-    
+
+
     ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-    ScrollTrigger.refresh(); 
+    ScrollTrigger.refresh();
 }
 loco()
 
 /////////////////////////
 //page2
-let clutter=""
+let clutter = ""
 //textContent --> 텍스트만 추출하는 방법
-let page2_h2=document.querySelector('#page2>h2').textContent
-console.log(page2_h2)
+let page2_h2 = document.querySelector('#page2>h2').textContent.split("")
+
+page2_h2.forEach(function (dets) {
+    clutter += `<span>${dets}</span>`
+    //clutter = clutter + `<span>T</span>`
+    document.querySelector('#page2>h2').innerHTML = clutter
+})
+
+gsap.to("#page2>h2>span", {
+    scrollTrigger: {
+        trigger: "#page2>h2>span",
+        start: "top bottom",
+        end: "bottom top",
+        scroller: "#main", //locomotive사용시 필수
+        scrub: 0.5
+    },
+    color: "#fff",
+    stagger: 0.2,
+})
+
+//page2 영역의 배경색 애니
+gsap.to("#page2 .background", {
+    scrollTrigger: {
+        trigger: "#page2",
+        start: "top top",
+        end: "bottom bottom",
+        scroller: "#main", //locomotive사용시 필수
+        scrub: 1
+    },
+    opacity: 0,
+
+})
 
 /////////////////////////
-  
+
+//page3
+function canvas() {
+    let canvas = document.querySelector("#page3 canvas");
+    let context = canvas.getContext("2d"); //canvas 사용시 필수 작성
+
+    canvas.width = window.innerWidth; // 화면의 넓이
+    canvas.height = window.innerHeight; //화면의 높이
+
+    window.addEventListener("resize", function () {
+        canvas.width = window.innerWidth; // 화면의 넓이
+        canvas.height = window.innerHeight; //화면의 높이
+    })
+
+    function files(index) {
+        let data = `./img/frames00007.png
+        ./img/frames000010.png
+        ./img/frames00013.png
+        ./img/frames00016.png
+        ./img/frames00019.png
+        ./img/frames00022.png
+        ./img/frames00025.png
+        ./img/frames00028.png
+        ./img/frames00031.png
+        ./img/frames00034.png
+        ./img/frames00037.png
+        ./img/frames00040.png
+        ./img/frames00043.png
+        ./img/frames00046.png
+        ./img/frames00049.png
+        ./img/frames00052.png
+        ./img/frames00055.png
+        ./img/frames00058.png
+        ./img/frames00061.png
+        ./img/frames00064.png
+        ./img/frames00067.png
+        ./img/frames00070.png
+        ./img/frames00073.png
+        ./img/frames00076.png
+        ./img/frames00079.png
+        ./img/frames00082.png
+        ./img/frames00085.png
+        ./img/frames00088.png
+        ./img/frames00091.png
+        ./img/frames00094.png
+        ./img/frames00097.png
+        ./img/frames00100.png
+        ./img/frames00103.png
+        ./img/frames00106.png
+        ./img/frames00109.png
+        ./img/frames00112.png
+        ./img/frames00115.png
+        ./img/frames00118.png
+        ./img/frames00121.png
+        ./img/frames00124.png
+        ./img/frames00127.png
+        ./img/frames00130.png
+        ./img/frames00133.png
+        ./img/frames00136.png
+        ./img/frames00139.png
+        ./img/frames00142.png
+        ./img/frames00145.png
+        ./img/frames00148.png
+        ./img/frames00151.png
+        ./img/frames00154.png
+        ./img/frames00157.png
+        ./img/frames00160.png
+        ./img/frames00163.png
+        ./img/frames00166.png
+        ./img/frames00169.png
+        ./img/frames00172.png
+        ./img/frames00175.png
+        ./img/frames00178.png
+        ./img/frames00181.png
+        ./img/frames00184.png
+        ./img/frames00187.png
+        ./img/frames00190.png
+        ./img/frames00193.png
+        ./img/frames00196.png
+        ./img/frames00199.png
+        ./img/frames00202.png`
+        return data.split("\n")[index] // "\n" --> enter로 인해 떨어트린 효과
+    }
+    let frameCount=67;
+
+    let 
+
+}
+canvas()
+
+
+
+
+
+/////////////////////////
+/////////////////////////
+/////////////////////////
+/////////////////////////
