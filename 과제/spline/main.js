@@ -59,6 +59,7 @@ app
         })
         // gsap.set(bean.scale,{x:1,y:1,z:1})
         gsap.set(bean.position,{x:-500,y:0,z:0})
+        gsap.set(bean.rotaion,{x:0,y:0,z:0})
 
 ///////////////////////////////////////////////
 
@@ -72,7 +73,6 @@ gsap.timeline({
         duration:0.2,
     }
 })
-// .to(bean.position,{x:0,y:0,z:0})
 .to(bean.scale,{x:1,y:1,z:1})
 
 gsap.timeline({
@@ -84,7 +84,7 @@ gsap.timeline({
     }
 })
 .to(bean.position,{x:500,y:0,z:0})
-.to(bean.rotation,{x:0,y:0,z:Math.PI * 2})
+.to(bean.rotation,{x:0,y:0,z:5})
 
 gsap.timeline({
 	scrollTrigger: {
@@ -92,23 +92,32 @@ gsap.timeline({
         start: 'top top',
         end: 'bottom 90%',
         scrub:1,
-        markers:true,
-
     }
 })
-.to(bean.position,{x:0,y:-50,z:0})
-.to(bean.rotation,{x:0,y:10,z:5})
+.to(bean.position,{x:100,y:0,z:0})
+.to(bean.rotation,{x:0,y:-0.2,z:0})
 
-// gsap.timeline({
-// 	scrollTrigger: {
-//     	trigger: '#section3',
-//         start: '85% 85%',
-//         end: 'bottom 90%',
-//         markers:true,
-//         scrub:1,
-//     }
-// })
-// .to(bean.rotation,{x:0,y:2,z:5})
+gsap.timeline({
+	scrollTrigger: {
+    	trigger: '#section3',
+        start: 'bottom 80%',
+        scrub:1,
+        markers:true
+    }
+})
+.to(bean.position,{x:10,y:0,z:0})
 
+gsap.timeline({
+	scrollTrigger: {
+    	trigger: '#section4',
+        start: 'top 90%',
+        end: 'bottom 70%',
+        markers:true,
+        scrub:1,
+    }
+})
+.to(bean.position,{x:100,y:0,z:0})
+.to(bean.rotation,{x:0,y:2,z:0})
+.to(bean.scale,{x:2,y:2,z:2})
 
 })
