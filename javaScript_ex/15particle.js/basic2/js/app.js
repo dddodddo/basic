@@ -23,10 +23,10 @@ particlesJS('particles-js',
         }
       },
       "color": {
-        "value": "#f00"
+        "value": "#f00" //#ffffff
       },
       "shape": {
-        "type": "star",
+        "type": "image",//["star","circle","edge"],
         "stroke": {
           "width": 0,
           "color": "#000000"
@@ -35,9 +35,9 @@ particlesJS('particles-js',
           "nb_sides": 5
         },
         "image": {
-          "src": "img/github.svg",
-          "width": 100,
-          "height": 100
+          "src": "https://cdn.pixabay.com/photo/2023/08/19/08/38/ai-generated-8200066_1280.png",
+          "width": 500,//100
+          "height": 500//100
         }
       },
       "opacity": {
@@ -51,7 +51,7 @@ particlesJS('particles-js',
         }
       },
       "size": {
-        "value": 20,
+        "value": 20,//20
         "random": true, //false
         "anim": {
           "enable": false,
@@ -71,7 +71,7 @@ particlesJS('particles-js',
         "enable": true,
         "speed": 1, //6
         "direction": "bottom",//none
-        "random": false,
+        "random": true,//false
         "straight": false,
         "out_mode": "out",
         "attract": {
