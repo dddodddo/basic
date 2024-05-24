@@ -39,6 +39,7 @@ cardWrapper.forEach(function(e,i){//e:item, i:item's index number
             start:"top" + (100 + 40 * i),
             end:"bottom +=650px", //+= start에서 시작하는 위치에서 650px에서 끝낸다.
             pin:e,
+            endTrigger:".end-anim", // 각각의 시작시점에서 애니메이션이 시작되는 것이 아닌 end-anim에서 시작해서 650지점 지난 시점이 바닥이 되어 끝나도록.
             scrub:1,
             pinSpacing:false, //pin을 만들때 공간을 만들지 않겠다.
         }
