@@ -215,8 +215,17 @@ window.addEventListener("load", () => {
     });
     // autoplay
     // setInterval(할일,시간) //시간마다 할일
-    setInterval(function(){
+    let slide = setInterval(function(){
         planeElements[0].click()
-    },3000)
+    },4000)
+
+    document.querySelector(".flex-wrapper span").addEventListener("mouseenter",function(){
+        clearInterval(slide)
+    })
+    document.querySelector(".flex-wrapper span").addEventListener("mouseleave",function(){
+        slide = setInterval(function(){
+            planeElements[0].click()
+        },4000)
+    })
 });
 
