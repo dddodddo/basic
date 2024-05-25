@@ -305,29 +305,23 @@ body{
     display: flex;
     gap: 7px;
 }
-.s_cold{
-    padding: 9px 13px;
-    border: 1px solid #fff;
-    width: 3.5vw; height: 2vw;
-    border-radius: 50px;
-    text-align: center;
-    color: #64b3ec;
-    font-size: 0.8vw;
-    line-height: 1vw;
-    min-width: 59px;
-    min-height: 34px;
-}
+.s_cold,
 .s_hot{
     padding: 9px 13px;
     border: 1px solid #fff;
     width: 3.5vw; height: 2vw;
     border-radius: 50px;
     text-align: center;
-    color: #EC6464;
     font-size: 0.8vw;
     line-height: 1vw;
     min-width: 59px;
     min-height: 34px;
+}
+.s_cold{
+    color: #64b3ec;
+}
+.s_hot{
+    color: #EC6464;
 }
 .s_tit{
     display: flex;
@@ -453,7 +447,8 @@ body{
     margin: 30px 24px 0px 0px;
 }
 #section9 .s_menu_r {
-    text-align: left;
+    position: absolute;
+    right: 0;
 }
 #section9 .box{
     justify-content: flex-end;

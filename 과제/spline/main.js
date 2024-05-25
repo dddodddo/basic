@@ -64,63 +64,34 @@ app
 ///////////////////////////////////////////////
 
 //bean
-// https://gsap.com/docs/v3/Plugins/ScrollTrigger/?page=1
-// 🧡💛💚💙💜위 링크 예시처럼 압축시키기
-// gsap.timeline({
-// 	scrollTrigger: {
-//     	trigger: '#section3',
-//         start: 'top 55%',
-//         scrub:1,
-//         duration:0.2,
-//     }
-// })
-// .to(bean.scale,{x:1,y:1,z:1})
 
 gsap.timeline({
-	scrollTrigger: {
-    	trigger: '#section3',
-        start: 'top 50%',
-        end:"top top",
-        scrub:1,
-        markers:true
-    }
+  scrollTrigger: {
+    trigger: '#section3',
+    start: 'top 55%',
+    end: 'bottom 80%',
+    scrub: 2,
+  }
 })
-.to(bean.position,{x:500,y:0,z:0})
-.to(bean.rotation,{x:0,y:0,z:5})
-.to(bean.scale,{x:2,y:2,z:2})
+.to(bean.scale, { x: 1, y: 1, z: 1 })
+.to(bean.position, { x: 500, y: 0, z: 0 })
+.to(bean.rotation, { x: 0, y: 0, z: 5 })
+.to(bean.position, { x: 100, y: 0, z: 0 })
+
+gsap.timeline({
+  scrollTrigger: {
+    trigger: '#section4',
+    start: 'top 80%',
+    end: 'bottom 80%',
+    scrub: 2,
+    markers: true
+  }
+})
+.to(bean.scale, { x: 1.3, y: 1.3, z: 1.3 })
+.to(bean.rotation, { x: 0, y: 16, z: 5 })
+.to(bean.position,{x:300, y:0, z:0})
 
 
-// gsap.timeline({
-// 	scrollTrigger: {
-//     	trigger: '#section3',
-//         start: 'top top',
-//         scrub:1,
-//     }
-// })
-// .to(bean.position,{x:100,y:0,z:0})
-// .to(bean.rotation,{x:0,y:-0.2,z:0})
-
-
-// gsap.timeline({
-// 	scrollTrigger: {
-//     	trigger: '#section3',
-//         start: 'bottom 80%',
-//         scrub:1,
-//         markers:true
-//     }
-// })
-
-
-// gsap.timeline({
-// 	scrollTrigger: {
-//     	trigger: '#section4',
-//         start: 'top 90%',
-//         end: 'top 70%',
-//         scrub:1,
-//     }
-// })
-// .to(bean.rotation,{x:0,y:10,z:0})
-// .to(bean.position,{x:0,y:0,z:0})
 
 
 })
