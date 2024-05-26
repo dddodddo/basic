@@ -45,7 +45,6 @@ app
   .load('https://prod.spline.design/7oLggwHQax4cYbuk/scene.splinecode')
   .then(() => {
     let bean = app.findObjectByName('bean')
-    console.log(bean)
     let icecoffee = app.findObjectByName('icecoffee')
     let cappuccino = app.findObjectByName('cappuccino')
     let javachip = app.findObjectByName('javachip')
@@ -84,14 +83,34 @@ gsap.timeline({
     start: 'top 80%',
     end: 'bottom 80%',
     scrub: 2,
-    markers: true
   }
 })
 .to(bean.scale, { x: 1.3, y: 1.3, z: 1.3 })
 .to(bean.rotation, { x: 0, y: 16, z: 5 })
 .to(bean.position,{x:300, y:0, z:0})
+.to(bean.position,{x:0, y:0, z:0})
 
+gsap.timeline({
+  scrollTrigger: {
+    trigger: '#section5',
+    start: 'top 80%',
+    end:'bottom 90%',
+    scrub: 2,
+  }
+})
+.to(bean.scale, {x:0, y:0, z:0})
 
+gsap.timeline({
+  scrollTrigger: {
+    trigger: '#section6',
+    start: 'top 80%',
+    end:'bottom 80%',
+    scrub: 2,
+    markers: true
+  }
+})
+.to(icecoffee.scale, {x:1, y:1, z:1},0)
+.to(icecoffee.rotaion,{x:10,y:0,z:0},0)
 
 
 })
