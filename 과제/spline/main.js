@@ -42,7 +42,7 @@ import {
 const canvas = document.getElementById('canvas3d');
 const app = new Application(canvas);
 app
-  .load('https://prod.spline.design/7oLggwHQax4cYbuk/scene.splinecode')
+  .load('https://prod.spline.design/hxnaZYm-OEPQwBqF/scene.splinecode')
   .then(() => {
     let bean = app.findObjectByName('bean')
     let icecoffee = app.findObjectByName('icecoffee')
@@ -56,9 +56,8 @@ app
           gsap.set(object.scale,{x:0,y:0,z:0})
           gsap.to(object?.rotation,5,{y:Math.PI*2,repeat:-1,ease:"none"})
         })
-        // gsap.set(bean.scale,{x:1,y:1,z:1})
         gsap.set(bean.position,{x:-500,y:0,z:0})
-        gsap.set(bean.rotaion,{x:0,y:0,z:0})
+        gsap.set(bean.rotation,{x:0,y:0,z:0})
 
 ///////////////////////////////////////////////
 
@@ -100,17 +99,35 @@ gsap.timeline({
 })
 .to(bean.scale, {x:0, y:0, z:0})
 
+//icecoffee
 gsap.timeline({
   scrollTrigger: {
     trigger: '#section6',
-    start: 'top 80%',
+    start: 'top 100%',
     end:'bottom 80%',
     scrub: 2,
+  }
+})
+.to(icecoffee.position,{x:-300, y:0, z:0},0)
+.to(icecoffee.scale, {x:1, y:1, z:1},0)
+.to(icecoffee.rotation, { x: 6.3, y: 0, z: 0 },0)
+
+gsap.timeline({
+  scrollTrigger: {
+    trigger: '#section7',
+    start: 'top 100%',
+    end: 'bottom 90%',
+    scrub: 1,
     markers: true
   }
 })
-.to(icecoffee.scale, {x:1, y:1, z:1},0)
-.to(icecoffee.rotaion,{x:10,y:0,z:0},0)
+.to(icecoffee.scale, { x: 0, y: 0, z: 0 }, 0)
+.to(icecoffee.position, { x: 0, y: 0, z: 0 }, 0)
+
+.to(cappuccino.scale, { x: 1, y: 1, z: 1 })
+.to(cappuccino.position, { x: 300, y: 0, z: 0 })
+
+
 
 
 })
