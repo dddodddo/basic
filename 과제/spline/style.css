@@ -168,8 +168,24 @@ body{
     position: absolute;
     left: 50%;top: 93%;
     transform: translate(-50%, -50%);
+    animation: icon-bounce 4s infinite;
 }
-
+@keyframes icon-bounce {
+    0%,
+    100%,
+    20%,
+    50%,
+    80% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+  } 
+#section1 .reserve{
+    position: absolute;
+    right: 0; bottom: 0;
+}
+#section1 .reserve img{
+    width: 13vw; height: 13vw;
+}
 
 /* section2 */
 #section2{

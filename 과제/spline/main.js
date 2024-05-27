@@ -62,7 +62,6 @@ app
 ///////////////////////////////////////////////
 
 //bean
-
 gsap.timeline({
   scrollTrigger: {
     trigger: '#section3',
@@ -99,35 +98,156 @@ gsap.timeline({
 })
 .to(bean.scale, {x:0, y:0, z:0})
 
+
 //icecoffee
 gsap.timeline({
   scrollTrigger: {
     trigger: '#section6',
-    start: 'top 100%',
-    end:'bottom 80%',
+    start: 'top 90%',
+    end:'bottom 100%',
     scrub: 2,
+    // markers:true
   }
 })
-.to(icecoffee.position,{x:-300, y:0, z:0},0)
-.to(icecoffee.scale, {x:1, y:1, z:1},0)
-.to(icecoffee.rotation, { x: 6.3, y: 0, z: 0 },0)
+.to(icecoffee.scale, { x: 1, y: 1, z: 1 })
+.to(icecoffee.position, { x: -400, y: 0, z: 0 })
+.to(icecoffee.scale, { x: 1.2, y: 1.2, z: 1.2 })
+.to(icecoffee.rotation, { x: 6.3, y: 0, z: 0 })
 
 gsap.timeline({
   scrollTrigger: {
     trigger: '#section7',
     start: 'top 100%',
-    end: 'bottom 90%',
+    end: '30% 100%',
+    scrub: 1,
+    // markers: true
+  }
+})
+.to(icecoffee.position, { x: 0, y: 0, z: 0 })
+.to(icecoffee.scale, { x: 0, y: 0, z: 0 })
+
+
+//cappuccino
+gsap.timeline({
+  scrollTrigger: {
+    trigger: '#section7',
+    start: '30% 100%',
+    end: 'bottom bottom',
+    scrub: 1,
+    // markers: true
+  }
+})
+.to(cappuccino.scale, { x: 1, y: 1, z: 1 })
+.to(cappuccino.position, { x: 400, y: 0, z: 0 })
+.to(cappuccino.scale, { x: 1.2, y: 1.2, z: 1.2 })
+.to(cappuccino.rotation, { x: 6.3, y: 0, z: 0 })
+
+gsap.timeline({
+  scrollTrigger: {
+    trigger: '#section8',
+    start: 'top 100%',
+    end: '30% 100%',
+    scrub: 1,
+    // markers: true
+  }
+})
+.to(cappuccino.position, { x: 0, y: 0, z: 0 })
+.to(cappuccino.scale, { x: 0, y: 0, z: 0 })
+
+
+//javachip
+gsap.timeline({
+  scrollTrigger: {
+    trigger: '#section8',
+    start: '30% 100%',
+    end: 'bottom bottom',
+    scrub: 1,
+    // markers: true
+  }
+})
+.to(javachip.scale, { x: 1, y: 1, z: 1 })
+.to(javachip.position, { x: -400, y: 0, z: 0 })
+.to(javachip.scale, { x: 1.2, y: 1.2, z: 1.2 })
+.to(javachip.rotation, { x: 6.3, y: 0, z: 0 })
+
+gsap.timeline({
+  scrollTrigger: {
+    trigger: '#section9',
+    start: 'top 100%',
+    end: '30% 100%',
+    scrub: 1,
+    // markers: true
+  }
+})
+.to(javachip.position, { x: 0, y: 0, z: 0 })
+.to(javachip.scale, { x: 0, y: 0, z: 0 })
+
+
+//blended
+gsap.timeline({
+  scrollTrigger: {
+    trigger: '#section9',
+    start: '30% 100%',
+    end: 'bottom bottom',
+    scrub: 1,
+    // markers: true
+  }
+})
+.to(blended.scale, { x: 1, y: 1, z: 1 })
+.to(blended.position, { x: 400, y: 0, z: 0 })
+.to(blended.scale, { x: 1.2, y: 1.2, z: 1.2 })
+.to(blended.rotation, { x: 6.3, y: 0, z: 0 })
+
+gsap.timeline({
+  scrollTrigger: {
+    trigger: '#section10',
+    start: 'top 100%',
+    end: '30% 100%',
+    scrub: 1,
+    // markers: true
+  }
+})
+.to(blended.position, { x: 0, y: 0, z: 0 })
+.to(blended.scale, { x: 0, y: 0, z: 0 })
+
+
+// tea
+gsap.timeline({
+  scrollTrigger: {
+    trigger: '#section10',
+    start: '30% 100%',
+    end: 'bottom bottom',
+    scrub: 1,
+    // markers: true
+  }
+})
+.to(tea.scale, { x: 1, y: 1, z: 1 })
+.to(tea.position, { x: -400, y: 0, z: 0 })
+.to(tea.scale, { x: 1.2, y: 1.2, z: 1.2 })
+.to(tea.rotation, { x: 6.3, y: 0, z: 0 })
+
+gsap.timeline({
+  scrollTrigger: {
+    trigger: '#section11',
+    start: 'top 75%',
+    end: '60% 100%',
+    scrub: 1,
+    // markers: true
+  }
+})
+.to(tea.position, { x: 500, y: -100, z: 0 })
+.to(tea.scale, { x: 1, y: 1, z: 1 })
+
+gsap.timeline({
+  scrollTrigger: {
+    trigger: 'footer',
+    start: '10% bottom',
+    end: '60% 100%',
     scrub: 1,
     markers: true
   }
 })
-.to(icecoffee.scale, { x: 0, y: 0, z: 0 }, 0)
-.to(icecoffee.position, { x: 0, y: 0, z: 0 }, 0)
-
-.to(cappuccino.scale, { x: 1, y: 1, z: 1 })
-.to(cappuccino.position, { x: 300, y: 0, z: 0 })
-
-
+.to(tea.position, { x: 500, y: 80, z: 0 })
 
 
 })

@@ -278,6 +278,7 @@ body.on{background-color: #e8fcff;}
 .team .box .tit{margin-bottom: 40px;}
 .team .box .txt{margin: 30px 0;}
 .team .box img{margin-top: 100px;}
+.team .box:nth-child(2) img{width: 100%;}
 
 /* footer */
 footer{width: 1320px; margin: 0 atuo;}
@@ -479,14 +480,90 @@ footer .bottom ul li b{color: #333;}
     .service .box .img {
         margin-top: 50px;
     }
+    footer{
+        width: 100%;
+        padding: 0 30px;
+        box-sizing: border-box;
+    }
 }
 /* 태블릿(768~1024) */
 @media(max-width:1024px){
-    
+    header .innerheader{
+        height: 80px;
+        line-height: 80px;
+    }
+    header .mainmenu{display: none;}
+    .menuOpen .open{
+        transform: none;
+        top: 0;
+        padding: 0;
+        width: 70px; height: 80px;
+    }
+    .menuOpen .open::before{display: none;}
+
+    .visual{flex-wrap: wrap;}
+    .visual>div{width: 100%;}
+    .visual .mainText {
+        padding-top: 50px;
+        padding-left: 30px;
+        box-sizing: border-box;
+    }
+
+    .inner{flex-wrap: wrap;}
+    .inner .box {
+        width: 100%;
+    }
+    .jurnal {
+        padding: 80px 0;
+    }
+    .jurnal .box img {
+        width: 100%;
+    }
+    .jurnal .box .img{
+        width: 80%;
+        margin: 0 auto 50px;
+    }
+
+    .service .box.design{
+        margin-top: 50px;
+        width: 100%;
+    }
+    .service .box.design .img img{
+        margin: 50px 0 0;
+    }
+    .service .box.design .tit{
+        font-size: 35px;
+    }
+
+    .customer{padding: 120px 0;}
+    .customer .tit{font-size: 30px;}
+
+    .team{padding: 80px 0; overflow: clip;}
+    .team .circleBox{left: 15%;}
+
+    .team .box.left{padding-right: 0;}
+    .team .box img{width: 100%;}
+    .team .box.left img{width: 70%;}
+    .team .box:last-child{width: 90%; margin: 70px auto 0;}
+    .team .box:last-child img{margin: 50px 0;}
+
+    footer .bottom ul{flex-wrap: wrap;}
+    footer .bottom ul li {width: 33.3333%;}
+    footer .bottom ul li:first-child{
+        width: 100%;
+        margin-bottom: 30px;
+    }
 }
 /* 태블릿(321~767) */
 @media(max-width:767px){
-    
+    header .innerheader {
+        height: 60px;
+        line-height: 60px;
+    }
+    .menuOpen .open{
+        width: 52px;
+        height: 60px;
+    }
 }
 /* 모바일(0~320) */
 @media(max-width:320px){

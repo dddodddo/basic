@@ -56,7 +56,7 @@ gsap.to("#page2 .background", {
     scrollTrigger: {
         trigger: "#page2",
         start: "top top",
-        end: "bottom bottom",
+        end: "bottom top",
         scroller: "#main", //locomotive사용시 필수
         scrub: 1
     },
@@ -70,6 +70,7 @@ gsap.to("#page2 .background", {
 function canvas() {
     let canvas = document.querySelector("#page3 canvas");
     let context = canvas.getContext("2d"); //canvas 사용시 필수 작성
+    console.log(context)
 
     canvas.width = window.innerWidth; // 화면의 넓이
     canvas.height = window.innerHeight; //화면의 높이
@@ -81,7 +82,7 @@ function canvas() {
 
     function files(index) {
         let data = `./img/frames00007.png
-        ./img/frames000010.png
+        ./img/frames00010.png
         ./img/frames00013.png
         ./img/frames00016.png
         ./img/frames00019.png
@@ -149,8 +150,67 @@ function canvas() {
         return data.split("\n")[index] // "\n" --> enter로 인해 떨어트린 효과
     }
     let frameCount=67;
+    let images=[]
+    let imageSeq={
+        frame:0
+    }
+    for(let i=0; i<frameCount; i++){
+        let img=new Image() //이미지 태그 만들기
+        img.src=files(i)
+        images.push(img)
+    }
+    // console.log(images)
+    gsap.to(imageSeq,{
+        fram:frameCount - 1,
+        snap:"fram",
+        ease:"none",
+        scrollTrigger:{
+            scrub:0.5,
+            trigger:"#page3",
+            start:"top top",
+            end:"250% top",
+            scroller:"#main" //locomotive에서 스크롤을 감지하는 역할
+        },
+        onUpdate:render
+    })
+    images[0].onload=render
 
-    let 
+    function render(){
+        scaleImage(images[imageSeq.frame],context)
+    }
+    function scaleImage(img,ctx){
+        let canvas=ctx.canvas
+        let hRatio=canvas.width/img.width
+        let vRatio=canvas.height/img.height
+        let ratio=Math.max(hRatio,vRatio)
+        let centerShift_x=(canvas.width - img.width*ratio)/2
+        let centerShift_y=(canvas.height - img.height*ratio)/2
+
+        ctx.clearRect(0,0,canvas.width,canvas.height)
+        ctx.drawImage(
+            img,
+            0,
+            0,
+            img.width,
+            img.height,
+            centerShift_x,
+            centerShift_y,
+            img.width*ratio,
+            img.height*ratio
+        )
+    }//scaleImage
+    ScrollTrigger.create({
+        trigger:"#page3",
+        pin:true,
+        scroller:"#main",
+        start:"top top",
+        end:"250%"
+    })
+
+
+
+
+
 
 }
 canvas()
