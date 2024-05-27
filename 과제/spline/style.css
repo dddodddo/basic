@@ -181,11 +181,12 @@ body{
   } 
 #section1 .reserve{
     position: absolute;
-    right: 0; bottom: 0;
+    right: 100px; bottom: 80px;
 }
-#section1 .reserve img{
-    width: 13vw; height: 13vw;
+#section1 .reserve .label{
+    width: 12vw; height: 12vw;
 }
+#section1 .reserve .reserve_logo
 
 /* section2 */
 #section2{

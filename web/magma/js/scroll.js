@@ -161,12 +161,12 @@ function canvas() {
     }
     // console.log(images)
     gsap.to(imageSeq,{
-        fram:frameCount - 1,
-        snap:"fram",
+        frame:frameCount - 1,
+        snap:"frame",
         ease:"none",
         scrollTrigger:{
             scrub:0.5,
-            trigger:"#page3",
+            trigger:"#page3", 
             start:"top top",
             end:"250% top",
             scroller:"#main" //locomotive에서 스크롤을 감지하는 역할
@@ -204,7 +204,7 @@ function canvas() {
         pin:true,
         scroller:"#main",
         start:"top top",
-        end:"250%"
+        end:"250% top"
     })
 
 

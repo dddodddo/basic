@@ -29,6 +29,13 @@ $(function(){
   })
 })
 /////////////////////////////////
+gsap.to('.label',{
+    rotation:360,
+    duration:10,
+    ease:"none",
+    repeat:-1
+})
+/////////////////////////////////
 $(document).ready(function(){
   $(".heart").click(function(){
       $(this).toggleClass("far fas");
