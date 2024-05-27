@@ -246,24 +246,13 @@ gsap.timeline({
   scrollTrigger: {
     trigger: '#section11',
     start: 'top 75%',
-    end: '60% 100%',
+    end: 'bottom 100%',
     scrub: 1,
-    // markers: true
+    markers: true
   }
 })
-.to(tea.position, { x: 500, y: -100, z: 0 })
-.to(tea.scale, { x: 1, y: 1, z: 1 })
-
-gsap.timeline({
-  scrollTrigger: {
-    trigger: 'footer',
-    start: '10% bottom',
-    end: '60% 100%',
-    scrub: 1,
-    // markers: true
-  }
-})
-.to(tea.position, { x: 500, y: 80, z: 0 })
+.to(tea.position, { x: 420, y: 0, z: 0 })
+.to(tea.scale, { x: 0, y: 0, z: 0 })
 
 
 })
