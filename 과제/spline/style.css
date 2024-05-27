@@ -178,15 +178,19 @@ body{
     80% {transform: translateY(0);}
     40% {transform: translateY(-10px);}
     60% {transform: translateY(-5px);}
-  } 
-#section1 .reserve{
-    position: absolute;
-    right: 100px; bottom: 80px;
+}
+#section1 .reserve img{
+    opacity: 0.8;
+    position: fixed;
 }
 #section1 .reserve .label{
-    width: 12vw; height: 12vw;
+    right: 100px; bottom: 80px;
+    width: 260px; height: 260px;
 }
-#section1 .reserve .reserve_logo
+#section1 .reserve .reserve_logo{
+    right: 163px; bottom: 147px;
+    width: 130px; height: 130px;
+}
 
 /* section2 */
 #section2{
@@ -194,7 +198,6 @@ body{
     background: url(img/page2.jpg) no-repeat center center/cover;
     transition: 0.3s;
     position: relative;
-    z-index: 21;
 }
 #section2 .text .s2_title{
     position: absolute;
@@ -401,6 +404,7 @@ body{
 }
 .s_slide_tit p{
     flex-shrink: 0;
+    margin-right: 20px;
     animation: ani 15s linear infinite;
 }
 @keyframes ani{

@@ -46,7 +46,7 @@ imageSliders.forEach(function(imageSlider){
     })//click함수
 
     let scrollAmmount=0
-    let yPos=imagesSlider.offsetTop// 문서의 top에서 선택한 영역의 top까지의 높이값
+    let yPos=imageSlider.offsetTop// 문서의 top에서 선택한 영역의 top까지의 높이값
     // console.log(yPos) 477 1906
     let xPos=0
 
@@ -58,8 +58,8 @@ imageSliders.forEach(function(imageSlider){
     }
 
     window.addEventListener("mousemove",function(e){
-        yPos=(e.clientY - tracker.offsetHeight/2) - imageSliders.offsetTop
-        xPos=(e.clientX - tracker.offsetWidth/2) - imageSliders.offsetLeft
+        yPos=(e.clientY - tracker.offsetHeight/2) - imageSlider.offsetTop
+        xPos=(e.clientX - tracker.offsetWidth/2) - imageSlider.offsetLeft
         mouseTracker()
     })
 

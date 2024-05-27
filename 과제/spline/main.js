@@ -31,10 +31,19 @@ $(function(){
 /////////////////////////////////
 gsap.to('.label',{
     rotation:360,
-    duration:10,
+    duration:7,
     ease:"none",
     repeat:-1
 })
+const reserve = document.querySelector(".reserve");
+ScrollTrigger.create({
+  trigger: "#section11",
+  start: "top 60%",
+  end: "bottom bottom",
+  ease: "power3.out",
+  onEnter: () => reserve.style.opacity = 0,
+  onLeaveBack: () => reserve.style.opacity = 1
+});
 /////////////////////////////////
 $(document).ready(function(){
   $(".heart").click(function(){
@@ -251,7 +260,7 @@ gsap.timeline({
     start: '10% bottom',
     end: '60% 100%',
     scrub: 1,
-    markers: true
+    // markers: true
   }
 })
 .to(tea.position, { x: 500, y: 80, z: 0 })
