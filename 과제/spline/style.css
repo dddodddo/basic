@@ -140,8 +140,6 @@ body{
     overflow: hidden;
     z-index: 20;
 }
-#section1 .text{
-}
 #section1 .text .s1_title{
     font-size: 8vw;
     font-weight: 700;
@@ -199,23 +197,22 @@ body{
     transition: 0.3s;
     position: relative;
 }
-#section2 .text .s2_title{
+#section2 .text{
     position: absolute;
+    color: #fff;
+    line-height: 1.2;
+    top: 30%;
+    left: 8%; 
+    
+}
+#section2 .text .s2_title{
     font-size: 6vw;
     font-weight: 700;
-    color: #fff;
-    position: absolute;
-    left: 8%;top: 25%;
-    line-height: 1.2;
+    margin-bottom: 70px;
 }
 #section2 .text .s2_sub_title{
-    position: absolute;
     font-size: 1vw;
     font-weight: 500;
-    color: #fff;
-    position: absolute;
-    left: 8%;top: 65%;
-    line-height: 1.2;
 }
 
 
@@ -227,23 +224,22 @@ body{
     transition: 0.3s;
     position: relative;
 }
-#section3 .text .s3_title{
+#section3 .text{
     position: absolute;
+    color: #fff;
+    line-height: 1.2;
+    top: 30%;
+    left: 8%; 
+    
+}
+#section3 .text .s3_title{
     font-size: 6vw;
     font-weight: 700;
-    color: #fff;
-    position: absolute;
-    left: 8%;top: 25%;
-    line-height: 1.2;
+    margin-bottom: 70px;
 }
 #section3 .text .s3_sub_title{
-    position: absolute;
     font-size: 1vw;
     font-weight: 500;
-    color: #fff;
-    position: absolute;
-    left: 8%;top: 65%;
-    line-height: 1.2;
 }
 
 
@@ -255,23 +251,22 @@ body{
     transition: 0.3s;
     position: relative;
 }
-#section4 .text .s4_title{
+#section4 .text{
     position: absolute;
+    color: #fff;
+    line-height: 1.2;
+    top: 30%;
+    left: 8%; 
+    
+}
+#section4 .text .s4_title{
     font-size: 6vw;
     font-weight: 700;
-    color: #fff;
-    position: absolute;
-    left: 8%;top: 25%;
-    line-height: 1.2;
+    margin-bottom: 70px;
 }
 #section4 .text .s4_sub_title{
-    position: absolute;
     font-size: 1vw;
     font-weight: 500;
-    color: #fff;
-    position: absolute;
-    left: 8%;top: 65%;
-    line-height: 1.2;
 }
 
 
@@ -524,3 +519,9 @@ body{
     align-items: center;
     color: #999;
 }
+/* //////////////////////////////////////////////////////// */
+/* .resetPosition {
+    transform: translateX(0px);
+    transition: transform 0.5s ease-in-out, opacity 1s ease-in-out;
+    opacity: 1;
+} */

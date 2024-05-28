@@ -35,15 +35,72 @@ gsap.to('.label',{
     ease:"none",
     repeat:-1
 })
-const reserve = document.querySelector(".reserve");
-ScrollTrigger.create({
-  trigger: "#section11",
-  start: "top 60%",
-  end: "bottom bottom",
-  ease: "power3.out",
-  onEnter: () => reserve.style.opacity = 0,
-  onLeaveBack: () => reserve.style.opacity = 1
-});
+/////////////////////////////////
+gsap.timeline()
+.to('#section1 .text',{
+  opacity:0,
+  scrollTrigger:{
+    trigger:"#section1",
+    start:"top top",
+    end:"bottom top",
+    scrub:1
+  }
+})
+
+gsap.set('#section2 .text',{x:-400})
+gsap.timeline()
+.to('#section2 .text',{
+    x:0,
+    scrollTrigger:{
+        trigger:"#section2",
+        start:"top 80%",
+        end:"bottom center",
+        scrub:1,
+        opacity:1,
+        duration:1
+    }
+})
+gsap.set('#section3 .text',{x:-400})
+gsap.timeline()
+.to('#section3 .text',{
+    x:0,
+    scrollTrigger:{
+        trigger:"#section3",
+        start:"top 80%",
+        end:"bottom center",
+        scrub:1,
+        opacity:1,
+        duration:1
+    }
+})
+gsap.set('#section4 .text',{x:-400})
+gsap.timeline()
+.to('#section4 .text',{
+    x:0,
+    scrollTrigger:{
+        trigger:"#section4",
+        start:"top 80%",
+        end:"bottom center",
+        scrub:1,
+        opacity:1,
+        duration:1
+    }
+})
+gsap.set('#section5 .text',{y:100})
+gsap.timeline()
+.to('#section5 .text',{
+    y:400,
+    scrollTrigger:{
+        trigger:"#section5",
+        start:"top 100%",
+        end:"bottom center",
+        scrub:1,
+        opacity:1,
+        duration:1
+    }
+})
+
+
 /////////////////////////////////
 $(document).ready(function(){
   $(".heart").click(function(){
@@ -248,7 +305,7 @@ gsap.timeline({
     start: 'top 75%',
     end: 'bottom 100%',
     scrub: 1,
-    markers: true
+    // markers: true
   }
 })
 .to(tea.position, { x: 420, y: 0, z: 0 })
