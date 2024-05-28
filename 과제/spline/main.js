@@ -33,7 +33,7 @@ gsap.to('.label',{
     rotation:360,
     duration:7,
     ease:"none",
-    repeat:-1
+    repeat:-1,
 })
 /////////////////////////////////
 gsap.timeline()
