@@ -3,7 +3,10 @@
     font-family: Humane;
     src: url(./63bf3e1c32ea7b2c3d1bdf93_Humane-Bold.otf);
 }
-
+.container{
+    width: 100vw;
+    overflow: clip;
+}
 * {
     margin: 0;
     padding: 0;
