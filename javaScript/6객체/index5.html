@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //객체 내에 객체 호출법
+        let person={
+            name:"홍길동",
+            age:23,
+            성적:{
+                영어:90,
+                수학:50,
+                철학:100
+            }
+        }
+        console.log(person.age)//23
+        console.log(person.성적)//{영어: 90, 수학: 50, 철학: 100}
+        console.log(person.성적.수학)//50
+
+        //나의 이름은 홍길동이고 나의 철학 점수는 100점이다.
+        console.log(`나의 이름은 ${person.name}이고 나의 철학 점수는 ${person.성적.철학}점이다.`)
+
+    </script>
+</body>
+</html>

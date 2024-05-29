@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <button id="btn">버튼</button>
+  <button id="btn" onclick="green(e)">버튼</button>
   <script>
     // 객체(Object) - 값의 복사와 참조
 
@@ -21,8 +21,8 @@
     let a = 100
     let b = a
     b = 200
-    console.log(a) //100
-    console.log(b) //200
+    // console.log(a) //100
+    // console.log(b) //200
 
     //객체타입 (객체, 배열, 함수, class ...)
 
@@ -31,12 +31,12 @@
       age: 20
     }
     let person2 = person
-    console.log(person.name) //홍길동
-    console.log(person2.name) //홍길동
+    // console.log(person.name) //홍길동
+    // console.log(person2.name) //홍길동
 
     person2.name = "강감찬"
-    console.log(person.name) //강감찬
-    console.log(person2.name) //강감찬
+    // console.log(person.name) //강감찬
+    // console.log(person2.name) //강감찬
 
 
     // [4] : 정리
@@ -55,10 +55,10 @@
 
     function 함수(obj) {
       obj.name = "세종대왕"
-      console.log(obj.name)
+      // console.log(obj.name)
     }
     함수(사람)
-    console.log(사람)
+    // console.log(사람)
 
     //별개 예제
     function 함수(e) {
@@ -79,10 +79,10 @@
       console.log(e)
       console.log('나는 함수2')
     }
-    btn.addEventListener("click",function(e){
-      함수2(e)
-    })
-    btn.addEventListener("click",함수2)
+    // btn.addEventListener("click",function(e){
+    //   함수2(e)
+    // })
+    // btn.addEventListener("click",함수2)
   </script>
 </body>
 
