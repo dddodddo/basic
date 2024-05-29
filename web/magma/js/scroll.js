@@ -28,6 +28,18 @@ function loco() {
 loco()
 
 /////////////////////////
+//새로 고침 시 화면 깨지는 현상을 막기 위해
+function scrollToTop(){
+    window.scrollTo(0,0)
+}
+window.onload=function(){
+    // setTimeout(할일,시간) //시간이 지난 후에 할 일
+    setTimeout(function(){
+        scrollToTop
+    },10)
+}
+/////////////////////////
+
 //page2
 let clutter = ""
 //textContent --> 텍스트만 추출하는 방법
@@ -149,7 +161,7 @@ function canvas() {
         ./img/frames00202.png`
         return data.split("\n")[index] // "\n" --> enter로 인해 떨어트린 효과
     }
-    let frameCount=67;
+    let frameCount=66;
     let images=[]
     let imageSeq={
         frame:0
@@ -215,11 +227,42 @@ function canvas() {
 }
 canvas()
 
-
-
-
-
 /////////////////////////
+//page4
+let clutter2 = ""
+//textContent --> 텍스트만 추출하는 방법
+let page4_h2 = document.querySelector('#page4>h2').textContent.split("")
+
+page4_h2.forEach(function (dets) {
+    clutter2 += `<span>${dets}</span>`
+    //clutter = clutter + `<span>T</span>`
+    document.querySelector('#page4>h2').innerHTML = clutter
+})
+
+gsap.to("#page4>h2>span", {
+    scrollTrigger: {
+        trigger: "#page4>h2>span",
+        start: "top bottom",
+        end: "bottom top",
+        scroller: "#main", //locomotive사용시 필수
+        scrub: 0.5
+    },
+    color: "#fff",
+    stagger: 0.2,
+})
+
+//page4 영역의 배경색 애니
+gsap.to("#page4 .background", {
+    scrollTrigger: {
+        trigger: "#page4",
+        start: "top top",
+        end: "bottom top",
+        scroller: "#main", //locomotive사용시 필수
+        scrub: 1
+    },
+    opacity: 0,
+
+})
 /////////////////////////
 /////////////////////////
 /////////////////////////
