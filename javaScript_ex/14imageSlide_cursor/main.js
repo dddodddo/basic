@@ -67,5 +67,9 @@ imageSliders.forEach(function(imageSlider){
         mouseTracker()
     })
 
+    prev.addEventListener("mouseenter",function(){
+        imageSlider.querySelector(".arrow-prev")
+    })
+
 
 })//forEach문

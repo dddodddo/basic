@@ -24,6 +24,20 @@
         //나의 이름은 홍길동이고 나의 철학 점수는 100점이다.
         console.log(`나의 이름은 ${person.name}이고 나의 철학 점수는 ${person.성적.철학}점이다.`)
 
+        //객체 내에 포함된 함수 --> 메서드(method)
+        //메서드 --> 객체의 어떤 동작이나 처리를 구현 담당.
+        //속성 --> 객체의 주요 특성(특징)을 정의(name,age)
+        // document.querySelector(".클래스명").offsetTop --> 객체 속성
+        // document.querySelector(".클래스명").addEventListener("click",함수) --> 메서드
+        let personMan={
+            name:"홍길동",
+            age:20,
+            showMessge:function(){
+                console.log(`나의 이름은 ${this.name}이고 나이는 ${this.age}입니다.`)
+            }
+        }
+        console.log(personMan.name)
+        personMan.showMessge()
     </script>
 </body>
 </html>
