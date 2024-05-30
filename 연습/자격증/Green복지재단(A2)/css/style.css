@@ -11,6 +11,34 @@ a{text-decoration: none; color: #000;}
 #wrap{
     width: 1200px;
     margin: 0 auto;
+    position: relative;
+}
+/* popup */
+.popup-view{
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px; height: 300px;
+    background-color: rgb(179, 216, 106);
+    border: 1px solid #ccc;
+    padding: 20px;
+    display: none;
+}
+.popup-view h3{
+    font-size: 24px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #000000;
+    color: #fff;
+    padding-bottom: 5px;
+}
+.popup-close{
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    background-color: #0a4288;
+    color: #fff;
+    padding: 8px 20px;
 }
 
 /* ///header/// */
@@ -124,20 +152,55 @@ a{text-decoration: none; color: #000;}
     width: 100%;
     display: flex;
 }
-#contents .notice{
+/* 공지사항 */
+#contents .notice,
+.gallery{
     width: 33.3333%;
     height: 200px;
-    background-color: #444;
+    padding: 10px;
 }
+.notice h2,
+.gallery h2{
+    display: inline-block;
+    background-color: #8a8a8a;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.notice>ul{}
+.notice>ul>li{
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.notice>ul>li>a{
+    margin-left: 10px;
+    text-decoration: underline;
+    text-underline-offset: 7px;
+}
+.notice>ul>li>span{
+
+}
+/* 갤러리 */
 #contents .gallery{
     width: 33.3333%;
     height: 200px;
-    background-color: #555;
 }
+.gallery ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.gallery ul li{}
+.gallery ul li a{}
+.gallery ul li a img{
+    width: 100px;height: 100px;
+}
+/* 배너 */
 #contents .banner{
     width: 33.3333%;
     height: 200px;
-    background-color: #666;
+    background-color: pink;
 }
 
 
