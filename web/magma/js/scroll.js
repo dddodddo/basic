@@ -29,14 +29,14 @@ loco()
 
 /////////////////////////
 //새로 고침 시 화면 깨지는 현상을 막기 위해
-function scrollToTop(){
-    window.scrollTo(0,0)
+function scrollToTop() {
+    window.scrollTo(0, 0)
 }
-window.onload=function(){
+window.onload = function () {
     // setTimeout(할일,시간) //시간이 지난 후에 할 일
-    setTimeout(function(){
+    setTimeout(function () {
         scrollToTop
-    },10)
+    }, 10)
 }
 /////////////////////////
 
@@ -161,44 +161,45 @@ function canvas() {
         ./img/frames00202.png`
         return data.split("\n")[index] // "\n" --> enter로 인해 떨어트린 효과
     }
-    let frameCount=66;
-    let images=[]
-    let imageSeq={
-        frame:0
+    let frameCount = 66;
+    let images = []
+    let imageSeq = {
+        frame: 0
     }
-    for(let i=0; i<frameCount; i++){
-        let img=new Image() //이미지 태그 만들기
-        img.src=files(i)
+    for (let i = 0; i < frameCount; i++) {
+        let img = new Image() //이미지 태그 만들기
+        img.src = files(i)
         images.push(img)
     }
     // console.log(images)
-    gsap.to(imageSeq,{
-        frame:frameCount - 1,
-        snap:"frame",
-        ease:"none",
-        scrollTrigger:{
-            scrub:0.5,
-            trigger:"#page3", 
-            start:"top top",
-            end:"250% top",
-            scroller:"#main" //locomotive에서 스크롤을 감지하는 역할
+    gsap.to(imageSeq, {
+        frame: frameCount - 1,
+        snap: "frame",
+        ease: "none",
+        scrollTrigger: {
+            scrub: 0.5,
+            trigger: "#page3",
+            start: "top top",
+            end: "250% top",
+            scroller: "#main" //locomotive에서 스크롤을 감지하는 역할
         },
-        onUpdate:render
+        onUpdate: render
     })
-    images[0].onload=render
+    images[0].onload = render
 
-    function render(){
-        scaleImage(images[imageSeq.frame],context)
+    function render() {
+        scaleImage(images[imageSeq.frame], context)
     }
-    function scaleImage(img,ctx){
-        let canvas=ctx.canvas
-        let hRatio=canvas.width/img.width
-        let vRatio=canvas.height/img.height
-        let ratio=Math.max(hRatio,vRatio)
-        let centerShift_x=(canvas.width - img.width*ratio)/2
-        let centerShift_y=(canvas.height - img.height*ratio)/2
 
-        ctx.clearRect(0,0,canvas.width,canvas.height)
+    function scaleImage(img, ctx) {
+        let canvas = ctx.canvas
+        let hRatio = canvas.width / img.width
+        let vRatio = canvas.height / img.height
+        let ratio = Math.max(hRatio, vRatio)
+        let centerShift_x = (canvas.width - img.width * ratio) / 2
+        let centerShift_y = (canvas.height - img.height * ratio) / 2
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
         ctx.drawImage(
             img,
             0,
@@ -207,23 +208,17 @@ function canvas() {
             img.height,
             centerShift_x,
             centerShift_y,
-            img.width*ratio,
-            img.height*ratio
+            img.width * ratio,
+            img.height * ratio
         )
-    }//scaleImage
+    } //scaleImage
     ScrollTrigger.create({
-        trigger:"#page3",
-        pin:true,
-        scroller:"#main",
-        start:"top top",
-        end:"250% top"
+        trigger: "#page3",
+        pin: true,
+        scroller: "#main",
+        start: "top top",
+        end: "250% top"
     })
-
-
-
-
-
-
 }
 canvas()
 
@@ -264,5 +259,383 @@ gsap.to("#page4 .background", {
 
 })
 /////////////////////////
+// page5
+function canvas5() {
+    let canvas = document.querySelector("#page5 canvas");
+    let context = canvas.getContext("2d"); //canvas 사용시 필수 작성
+    console.log(context)
+
+    canvas.width = window.innerWidth; // 화면의 넓이
+    canvas.height = window.innerHeight; //화면의 높이
+
+    window.addEventListener("resize", function () {
+        canvas.width = window.innerWidth; // 화면의 넓이
+        canvas.height = window.innerHeight; //화면의 높이
+    })
+
+    function files(index) {
+        var data = `./img/bridges00004.png
+        ./img/bridges00007.png
+        ./img/bridges00010.png
+        ./img/bridges00013.png
+        ./img/bridges00016.png
+        ./img/bridges00019.png
+        ./img/bridges00022.png
+        ./img/bridges00025.png
+        ./img/bridges00028.png
+        ./img/bridges00031.png
+        ./img/bridges00034.png
+        ./img/bridges00037.png
+        ./img/bridges00040.png
+        ./img/bridges00043.png
+        ./img/bridges00046.png
+        ./img/bridges00049.png
+        ./img/bridges00052.png
+        ./img/bridges00055.png
+        ./img/bridges00058.png
+        ./img/bridges00061.png
+        ./img/bridges00064.png
+        ./img/bridges00067.png
+        ./img/bridges00070.png
+        ./img/bridges00073.png
+        ./img/bridges00076.png
+        ./img/bridges00079.png
+        ./img/bridges00082.png
+        ./img/bridges00085.png
+        ./img/bridges00088.png
+        ./img/bridges00091.png
+        ./img/bridges00094.png
+        ./img/bridges00097.png
+        ./img/bridges00100.png
+        ./img/bridges00103.png
+        ./img/bridges00106.png
+        ./img/bridges00109.png
+        ./img/bridges00112.png
+        ./img/bridges00115.png
+        ./img/bridges00118.png
+        ./img/bridges00121.png
+        ./img/bridges00124.png
+        ./img/bridges00127.png
+        ./img/bridges00130.png
+        ./img/bridges00133.png
+        ./img/bridges00136.png
+        ./img/bridges00139.png
+        ./img/bridges00142.png
+        ./img/bridges00145.png
+        ./img/bridges00148.png
+        ./img/bridges00151.png
+        ./img/bridges00154.png
+        ./img/bridges00157.png
+        ./img/bridges00160.png
+        ./img/bridges00163.png
+        ./img/bridges00202.png`;
+        return data.split("\n")[index] // "\n" --> enter로 인해 떨어트린 효과
+    }
+    let frameCount = 55;
+    let images = []
+    let imageSeq = {
+        frame: 0
+    }
+    for (let i = 0; i < frameCount; i++) {
+        let img = new Image() //이미지 태그 만들기
+        img.src = files(i)
+        images.push(img)
+    }
+    // console.log(images)
+    gsap.to(imageSeq, {
+        frame: frameCount - 1,
+        snap: "frame",
+        ease: "none",
+        scrollTrigger: {
+            scrub: 0.5,
+            trigger: "#page5",
+            start: "top top",
+            end: "250% top",
+            scroller: "#main" //locomotive에서 스크롤을 감지하는 역할
+        },
+        onUpdate: render
+    })
+    images[0].onload = render
+
+    function render() {
+        scaleImage(images[imageSeq.frame], context)
+    }
+
+    function scaleImage(img, ctx) {
+        let canvas = ctx.canvas
+        let hRatio = canvas.width / img.width
+        let vRatio = canvas.height / img.height
+        let ratio = Math.max(hRatio, vRatio)
+        let centerShift_x = (canvas.width - img.width * ratio) / 2
+        let centerShift_y = (canvas.height - img.height * ratio) / 2
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        ctx.drawImage(
+            img,
+            0,
+            0,
+            img.width,
+            img.height,
+            centerShift_x,
+            centerShift_y,
+            img.width * ratio,
+            img.height * ratio
+        )
+    } //scaleImage
+    ScrollTrigger.create({
+        trigger: "#page5",
+        pin: true,
+        scroller: "#main",
+        start: "top top",
+        end: "250% top"
+    })
+}
+canvas5()
 /////////////////////////
+// page6
+let clutter3 = ""
+//textContent --> 텍스트만 추출하는 방법
+let page6_h2 = document.querySelector('#page6>h2').textContent.split("")
+
+page6_h2.forEach(function (dets) {
+    clutter3 += `<span>${dets}</span>`
+    //clutter = clutter + `<span>T</span>`
+    document.querySelector('#page6>h2').innerHTML = clutter
+})
+
+gsap.to("#page6>h2>span", {
+    scrollTrigger: {
+        trigger: "#page6>h2>span",
+        start: "top bottom",
+        end: "bottom top",
+        scroller: "#main", //locomotive사용시 필수
+        scrub: 0.5
+    },
+    color: "#fff",
+    stagger: 0.2,
+})
 /////////////////////////
+// page7
+function canvas7() {
+    let canvas = document.querySelector("#page7 canvas");
+    let context = canvas.getContext("2d"); //canvas 사용시 필수 작성
+    console.log(context)
+
+    canvas.width = window.innerWidth; // 화면의 넓이
+    canvas.height = window.innerHeight; //화면의 높이
+
+    window.addEventListener("resize", function () {
+        canvas.width = window.innerWidth; // 화면의 넓이
+        canvas.height = window.innerHeight; //화면의 높이
+    })
+
+    function files(index) {
+        var data = `https://thisismagma.com/assets/home/lore/seq/1.webp?2
+        https://thisismagma.com/assets/home/lore/seq/2.webp?2
+        https://thisismagma.com/assets/home/lore/seq/3.webp?2
+        https://thisismagma.com/assets/home/lore/seq/4.webp?2
+        https://thisismagma.com/assets/home/lore/seq/5.webp?2
+        https://thisismagma.com/assets/home/lore/seq/6.webp?2
+        https://thisismagma.com/assets/home/lore/seq/7.webp?2
+        https://thisismagma.com/assets/home/lore/seq/8.webp?2
+        https://thisismagma.com/assets/home/lore/seq/9.webp?2
+        https://thisismagma.com/assets/home/lore/seq/10.webp?2
+        https://thisismagma.com/assets/home/lore/seq/11.webp?2
+        https://thisismagma.com/assets/home/lore/seq/12.webp?2
+        https://thisismagma.com/assets/home/lore/seq/13.webp?2
+        https://thisismagma.com/assets/home/lore/seq/14.webp?2
+        https://thisismagma.com/assets/home/lore/seq/15.webp?2
+        https://thisismagma.com/assets/home/lore/seq/16.webp?2
+        https://thisismagma.com/assets/home/lore/seq/17.webp?2
+        https://thisismagma.com/assets/home/lore/seq/18.webp?2
+        https://thisismagma.com/assets/home/lore/seq/19.webp?2
+        https://thisismagma.com/assets/home/lore/seq/20.webp?2
+        https://thisismagma.com/assets/home/lore/seq/21.webp?2
+        https://thisismagma.com/assets/home/lore/seq/22.webp?2
+        https://thisismagma.com/assets/home/lore/seq/23.webp?2
+        https://thisismagma.com/assets/home/lore/seq/24.webp?2
+        https://thisismagma.com/assets/home/lore/seq/25.webp?2
+        https://thisismagma.com/assets/home/lore/seq/26.webp?2
+        https://thisismagma.com/assets/home/lore/seq/27.webp?2
+        https://thisismagma.com/assets/home/lore/seq/28.webp?2
+        https://thisismagma.com/assets/home/lore/seq/29.webp?2
+        https://thisismagma.com/assets/home/lore/seq/30.webp?2
+        https://thisismagma.com/assets/home/lore/seq/31.webp?2
+        https://thisismagma.com/assets/home/lore/seq/32.webp?2
+        https://thisismagma.com/assets/home/lore/seq/33.webp?2
+        https://thisismagma.com/assets/home/lore/seq/34.webp?2
+        https://thisismagma.com/assets/home/lore/seq/35.webp?2
+        https://thisismagma.com/assets/home/lore/seq/36.webp?2
+        https://thisismagma.com/assets/home/lore/seq/37.webp?2
+        https://thisismagma.com/assets/home/lore/seq/38.webp?2
+        https://thisismagma.com/assets/home/lore/seq/39.webp?2
+        https://thisismagma.com/assets/home/lore/seq/40.webp?2
+        https://thisismagma.com/assets/home/lore/seq/41.webp?2
+        https://thisismagma.com/assets/home/lore/seq/42.webp?2
+        https://thisismagma.com/assets/home/lore/seq/43.webp?2
+        https://thisismagma.com/assets/home/lore/seq/44.webp?2
+        https://thisismagma.com/assets/home/lore/seq/45.webp?2
+        https://thisismagma.com/assets/home/lore/seq/46.webp?2
+        https://thisismagma.com/assets/home/lore/seq/47.webp?2
+        https://thisismagma.com/assets/home/lore/seq/48.webp?2
+        https://thisismagma.com/assets/home/lore/seq/49.webp?2
+        https://thisismagma.com/assets/home/lore/seq/50.webp?2
+        https://thisismagma.com/assets/home/lore/seq/51.webp?2
+        https://thisismagma.com/assets/home/lore/seq/52.webp?2
+        https://thisismagma.com/assets/home/lore/seq/53.webp?2
+        https://thisismagma.com/assets/home/lore/seq/54.webp?2
+        https://thisismagma.com/assets/home/lore/seq/55.webp?2
+        https://thisismagma.com/assets/home/lore/seq/56.webp?2
+        https://thisismagma.com/assets/home/lore/seq/57.webp?2
+        https://thisismagma.com/assets/home/lore/seq/58.webp?2
+        https://thisismagma.com/assets/home/lore/seq/59.webp?2
+        https://thisismagma.com/assets/home/lore/seq/60.webp?2
+        https://thisismagma.com/assets/home/lore/seq/61.webp?2
+        https://thisismagma.com/assets/home/lore/seq/62.webp?2
+        https://thisismagma.com/assets/home/lore/seq/63.webp?2
+        https://thisismagma.com/assets/home/lore/seq/64.webp?2
+        https://thisismagma.com/assets/home/lore/seq/65.webp?2
+        https://thisismagma.com/assets/home/lore/seq/66.webp?2
+        https://thisismagma.com/assets/home/lore/seq/67.webp?2
+        https://thisismagma.com/assets/home/lore/seq/68.webp?2
+        https://thisismagma.com/assets/home/lore/seq/69.webp?2
+        https://thisismagma.com/assets/home/lore/seq/70.webp?2
+        https://thisismagma.com/assets/home/lore/seq/71.webp?2
+        https://thisismagma.com/assets/home/lore/seq/72.webp?2
+        https://thisismagma.com/assets/home/lore/seq/73.webp?2
+        https://thisismagma.com/assets/home/lore/seq/74.webp?2
+        https://thisismagma.com/assets/home/lore/seq/75.webp?2
+        https://thisismagma.com/assets/home/lore/seq/76.webp?2
+        https://thisismagma.com/assets/home/lore/seq/77.webp?2
+        https://thisismagma.com/assets/home/lore/seq/78.webp?2
+        https://thisismagma.com/assets/home/lore/seq/79.webp?2
+        https://thisismagma.com/assets/home/lore/seq/80.webp?2
+        https://thisismagma.com/assets/home/lore/seq/81.webp?2
+        https://thisismagma.com/assets/home/lore/seq/82.webp?2
+        https://thisismagma.com/assets/home/lore/seq/83.webp?2
+        https://thisismagma.com/assets/home/lore/seq/84.webp?2
+        https://thisismagma.com/assets/home/lore/seq/85.webp?2
+        https://thisismagma.com/assets/home/lore/seq/86.webp?2
+        https://thisismagma.com/assets/home/lore/seq/87.webp?2
+        https://thisismagma.com/assets/home/lore/seq/88.webp?2
+        https://thisismagma.com/assets/home/lore/seq/89.webp?2
+        https://thisismagma.com/assets/home/lore/seq/90.webp?2
+        https://thisismagma.com/assets/home/lore/seq/91.webp?2
+        https://thisismagma.com/assets/home/lore/seq/92.webp?2
+        https://thisismagma.com/assets/home/lore/seq/93.webp?2
+        https://thisismagma.com/assets/home/lore/seq/94.webp?2
+        https://thisismagma.com/assets/home/lore/seq/95.webp?2
+        https://thisismagma.com/assets/home/lore/seq/96.webp?2
+        https://thisismagma.com/assets/home/lore/seq/97.webp?2
+        https://thisismagma.com/assets/home/lore/seq/98.webp?2
+        https://thisismagma.com/assets/home/lore/seq/99.webp?2
+        https://thisismagma.com/assets/home/lore/seq/100.webp?2
+        https://thisismagma.com/assets/home/lore/seq/101.webp?2
+        https://thisismagma.com/assets/home/lore/seq/102.webp?2
+        https://thisismagma.com/assets/home/lore/seq/103.webp?2
+        https://thisismagma.com/assets/home/lore/seq/104.webp?2
+        https://thisismagma.com/assets/home/lore/seq/105.webp?2
+        https://thisismagma.com/assets/home/lore/seq/106.webp?2
+        https://thisismagma.com/assets/home/lore/seq/107.webp?2
+        https://thisismagma.com/assets/home/lore/seq/108.webp?2
+        https://thisismagma.com/assets/home/lore/seq/109.webp?2
+        https://thisismagma.com/assets/home/lore/seq/110.webp?2
+        https://thisismagma.com/assets/home/lore/seq/111.webp?2
+        https://thisismagma.com/assets/home/lore/seq/112.webp?2
+        https://thisismagma.com/assets/home/lore/seq/113.webp?2
+        https://thisismagma.com/assets/home/lore/seq/114.webp?2
+        https://thisismagma.com/assets/home/lore/seq/115.webp?2
+        https://thisismagma.com/assets/home/lore/seq/116.webp?2
+        https://thisismagma.com/assets/home/lore/seq/117.webp?2
+        https://thisismagma.com/assets/home/lore/seq/118.webp?2
+        https://thisismagma.com/assets/home/lore/seq/119.webp?2
+        https://thisismagma.com/assets/home/lore/seq/120.webp?2
+        https://thisismagma.com/assets/home/lore/seq/121.webp?2
+        https://thisismagma.com/assets/home/lore/seq/122.webp?2
+        https://thisismagma.com/assets/home/lore/seq/123.webp?2
+        https://thisismagma.com/assets/home/lore/seq/124.webp?2
+        https://thisismagma.com/assets/home/lore/seq/125.webp?2
+        https://thisismagma.com/assets/home/lore/seq/126.webp?2
+        https://thisismagma.com/assets/home/lore/seq/127.webp?2
+        https://thisismagma.com/assets/home/lore/seq/128.webp?2
+        https://thisismagma.com/assets/home/lore/seq/129.webp?2
+        https://thisismagma.com/assets/home/lore/seq/130.webp?2
+        https://thisismagma.com/assets/home/lore/seq/131.webp?2
+        https://thisismagma.com/assets/home/lore/seq/132.webp?2
+        https://thisismagma.com/assets/home/lore/seq/133.webp?2
+        https://thisismagma.com/assets/home/lore/seq/134.webp?2
+        https://thisismagma.com/assets/home/lore/seq/135.webp?2
+        https://thisismagma.com/assets/home/lore/seq/136.webp?2`;
+        return data.split("\n")[index] // "\n" --> enter로 인해 떨어트린 효과
+    }
+    let frameCount = 136;
+    let images = []
+    let imageSeq = {
+        frame: 0
+    }
+    for (let i = 0; i < frameCount; i++) {
+        let img = new Image() //이미지 태그 만들기
+        img.src = files(i)
+        images.push(img)
+    }
+    // console.log(images)
+    gsap.to(imageSeq, {
+        frame: frameCount - 1,
+        snap: "frame",
+        ease: "none",
+        scrollTrigger: {
+            scrub: 0.5,
+            trigger: "#page7",
+            start: "top top",
+            end: "250% top",
+            scroller: "#main" //locomotive에서 스크롤을 감지하는 역할
+        },
+        onUpdate: render
+    })
+    images[0].onload = render
+
+    function render() {
+        scaleImage(images[imageSeq.frame], context)
+    }
+
+    function scaleImage(img, ctx) {
+        let canvas = ctx.canvas
+        let hRatio = canvas.width / img.width
+        let vRatio = canvas.height / img.height
+        let ratio = Math.max(hRatio, vRatio)
+        let centerShift_x = (canvas.width - img.width * ratio) / 2
+        let centerShift_y = (canvas.height - img.height * ratio) / 2
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        ctx.drawImage(
+            img,
+            0,
+            0,
+            img.width,
+            img.height,
+            centerShift_x,
+            centerShift_y,
+            img.width * ratio,
+            img.height * ratio
+        )
+    } //scaleImage
+    ScrollTrigger.create({
+        trigger: "#page7",
+        pin: true,
+        scroller: "#main",
+        start: "top top",
+        end: "250% top"
+    })
+}
+canvas7()
+
+gsap.to("#page7",{
+    scrollTrigger:{
+        trigger:"#page7",
+        start:"top top",
+        end:"bottom 40%",
+        scroller:"#main",
+        scrub:true
+    },
+    opacity:1
+})
