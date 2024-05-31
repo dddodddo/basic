@@ -34,8 +34,24 @@ tl.to(".header__img",{
     clipPath: `polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)`,
     ease:"expo.out",
     duration:2
+},"-=1")
+/////////////////////////////////////////////////////////////
+//각 영역의 제목 부분의 사각 도형
+let gsapSq=document.querySelectorAll(".section-title__square")
+gsapSq.forEach(function(gSq, i){
+    let rotate=gsap.from(gSq,{duration:3,rotation:720})
+    ScrollTrigger.create({
+        trigger:gSq,
+        start:"top bottom",
+        scrub:1.9,
+        animation:rotate
+    })
 })
 /////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////
+function header(){
+    gsap.from("")
+
+}
+header()
 /////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////

@@ -7,8 +7,23 @@
 </head>
 <body>
     <script>
+        //[1] 프로토타입이란 무엇인가?
+        //자바스크립트는 프로토타입 기반의 언어이다.
+        //Prototype : 원형 (자기자신이 만들어지게 된 원형)
+
         let 과일={name:"사과"}
         console.log(과일)
+
+        //속성 추가
+        과일.expiration='안녕'
+        console.log(과일)
+
+        //속성이 있는지 체크
+        console.log(과일.hasOwnProperty('expiration'))//true
+        console.log(과일.hasOwnProperty('age'))//false
+
+        let aaa={}
+        console.log(aaa)
     </script>
 </body>
 </html>

@@ -32,3 +32,10 @@ console.log(Index)
     $(this).addClass("active").show().siblings().removeClass("active")
     tabCont.eq(Index).show().siblings().hide()
 })
+
+$('.popup-btn').click(function(){
+    $(".popup-view").show()
+})
+$('.popup-close').click(function(){
+    $(".popup-view").hide()
+})
