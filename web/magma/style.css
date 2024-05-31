@@ -422,13 +422,15 @@ button {
 }
 
 /* page7 */
-#page7{
+#page7 {
     margin-top: -70vh;
     position: relative;
-    height: 100vh; width: 100vw;
+    height: 100vh;
+    width: 100vw;
     background-color: #0a3cce;
     opacity: 0;
 }
+
 .page7-cir {
     display: flex;
     align-items: center;
@@ -442,15 +444,74 @@ button {
     width: 30vw;
     border-radius: 50%;
     border: 1px solid #fff;
-  }
-  .page7-cir-inner {
+}
+
+.page7-cir-inner {
     height: 70%;
     width: 70%;
     border-radius: 50%;
     background-color: transparent;
     border: 1px solid #fff;
-  }
+    display: grid;
+    align-items: center;
+}
+
+.page7-cir-inner #number {
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+}
+
 /* page8 */
+#page8 {
+    margin-top: -100vh;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.page8-inner {
+    width: 100%;
+    height: 100%;
+    background-color: #0a3cce;
+}
+#page8 .video > video {
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transform: scale(1.5);
+  }
+  .page8-bottom {
+    z-index: 20;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+  .page8-bottom > h2 {
+    color: #fff;
+    margin-bottom: 2vw;
+    font-size: 5vw;
+    font-weight: 100;
+    overflow: hidden;
+  }
+  .page8-bottom > h2 span {
+    display: inline-block;
+  }
+  .page8-bottom > h2 span:nth-child(6) {
+    width: 40px;
+  }
+  .page8-bottom > button {
+    padding: 20px 30px;
+    border-radius: 50px;
+    border: none;
+    background-color: #fff;
+    color: #0a3cce;
+  }
 /* page9 */
 /* page10 */
 /* page11 */

@@ -1,42 +1,42 @@
 function loco() {
-    gsap.registerPlugin(ScrollTrigger)
-    const locoScroll = new LocomotiveScroll({
-        el: document.querySelector("#main"),
-        smooth: true,
-    });
+  gsap.registerPlugin(ScrollTrigger)
+  const locoScroll = new LocomotiveScroll({
+    el: document.querySelector("#main"),
+    smooth: true,
+  });
 
-    locoScroll.on("scroll", ScrollTrigger.update);
-    ScrollTrigger.scrollerProxy("#main", {
-        scrollTop(value) {
-            return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-        },
-        getBoundingClientRect() {
-            return {
-                top: 0,
-                left: 0,
-                width: window.innerWidth,
-                height: window.innerHeight
-            };
-        },
-        pinType: document.querySelector("#main").style.transform ? "transform" : "fixed"
-    });
+  locoScroll.on("scroll", ScrollTrigger.update);
+  ScrollTrigger.scrollerProxy("#main", {
+    scrollTop(value) {
+      return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+    },
+    getBoundingClientRect() {
+      return {
+        top: 0,
+        left: 0,
+        width: window.innerWidth,
+        height: window.innerHeight
+      };
+    },
+    pinType: document.querySelector("#main").style.transform ? "transform" : "fixed"
+  });
 
 
-    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-    ScrollTrigger.refresh();
+  ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+  ScrollTrigger.refresh();
 }
 loco()
 
 /////////////////////////
 //새로 고침 시 화면 깨지는 현상을 막기 위해
 function scrollToTop() {
-    window.scrollTo(0, 0)
+  window.scrollTo(0, 0)
 }
 window.onload = function () {
-    // setTimeout(할일,시간) //시간이 지난 후에 할 일
-    setTimeout(function () {
-        scrollToTop
-    }, 10)
+  // setTimeout(할일,시간) //시간이 지난 후에 할 일
+  setTimeout(function () {
+    scrollToTop
+  }, 10)
 }
 /////////////////////////
 
@@ -46,33 +46,33 @@ let clutter = ""
 let page2_h2 = document.querySelector('#page2>h2').textContent.split("")
 
 page2_h2.forEach(function (dets) {
-    clutter += `<span>${dets}</span>`
-    //clutter = clutter + `<span>T</span>`
-    document.querySelector('#page2>h2').innerHTML = clutter
+  clutter += `<span>${dets}</span>`
+  //clutter = clutter + `<span>T</span>`
+  document.querySelector('#page2>h2').innerHTML = clutter
 })
 
 gsap.to("#page2>h2>span", {
-    scrollTrigger: {
-        trigger: "#page2>h2>span",
-        start: "top bottom",
-        end: "bottom top",
-        scroller: "#main", //locomotive사용시 필수
-        scrub: 0.5
-    },
-    color: "#fff",
-    stagger: 0.2,
+  scrollTrigger: {
+    trigger: "#page2>h2>span",
+    start: "top bottom",
+    end: "bottom top",
+    scroller: "#main", //locomotive사용시 필수
+    scrub: 0.5
+  },
+  color: "#fff",
+  stagger: 0.2,
 })
 
 //page2 영역의 배경색 애니
 gsap.to("#page2 .background", {
-    scrollTrigger: {
-        trigger: "#page2",
-        start: "top top",
-        end: "bottom top",
-        scroller: "#main", //locomotive사용시 필수
-        scrub: 1
-    },
-    opacity: 0,
+  scrollTrigger: {
+    trigger: "#page2",
+    start: "top top",
+    end: "bottom top",
+    scroller: "#main", //locomotive사용시 필수
+    scrub: 1
+  },
+  opacity: 0,
 
 })
 
@@ -80,20 +80,20 @@ gsap.to("#page2 .background", {
 
 //page3
 function canvas() {
-    let canvas = document.querySelector("#page3 canvas");
-    let context = canvas.getContext("2d"); //canvas 사용시 필수 작성
-    console.log(context)
+  let canvas = document.querySelector("#page3 canvas");
+  let context = canvas.getContext("2d"); //canvas 사용시 필수 작성
+  console.log(context)
 
+  canvas.width = window.innerWidth; // 화면의 넓이
+  canvas.height = window.innerHeight; //화면의 높이
+
+  window.addEventListener("resize", function () {
     canvas.width = window.innerWidth; // 화면의 넓이
     canvas.height = window.innerHeight; //화면의 높이
+  })
 
-    window.addEventListener("resize", function () {
-        canvas.width = window.innerWidth; // 화면의 넓이
-        canvas.height = window.innerHeight; //화면의 높이
-    })
-
-    function files(index) {
-        let data = `./img/frames00007.png
+  function files(index) {
+    let data = `./img/frames00007.png
         ./img/frames00010.png
         ./img/frames00013.png
         ./img/frames00016.png
@@ -159,66 +159,66 @@ function canvas() {
         ./img/frames00196.png
         ./img/frames00199.png
         ./img/frames00202.png`
-        return data.split("\n")[index] // "\n" --> enter로 인해 떨어트린 효과
-    }
-    let frameCount = 66;
-    let images = []
-    let imageSeq = {
-        frame: 0
-    }
-    for (let i = 0; i < frameCount; i++) {
-        let img = new Image() //이미지 태그 만들기
-        img.src = files(i)
-        images.push(img)
-    }
-    // console.log(images)
-    gsap.to(imageSeq, {
-        frame: frameCount - 1,
-        snap: "frame",
-        ease: "none",
-        scrollTrigger: {
-            scrub: 0.5,
-            trigger: "#page3",
-            start: "top top",
-            end: "250% top",
-            scroller: "#main" //locomotive에서 스크롤을 감지하는 역할
-        },
-        onUpdate: render
-    })
-    images[0].onload = render
+    return data.split("\n")[index] // "\n" --> enter로 인해 떨어트린 효과
+  }
+  let frameCount = 66;
+  let images = []
+  let imageSeq = {
+    frame: 0
+  }
+  for (let i = 0; i < frameCount; i++) {
+    let img = new Image() //이미지 태그 만들기
+    img.src = files(i)
+    images.push(img)
+  }
+  // console.log(images)
+  gsap.to(imageSeq, {
+    frame: frameCount - 1,
+    snap: "frame",
+    ease: "none",
+    scrollTrigger: {
+      scrub: 0.5,
+      trigger: "#page3",
+      start: "top top",
+      end: "250% top",
+      scroller: "#main" //locomotive에서 스크롤을 감지하는 역할
+    },
+    onUpdate: render
+  })
+  images[0].onload = render
 
-    function render() {
-        scaleImage(images[imageSeq.frame], context)
-    }
+  function render() {
+    scaleImage(images[imageSeq.frame], context)
+  }
 
-    function scaleImage(img, ctx) {
-        let canvas = ctx.canvas
-        let hRatio = canvas.width / img.width
-        let vRatio = canvas.height / img.height
-        let ratio = Math.max(hRatio, vRatio)
-        let centerShift_x = (canvas.width - img.width * ratio) / 2
-        let centerShift_y = (canvas.height - img.height * ratio) / 2
+  function scaleImage(img, ctx) {
+    let canvas = ctx.canvas
+    let hRatio = canvas.width / img.width
+    let vRatio = canvas.height / img.height
+    let ratio = Math.max(hRatio, vRatio)
+    let centerShift_x = (canvas.width - img.width * ratio) / 2
+    let centerShift_y = (canvas.height - img.height * ratio) / 2
 
-        ctx.clearRect(0, 0, canvas.width, canvas.height)
-        ctx.drawImage(
-            img,
-            0,
-            0,
-            img.width,
-            img.height,
-            centerShift_x,
-            centerShift_y,
-            img.width * ratio,
-            img.height * ratio
-        )
-    } //scaleImage
-    ScrollTrigger.create({
-        trigger: "#page3",
-        pin: true,
-        scroller: "#main",
-        start: "top top",
-        end: "250% top"
-    })
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    ctx.drawImage(
+      img,
+      0,
+      0,
+      img.width,
+      img.height,
+      centerShift_x,
+      centerShift_y,
+      img.width * ratio,
+      img.height * ratio
+    )
+  } //scaleImage
+  ScrollTrigger.create({
+    trigger: "#page3",
+    pin: true,
+    scroller: "#main",
+    start: "top top",
+    end: "250% top"
+  })
 }
 canvas()
 
@@ -229,52 +229,52 @@ let clutter2 = ""
 let page4_h2 = document.querySelector('#page4>h2').textContent.split("")
 
 page4_h2.forEach(function (dets) {
-    clutter2 += `<span>${dets}</span>`
-    //clutter = clutter + `<span>T</span>`
-    document.querySelector('#page4>h2').innerHTML = clutter
+  clutter2 += `<span>${dets}</span>`
+  //clutter = clutter + `<span>T</span>`
+  document.querySelector('#page4>h2').innerHTML = clutter
 })
 
 gsap.to("#page4>h2>span", {
-    scrollTrigger: {
-        trigger: "#page4>h2>span",
-        start: "top bottom",
-        end: "bottom top",
-        scroller: "#main", //locomotive사용시 필수
-        scrub: 0.5
-    },
-    color: "#fff",
-    stagger: 0.2,
+  scrollTrigger: {
+    trigger: "#page4>h2>span",
+    start: "top bottom",
+    end: "bottom top",
+    scroller: "#main", //locomotive사용시 필수
+    scrub: 0.5
+  },
+  color: "#fff",
+  stagger: 0.2,
 })
 
 //page4 영역의 배경색 애니
 gsap.to("#page4 .background", {
-    scrollTrigger: {
-        trigger: "#page4",
-        start: "top top",
-        end: "bottom top",
-        scroller: "#main", //locomotive사용시 필수
-        scrub: 1
-    },
-    opacity: 0,
+  scrollTrigger: {
+    trigger: "#page4",
+    start: "top top",
+    end: "bottom top",
+    scroller: "#main", //locomotive사용시 필수
+    scrub: 1
+  },
+  opacity: 0,
 
 })
 /////////////////////////
 // page5
 function canvas5() {
-    let canvas = document.querySelector("#page5 canvas");
-    let context = canvas.getContext("2d"); //canvas 사용시 필수 작성
-    console.log(context)
+  let canvas = document.querySelector("#page5 canvas");
+  let context = canvas.getContext("2d"); //canvas 사용시 필수 작성
+  console.log(context)
 
+  canvas.width = window.innerWidth; // 화면의 넓이
+  canvas.height = window.innerHeight; //화면의 높이
+
+  window.addEventListener("resize", function () {
     canvas.width = window.innerWidth; // 화면의 넓이
     canvas.height = window.innerHeight; //화면의 높이
+  })
 
-    window.addEventListener("resize", function () {
-        canvas.width = window.innerWidth; // 화면의 넓이
-        canvas.height = window.innerHeight; //화면의 높이
-    })
-
-    function files(index) {
-        var data = `./img/bridges00004.png
+  function files(index) {
+    var data = `./img/bridges00004.png
         ./img/bridges00007.png
         ./img/bridges00010.png
         ./img/bridges00013.png
@@ -329,66 +329,66 @@ function canvas5() {
         ./img/bridges00160.png
         ./img/bridges00163.png
         ./img/bridges00202.png`;
-        return data.split("\n")[index] // "\n" --> enter로 인해 떨어트린 효과
-    }
-    let frameCount = 55;
-    let images = []
-    let imageSeq = {
-        frame: 0
-    }
-    for (let i = 0; i < frameCount; i++) {
-        let img = new Image() //이미지 태그 만들기
-        img.src = files(i)
-        images.push(img)
-    }
-    // console.log(images)
-    gsap.to(imageSeq, {
-        frame: frameCount - 1,
-        snap: "frame",
-        ease: "none",
-        scrollTrigger: {
-            scrub: 0.5,
-            trigger: "#page5",
-            start: "top top",
-            end: "250% top",
-            scroller: "#main" //locomotive에서 스크롤을 감지하는 역할
-        },
-        onUpdate: render
-    })
-    images[0].onload = render
+    return data.split("\n")[index] // "\n" --> enter로 인해 떨어트린 효과
+  }
+  let frameCount = 55;
+  let images = []
+  let imageSeq = {
+    frame: 0
+  }
+  for (let i = 0; i < frameCount; i++) {
+    let img = new Image() //이미지 태그 만들기
+    img.src = files(i)
+    images.push(img)
+  }
+  // console.log(images)
+  gsap.to(imageSeq, {
+    frame: frameCount - 1,
+    snap: "frame",
+    ease: "none",
+    scrollTrigger: {
+      scrub: 0.5,
+      trigger: "#page5",
+      start: "top top",
+      end: "250% top",
+      scroller: "#main" //locomotive에서 스크롤을 감지하는 역할
+    },
+    onUpdate: render
+  })
+  images[0].onload = render
 
-    function render() {
-        scaleImage(images[imageSeq.frame], context)
-    }
+  function render() {
+    scaleImage(images[imageSeq.frame], context)
+  }
 
-    function scaleImage(img, ctx) {
-        let canvas = ctx.canvas
-        let hRatio = canvas.width / img.width
-        let vRatio = canvas.height / img.height
-        let ratio = Math.max(hRatio, vRatio)
-        let centerShift_x = (canvas.width - img.width * ratio) / 2
-        let centerShift_y = (canvas.height - img.height * ratio) / 2
+  function scaleImage(img, ctx) {
+    let canvas = ctx.canvas
+    let hRatio = canvas.width / img.width
+    let vRatio = canvas.height / img.height
+    let ratio = Math.max(hRatio, vRatio)
+    let centerShift_x = (canvas.width - img.width * ratio) / 2
+    let centerShift_y = (canvas.height - img.height * ratio) / 2
 
-        ctx.clearRect(0, 0, canvas.width, canvas.height)
-        ctx.drawImage(
-            img,
-            0,
-            0,
-            img.width,
-            img.height,
-            centerShift_x,
-            centerShift_y,
-            img.width * ratio,
-            img.height * ratio
-        )
-    } //scaleImage
-    ScrollTrigger.create({
-        trigger: "#page5",
-        pin: true,
-        scroller: "#main",
-        start: "top top",
-        end: "250% top"
-    })
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    ctx.drawImage(
+      img,
+      0,
+      0,
+      img.width,
+      img.height,
+      centerShift_x,
+      centerShift_y,
+      img.width * ratio,
+      img.height * ratio
+    )
+  } //scaleImage
+  ScrollTrigger.create({
+    trigger: "#page5",
+    pin: true,
+    scroller: "#main",
+    start: "top top",
+    end: "250% top"
+  })
 }
 canvas5()
 /////////////////////////
@@ -398,39 +398,39 @@ let clutter3 = ""
 let page6_h2 = document.querySelector('#page6>h2').textContent.split("")
 
 page6_h2.forEach(function (dets) {
-    clutter3 += `<span>${dets}</span>`
-    //clutter = clutter + `<span>T</span>`
-    document.querySelector('#page6>h2').innerHTML = clutter
+  clutter3 += `<span>${dets}</span>`
+  //clutter = clutter + `<span>T</span>`
+  document.querySelector('#page6>h2').innerHTML = clutter
 })
 
 gsap.to("#page6>h2>span", {
-    scrollTrigger: {
-        trigger: "#page6>h2>span",
-        start: "top bottom",
-        end: "bottom top",
-        scroller: "#main", //locomotive사용시 필수
-        scrub: 0.5
-    },
-    color: "#fff",
-    stagger: 0.2,
+  scrollTrigger: {
+    trigger: "#page6>h2>span",
+    start: "top bottom",
+    end: "bottom top",
+    scroller: "#main", //locomotive사용시 필수
+    scrub: 0.5
+  },
+  color: "#fff",
+  stagger: 0.2,
 })
 /////////////////////////
 // page7
 function canvas7() {
-    let canvas = document.querySelector("#page7 canvas");
-    let context = canvas.getContext("2d"); //canvas 사용시 필수 작성
-    console.log(context)
+  let canvas = document.querySelector("#page7 canvas");
+  let context = canvas.getContext("2d"); //canvas 사용시 필수 작성
+  console.log(context)
 
+  canvas.width = window.innerWidth; // 화면의 넓이
+  canvas.height = window.innerHeight; //화면의 높이
+
+  window.addEventListener("resize", function () {
     canvas.width = window.innerWidth; // 화면의 넓이
     canvas.height = window.innerHeight; //화면의 높이
+  })
 
-    window.addEventListener("resize", function () {
-        canvas.width = window.innerWidth; // 화면의 넓이
-        canvas.height = window.innerHeight; //화면의 높이
-    })
-
-    function files(index) {
-        var data = `https://thisismagma.com/assets/home/lore/seq/1.webp?2
+  function files(index) {
+    var data = `https://thisismagma.com/assets/home/lore/seq/1.webp?2
         https://thisismagma.com/assets/home/lore/seq/2.webp?2
         https://thisismagma.com/assets/home/lore/seq/3.webp?2
         https://thisismagma.com/assets/home/lore/seq/4.webp?2
@@ -566,76 +566,156 @@ function canvas7() {
         https://thisismagma.com/assets/home/lore/seq/134.webp?2
         https://thisismagma.com/assets/home/lore/seq/135.webp?2
         https://thisismagma.com/assets/home/lore/seq/136.webp?2`;
-        return data.split("\n")[index] // "\n" --> enter로 인해 떨어트린 효과
-    }
-    let frameCount = 136;
-    let images = []
-    let imageSeq = {
-        frame: 0
-    }
-    for (let i = 0; i < frameCount; i++) {
-        let img = new Image() //이미지 태그 만들기
-        img.src = files(i)
-        images.push(img)
-    }
-    // console.log(images)
-    gsap.to(imageSeq, {
-        frame: frameCount - 1,
-        snap: "frame",
-        ease: "none",
-        scrollTrigger: {
-            scrub: 0.5,
-            trigger: "#page7",
-            start: "top top",
-            end: "250% top",
-            scroller: "#main" //locomotive에서 스크롤을 감지하는 역할
-        },
-        onUpdate: render
-    })
-    images[0].onload = render
+    return data.split("\n")[index] // "\n" --> enter로 인해 떨어트린 효과
+  }
+  let frameCount = 136;
+  let images = []
+  let imageSeq = {
+    frame: 0
+  }
+  for (let i = 0; i < frameCount; i++) {
+    let img = new Image() //이미지 태그 만들기
+    img.src = files(i)
+    images.push(img)
+  }
+  // console.log(images)
+  gsap.to(imageSeq, {
+    frame: frameCount - 1,
+    snap: "frame",
+    ease: "none",
+    scrollTrigger: {
+      scrub: 0.5,
+      trigger: "#page7",
+      start: "top top",
+      end: "250% top",
+      scroller: "#main" //locomotive에서 스크롤을 감지하는 역할
+    },
+    onUpdate: render
+  })
+  images[0].onload = render
 
-    function render() {
-        scaleImage(images[imageSeq.frame], context)
-    }
+  function render() {
+    scaleImage(images[imageSeq.frame], context)
+  }
 
-    function scaleImage(img, ctx) {
-        let canvas = ctx.canvas
-        let hRatio = canvas.width / img.width
-        let vRatio = canvas.height / img.height
-        let ratio = Math.max(hRatio, vRatio)
-        let centerShift_x = (canvas.width - img.width * ratio) / 2
-        let centerShift_y = (canvas.height - img.height * ratio) / 2
+  function scaleImage(img, ctx) {
+    let canvas = ctx.canvas
+    let hRatio = canvas.width / img.width
+    let vRatio = canvas.height / img.height
+    let ratio = Math.max(hRatio, vRatio)
+    let centerShift_x = (canvas.width - img.width * ratio) / 2
+    let centerShift_y = (canvas.height - img.height * ratio) / 2
 
-        ctx.clearRect(0, 0, canvas.width, canvas.height)
-        ctx.drawImage(
-            img,
-            0,
-            0,
-            img.width,
-            img.height,
-            centerShift_x,
-            centerShift_y,
-            img.width * ratio,
-            img.height * ratio
-        )
-    } //scaleImage
-    ScrollTrigger.create({
-        trigger: "#page7",
-        pin: true,
-        scroller: "#main",
-        start: "top top",
-        end: "250% top"
-    })
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    ctx.drawImage(
+      img,
+      0,
+      0,
+      img.width,
+      img.height,
+      centerShift_x,
+      centerShift_y,
+      img.width * ratio,
+      img.height * ratio
+    )
+  } //scaleImage
+  ScrollTrigger.create({
+    trigger: "#page7",
+    pin: true,
+    scroller: "#main",
+    start: "top top",
+    end: "250% top"
+  })
 }
 canvas7()
 
-gsap.to("#page7",{
-    scrollTrigger:{
-        trigger:"#page7",
-        start:"top top",
-        end:"bottom 40%",
-        scroller:"#main",
-        scrub:true
-    },
-    opacity:1
+gsap.to("#page7", {
+  scrollTrigger: {
+    trigger: "#page7",
+    start: "top top",
+    end: "bottom 40%",
+    scroller: "#main",
+    scrub: true
+  },
+  opacity: 1
 })
+
+gsap.to(".page7-cir", {
+  scrollTrigger: {
+    trigger: ".page7-cir",
+    start: "top center",
+    end: "bottom 40%",
+    scroller: "#main",
+    scrub: 0.5
+  },
+  scale: 1.5,
+  //circle이 커지고 난 뒤 할 일
+  onComplete: () => {
+    gsap.to(".page7-cir", {
+      scrollTrigger: {
+        trigger: ".page7-cir",
+        start: "bottom 20%",
+        end: "bottom top",
+        scroller: "#main",
+        scrub: 1
+      },
+      opacity:0,
+    })
+  }
+})
+
+gsap.to(".page7-cir-inner", {
+  scrollTrigger: {
+    trigger: ".page7-cir-inner",
+    start: "top center",
+    end: "bottom 40%",
+    scroller: "#main",
+    scrub: true
+  },
+  backgroundColor:"#0a3bce91"
+})
+
+//숫자 만들기
+let number=document.querySelector("#number")
+let numVal={value:0}
+let endValue=60
+let tl=gsap.timeline({
+  scrollTrigger:{
+    trigger: ".page7-cir",
+    start: "top center",
+    end: "bottom 20%",
+    scroller: "#main",
+    scrub: 0.5
+  }
+})
+.to(numVal,{
+  value:numVal.value,
+  duration:2,
+  onUpdate:()=>{
+    number.innerHTML=numVal.value;
+  }
+})
+.to(numVal,{
+  value:endValue,
+  duration:2,
+  onUpdate:()=>{
+    number.innerHTML=Math.round(numVal.value) + "%";//round반올림
+  }
+})
+
+
+/////////////////////////////
+// page8
+gsap.fromTo(".page8-inner",{
+  opacity:0
+},{
+  scrollTrigger:{
+    trigger: ".page8-inner",
+    start: "top top",
+    end: "+=50% top",
+    scroller: "#main",
+    scrub: 1
+  },
+  opacity:1
+})
+/////////////////////////////
