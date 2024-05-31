@@ -49,9 +49,101 @@ gsapSq.forEach(function(gSq, i){
 })
 /////////////////////////////////////////////////////////////
 function header(){
-    gsap.from("")
+    gsap.to(".title_paralax",{
+        scrollTrigger:{
+            trigger:".header",
+            start:"top top",
+            scrub:1.9
+        },
+        yPercent:-150
+    })
+    gsap.to(".header .stroke",{
+        scrollTrigger:{
+            trigger:".header",
+            start:"top top",
+            scrub:1.9
+        },
+        yPercent:50
+    })
 
+    gsap.to(".header .header__img",{
+        scrollTrigger:{
+            trigger:".header",
+            start:"top top",
+            scrub:1.9
+        },
+        scale:1.3
+    })
+    gsap.to(".header .header__marq-wrapp",{
+        scrollTrigger:{
+            trigger:".header",
+            start:"top top",
+            scrub:1.9
+        },
+        xPercent:-50
+    })
+    gsap.to(".header .header__marq-star",{
+        scrollTrigger:{
+            trigger:".header",
+            start:"top top",
+            scrub:1.9
+        },
+        // rotation:-720
+        rotate:-720
+    })
+    
 }
 header()
+/////////////////////////////////////////////////////////////
+function about(){
+    gsap.from(".about__img",{
+        scrollTrigger:{
+            trigger:".about",
+            start:"top bottom",
+            scrub:1.9
+        },
+        yPercent:80
+        
+       })
+
+       gsap.from(".about__img img",{
+        scrollTrigger:{
+            trigger:".about",
+            start:"top bottom",
+            scrub:1.9
+        },
+       scale:1.6
+        
+       })
+
+       gsap.to(".about__txt",{
+        scrollTrigger:{
+            trigger:".about__wrapp",
+            start:"top bottom",
+            scrub:1.9
+        },
+        yPercent:50
+        
+       })
+}
+about();
+/////////////////////////////////////////////////////////////
+function benefits(){
+    gsap.from(".benefits__num",{
+        scrollTrigger:{
+            trigger:".benefits__list",
+            start:"top bottom",
+            scrub:1.9
+        },
+        // forEach((각각의 요소,인덱스)=>{})
+        //y:(인덱스, 각각요소)=>{}
+        yPercent:100
+        
+       })
+}
+benefits()
+/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////
