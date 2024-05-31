@@ -2,65 +2,89 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sushi</title>
-    <!-- favicon -->
-    <link rel="shortcut icon"
-        href="https://img.freepik.com/premium-psd/floating-shrimp-sushi-japanese-food-minimal-icon-3d-rendering_570783-1231.jpg?ga=GA1.1.456315303.1714100878&semt=ais_user"
-        type="image/x-icon">
-    <!-- font -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sushi</title>
+  <!-- favicon -->
+  <link rel="shortcut icon"
+    href="https://img.freepik.com/premium-psd/floating-shrimp-sushi-japanese-food-minimal-icon-3d-rendering_570783-1231.jpg?ga=GA1.1.456315303.1714100878&semt=ais_user"
+    type="image/x-icon">
+  <!-- font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header class="header" id="header">
-        <nav class="nav container">
-            <a href="#" class="nav_logo">
-                <img src="img/logo.png" alt="logo">
-                Sushi
-            </a>
-            <div class="nav_menu" id="nav_menu">
-                <ul class="nav_list">
-                    <li class="nav_item">
-                        <a href="#" class="nav_link">Home</a>
-                    </li>
-                    <li class="nav_item">
-                        <a href="#" class="nav_link">About Us</a>
-                    </li>
-                    <li class="nav_item">
-                        <a href="#" class="nav_link">Popular</a>
-                    </li>
-                    <li class="nav_item">
-                        <a href="#" class="nav_link">recently</a>
-                    </li>
-                </ul>
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#" class="nav_logo">
+        <img src="img/logo.png" alt="logo">
+        Sushi
+      </a>
+      <div class="nav_menu" id="nav_menu">
+        <ul class="nav_list">
+          <li class="nav_item">
+            <a href="#" class="nav_link">Home</a>
+          </li>
+          <li class="nav_item">
+            <a href="#" class="nav_link">About Us</a>
+          </li>
+          <li class="nav_item">
+            <a href="#" class="nav_link">Popular</a>
+          </li>
+          <li class="nav_item">
+            <a href="#" class="nav_link">recently</a>
+          </li>
+        </ul>
 
-                <div class="nav_close" id="nav_close">
-                    <i class="ri-close-line"></i>
-                </div>
-                <img src="img/leaf-branch-4.png" alt="nav image" class="nav_img-1">
-                <img src="img/leaf-branch-3.png" alt="nav image" class="nav_img-2">
-            </div><!-- nav_menu -->
+        <div class="nav_close" id="nav_close">
+          <i class="ri-close-line"></i>
+        </div>
+        <img src="img/leaf-branch-4.png" alt="nav image" class="nav_img-1">
+        <img src="img/leaf-branch-3.png" alt="nav image" class="nav_img-2">
+      </div><!-- nav_menu -->
 
-            <div class="nav_buttons">
-                <!-- 배경색 바꾸기 -->
-                <i class="ri-moon-cloudy-line change-theme" id="change-theme"></i>
-                <!-- 메뉴 보이기 -->
-                <div class="nav_toggle" id="nav_toggle">
-                    <i class="ri-apps-line"></i>
-                </div>
+      <div class="nav_buttons">
+        <!-- 배경색 바꾸기 -->
+        <i class="ri-moon-cloudy-line change-theme" id="change-theme"></i>
+        <!-- 메뉴 보이기 -->
+        <div class="nav_toggle" id="nav_toggle">
+          <i class="ri-apps-line"></i>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="home section" id="home">
+      <div class="home_container container grid">
+        <img src="img/home-sushi-rolls.png" alt="home img" class="home_img">
+        <div class="home_data">
+          <h1 class="home_title">
+            Enjoy Delicious
+            <div>
+              <img src="img/home-sushi-title.png" alt="sushi-title">
+              sushi Food
             </div>
-        </nav>
-    </header>
+          </h1>
+          <p class="home_description">
+            Enjoy a good dinner with the best dishes in the restaurant and improve your day.
+          </p>
+          <a href="#" class="button">
+            Order Now <i class="ri-arrow-right-s-fill"></i>
+          </a>
+        </div><!-- home_data -->
+      </div><!-- home_container -->
+      <img src="img/leaf-branch-2.png" alt="leaf-branch-2" class="home_leaf-1">
+      <img src="img/leaf-branch-4.png" alt="leaf-branch-4" class="home_leaf-2">
+    </section><!-- home section -->
+  </main>
 
-
-    <script src="main.js"></script>
+  <script src="main.js"></script>
 </body>
 
 </html>
