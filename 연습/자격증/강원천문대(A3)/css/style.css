@@ -78,41 +78,76 @@ a{text-decoration: none; color: #000;}
 }
 .sliderWrap{
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 .sliderWrap .slider{
+    position: relative;
+}
+.sliderWrap .slider img{
+    width: 1200px;
     height: 300px;
+    vertical-align: top;
 }
 .sliderWrap .slider p{
     position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    color: #242424;
+    font-size: 20px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+
 }
 
 /* main */
 #main{
     width: 100%;
-    background-color: #834545;
+    display: flex;
 }
 
 #main .info{
     width: 33.3333%;
+    height: 200px;
+    padding: 10px;
 }
 .info .info-menu{}
-.info .info-menu a{}
+.info .info-menu a{
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #2345a1;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.info .info-menu span{
+    color: #000;
+}
 
-.info .info-cont{}
+.info .info-cont{
+    position: relative;
+}
 .info .info-cont .notice{}
 .info .info-cont .notice ul{}
-.info .info-cont .notice ul li{}
+.info .info-cont .notice ul li{
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
 .info .info-cont .notice ul li a{}
 .info .info-cont .notice ul li span{}
 
-.info .info-cont .gallery{}
+.info .info-cont .gallery{
+    position: absolute;
+    top: 13px;
+    left: 24px;
+}
 .info .info-cont .gallery ul{
     display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
 }
 .info .info-cont .gallery img{
-    width: 100px;
+    width: 100px; height: 100px;
     vertical-align: top;
 }
 
@@ -126,4 +161,6 @@ a{text-decoration: none; color: #000;}
     width: 33.3333%;
 
 }
-#main .sc img{}
+
+#footer{}
+#footer {}

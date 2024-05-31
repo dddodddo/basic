@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //var는 함수 스코프, let은 블록(={}) 스코프
+        //let, const은 블록(={}) 스코프는 {} 안에서는 밖의 변수를 사용할 수 있지만
+        //블록 안에서 만들어진 (선언된)변수는 블럭 밖에서는 사용할 수 없다 --> Err
+        var z= 3
+        function b(){
+            var a =1
+            console.log(z)
+            let q = 10
+        }
+        b()
+        // console.log(a)
+        // console.log(q)
+
+        if(true){
+            var t = 33
+            let v = 44
+
+        }
+        console.log(t)
+        console.log(v)
+    </script>
+</body>
+</html>
