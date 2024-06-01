@@ -32,10 +32,3 @@ $(".popup-btn").click(function(){
 $(".popup-close").click(function(){
     $(".popup-view").hide()
 })
-
-$(".popup-btn").click(function(){
-    $(".popup-view").show();
-});
-$(".popup-close").click(function(){
-    $(".popup-view").hide ();
-});
