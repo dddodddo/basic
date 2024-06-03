@@ -50,6 +50,7 @@ a{
     position: absolute;
     left: 0; 
     top: 99px;
+    transition: 0.3s;
 }
 #header .container.on::after{
     height: 170px;
@@ -78,6 +79,7 @@ a{
     position: absolute;
     top: 40px;
     left: 0;
+    display: none;
 }
 .nav>ul>li>ul>li{}
 .nav>ul>li>ul>li>a{
@@ -97,12 +99,20 @@ a{
 
 #slider{
     width: 100%;
+    height: 300px;
+    overflow: hidden;
 }
 .sliderWrap{
     width: 100%;
-    height: 300px;
     background-color: pink;
 }
+.sliderWrap .slider img{
+    width: 100%;
+    height: 300px;
+    vertical-align: top;
+}
+
+
 
 
 #contents{
@@ -112,7 +122,47 @@ a{
     width: 33.3333%;
     height: 200px;
     background-color: #444;
+    padding: 20px;
 }
+.notice h3{
+    padding: 10px;
+    background-color: #ccc;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.notice li{
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+.notice li a{
+    color: #fff;
+}
+.popup-view{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background-color: palegreen;
+    padding: 20px;
+    display: none;
+}
+.popup-view h3{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.popup-close{
+    position: absolute;
+    left: 80%;
+    top: 80%;
+    cursor: pointer;
+}
+
+
 .gallery{
     width: 33.3333%;
     height: 200px;

@@ -659,7 +659,7 @@ gsap.to(".page7-cir", {
         scroller: "#main",
         scrub: 1
       },
-      opacity:0,
+      opacity: 0,
     })
   }
 })
@@ -672,50 +672,103 @@ gsap.to(".page7-cir-inner", {
     scroller: "#main",
     scrub: true
   },
-  backgroundColor:"#0a3bce91"
+  backgroundColor: "#0a3bce91"
 })
 
 //숫자 만들기
-let number=document.querySelector("#number")
-let numVal={value:0}
-let endValue=60
-let tl=gsap.timeline({
-  scrollTrigger:{
-    trigger: ".page7-cir",
-    start: "top center",
-    end: "bottom 20%",
-    scroller: "#main",
-    scrub: 0.5
-  }
-})
-.to(numVal,{
-  value:numVal.value,
-  duration:2,
-  onUpdate:()=>{
-    number.innerHTML=numVal.value;
-  }
-})
-.to(numVal,{
-  value:endValue,
-  duration:2,
-  onUpdate:()=>{
-    number.innerHTML=Math.round(numVal.value) + "%";//round반올림
-  }
-})
+let number = document.querySelector("#number")
+let numVal = {
+  value: 0
+}
+let endValue = 60
+let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".page7-cir",
+      start: "top center",
+      end: "bottom 20%",
+      scroller: "#main",
+      scrub: 0.5
+    }
+  })
+  .to(numVal, {
+    value: numVal.value,
+    duration: 2,
+    onUpdate: () => {
+      number.innerHTML = numVal.value;
+    }
+  })
+  .to(numVal, {
+    value: endValue,
+    duration: 2,
+    onUpdate: () => {
+      number.innerHTML = Math.round(numVal.value) + "%"; //round반올림
+    }
+  })
 
 
 /////////////////////////////
-// page8
-gsap.fromTo(".page8-inner",{
-  opacity:0
-},{
-  scrollTrigger:{
+//page8
+gsap.to("#page8", {
+  scrollTrigger: {
+    trigger: "#page8",
+    start: "top top",
+    end: "+=300% top",
+    scroller: "#main",
+    pin: true
+  }
+})
+
+let clutter4 = "";
+let page8_h2 = document.querySelector("#page8 h2").textContent.split("")
+
+page8_h2.forEach(function (dets) {
+  clutter4 += `<span>${dets}</span>`;
+  //clutter = clutter + `<span>T</span>`
+  document.querySelector("#page8 h2").innerHTML = clutter4
+})
+
+gsap.fromTo("#page8 h2>span", {
+  y: "100%",
+  rotate: 30
+}, {
+  scrollTrigger: {
+    trigger: "#page8 h2>span",
+    start: "top 80%",
+    end: "bottom center",
+    scroller: "#main", //locomotive 사용시 필수
+    scrub: 2
+  },
+  stagger: 0.2,
+  y: 0,
+  rotate: 0
+})
+
+
+
+
+gsap.fromTo(".page8-inner", {
+  opacity: 0
+}, {
+  scrollTrigger: {
     trigger: ".page8-inner",
     start: "top top",
     end: "+=50% top",
     scroller: "#main",
-    scrub: 1
+    scrub: 1,
   },
-  opacity:1
+  opacity: 1,
+  onComplete: () => {
+    gsap.to("#page8 video", {
+      scale: 1,
+      scrollTrigger: {
+        trigger: ".page8-inner",
+        start: "top top",
+        end: "+=50% top",
+        scroller: "#main",
+        scrub: 1,
+      }
+    })
+  }
+
 })
 /////////////////////////////
