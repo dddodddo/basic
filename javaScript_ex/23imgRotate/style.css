@@ -77,7 +77,7 @@ h2 {
   height: 100vh;
 }
 .anime-card-inner {
-  position: absolute;
+  position: fixed;
   transform-style: preserve-3d;
   min-height: 348px;
 }
@@ -186,8 +186,8 @@ h2 {
     text-align: center !important;
 }
 .col-xl-7 {
-    flex: 0 0 50%;
-    max-width: 50%;
+    flex: 0 0 70%;
+    max-width: 70%;
 }
 .container, .container-lg, .container-md, .container-sm, .container-xl {
     width: 1140px;

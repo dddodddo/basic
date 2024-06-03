@@ -41,6 +41,21 @@ a{
 }
 
 
+
+#header .container::after{
+    content: "";
+    width: 100%;
+    height: 0px;
+    background-color: blueviolet;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    transition: 0.3s;
+}
+#header .container.on::after{
+    height: 200px;
+}
+
 .nav>ul{
     display: flex;
     justify-content: right;
@@ -71,7 +86,7 @@ a{
     display: inline-block;
     text-align: center;
     padding: 10px;
-    background-color: rgb(230, 255, 186);
+    background-color: blueviolet;
     width: 123px;
 }
 .nav>ul>li>ul>li>a:hover{
@@ -85,14 +100,17 @@ a{
 #slider{
     width: 100%;
     height: 300px;
+}
+#slider .container{
     overflow: hidden;
 }
 .sliderWrap{
     width: 100%;
     background-color: pink;
+    display: flex;
 }
 .sliderWrap .slider img{
-    width: 100%;
+    width: 1200px;
     height: 300px;
     vertical-align: top;
 }
