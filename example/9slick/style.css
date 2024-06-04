@@ -16,7 +16,7 @@
 .main-slick .slick-slide .text{}
 .main-slick .slick-slide .text p:first-child{
     position: relative;
-    opacity: 0; /* //넣어 주지 않으면 전에 작용된 글씨가 남아있음 */
+    opacity: 0;/* //넣어 주지 않으면 전에 작용된 글씨가 남아있음 */
     transition: 0.5s;
     transition-delay: 0.5s;
     left: -100%;
