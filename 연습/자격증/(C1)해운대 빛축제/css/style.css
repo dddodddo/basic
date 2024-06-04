@@ -18,7 +18,7 @@ a{
 }
 /* header */
 #header{
-    width: 20%;
+    width: 15%;
     height: 650px;
 }
 #header .logo{
@@ -59,8 +59,9 @@ a{
     background-color: #cd8a8a;
 }
 
+/* wrap_right */
 #wrap_right{
-    width: 80%;
+    width: 85%;
 }
 
 /* slider */
@@ -95,9 +96,49 @@ a{
 }
 .tab{
     width: 33.3333%;
-    height: 200px;
     background-color: #444;
+    padding: 10px;
+    position: relative;
 }
+.info{
+
+}
+.info .info_tit{
+    
+}
+.info .info_tit a{
+    display: inline-block;
+    padding: 10px;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin-bottom: 10px;
+}
+.info .info_cont{
+}
+.info .info_cont .notice{}
+.info .info_cont .notice>ul>li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    color: #fff;
+}
+.notice>ul>li>a{
+    color: #fff;
+}
+.info .info_cont .gallery{
+    position: absolute;
+    top: 85px;
+    left: 16px;
+}
+.info .info_cont .gallery img{
+    width: 80px;
+    height: 80px;
+}
+
+
+
 .banner{
     width: 33.3333%;
     height: 200px;

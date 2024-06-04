@@ -19,3 +19,15 @@ $(function(){
         currnetIndex=nextIndex
     },3000)
 })
+
+$(function(){
+    let infoTit=$(".info_tit>a")
+    let infoCont=$(".info .info_cont>div")
+    infoCont.hide().eq(0).show()
+
+    infoTit.click(function(){
+        const Index = $(this).index()
+        $(this).addClass("active").siblings().removeClass("active")
+        infoCont.eq(Index).show().siblings().hide()
+    })
+})
