@@ -34,3 +34,16 @@ $(function(){
         currentIndex=nextIndex
     },3000)
 })
+
+
+$(function(){
+    let tabBtn = $(".tab_btn>a")
+    let tabCont = $(".tab_cont>div")
+    tabCont.hide().eq(0).show()
+
+    tabBtn.click(function(){
+        let Index=$(this).index
+        tabBtn.addClass("active").siblings().removeClass("active")
+        tabCont.eq(Index).show().siblings().hide()
+    })
+})

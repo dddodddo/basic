@@ -1,0 +1,2 @@
+$('.main-slick').slick({
+  });
