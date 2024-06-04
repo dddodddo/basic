@@ -71,14 +71,15 @@ let mainText = gsap.timeline({
   .to(".main-txt", {
     opacity: 0,
     ease: "linear",
-    duration: "+=1"
-  })
+    duration: 2
+  }, "+=2")
 
   //글자 묶음
   .to(".banner-content", {
     ease: "linear",
     yPercent: 150,
-    opacity: 1
+    opacity: 1,
+    duration: 1
   }, "+=1")
 
 
@@ -87,22 +88,110 @@ let tl_img = gsap.timeline({
     scrollTrigger: {
       trigger: ".banner",
       start: "top 70%",
-      end: "+=100%",
-      scrub: 1
+      end: "+=330%",
+      scrub: 1,
+      marks: true
     }
   })
   .to(animeCard, {
     rotationY: 0,
     ease: "Expo.easeIn",
     duration: 2,
-    scale:1,
+    scale: 1,
     width: "100vw",
     height: "100vh",
   })
-  .to(animeCard,{
-    height:"60vh",
-    width:"535px",
-    left:"calc(50% + 500px)",
-    duration:2,
-    delay:0.5,
+  .to(animeCard, {
+    height: "60vh",
+    width: "535px",
+    left: "calc(50% + 500px)",
+    duration: 2,
+    delay: 0.5,
   })
+  //오른쪽으로 이동하면서 이미지 바뀐다.
+  .to(".main-wallpaper", {
+    opacity: 0,
+    delay: 0.5
+  }, "<") //앞의 애니와 같은 시간에 이루어짐
+
+  //두번째 banner
+  .to(animeCard, {
+    ease: "linear",
+    rotationY: -180,
+    height: "100vh",
+    width: "100vw",
+    left: "50%",
+    duration: 2
+  })
+  .to(animeCard, {
+    ease: "linear",
+    rotationY: -180,
+    height: "100vh",
+    width: "100vw",
+    left: "50%",
+    duration: 2
+  })
+  .to(animeCard, {
+    ease: "linear",
+    rotationY: -360,
+    height: "60vh",
+    width: "535px",
+    left: "calc(50% - 550px)",
+    duration: 2
+  })
+  .to(animeCard, {
+    ease: "linear",
+    rotationY: -180,
+    height: "100vh",
+    width: "100vw",
+    left: "50%",
+    duration: 2
+  })
+
+gsap.to(".anime-card", {
+  ease: "linear",
+  scrollTrigger: {
+    trigger: ".anime-card",
+    start: "top top",
+    end: "top bottom",
+    endTrigger: ".slider-card",
+    pin: true,
+    pinSpacing: false,
+    scrub: 1
+  }
+})
+
+// gsap.set(".anime-card-front img", {
+//   attr: {
+//     src: "https://www.yudiz.com/codepen/gsap-landing-page/tanjiro.jpg"
+//   }
+// })
+// gsap.set(".anime-card-back img", {
+//   attr: {
+//     src: "https://www.yudiz.com/codepen/gsap-landing-page/zenitsu.jpg"
+//   }
+// })
+
+//이미지 바꾸기
+gsap.to(".anime-card-front img", {
+  attr: {
+    src: "https://www.yudiz.com/codepen/gsap-landing-page/inosuke.jpg"
+  },
+  scrollTrigger: {
+    trigger: ".banner-three",
+    start: "top bottom",
+    scrub: 1
+  }
+})
+gsap.to(".anime-card-back img", {
+  attr: {
+    src: "https://www.yudiz.com/codepen/gsap-landing-page/nezuko.png"
+  },
+  scrollTrigger: {
+    trigger: ".banner-four",
+    start: "top bottom",
+    end:"top bottom",
+    endTrigger:".slider-card",
+    scrub: 1
+  }
+})

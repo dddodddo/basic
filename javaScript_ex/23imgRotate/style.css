@@ -17,6 +17,8 @@ body {
 .banner-three,
 .banner-four{
   border: 5px solid red;
+  position: relative;
+  z-index: 5;
 }
 .banner-three{height: 100vh;}
 /* .banner, .banner-two { height: 100vh; } */
@@ -67,8 +69,8 @@ h2 {
 .banner-three .row{justify-content: flex-end;}
 /*banners section*/
 .anime-card {
-  position: fixed;
-  /* position: absolute; */
+  /* position: fixed; */
+  position: absolute;
   left: 0;
   top: 0;
   transform: translate(-50%, -50%);
@@ -77,7 +79,8 @@ h2 {
   height: 100vh;
 }
 .anime-card-inner {
-  position: fixed;
+  /* position: fixed; */
+  position: absolute;
   transform-style: preserve-3d;
   min-height: 348px;
 }
