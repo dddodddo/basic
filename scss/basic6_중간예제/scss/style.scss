@@ -1,0 +1,53 @@
+@use "./partials/vars";
+
+*{margin: 0;padding: 0;}
+
+body{
+    height: 100vh;
+    font-family: vars.$ff;
+    font-size: vars.$fs-body;
+    color:vars.$color-body;
+}
+
+h1{
+    margin: 0 0 vars.$spacer 0;
+    padding: vars.$spacer*0.7 0;
+    font-size: vars.$fs-h1;
+    color: vars.$color-heading;
+    letter-spacing: vars.$ls;
+    text-transform: uppercase;
+}
+
+#mall-events-container{
+    padding: vars.$spacer;
+    text-align: center;
+}
+
+.events{
+    width: 95%;
+    min-width: 1000px;
+    margin: 0 auto;
+    padding-top: vars.$spacer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.event{
+    background-color: vars.$color-white;
+    box-shadow: vars.$bs;
+    padding: vars.$spacer*1.5 vars.$spacer*3;
+    border-top-left-radius: 130px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 130px;
+    border-bottom-left-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: vars.$spacer*1.5;
+
+    &:nth-of-type(1){
+        
+    }
+}

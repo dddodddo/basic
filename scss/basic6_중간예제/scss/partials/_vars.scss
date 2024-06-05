@@ -1,4 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+//color
+$color-white:#fff;
+$color-blue:#1359c2;
+$color-light-gray:rgba(0,0,0,0.1);
+$color-gray:rgba(0,0,0,0.5);
+$color-dark-gray:rgba(0,0,0,0.6);
+
+$color-accent:$color-blue;
+$color-body:$color-gray;
+$color-heading:$color-accent;
 
 //typography
 $ff:"Noto Sans KR", sans-serif;
@@ -19,3 +29,5 @@ $ls:5px; //letter-spacing
 
 //기타
 $spacer:1rem;
+$bs:0 0 1rem $color-light-gray;
+$bs-accent:0 0 1.2rem $color-dark-gray;
