@@ -42,8 +42,8 @@ $(function(){
     tabCont.hide().eq(0).show()
 
     tabBtn.click(function(){
-        let Index=$(this).index
-        tabBtn.addClass("active").siblings().removeClass("active")
+        const Index=$(this).index()
+        $(this).addClass("active").siblings().removeClass("active")
         tabCont.eq(Index).show().siblings().hide()
     })
 })
