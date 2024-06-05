@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
+
 <body>
-    <script>
-        //자바스크립트 함수의 내부와 객체간의 관계
+  <script>
+    //자바스크립트 함수의 내부와 객체간의 관계
 
-        //Animal 함수(생성자 함수)이면 자신과 자신과 같은 이름의 "Animal 포로토 타입 객체"가 생성
-        //Animal 함수는 멤버로 --> prototype속성이 생성 --> 다른 곳에 생성된 같은 이름의 "Animal 프로토 타입 객체"를 가르킴
+    //Animal 함수(생성자 함수)이면 자신과 자신과 같은 이름의 "Animal 포로토 타입 객체"가 생성
+    //Animal 함수는 멤버로 --> prototype속성이 생성 --> 다른 곳에 생성된 같은 이름의 "Animal 프로토 타입 객체"를 가르킴
 
-        //생성자 함수
-        function Animal(){}
+    //생성자 함수
+    function Animal() {}
 
-        //Animal()2️⃣                         1️⃣Animal 프로토타입 객체
-        //prototype(1️⃣을 가리킴)             (2️⃣를 가리킴) constructor
+    //Animal()2️⃣                         1️⃣Animal 프로토타입 객체
+    //prototype(1️⃣을 가리킴)             (2️⃣를 가리킴) constructor
 
-        // console.log(Animal)
-        //생성자 함수를 통해 객체 만들기
-        
-        //Animal이라는 생성자 함수가 자식을 낳았고(new) 그 자식의 이름은 tiger이다.
-        let tiger=new Animal()
-        // console.log(tiger.constructor)
-        let lion=new Animal()
-        //new 연산자와 생성자 함수를 이용하여 객체 생성시 각 객체에는
-        //__proto__ 속성이 자동으로 생성 --> 이 객체가 만들어질 수 있도록 해 준 원형(Animal 포로토타입 객체)을 숨은 링크로 가리킨다.
+    // console.log(Animal)
+    //생성자 함수를 통해 객체 만들기
 
-        Animal.prototype.aniRun=function(){
-            return "동물이 뛴다."
-        }
-        console.log(tiger)
-        console.log(tiger.aniRun())
-        console.log(lion.aniRun())
+    //Animal이라는 생성자 함수가 자식을 낳았고(new) 그 자식의 이름은 tiger이다.
+    let tiger = new Animal()
+    // console.log(tiger.constructor)
+    let lion = new Animal()
+    //new 연산자와 생성자 함수를 이용하여 객체 생성시 각 객체에는
+    //__proto__ 속성이 자동으로 생성 --> 이 객체가 만들어질 수 있도록 해 준 원형(Animal 포로토타입 객체)을 숨은 링크로 가리킨다.
 
-        tiger.aniRun=function(){ //tiger 내부의 aniRun 함수가 우선 적용됨
-            return"타이거가 뛴다."
-        }
-        console.log(tiger.aniRun()) //"타이거가 뛴다."
-        console.log(lion.aniRun()) //"동물이 뛴다."
+    Animal.prototype.aniRun = function () {
+      return "동물이 뛴다."
+    }
+    console.log(tiger)
+    console.log(tiger.aniRun())
+    console.log(lion.aniRun())
 
-    </script>
+    tiger.aniRun = function () { //tiger 내부의 aniRun 함수가 우선 적용됨
+      return "타이거가 뛴다."
+    }
+    console.log(tiger.aniRun()) //"타이거가 뛴다."
+    console.log(lion.aniRun()) //"동물이 뛴다."
+  </script>
 </body>
+
 </html>
