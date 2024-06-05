@@ -9,7 +9,8 @@ document.querySelectorAll(".progress").forEach((progressEle, index) => {
         max: MAX,
         value: 0,
         animationDuration:1500,
-        textFormat: (val)=>val+"%",
+        // textFormat: (val)=>val+"%",
+        textFormat: (val)=>val,
     });
 
     circleProgressInstances.push(cp)
