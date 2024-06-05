@@ -36,7 +36,7 @@ body {
 .progress {
     --color: orange;
 }
-.circle-progress{width: 180px; height: 180px;}
+.circle-progress{width: 100%; height: auto;}
 .circle-progress-value {
     stroke-width: 6px;
     stroke: var(--color);
