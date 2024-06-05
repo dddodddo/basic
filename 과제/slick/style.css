@@ -9,11 +9,12 @@ a{text-decoration: none; color: #fff;}
     height: 100vh;
     width: 100%;
     background: url(images/bg-main.jpg) no-repeat center/cover;
+    overflow: hidden;
 }
 /* btn */
 #main .slick-arrow{
     position: absolute;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
     z-index: 100;
 }
@@ -100,7 +101,7 @@ a{text-decoration: none; color: #fff;}
 
 /* slide */
 .slide{
-    padding-top: 70px;
+    padding-top: 2%;
     position: relative;
 }
 .slick-initialized .slick-slide{
@@ -130,8 +131,8 @@ a{text-decoration: none; color: #fff;}
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    margin-top: 7%;
     margin-bottom: 10%;
+    margin-top: 5%;
 }
 
 /* slide_right */
@@ -148,7 +149,7 @@ a{text-decoration: none; color: #fff;}
     opacity: 1;
 }
 .right .title h1{
-    font-size: 280px;
+    font-size: 230px;
     line-height: 1;
     display: inline-block;
 }
