@@ -17,6 +17,17 @@ spline.prototype.setCursorPos=function(x,y){
     return this
 }
 
+function alignAll(x,y){
+    for(let i in sp){
+        sp[i].setCursorPos(x,y)
+    }
+}
+
+window.addEventListener("mousemove",function(ev){
+    alignAll(ev.clientX, ev.clientY)
+})
+
+
 let sp=[]
 for(let i=0; i<180; i++ ){
     let div = document.createElement("div")
