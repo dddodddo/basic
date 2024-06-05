@@ -36,16 +36,16 @@ body {
 .progress {
     --color: orange;
 }
-
+.circle-progress{width: 180px; height: 180px;}
 .circle-progress-value {
     stroke-width: 6px;
     stroke: var(--color);
-    stroke-dasharray: 4 1;
+    stroke-dasharray: 6 2;
 }
 
 .circle-progress-circle {
     stroke-width: 6px;
-    stroke: #eee;
+    stroke: #17181c;
 }
 
 .circle-progress-text {
