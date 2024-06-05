@@ -1,3 +1,3 @@
 $('.slide').slick({
-    autoplay:true
+    // autoplay:true
 });
