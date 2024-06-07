@@ -36,12 +36,62 @@ a{
     width: 100%;
     height: 85%;
     background-color: #222;
+    padding: 10px;
 }
-
+.nav>ul{}
+.nav>ul>li{
+    position: relative;
+    z-index: 10;
+}
+.nav>ul>li>a{
+    width: 100%;
+    display: inline-block;
+    text-align: left;
+    padding: 10px 20px;
+    background-color: #fff;
+}
+.nav>ul>li>a:hover{
+    background-color: #ccc;
+}
+.nav>ul>li>ul{
+    position: absolute;
+    left: 180px;
+    top: 0;
+    display: flex;
+    /* display: none; */
+}
+.nav>ul>li>ul>li{
+    display: none;
+}
+.nav>ul>li>ul>li>a{
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(254, 223, 165);
+    width: 120px;
+}
+.nav>ul>li>ul>li>a:hover{
+    background-color: rgb(253, 200, 102);
+}
+.sliderwrap::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: calc(41px*4);
+    background-color: rgb(254, 223, 165);
+    top: 137.5px;
+    left: -10px;
+    /* display: none; */
+    transition: 0.3s;
+}
+.sliderwrap.on::after{
+    width: calc(100% + 10px);
+}
 
 /* wrapright */
 #wrapright{
     width: calc(100% - 200px);
+    position: relative;
 }
 
 
@@ -50,7 +100,30 @@ a{
 .sliderwrap{
     width: 100%;
     height: 400px;
-    background-color: #333;
+}
+.sliderwrap .slider{
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+.sliderwrap .slider .img{
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.sliderwrap .slider .s1{
+    background: url(../img/s1.jpg) no-repeat center/cover;
+    height: 400px;
+}
+.sliderwrap .slider .s2{
+    background: url(../img/s2.jpg) no-repeat center/cover;
+    height: 400px;
+}
+.sliderwrap .slider .s3{
+    background: url(../img/s3.jpg) no-repeat center/cover;
+    height: 400px;
 }
 
 
@@ -71,11 +144,14 @@ a{
     height: 250px;
     background-color: pink;
 }
-.tab .notice{
+.tab .info{
     width: 100%;
     height: 250px;
 }
-.tab .gallery{}
+.gallery img{
+    width: 100px;
+    height: 100px;
+}
 
 
 
