@@ -74,7 +74,7 @@ navClose.addEventListener("click",function(){
 //scrollUp
 let scrollup=()=>{
     //let scrollY=scrollY
-    console.log(pageYOffset)
+    // console.log(pageYOffset)
     let scrollUp=document.querySelector("#scroll-up")
     pageYOffset>=100?
     scrollUp.classList.add("show-scroll")
@@ -88,20 +88,21 @@ window.addEventListener("scroll",scrollup)
 let scrollActive=()=>{
     //let scrollY=pageYOffset
     let scrollYY=scrollY
-    console.log(scrollYY)
+    // console.log(scrollYY)
     //let sections=document.querySelectorAll("section[id]")//section태그중 속성 id가 있는것
     let sections=document.querySelectorAll(".section")
 
     sections.forEach((current)=>{
         let sectionHeight=current.offsetHeight;//각 section의 높이값
-        let sectionTop=current.offsetTop;//각 section의 전체문서에서의 top의 위치
+        let sectionTop=current.offsetTop -80;//각 section의 전체문서에서의 top의 위치
 
         let sectionId=current.getAttribute("id")
         // console.log(sectionId)
 
         let sectionClass=document.querySelector(`.nav_menu a[href*="${sectionId}"]`)
-        
+        console.log(sectionClass)
         if(scrollYY>sectionTop && scrollYY <= sectionTop + sectionHeight){
+            console.log("실행")
             sectionClass.classList.add('action-link')
         }else{
             sectionClass.classList.remove('action-link')
