@@ -40,9 +40,10 @@ a{text-decoration: none; color: #333;}
 .sliderWrap .slider{
     width: calc(100% - 230px);
     position: relative;
+    overflow: hidden;
 }
 .sliderWrap .slider .img{
-    width: 300%;
+    width: 400%;
     height: 400px;
     display: flex;
     position: absolute;
@@ -52,11 +53,12 @@ a{text-decoration: none; color: #333;}
 }
 .sliderWrap .slider .img .s{
     width: calc(100%/3);
-    height: 400px;
 }
 .sliderWrap .slider .img .s img{
     width: 100%;
     height: 400px;
+    vertical-align: top;
+
 }
 
 
