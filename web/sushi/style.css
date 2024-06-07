@@ -498,37 +498,77 @@ padding-inline-end: right */
     .header .nav_list {
         gap: 3rem;
     }
-    .popular_container{
+    .popualr_container{
         grid-template-columns: repeat(2,250px);
+        gap: 3.5rem;
+        padding-block: 6rem 4rem;
+    }
+    .popular_card{
+        padding: 7.5rem -2rem -2rem;
+        border-radius: 1.5rem;
+    }
+    .popular_img{
+        width: 230px;
+    }
+    .popular_card .popular_button{
+        bottom: 2rem;
+    }
+
+    .popular.section_subtitle,
+    .popular.section_title{
+        text-align: center;
     }
 }
 
-@media (min-width:1024px) {
-
-    /* 화면의 넓이가 1024px이상일 때  */
-    .container {
-        margin-inline: auto;
+@media (min-width:1024px){
+    /* 화면의 넓이가 1024px이상일때 */
+    .container{
+        margin-inline:auto ;
     }
-
-    .home_img {
+    .home_img{
         width: 600px;
         position: absolute;
-        top: 4rem;
-        right: -1rem;
+        top: 4rem; right: -1rem;
     }
-
-    .home_data {
-        order: -1;
-        text-align: left;
-    }
-
-    .home_title div {
-        justify-content: initial;
-    }
-
+    .home_data{order:-1; text-align: left;}
+    .home_title div{justify-content: initial;}
     .home_title img {
         width: 60px;
     }
+
+    .about_container{
+        grid-template-columns: 450px 360px;
+        align-items: center;
+        gap:7rem;
+    }
+    .about_data,
+    .section_subtitle,
+    .section_title{
+        text-align: initial;
+    }
+    .about_data{
+        order: 1;
+    }
+    .about_img{width: 450px;}
+
+    .popular_container{
+        grid-template-columns: repeat(3,262px);
+        gap:3.5rem;
+        padding-block: 6rem 4rem;
+    }
+    .popular_card{
+        padding: 7.5rem 2rem 2rem;
+        border-radius: 1.5rem;
+    }
+    .popular_img{
+        width: 230px;
+    }
+    .popular_card .popular_button{
+        bottom: 2rem;
+    }
+    .popular .section_subtitle,
+    .popular .section_title{text-align: center;}
+
 }
 
 @media (min-width:1280px) {
