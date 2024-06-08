@@ -44,12 +44,13 @@ $(function () {
 
 $(function () {
     let infotit = $(".info_tit>a")
-    let info_cont = $(".info_cont>div")
+    let infocont = $(".info_cont>div")
 
     infocont.hide().first().show()
 
-    infotit.cilck(function () {
+    infotit.click(function () {
         let index = $(this).index()
-        $(this).addClass("active")
+        $(this).addClass("active").siblings().removeClass("active")
+        infocont.eq(index).show().siblings().hide()
     })
 })
