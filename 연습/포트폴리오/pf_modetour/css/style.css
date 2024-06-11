@@ -57,11 +57,11 @@ video {
     position: absolute;
     right: 55px;
     top: 45px;
-    width: 600px;
+    width: 400px;
     display: flex;
     justify-content: space-between;
     gap: 58px;
-    font-size: 40px;
+    font-size: 24px;
     color: #9F9F9F;
     padding: 25px 36px;
     background-color: rgba(255, 255, 255, 0.85);
