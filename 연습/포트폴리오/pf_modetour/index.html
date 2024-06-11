@@ -3,14 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>모두투어</title>
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
-    <h1>모두투어</h1>
+    <div id="wrap">
+        <article class="mv">
+            <video muted autoplay loop>
+                <source src="./video/portfolio_modetour_video.mp4" type="video/mp4">
+            </video>
+            <div class="main_tit">
+                <h1 class="logo">
+                    <img src="img/logo_white.png" alt="logo_white">
+                </h1>
+                <!-- 시계 -->
+            </div>
+            <div class="main_search">
+                <h5 class="search">
+                    검색어를 입력해 주세요.
+                </h5>
+                <i class="fas fa-search"></i>
+            </div>
+        </article>
+    </div>
 
-    <script src="main.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

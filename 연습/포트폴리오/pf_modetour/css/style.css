@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Pretendard;
+    src: url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+}
+
+body {
+    font-family: Pretendard, sans-serif;
+}
+
+#wrap {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+/* /////////////////////////////////🎈mv🎈/////////////////////////////// */
+.mv {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+
+/* /////////////////////////////////🎈main_tit🎈/////////////////////////////// */
+.main_tit{
+}
+.main_tit .logo{
+    
+}
+.main_tit .logo img{
+    width: 50%;
+    opacity: 75%;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%,-50%);
+}
+/* /////////////////////////////////🎈main_search🎈/////////////////////////////// */
+.main_search{
+    position: absolute;
+    right: 55px;
+    top: 45px;
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+    gap: 58px;
+    font-size: 40px;
+    color: #9F9F9F;
+    padding: 25px 36px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 50px;
+}
+.main_search .search{}
+.main_search i{}

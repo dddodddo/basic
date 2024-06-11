@@ -7,18 +7,16 @@ $(function () {
     })
 })
 
-$(function () {
-    let currentIndex = 0
-    $(".slider").hide().first().show()
-
-    setInterval(function () {
-        let nextIndex = (currentIndex + 1) % 3
+$(function(){
+    let currentIndex=0
+    $(".slider").hide().eq(0).show()
+    setInterval(function(){
+        let nextIndex=(currentIndex+1)%3
         $(".slider").eq(currentIndex).fadeOut(600)
         $(".slider").eq(nextIndex).fadeIn(600)
-        currentIndex = nextIndex
-    }, 3000)
+        currentIndex=nextIndex
+    },3000)
 })
-
 
 $(function () {
     let tabBtn = $(".tabBtn>a")
