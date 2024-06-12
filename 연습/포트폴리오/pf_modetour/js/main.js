@@ -49,6 +49,6 @@ gsap.timeline({
   }
 })
 .to(".mv",{opacity:0.3,duration:100},5)
-.to(".mv .nav",{x:-30+"%",y:35+"%",duration:100},5)
+.to(".mv .nav",{x:-30+"%",y:50+"%",duration:100},5)
 .to(".mv .logo img",{x:-67+"%",y:410+"%",scale:0.2,duration:100},5)
 
