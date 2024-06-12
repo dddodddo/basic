@@ -9,25 +9,6 @@ $(function () {
   })
 }, 3000)
 
-$(function () {
-  let currentIndex = 0
-  $(".sliderWrap").append($(".slider").eq(0).clone(true))
-
-  setInterval(function () {
-    currentIndex++
-    $(".sliderWrap").animate({
-      marginLeft: -currentIndex * 100 + "%"
-    }, 600)
-    if (currentIndex == 3) {
-      setTimeout(function () {
-        $(".sliderWrap").animate({
-          marginLeft: 0
-        }, 0)
-        currentIndex = 0
-      }, 700)
-    }
-  }, 3000)
-})
 
 $(function(){
     let tabBtn=$(".tabBtn>a")
@@ -39,4 +20,20 @@ $(function(){
         tabBtn.addClass("active").siblings().removeClass("active")
         tabCont.eq(index).show().siblings().hide()
     })
+})
+
+$(function(){
+  let currentIndex=0
+  $(".sliderWrap").append($(".slider").eq(0).clone(true))
+
+  setInterval(function(){
+    currentIndex++
+    $(".slider").animate({top:-currentIndex*350+"px"},600)
+    if(currentIndex==3){
+      setTimeout(function(){
+        $(".slider").animate({top:0},0)
+        currentIndex=0
+      },700)
+    }
+  },3000)
 })

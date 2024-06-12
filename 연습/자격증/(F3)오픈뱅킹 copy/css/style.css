@@ -84,22 +84,25 @@ a{text-decoration: none; color: #000;}
     background-color: #333;
 }
 #slider .sliderWrap{
-    width: 400%;
+    width: 100%;
     height: 350px;
-    display: flex;
 }
 #slider .sliderWrap .slider{
     width: 100%;
     height: 350px;
+    position: relative;
 }
 #slider .sliderWrap .slider.s1{
     background: url(../img/s1.jpg) no-repeat center/cover;
+    height: 350px;
 }
 #slider .sliderWrap .slider.s2{
     background: url(../img/s2.jpg) no-repeat center/cover;
+    height: 350px;
 }
 #slider .sliderWrap .slider.s3{
     background: url(../img/s3.jpg) no-repeat center/cover;
+    height: 350px;
 }
 
 
@@ -141,7 +144,6 @@ a{text-decoration: none; color: #000;}
     height: 100px;
 }
 
-.tab .tabCont
 
 #footer{
     width: 100%;
