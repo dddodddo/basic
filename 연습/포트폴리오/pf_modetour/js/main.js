@@ -66,4 +66,4 @@ gsap.timeline({
 .to(".mv video",{opacity:0})
 .to(".mv .nav",{opacity:0})
 .to(".mv .logo img",{opacity:0})
-.to(".mv .logo img",{opacity:0})
+.to(".header",{opacity:1})

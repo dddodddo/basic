@@ -39,6 +39,7 @@ a {
   width: 100%;
   padding: 30px 241px 30px 192px;
   z-index: 100;
+  opacity: 0;
 }
 .main_logo {
 }
@@ -139,6 +140,7 @@ video {
 
 /* /////////////////////////////////🎈main_search🎈/////////////////////////////// */
 .main_search {
+  z-index: 10;
 }
 
 .main_search .search {
