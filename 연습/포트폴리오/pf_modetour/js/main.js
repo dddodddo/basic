@@ -39,12 +39,11 @@ setInterval(updateClock, 1000);
 ////////////////////////🎁mv-video🎁////////////////////////
 gsap.timeline({
   scrollTrigger: {
-    trigger: "#wrap",
+    trigger: ".mv",
     start:"top top",
     end:"90% top",
     scrub:2,
     duration:3,
-    markers: true,
     pinSpacing: false
   }
 })
@@ -52,3 +51,19 @@ gsap.timeline({
 .to(".mv .nav",{x:-30+"%",y:50+"%",duration:100},5)
 .to(".mv .logo img",{x:-67+"%",y:410+"%",scale:0.2,duration:100},5)
 
+////////////////////////🎁header🎁////////////////////////
+gsap.timeline({
+  scrollTrigger: {
+    trigger: ".section1",
+    start:"top 10%",
+    end:"top 10%",
+    scrub:2,
+    duration:3,
+    markers: true,
+    pinSpacing: false
+  }
+})
+.to(".mv video",{opacity:0})
+.to(".mv .nav",{opacity:0})
+.to(".mv .logo img",{opacity:0})
+.to(".mv .logo img",{opacity:0})
