@@ -17,8 +17,10 @@ let tl=gsap.timeline({
       markers:true
     }
 })
-tl.to(path1,{strokeDashoffset:0},"plane")
-tl.to(".paper-plane",{offsetDistance: "100%"},"plane")
+tl.to(".paper-plane",{
+    offsetDistance: "80%",
+    stagger:0.022
+},"plane")
 
 /////////////////////////////
 //비행기의 방향
