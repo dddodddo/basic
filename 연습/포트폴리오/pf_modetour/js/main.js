@@ -58,7 +58,7 @@ gsap.timeline({
     start:"top 10%",
     end:"top 10%",
     scrub:2,
-    duration:3,
+    duration:10,
     markers: true,
     pinSpacing: false
   }
@@ -66,4 +66,4 @@ gsap.timeline({
 .to(".mv video",{opacity:0})
 .to(".mv .nav",{opacity:0})
 .to(".mv .logo img",{opacity:0})
-.to(".header",{opacity:1})
+.to(".header",{opacity:1},0.2)
