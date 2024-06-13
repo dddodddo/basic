@@ -1,17 +1,17 @@
 gsap.registerPlugin(ScrollTrigger);
 
-var innerSliderOne = document.querySelector('.slider-inner-one');
-var innerSliderTwo = document.querySelector('.slider-inner-two');
-var images = document.querySelectorAll('.img');
+let innerSliderOne = document.querySelector(".slider-inner-one");
+let innerSliderTwo = document.querySelector(".slider-inner-two");
+let images = document.querySelectorAll(".img");
 var current = 0; //현재위치
 var target = 0; //스크롤탑값
-var ease = 0.075;
-var imageItems = [];
+let ease = 0.075;
+let imageItems = [];
 let stop;
 
 images.forEach((image) => {
-  imageItems.push(image)
-})
+  imageItems.push(image);
+});
 
 function lerp(start, end, t) {
   return start * (1 - t) + end * t;
@@ -22,39 +22,61 @@ function lerp(start, end, t) {
   // return 107.21
 }
 
+function transformElement(el, transform) {
+  el.style.transform = transform;
+}
 function animate() {
-  target.window.scrollY
-  console.log(target)
-  current = lerp(current, target, ease) //lerp(100,150,0.075)
+  target = window.scrollY;
+  console.log(target);
+  current = lerp(current, target, ease); //lerp(100,150,0.075)
+  //console.log(current);
+  for (let i = 0; i < imageItems.length; i++) {
+    if (current < target - 50 || current > target + 50) {
+      transformElement(imageItems[i], `scale(0.8)`);
+    } else {
+      transformElement(imageItems[i], `scale(1)`);
+    }
+  }
 }
 
 //가로스크롤
-gsap.to(innerSliderOne, {
-  xPercent: -50,
-  ease: "none",
-  delay: 1,
-  scrollTrigger: {
-    trigger: "main",
-    start: "top top",
-    scrub: 1,
-    end: "+=200%",
-    pin: true,
-    onEnter: function ani() {
-      animate()
-      requestAnimationFrame(ani)
-    }
-  }
-}, 0)
+gsap.to(
+  innerSliderOne,
+  {
+    xPercent: -50,
+    ease: "none",
+    delay: 1,
+    scrollTrigger: {
+      trigger: "main",
+      start: "top top",
+      scrub: 1,
+      end: "+=200%",
+      pin: true,
+      onEnter: function ani() {
+        animate();
+        stop = requestAnimationFrame(ani);
+      },
+      onLeaveBack: () => {
+        cancelAnimationFrame(stop);
+      },
+    },
+  },
+  0
+);
 
-gsap.to(innerSliderTwo, {
-  xPercent: -67,
-  ease: "none",
-  delay: 1,
-  scrollTrigger: {
-    trigger: "main",
-    start: "top top",
-    scrub: 1,
-    end: "+=200%",
-    pin: true,
-  }
-}, 0)
+gsap.to(
+  innerSliderTwo,
+  {
+    xPercent: -67,
+    ease: "none",
+    delay: 1,
+    scrollTrigger: {
+      trigger: "main",
+      start: "top top",
+      scrub: 1,
+      end: "+=200%",
+      pin: true,
+    },
+  },
+  0
+);

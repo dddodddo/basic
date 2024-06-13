@@ -1,75 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>모두투어</title>
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>모두투어</title>
-  <link rel="stylesheet" as="style" crossorigin
-    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-  <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-  <div id="wrap">
-    <section class="mv">
-      <video muted autoplay loop>
-        <source src="./video/portfolio_modetour_video.mp4" type="video/mp4">
-      </video>
-      <div class="main_tit">
-        <h1 class="logo">
-          <img src="img/logo_white.png" alt="logo_white">
+  <body>
+    <div id="wrap">
+      <header class="header">
+        <h1 class="main_logo">
+          <a href="#"><img src="img/logo.png" alt="logo" /></a>
         </h1>
-        <div class="main_sub">
-          <h3 class="seoul">Seoul</h3>
-          <div class="clock">
-            <div class="time_box">
-              <span class="txt_lg" id="hoursTens">0</span>
-              <span class="txt_lg" id="hoursOnes">0</span>
-              <span class="mark">:</span>
-              <span class="txt_lg" id="minTens">0</span>
-              <span class="txt_lg" id="minOnes">0</span>
-              <span class="mark">:</span>
-              <span class="txt_lg" id="secTens">0</span>
-              <span class="txt_lg" id="secOnes">0</span>
+        <nav class="main_nav">
+          <ul>
+            <li><a href="#">Travel</a></li>
+            <li><a href="#">Airline</a></li>
+            <li><a href="#">Hotel</a></li>
+            <li><a href="#">Tour</a></li>
+          </ul>
+        </nav>
+      </header>
+      <section class="mv">
+        <video muted autoplay loop>
+          <source src="./video/portfolio_modetour_video.mp4" type="video/mp4" />
+        </video>
+        <div class="main_tit">
+          <h1 class="logo">
+            <img src="img/logo_white.png" alt="logo_white" />
+          </h1>
+          <div class="main_sub">
+            <h3 class="seoul">Seoul</h3>
+            <div class="clock">
+              <div class="time_box">
+                <span class="txt_lg" id="hoursTens">0</span>
+                <span class="txt_lg" id="hoursOnes">0</span>
+                <span class="mark">:</span>
+                <span class="txt_lg" id="minTens">0</span>
+                <span class="txt_lg" id="minOnes">0</span>
+                <span class="mark">:</span>
+                <span class="txt_lg" id="secTens">0</span>
+                <span class="txt_lg" id="secOnes">0</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="main_search">
-        <form action="#">
-          <input type="text" class="search" placeholder="검색어를 입력해 주세요.">
-        </form>
-        <span><i class="fas fa-search"></i></span>
-      </div>
-      <nav class="nav">
-        <ul>
-          <li><a href="#">Travel</a></li>
-          <li><a href="#">Airline</a></li>
-          <li><a href="#">Hotel</a></li>
-          <li><a href="#">Tour</a></li>
-        </ul>
-      </nav>
-    </section>
-    <section class="mainNav">
-      <nav class="main_nav">
-        <ul>
-          <li><a href="#">Travel</a></li>
-          <li><a href="#">Airline</a></li>
-          <li><a href="#">Hotel</a></li>
-          <li><a href="#">Tour</a></li>
-        </ul>
-      </nav>
-    </section>
-    <section class="section1"></section>
-    <section class="section2"></section>
-  </div>
+        <div class="main_search">
+          <form action="#">
+            <input
+              type="text"
+              class="search"
+              placeholder="검색어를 입력해 주세요."
+            />
+          </form>
+          <span><i class="fas fa-search"></i></span>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li><a href="#">Travel</a></li>
+            <li><a href="#">Airline</a></li>
+            <li><a href="#">Hotel</a></li>
+            <li><a href="#">Tour</a></li>
+          </ul>
+        </nav>
+      </section>
+      <!-- <header class="header">
+        <h1 class="main_logo">
+          <img src="img/logo.png" alt="logo" />
+        </h1>
+        <nav class="main_nav">
+          <ul>
+            <li><a href="#">Travel</a></li>
+            <li><a href="#">Airline</a></li>
+            <li><a href="#">Hotel</a></li>
+            <li><a href="#">Tour</a></li>
+          </ul>
+        </nav>
+      </header> -->
+      <section class="section1"></section>
+      <section class="section2"></section>
+    </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="js/jquery.js"></script>
-  <script src="js/main.js"></script>
-</body>
-
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
