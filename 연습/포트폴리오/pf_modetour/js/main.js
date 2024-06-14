@@ -3,7 +3,7 @@ gsap.registerPlugin(ScrollTrigger);
 const lenis = new Lenis();
 
 lenis.on("scroll", (e) => {
-  console.log(e);
+  // console.log(e);
 });
 
 lenis.on("scroll", ScrollTrigger.update);
@@ -15,6 +15,10 @@ gsap.ticker.add((time) => {
 gsap.ticker.lagSmoothing(0);
 // color  #00A87F
 // color: rgb(153, 153, 153)
+
+// 마우스 따라 움직이는 법
+// SwsImg.style.transform = `translate(${newX}px, ${newY}px)`;
+// Sws.style.transform = `translate(${newX}px, ${newY}px)`;
 
 ////////////////////////🎁search icon🎁////////////////////////
 $(function () {
@@ -56,11 +60,22 @@ gsap
       pinSpacing: false,
     },
   })
-  .to(".mv", { opacity: 0.3, duration: 100 }, 5)
-  .to(".mv .nav", { x: -30 + "%", y: 50 + "%", duration: 100 }, 5)
+  .to(".mv", {
+    opacity: 0.3,
+    duration: 100
+  }, 5)
+  .to(".mv .nav", {
+    x: -30 + "%",
+    y: 50 + "%",
+    duration: 100
+  }, 5)
   .to(
-    ".mv .logo img",
-    { x: -67 + "%", y: 410 + "%", scale: 0.2, duration: 100 },
+    ".mv .logo img", {
+      x: -67 + "%",
+      y: 410 + "%",
+      scale: 0.2,
+      duration: 100
+    },
     5
   );
 
@@ -77,10 +92,75 @@ gsap
       pinSpacing: false,
     },
   })
-  .to(".mv video", { opacity: 0 })
-  .to(".mv .nav", { opacity: 0 })
-  .to(".mv .logo img", { opacity: 0 })
-  .to(".header", { opacity: 1 }, 0.2);
+  .to(".mv video", {
+    opacity: 0
+  })
+  .to(".mv .nav", {
+    opacity: 0
+  })
+  .to(".mv .logo img", {
+    opacity: 0
+  })
+  .to(".header", {
+    opacity: 1
+  }, 0.2);
 
-  
-////////////////////////🎁header🎁////////////////////////
+
+////////////////////////🎁sws_clock🎁////////////////////////
+setInterval(() => {
+  let today = new Date()
+
+  let options = {
+    timeZone: 'Europe/Zurich'
+  };
+  let timeString = today.toLocaleTimeString('en-GB', options);
+  let [hh, mm, ss] = timeString.split(':');
+
+  document.querySelector('#hours').innerHTML = hh
+  document.querySelector('#min').innerHTML = mm
+  document.querySelector('#sec').innerHTML = ss
+
+}, 1000)
+////////////////////////🎁sws mostion🎁////////////////////////
+let wrapper = document.querySelector(".section1")
+let Sws = document.querySelector(".switzerland")
+let SwsImg = document.querySelector(".sub_sws")
+
+wrapper.addEventListener('mouseover', function (e) {
+  let wrapperRect = wrapper.getBoundingClientRect();
+  console.log(wrapperRect);
+
+  let relX = e.clientX - (wrapperRect.left + wrapperRect.width / 2)
+  let relY = e.clientY - (wrapperRect.top + wrapperRect.height / 2)
+
+  let SwsMaxDisplacement = 50
+  let SwsImgMaxDisplacement = 75
+
+  let SwsImgMaxDisplacementX = (relX / wrapperRect.width) * SwsImgMaxDisplacement
+  let SwsImgMaxDisplacementY = (relY / wrapperRect.height) * SwsImgMaxDisplacement
+
+  let SwsMaxDisplacementX = (relX / wrapperRect.width) * SwsMaxDisplacement
+  let SwsMaxDisplacementY = (relY / wrapperRect.height) * SwsMaxDisplacement
+
+  gsap.to(SwsImg, {
+    x: SwsImgMaxDisplacementX,
+    y: SwsImgMaxDisplacementY,
+    duration: 0.3,
+    ease: "power3.out"
+  })
+  gsap.to(Sws, {
+    x: -SwsMaxDisplacementX,
+    y: SwsMaxDisplacementY,
+    duration: 0.3,
+    ease: "power3.out"
+  })
+});
+
+////////////////////////🎁section1 slick🎁////////////////////////
+$('.fade').slick({
+  dots: true,
+  infinite: true,
+  speed: 500,
+  fade: true,
+  cssEase: 'linear'
+});

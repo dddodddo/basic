@@ -1,96 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>모두투어</title>
-    <link
-      rel="stylesheet"
-      as="style"
-      crossorigin
-      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
 
-  <body>
-    <div id="wrap">
-      <header class="header">
-        <h1 class="main_logo">
-          <a href="#"><img src="img/logo.png" alt="logo" /></a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>모두투어</title>
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div id="wrap">
+    <!-- 💛💛header💛💛 -->
+    <header class="header">
+      <h1 class="main_logo">
+        <a href="#"><img src="img/logo.png" alt="logo" /></a>
+      </h1>
+      <nav class="main_nav">
+        <ul>
+          <li><a href="#">Travel</a></li>
+          <li><a href="#">Airline</a></li>
+          <li><a href="#">Hotel</a></li>
+          <li><a href="#">Tour</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- 💛💛mv💛💛 -->
+    <section class="mv">
+      <video muted autoplay loop>
+        <source src="./video/portfolio_modetour_video.mp4" type="video/mp4" />
+      </video>
+      <div class="main_tit">
+        <h1 class="logo">
+          <img src="img/logo_white.png" alt="logo_white" />
         </h1>
-        <nav class="main_nav">
-          <ul>
-            <li><a href="#">Travel</a></li>
-            <li><a href="#">Airline</a></li>
-            <li><a href="#">Hotel</a></li>
-            <li><a href="#">Tour</a></li>
-          </ul>
-        </nav>
-      </header>
-      <section class="mv">
-        <video muted autoplay loop>
-          <source src="./video/portfolio_modetour_video.mp4" type="video/mp4" />
-        </video>
-        <div class="main_tit">
-          <h1 class="logo">
-            <img src="img/logo_white.png" alt="logo_white" />
-          </h1>
-          <div class="main_sub">
-            <h3 class="seoul">Seoul</h3>
-            <div class="clock">
-              <div class="time_box">
-                <span class="txt_lg" id="hoursTens">0</span>
-                <span class="txt_lg" id="hoursOnes">0</span>
-                <span class="mark">:</span>
-                <span class="txt_lg" id="minTens">0</span>
-                <span class="txt_lg" id="minOnes">0</span>
-                <span class="mark">:</span>
-                <span class="txt_lg" id="secTens">0</span>
-                <span class="txt_lg" id="secOnes">0</span>
-              </div>
+        <div class="main_sub">
+          <h3 class="seoul">Seoul</h3>
+          <div class="clock">
+            <div class="time_box">
+              <span class="txt_lg" id="hoursTens">0</span>
+              <span class="txt_lg" id="hoursOnes">0</span>
+              <span class="mark">:</span>
+              <span class="txt_lg" id="minTens">0</span>
+              <span class="txt_lg" id="minOnes">0</span>
+              <span class="mark">:</span>
+              <span class="txt_lg" id="secTens">0</span>
+              <span class="txt_lg" id="secOnes">0</span>
             </div>
           </div>
         </div>
-        <div class="main_search">
-          <form action="#">
-            <input
-              type="text"
-              class="search"
-              placeholder="검색어를 입력해 주세요."
-            />
-          </form>
-          <span><i class="fas fa-search"></i></span>
-        </div>
-        <nav class="nav">
-          <ul>
-            <li><a href="#">Travel</a></li>
-            <li><a href="#">Airline</a></li>
-            <li><a href="#">Hotel</a></li>
-            <li><a href="#">Tour</a></li>
-          </ul>
-        </nav>
-      </section>
-      <section class="section1">
-        <div class="sws">
-          <div class="main_sws">
+      </div>
+      <div class="main_search">
+        <form action="#">
+          <input type="text" class="search" placeholder="검색어를 입력해 주세요." />
+        </form>
+        <span><i class="fas fa-search"></i></span>
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a href="#">Travel</a></li>
+          <li><a href="#">Airline</a></li>
+          <li><a href="#">Hotel</a></li>
+          <li><a href="#">Tour</a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <!-- 💛💛section1💛💛 -->
+    <section class="section1">
+      <div class="sws">
+        <div class="main_sws">
+          <div class="tracker">
+            <h3 class="switzerland">Switzerland</h3>
             <div class="sub_sws">
               <img src="img/schilthorn.png" alt="schilthorn">
             </div>
           </div>
+          <div class="sws_clock_wrap">
+            <div class="sws_clock_time">[현재 시각]</div>
+            <div class="sws_clock">
+              <div class="time_box_sws">
+                <span class="txt_lg_sws" id="hours">00</span>
+                <span class="mark_sws">:</span>
+                <span class="txt_lg_sws" id="min">00</span>
+                <span class="mark_sws">:</span>
+                <span class="txt_sm_sws" id="sec">00</span>
+              </div>
+            </div>
+          </div>
+          <div class="sws_text">
+            <div class="t_subtit">
+              <span class="t_subtit_s">스위스 완전일주</span>
+              <span>(7박 9일)</span>
+            </div>
+            <div class="t_subtag">
+              <span>#스위스일주</span>
+              <span>#쉴트호른</span>
+              <span>#스위스온천</span>
+              <span>#서유럽여행</span>
+            </div>
+          </div>
         </div>
-      </section>
-      <section class="section2"></section>
-    </div>
+      </div>
+      <!-- <div class="sws">
+        <div class="main_sws">
+          <div class="tracker">
+            <h3 class="switzerland">Switzerland</h3>
+            <div class="sub_sws">
+              <img src="img/schilthorn.png" alt="schilthorn">
+            </div>
+          </div>
+          <div class="sws_clock_wrap">
+            <div class="sws_clock_time">[현재 시각]</div>
+            <div class="sws_clock">
+              <div class="time_box_sws">
+                <span class="txt_lg_sws" id="hours">00</span>
+                <span class="mark_sws">:</span>
+                <span class="txt_lg_sws" id="min">00</span>
+                <span class="mark_sws">:</span>
+                <span class="txt_sm_sws" id="sec">00</span>
+              </div>
+            </div>
+          </div>
+          <div class="sws_text">
+            <div class="t_subtit">
+              <span class="t_subtit_s">스위스 완전일주</span>
+              <span>(7박 9일)</span>
+            </div>
+            <div class="t_subtag">
+              <span>#스위스일주</span>
+              <span>#쉴트호른</span>
+              <span>#스위스온천</span>
+              <span>#서유럽여행</span>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+      <div class="sws">
+        <div class="main_sws">
+          <div class="tracker">
+            <h3 class="switzerland">Switzerland</h3>
+            <div class="sub_sws">
+              <img src="img/schilthorn.png" alt="schilthorn">
+            </div>
+          </div>
+          <div class="sws_clock_wrap">
+            <div class="sws_clock_time">[현재 시각]</div>
+            <div class="sws_clock">
+              <div class="time_box_sws">
+                <span class="txt_lg_sws" id="hours">00</span>
+                <span class="mark_sws">:</span>
+                <span class="txt_lg_sws" id="min">00</span>
+                <span class="mark_sws">:</span>
+                <span class="txt_sm_sws" id="sec">00</span>
+              </div>
+            </div>
+          </div>
+          <div class="sws_text">
+            <div class="t_subtit">
+              <span class="t_subtit_s">스위스 완전일주</span>
+              <span>(7박 9일)</span>
+            </div>
+            <div class="t_subtag">
+              <span>#스위스일주</span>
+              <span>#쉴트호른</span>
+              <span>#스위스온천</span>
+              <span>#서유럽여행</span>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div> -->
+      <div class="ticket">
+        <h3 class="ticket_tit">투어 찾기</h3>
+        <div class="country">
+          <div class="c_start">
+            <div class="start">출발지</div>
+            <div class="s_country">BUSAN</div>
+          </div>
+          <i class="fas fa-plane"></i>
+          <div class="c_end">
+            <div class="end">도착지</div>
+            <div class="e_country">Bern</div>
+          </div>
+        </div>
+        <div class="boder"></div>
+        <div class="conts">
+          <div class="conts_wrap">
+            <div class="conts_s tikCont">
+              <p>출발일<span>2024.06.14</span></p>
+            </div>
+            <div class="conts_e tikCont">
+              <p>도착일<span>2024.07.26</span></p>
+            </div>
+            <div class="conts_p tikCont">
+              <p>인원<span>4</span></p>
+            </div>
+          </div>
+          <div class="conts_c tikCont">
+            <p>여행 컨셉</p>
+            <div class="concept">
+              <p>#관광</p>
+              <p>#자유여행</p>
+              <p>#허니문</p>
+              <p>#휴양</p>
+              <p>#한달살기</p>
+            </div>
+          </div>
+        </div>
+        <div class="conts_btn">
+          <a href="#">검색하기</a>
+        </div>
+      </div>
+    </section>
 
-    <script src="https://unpkg.com/lenis@1.1.3/dist/lenis.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="js/jquery.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+    <!-- 💛💛section2💛💛 -->
+    <section class="section2"></section>
+  </div>
+
+  <script src="https://unpkg.com/lenis@1.1.3/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
 </html>

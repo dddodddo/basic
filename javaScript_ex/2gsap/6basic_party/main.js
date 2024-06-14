@@ -1,7 +1,7 @@
 gsap.registerPlugin(ScrollTrigger)
 const lenis = new Lenis()
 lenis.on('scroll', (e) => {
-  console.log(e)
+  // console.log(e)
 })
 
 lenis.on('scroll', ScrollTrigger.update)
@@ -137,7 +137,7 @@ splitTypes.forEach(function (char, i) {
   const text = new SplitType(char, {
     types: 'chars'
   })
-  console.log(text)
+  // console.log(text)
 
   gsap.from(text.chars, {
     opacity: 0,

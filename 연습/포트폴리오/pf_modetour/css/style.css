@@ -41,24 +41,23 @@ a {
   z-index: 100;
   opacity: 0;
 }
-.main_logo {
-}
+
+.main_logo {}
+
 .main_logo img {
   width: 196px;
 }
 
-.main_nav {
-}
+.main_nav {}
 
-.main_nav > ul {
+.main_nav>ul {
   display: flex;
   gap: 98px;
 }
 
-.main_nav > ul > li {
-}
+.main_nav>ul>li {}
 
-.main_nav > ul > li > a {
+.main_nav>ul>li>a {
   display: inline-block;
   font-size: 25px;
   color: #3a3a3a;
@@ -66,7 +65,7 @@ a {
   transition: 0.3s;
 }
 
-.main_nav > ul > li > a:hover {
+.main_nav>ul>li>a:hover {
   color: #00a87f;
 }
 
@@ -88,11 +87,9 @@ video {
 }
 
 /* /////////////////////////////////🎈main_tit🎈/////////////////////////////// */
-.main_tit {
-}
+.main_tit {}
 
-.main_tit .logo {
-}
+.main_tit .logo {}
 
 .main_tit .logo img {
   width: 975px;
@@ -135,8 +132,7 @@ video {
   margin-left: -7px;
 }
 
-.mark {
-}
+.mark {}
 
 /* /////////////////////////////////🎈main_search🎈/////////////////////////////// */
 .main_search {
@@ -178,15 +174,14 @@ input::placeholder {
   right: 74px;
 }
 
-.nav > ul {
+.nav>ul {
   display: flex;
   gap: 98px;
 }
 
-.nav > ul > li {
-}
+.nav>ul>li {}
 
-.nav > ul > li > a {
+.nav>ul>li>a {
   display: inline-block;
   font-size: 25px;
   color: #fff;
@@ -194,7 +189,7 @@ input::placeholder {
   transition: 0.3s;
 }
 
-.nav > ul > li > a:hover {
+.nav>ul>li>a:hover {
   color: #00a87f;
 }
 
@@ -202,21 +197,170 @@ input::placeholder {
 .section1 {
   width: 100%;
   height: 100vh;
-  background-color: #ddd;
   position: sticky;
 }
-.sws{
+/* /////////////////////////////////🎀sws🎀/////////////////////////////// */
+.sws {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1455px;
+  height: 700px;
+  overflow: hidden;
+}
+
+.main_sws {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 1500px;
+  width: 100%;
+  height: 100%;
   transform: translate(-50%, -50%);
-  background: url(../img/schilthorn_main.jpg) no-repeat 50% 50%;
-  background-size: contain;
+  border-radius: 50px;
+  background: url(../img/schilthorn_main.jpg) no-repeat 50% 16%;
+  background-size: cover;
+  overflow: hidden;
 }
-.sws .main_sws{}
-.sws .main_sws .sub_sws{}
-.sws .main_sws .sub_sws img{}
+
+/* /////////////////////////////////🎈main_sws 🎈/////////////////////////////// */
+.tracker {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+}
+.tracker .switzerland {
+  position: absolute;
+  top: 27%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  font-size: 129px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.tracker .sub_sws {
+  position: absolute;
+  top: 88%;
+  left: 44%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+}
+
+.tracker .sub_sws img {
+  width: 1495px;
+  height: auto;
+  display: block;
+}
+.sws_text {
+  width: 100%;
+  height: 168px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 30px 80px;
+  color: #fff;
+  font-size: 17px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 100;
+}
+
+.sws_text .t_subtit {
+  margin-bottom: 18px;
+  margin-right: 15px;
+}
+
+.sws_text .t_subtit .t_subtit_s {
+  font-size: 35px;
+}
+
+.sws_text .t_subtag span {
+  margin-right: 10px;
+}
+
+
+
+/* /////////////////////////////////🎈sws_clock 🎈/////////////////////////////// */
+.sws_clock_wrap{
+  margin-top: 70px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.sws_clock_wrap .sws_clock_time{
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.sws_clock_wrap .sws_clock {
+  color: white;
+  font-weight: bold;
+  font-size: 45px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.time_box_sws .mark_sws {
+  display: inline-block;
+  margin: -13px;
+}
+
+
+/* /////////////////////////////////🎈ticket🎈/////////////////////////////// */
+.ticket {
+  position: absolute;
+  right: 50px;
+  bottom: 0px;
+  color: #3a3a3a;
+  width: 351px;
+  height: 474px;
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  padding: 27px;
+}
+.ticket .ticket_tit{
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 27px;
+}
+
+.ticket .country{
+  display: flex;
+}
+.ticket .country .c_start{}
+.ticket .country .c_start .start{}
+.ticket .country .c_start .s_country{}
+
+.ticket .country .fa-plane{}
+
+.ticket .country .c_end{}
+.ticket .country .c_end .end{}
+.ticket .country .c_end .e_country{}
+
+.ticket .boder{}
+
+.ticket .conts{
+  display: flex;
+}
+.ticket .conts .conts_wrap{}
+.ticket .conts .conts_wrap .tikCont{}
+.ticket .conts_btn{
+  text-align: center;
+}
+
+
+
+
 
 /* /////////////////////////////////🎀section2🎀/////////////////////////////// */
 .section2 {
