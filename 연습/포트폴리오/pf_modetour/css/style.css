@@ -219,7 +219,9 @@ input::placeholder {
   left: 50%;
   transform: translateX(-50%);
   bottom: 20px;
-  display: flex;
+}
+.slick-dots li{
+  display: inline-block;
 }
 /* /////////////////////////////////🎀sws🎀/////////////////////////////// */
 .section1 .section1Wrap .sws {
