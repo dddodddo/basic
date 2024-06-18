@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class person{
+            //name;
+            //year;
+            constructor(name, year){
+                this.name=name;
+                this.year=year;
+                
+            }
+            sayName(){
+               return `안녕하세요 저는 ${this.name}입니다.`; 
+            }
+
+        }
+        const hongildong=new person("홍길동",2004)
+        //인스턴스는객체를 의미한다. 
+
+        console.log(hongildong)
+        console.log(hongildong.sayName())//안녕하세요 저는 홍길동입니다.
+
+        const kangkamchang=new person("강감찬",2010)
+
+        console.log(kangkamchang)
+
+        console.log(typeof person)//function//클래스는 함수이다.
+        console.log(typeof kangkamchang)//object //클래스로 생성한 인스턴스는 객체이다.
+
+    </script>
+</body>
+</html>
