@@ -20,7 +20,7 @@ gsap.ticker.lagSmoothing(0);
 // SwsImg.style.transform = `translate(${newX}px, ${newY}px)`;
 // Sws.style.transform = `translate(${newX}px, ${newY}px)`;
 
-////////////////////////🎁search icon🎁////////////////////////
+////////////////////////🎁mv search_icon🎁////////////////////////
 $(function () {
   let Icon = $(".fa-search");
   Icon.click(function () {
@@ -32,7 +32,7 @@ $(function () {
   });
 });
 
-////////////////////////🎁clock🎁////////////////////////
+////////////////////////🎁mv clock🎁////////////////////////
 function updateClock() {
   var now = new Date();
   var hours = String(now.getHours()).padStart(2, "0");
@@ -60,26 +60,32 @@ gsap
       pinSpacing: false,
     },
   })
-  .to(".mv", {
-    opacity: 0.3,
-    duration: 100
-  }, 5)
-  .to(".mv .nav", {
-    x: -30 + "%",
-    y: 50 + "%",
-    duration: 100
-  }, 5)
+  .to(
+    ".mv", {
+      opacity: 0.3,
+      duration: 100,
+    },
+    5
+  )
+  .to(
+    ".mv .nav", {
+      x: -30 + "%",
+      y: 50 + "%",
+      duration: 100,
+    },
+    5
+  )
   .to(
     ".mv .logo img", {
       x: -67 + "%",
       y: 410 + "%",
       scale: 0.2,
-      duration: 100
+      duration: 100,
     },
     5
   );
 
-////////////////////////🎁header🎁////////////////////////
+////////////////////////🎁section1 gsap🎁////////////////////////
 gsap
   .timeline({
     scrollTrigger: {
@@ -92,75 +98,69 @@ gsap
       pinSpacing: false,
     },
   })
-  .to(".mv video", {
-    opacity: 0
-  })
-  .to(".mv .nav", {
-    opacity: 0
-  })
-  .to(".mv .logo img", {
-    opacity: 0
-  })
-  .to(".header", {
-    opacity: 1
-  }, 0.2);
+  .to(".mv video", {opacity: 0,})
+  .to(".mv .nav", {opacity: 0,})
+  .to(".mv .logo img", {opacity: 0,})
+  .to(".header", {opacity: 1,},0.2)
+  .to(".ticket",{y:-289+"px",opacity:1},1)
 
-
-////////////////////////🎁sws_clock🎁////////////////////////
+////////////////////////🎁section1 sws_clock🎁////////////////////////
 setInterval(() => {
-  let today = new Date()
+  let today = new Date();
 
   let options = {
-    timeZone: 'Europe/Zurich'
+    timeZone: "Europe/Zurich",
   };
-  let timeString = today.toLocaleTimeString('en-GB', options);
-  let [hh, mm, ss] = timeString.split(':');
+  let timeString = today.toLocaleTimeString("en-GB", options);
+  let [hh, mm, ss] = timeString.split(":");
 
-  document.querySelector('#hours').innerHTML = hh
-  document.querySelector('#min').innerHTML = mm
-  document.querySelector('#sec').innerHTML = ss
+  document.querySelector("#hours").innerHTML = hh;
+  document.querySelector("#min").innerHTML = mm;
+  document.querySelector("#sec").innerHTML = ss;
+}, 1000);
+////////////////////////🎁section1 sws mostion🎁////////////////////////
+let wrapper = document.querySelector(".section1");
+let Sws = document.querySelector(".switzerland");
+let SwsImg = document.querySelector(".sub_sws");
 
-}, 1000)
-////////////////////////🎁sws mostion🎁////////////////////////
-let wrapper = document.querySelector(".section1")
-let Sws = document.querySelector(".switzerland")
-let SwsImg = document.querySelector(".sub_sws")
-
-wrapper.addEventListener('mouseover', function (e) {
+wrapper.addEventListener("mouseover", function (e) {
   let wrapperRect = wrapper.getBoundingClientRect();
   console.log(wrapperRect);
 
-  let relX = e.clientX - (wrapperRect.left + wrapperRect.width / 2)
-  let relY = e.clientY - (wrapperRect.top + wrapperRect.height / 2)
+  let relX = e.clientX - (wrapperRect.left + wrapperRect.width / 2);
+  let relY = e.clientY - (wrapperRect.top + wrapperRect.height / 2);
 
-  let SwsMaxDisplacement = 50
-  let SwsImgMaxDisplacement = 75
+  let SwsMaxDisplacement = 50;
+  let SwsImgMaxDisplacement = 75;
 
-  let SwsImgMaxDisplacementX = (relX / wrapperRect.width) * SwsImgMaxDisplacement
-  let SwsImgMaxDisplacementY = (relY / wrapperRect.height) * SwsImgMaxDisplacement
+  let SwsImgMaxDisplacementX =
+    (relX / wrapperRect.width) * SwsImgMaxDisplacement;
+  let SwsImgMaxDisplacementY =
+    (relY / wrapperRect.height) * SwsImgMaxDisplacement;
 
-  let SwsMaxDisplacementX = (relX / wrapperRect.width) * SwsMaxDisplacement
-  let SwsMaxDisplacementY = (relY / wrapperRect.height) * SwsMaxDisplacement
+  let SwsMaxDisplacementX = (relX / wrapperRect.width) * SwsMaxDisplacement;
+  let SwsMaxDisplacementY = (relY / wrapperRect.height) * SwsMaxDisplacement;
 
   gsap.to(SwsImg, {
     x: SwsImgMaxDisplacementX,
     y: SwsImgMaxDisplacementY,
     duration: 0.3,
-    ease: "power3.out"
-  })
+    ease: "power3.out",
+  });
   gsap.to(Sws, {
     x: -SwsMaxDisplacementX,
     y: SwsMaxDisplacementY,
     duration: 0.3,
-    ease: "power3.out"
-  })
+    ease: "power3.out",
+  });
 });
 
 ////////////////////////🎁section1 slick🎁////////////////////////
-$('.fade').slick({
+$('.section1Wrap').slick({
   dots: true,
   infinite: true,
   speed: 500,
   fade: true,
   cssEase: 'linear'
 });
+
