@@ -1,25 +1,44 @@
-gsap.registerPlugin(Flip)
-
-const items = gsap.utils.toArray(".item"),
-      details = document.querySelector('.detail'),
-      detailContent = document.querySelector('.content'),
-      detailImage = document.querySelector('.detail img'),
-      detailTitle = document.querySelector('.detail .title'),
-      detailSecondary = document.querySelector('.detail .secondary'),
-      detailDescription = document.querySelector('.detail .description');
+gsap.registerPlugin(Flip);
 
 
-let activeItem; //어떤 항목이 열려있는지 추적함
+const thumbs=document.querySelectorAll(".item");
+const modal=document.querySelector('.modal');
+const toggle=document.querySelector('.page3 button')
+const modalImage=modal.querySelector('.modal-image');
+const wrapper=document.querySelector('.grid-wrapper');
+let activeThumb;
 
-gsap.set(detailContent,{yPercent:-100})
+thumbs.forEach((thumb)=>{
+  thumb.addEventListener("click",()=>{
+    activeThumb=thumb;
+    thumb.classList.add("active-thumb");
+    thumb.dataset.flipId="img";//<div class="item" data-flip-id="img">...</div>
+    gsap.set(thumb,{opacity:0})
 
-function showDetails(item){
-  let onLoad=()=>{
-    // Flip.fit(무엇을, 어디에, 어떻게)
-    Flip.fit(details, 어디에, 어떻게)
-  }
-}
-items.forEach((item)=>item.addEventListener("click",()=>showDetails(item)))
+    const state=Flip.getState([thumb,modalImage],{
+        props:"borderRadius,aspectRatio,boxShadow"
+    })
 
-gsap.to(".app",{autoAlpha:1,duration:0.2})
-gsap.from(".item",{autoAlpha:0,yPercent:30,stagger:0.05})
+    modalImage.querySelector("img").setAttribute("src",thumb.dataset.url)
+    modal.classList.add('active')
+    modalImage.style.display="block";
+
+    Flip.from(state,{
+        duration:0.25,
+        ease:"sin.inOut"
+    })
+  })
+})
+
+modal.addEventListener('click',()=>{
+    gsap.set(activeThumb,{opacity:1})
+    const state=Flip.getState([activeThumb,modalImage],{
+        props:"borderRadius,aspectRatio,boxShadow"
+    })
+    modal.classList.remove("avtive")
+    Flip.from(state,{
+        duration:0.25,
+        absolute:true,
+        ease:"sine,inOut",
+    })
+})
