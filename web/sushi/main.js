@@ -74,7 +74,7 @@ navClose.addEventListener("click",function(){
 //scrollUp
 let scrollup=()=>{
     //let scrollY=scrollY
-    // console.log(pageYOffset)
+    //console.log(pageYOffset)
     let scrollUp=document.querySelector("#scroll-up")
     pageYOffset>=100?
     scrollUp.classList.add("show-scroll")
@@ -88,27 +88,51 @@ window.addEventListener("scroll",scrollup)
 let scrollActive=()=>{
     //let scrollY=pageYOffset
     let scrollYY=scrollY
-    // console.log(scrollYY)
-    //let sections=document.querySelectorAll("section[id]")//section태그중 속성 id가 있는것
-    let sections=document.querySelectorAll(".section")
+    //console.log(scrollYY)
+    let sections=document.querySelectorAll("section[id]")//section태그중 속성 id가 있는것
 
     sections.forEach((current)=>{
         let sectionHeight=current.offsetHeight;//각 section의 높이값
-        let sectionTop=current.offsetTop -80;//각 section의 전체문서에서의 top의 위치
+        let sectionTop=current.offsetTop - 80;//각 section의 전체문서에서의 top의 위치
 
         let sectionId=current.getAttribute("id")
-        // console.log(sectionId)
+        //console.log(sectionId)
 
         let sectionClass=document.querySelector(`.nav_menu a[href*="${sectionId}"]`)
         console.log(sectionClass)
+
         if(scrollYY>sectionTop && scrollYY <= sectionTop + sectionHeight){
             console.log("실행")
             sectionClass.classList.add('action-link')
         }else{
             sectionClass.classList.remove('action-link')
         }
+
     })
 }
-// window.addEventListener("scroll",function(){scrollActive()})
+//window.addEventListener("scroll",function(){scrollActive();})
 window.addEventListener("scroll",scrollActive)
-scrollActive();
+
+
+// 영역별 애니메이션
+
+ScrollReveal().reveal('.home_data,.home_img, .about_data, .about_img, .popular_card, .recently_data, .recently_img, .home_leaf-1, .recently_leaf-1, .home_leaf-2, .about_leaf, .recently_leaf-2,.footer_description,.footer_content,.footer_info',{
+    distance: '60px',
+    origin: 'top',
+    duration: 2500,
+    delay:400,
+    reset: true
+});
+ScrollReveal().reveal('.home_data', {
+    origin: 'bottom',
+});
+ScrollReveal().reveal('.about_data, .recently_data, .home_leaf-1, .recently_leaf-1', {
+    origin: 'left',
+});
+ScrollReveal().reveal('.about_img, .recently_img, .home_leaf-2, .about_leaf, .recently_leaf-2', {
+    origin: 'right',
+});
+ScrollReveal().reveal('.popular_card,.footer_card img', {
+    origin: 'top',
+    interval: 400,
+});
