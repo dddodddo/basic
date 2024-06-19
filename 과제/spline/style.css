@@ -14,7 +14,11 @@ body{
 
 }
 
-.canvas-cont{
+.plane{
+    width: 50%;
+    height: 50vh;
+}
+/* .canvas-cont{
     position: fixed;
     z-index: 2;
     top: 0;
@@ -27,7 +31,7 @@ body{
     width: 100%;
     height: 100%;
     display: block;
-  }
+  } */
 
 /* header */
 #wrap{}
