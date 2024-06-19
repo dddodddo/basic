@@ -3,8 +3,8 @@
   --main-font-color: #fff;
 
   /* background-color */
-  --main-btn-color:#f1f1f1;
-  --main-btn-hover-color:#b9b9b9;
+  --main-btn-color: #f1f1f1;
+  --main-btn-hover-color: #b9b9b9;
 
 }
 
@@ -43,18 +43,21 @@ body {
   bottom: 1%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
+  gap: 20px;
 }
 
 .control {
   font-size: 18px;
-  border: none;
+  border: 1px solid transparent;
   margin-inline: 2px;
-  padding: 0px 15px;
+  padding-bottom: 5px;
   transition: .3s all ease-in-out;
   background: transparent;
   color: var(--main-font-color);
   cursor: pointer;
 }
+
 .control:hover {
   border-bottom: 1px solid var(--main-font-color);
 }
@@ -67,32 +70,31 @@ body {
   top: 33%;
   transform: translate(-50%, -50%);
   font-size: 27px;
+  z-index: 100;
 }
 
-.sec1_2024 {
+
+
+.sec1_bg{
   position: absolute;
-  top: 3%;
-  left: 3%;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
 }
-
-.sec1_web {
+.bg1,
+.bg2,
+.bg3{
   position: absolute;
-  bottom: 3%;
-  left: 3%;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
 }
-
-.sec1_port {
-  position: absolute;
-  bottom: 3%;
-  right: 3%;
+.bg1.on,
+.bg2.on,
+.bg3.on{
+  opacity: 1;
 }
-
-.fa-sun {
-  position: absolute;
-  top: 3%;
-  right: 3%;
-}
-
 
 .sec1_name {
   position: absolute;
@@ -100,6 +102,12 @@ body {
   left: 50%;
   display: flex;
   transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.park,
+.hyeon{
+  position: relative;
 }
 
 h1 {
@@ -109,4 +117,69 @@ h1 {
   font-weight: bold;
   text-align: center;
   padding: 22px;
+  transition: 0.6s;
+}
+
+h1:hover {
+  -webkit-text-stroke: 0px;
+}
+
+.name_span{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+  text-align: center;
+  font-size: 0px;
+  font-weight: 300;
+}
+
+.name_span.on{
+  font-size: 20px;
+}
+.sec1_2024 {
+  position: absolute;
+  top: 3%;
+  left: 3%;
+  font-size: 20px;
+}
+
+.sec1_web {
+  position: absolute;
+  bottom: 3%;
+  left: 3%;
+  font-size: 20px;
+}
+
+.sec1_port {
+  position: absolute;
+  bottom: 3%;
+  right: 3%;
+  font-size: 20px;
+}
+
+.fa-sun {
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+#section2{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+#section2>video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
 }
