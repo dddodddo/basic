@@ -56,13 +56,9 @@ perspective: 1500px;
 
 .button>div{position: absolute;}
 .button .rotate-x-button{left: -300px;}
-.button .rotate-x-button .rotate-x-top{}
-.button .rotate-x-button .rotate-x-bottom{}
 
 .button .rotate-y-button{bottom: -300px;
 display: flex; gap: 100px; left: 50%;
 transform: translateX(-50%);}
-.button .rotate-y-button .rotate-y-left{}
-.button .rotate-y-button .rotate-y-right{}
 
 .button .front{bottom: -300px; cursor: pointer;}

@@ -69,7 +69,7 @@ gsap.to(".sec1_port",{bottom: 3+"%", duration: 2});
 
 gsap.to(".border_right",{width: 107+"px", duration: 2, opacity:0});
 gsap.to(".fa-sun",{right: 3+"%", duration: 2});
-
+/////////////////////////////////////////////////////////
 setInterval(()=>{
   let today=new Date()
   let hh=addZero(today.getHours())
@@ -88,24 +88,45 @@ setInterval(()=>{
 
 gsap.timeline({
   scrollTrigger:{
-      trigger:'.sec02',
-      start:'top 50%',
-      end:'30% top',
+      trigger:'.call',
+      start:'top 40%',
+      end:'30% 20%',
       scrub:2,
-      markers:true,
+      markers:true
   }
 })
-.fromTo(".circle",{width:0, height:0,top:'3%'},{width:250,height:250,top:'30%'})
+.fromTo(".circle",{width:0, height:0, top:0},{width:300,height:300,top:820})
+.fromTo('.textBox',{opacity:0},{opacity:1})
+/////////////////////////////////////////////////////////
+let rotationX=0
+let rotationY=0
+let cube=document.querySelector('.box-area')
+let content=document.querySelector('.box-back h2')
 
 
-// textBox
-gsap.timeline({
-  scrollTrigger:{
-      trigger:'.sec02 .textBox',
-      start:'top 80%',
-      end:'100% 80%',
-      scrub:2,
-      markers:true,
-  }
-})
-.fromTo('.textBox',{top:"50%",opacity:0},{top:'40%',opacity:1})
+function rotateXAxis(n){
+    rotationX=rotationX + (90 * n)
+    rotationY=0
+    console.log(rotationX)
+    content.style.transform=`rotateX(180deg) rotateY(180deg)`
+    cube.style.transform=`rotateX(${rotationX}deg) rotateY(0deg)`
+
+}
+
+
+
+function rotateYAxis(n){
+    rotationY=rotationY + (90 * n)
+    rotationX=0
+    console.log(rotationY)
+    //transform: rotateX(0deg) rotateY(0deg)
+    content.style.transform=`rotateX(0deg) rotateY(0deg)`
+    cube.style.transform=`rotateX(0deg) rotateY(${rotationY}deg)`
+}
+
+function front(){
+    rotationX=0
+    rotationY=0
+    cube.style.transform=`rotateX(0deg) rotateY(0deg)`
+}
+
