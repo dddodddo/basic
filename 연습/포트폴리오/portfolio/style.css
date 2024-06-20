@@ -5,20 +5,28 @@
   /* btn*/
   --main-btn-color: #f1f1f1;
   --main-btn-hover-color: #b9b9b9;
-
 }
-
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Pretendard';
+  font-family: "Pretendard";
   font-weight: 200;
   word-spacing: 3px;
   letter-spacing: 0.5px;
 }
-
+button {
+  background: inherit;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  overflow: visible;
+  color: var(--main-white-color);
+  cursor: pointer;
+  font-size: 30px;
+}
 body {
   width: 100%;
   height: 100vh;
@@ -28,7 +36,6 @@ body {
 
 #wrap {
   position: relative;
-  z-index: -100;
 }
 
 #section1 {
@@ -58,7 +65,7 @@ body {
   border: 1px solid transparent;
   margin-inline: 2px;
   padding-bottom: 5px;
-  transition: .3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
   background: transparent;
   color: var(--main-white-color);
   cursor: pointer;
@@ -68,25 +75,21 @@ body {
   border-bottom: 1px solid var(--main-white-color);
 }
 
-
-
 .sec1_tit {
   position: absolute;
   left: 50%;
   top: 33%;
   transform: translate(-50%, -50%);
   font-size: 27px;
-  z-index: 100;
+  /* z-index: 100; */
 }
-
-
 
 .sec1_bg {
   position: absolute;
   top: 0;
   width: 100%;
   height: 100vh;
-  z-index: -1;
+  /* z-index: -1; */
 }
 
 .bg1,
@@ -121,7 +124,7 @@ body {
 .sec1_name h1 {
   font-size: 272px;
   color: transparent;
-  -webkit-text-stroke: 3px #fff;
+  -webkit-text-stroke: 3px var(--main-white-color);
   font-weight: bold;
   text-align: center;
   padding: 22px;
@@ -137,7 +140,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #000;
+  color: var(--main-black-color);
   text-align: center;
   font-size: 0px;
   font-weight: 300;
@@ -208,24 +211,22 @@ body {
   width: 0px;
 }
 
-
-
 #section2 {
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  z-index: -2;
+  /* z-index: -2; */
 }
 
-#section2>video {
+#section2 > video {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
-  z-index: -1;
+  /* z-index: -1; */
 }
 
 .section_text {
@@ -248,7 +249,6 @@ body {
   margin: -10px;
 }
 
-
 .call {
   position: relative;
   height: 100%;
@@ -261,6 +261,20 @@ body {
   top: 40%;
   left: 15%;
   transform: translateX(-50%);
+  z-index: 10;
+}
+.call .circle2 {
+  position: absolute;
+  border-radius: 100px 100px 0 0;
+  border: 2px solid var(--main-white-color); /* 테두리 색상과 두께 설정 */
+  background-color: transparent;
+  top: 40%;
+  left: 20%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+.call .circle2:hover {
+  background-color: var(--main-white-color);
 }
 
 .call .textBox {
@@ -271,14 +285,12 @@ body {
   z-index: 10;
 }
 
-.call .textBox>p {
+.call .textBox > p {
   text-align: center;
   font-weight: 500;
   color: var(--main-black-color);
   font-size: 19px;
 }
-
-
 
 #section2 {
   position: relative;
@@ -288,27 +300,25 @@ body {
 
 .cube {
   position: absolute;
-  top: 34%;
-  left: 25%;
+  top: 40%;
+  left: 30%;
   transform: translate(-50%, -50%);
   perspective: 1500px;
 }
 
 .box-area {
-  /* 회전하는 주체 */
   position: relative;
   transform-style: preserve-3d;
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   transition: 0.5s;
   transform: rotateX(0deg) rotateY(0deg);
-
 }
 
 .box-area .box {
   position: absolute;
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   transform-style: preserve-3d;
   display: flex;
   justify-content: center;
@@ -317,38 +327,37 @@ body {
 
 .box-area .box h2 {
   font-size: 25px;
-  color: #fff;
+  color: var(--main-white-color);
 }
 
 .box-area .box-front {
-  background-color: rgba(228, 39, 39, 0.5);
-  transform: translateZ(200px);
+  background: url(img/img1.jpg) center/cover no-repeat;
+  transform: translateZ(150px);
 }
 
 .box-area .box-right {
-  background-color: rgba(245, 135, 18, 0.5);
-  transform: rotateY(90deg) translateZ(200px);
+  background: url(img/img2.jpg) center/cover no-repeat;
+  transform: rotateY(90deg) translateZ(150px);
 }
 
 .box-area .box-back {
-  background-color: rgba(255, 196, 0, 0.5);
-  transform: rotateY(180deg) translateZ(200px);
+  background: url(img/img3.jpg) center/cover no-repeat;
+  transform: rotateY(180deg) translateZ(150px);
 }
 
 .box-area .box-left {
-  background-color: rgba(72, 255, 5, 0.5);
-  transform: rotateY(-90deg) translateZ(200px);
+  background: url(img/img4.jpg) center/cover no-repeat;
+  transform: rotateY(-90deg) translateZ(150px);
 }
 
 .box-area .box-top {
-  background-color: rgba(4, 67, 255, 0.5);
-  transform: rotateX(90deg) translateZ(200px);
+  background: url(img/img5.jpg) center/cover no-repeat;
+  transform: rotateX(90deg) translateZ(150px);
 }
 
 .box-area .box-bottom {
-  background-color: rgba(131, 16, 253, 0.5);
-  transform: rotateX(-90deg) translateZ(200px);
-
+  background: url(img/img6.jpg) center/cover no-repeat;
+  transform: rotateX(-90deg) translateZ(150px);
 }
 
 .button {
@@ -360,23 +369,187 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.button>div {
+.button > div {
   position: absolute;
 }
 
-.button .rotate-x-button {
-  left: -300px;
+.button .rotate-x-top {
+  position: absolute;
+  top: -270px;
 }
-
-.button .rotate-y-button {
-  bottom: -300px;
-  display: flex;
-  gap: 100px;
-  left: 50%;
-  transform: translateX(-50%);
+.button .rotate-x-bottom {
+  position: absolute;
+  bottom: -270px;
+  width: 25px;
+}
+.button .rotate-y-left {
+  position: absolute;
+  left: -270px;
+}
+.button .rotate-y-right {
+  position: absolute;
+  right: -270px;
 }
 
 .button .front {
-  bottom: -300px;
+  left: -285px;
+  top: -206px;
   cursor: pointer;
+  font-weight: 500;
+  padding: 10px;
+  background-color: var(--main-white-color);
+  color: var(--main-black-color);
+  border-radius: 50%;
+}
+.button .front:hover {
+  background-color: var(--main-black-color);
+  color: var(--main-white-color);
+}
+
+.cube2 {
+  position: absolute;
+  top: 65%;
+  right: 14%;
+  transform: translate(-50%, -50%);
+  perspective: 1500px;
+}
+.box-area2 {
+  position: relative;
+  transform-style: preserve-3d;
+  width: 300px;
+  height: 300px;
+  transition: 0.5s;
+  transform: rotateX(0deg) rotateY(0deg);
+}
+
+.box-area2 .box {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-area2 .box h2 {
+  font-size: 25px;
+  color: var(--main-white-color);
+}
+
+.box-area2 .box-front2 {
+  background: url(img/img1.jpg) center/cover no-repeat;
+  transform: translateZ(150px);
+}
+
+.box-area2 .box-right2 {
+  background: url(img/img2.jpg) center/cover no-repeat;
+  transform: rotateY(90deg) translateZ(150px);
+}
+
+.box-area2 .box-back2 {
+  background: url(img/img3.jpg) center/cover no-repeat;
+  transform: rotateY(180deg) translateZ(150px);
+}
+
+.box-area2 .box-left2 {
+  background: url(img/img4.jpg) center/cover no-repeat;
+  transform: rotateY(-90deg) translateZ(150px);
+}
+
+.box-area2 .box-top2 {
+  background: url(img/img5.jpg) center/cover no-repeat;
+  transform: rotateX(90deg) translateZ(150px);
+}
+
+.box-area2 .box-bottom2 {
+  background: url(img/img6.jpg) center/cover no-repeat;
+  transform: rotateX(-90deg) translateZ(150px);
+}
+.button .front2 {
+  right: -285px;
+  bottom: -206px;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 10px;
+  background-color: var(--main-white-color);
+  color: var(--main-black-color);
+  border-radius: 50%;
+}
+.button .front2:hover {
+  background-color: var(--main-black-color);
+  color: var(--main-white-color);
+}
+
+#section3 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#section4 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.w {
+  width: 490px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  /* transform: translate(-227px, -227px); */
+  margin: -227px 0 0 -227px;
+}
+
+.w div {
+  width: 24px;
+  height: 25px;
+  margin: 0 10px 10px 0;
+  float: left;
+  border-left: 1px solid #fff;
+  position: relative;
+  transform-origin: 0 0;
+}
+.w div::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: -1px;
+  left: -4px;
+  border: 5px solid #fff;
+  border-color: #fff transparent transparent transparent;
+  border-width: 5px 3.5px 0 3.5px;
+}
+
+.w div.i74,
+.w div.i84,
+.w div.i94,
+.w div.i104 {
+  margin-right: 150px;
+}
+
+#section5 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#section6 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#section7 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--main-white-color);
 }

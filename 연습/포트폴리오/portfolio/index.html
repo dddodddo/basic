@@ -72,17 +72,18 @@
         <h1 class="sec_tit">About me</h1>
         <div class="clock">
           <div class="time_box">
-            <span class="txt_lg" id="hours">00</span>
+            <span class="txt_lg" id="hours1">00</span>
             <span class="mark">:</span>
-            <span class="txt_lg" id="min">00</span>
+            <span class="txt_lg" id="min1">00</span>
             <span class="mark">:</span>
-            <span class="txt_sm" id="sec">00</span>
+            <span class="txt_sm" id="sec1">00</span>
           </div>
         </div>
       </div>
 
       <section class="call">
         <span class="circle"></span>
+        <span class="circle2" stroke="blue" ></span>
         <div class="textBox">
           <p>
             +82 10 - 9218 - 1934<br>
@@ -93,43 +94,152 @@
 
       <div class="cube">
         <div class="box-area">
-            <div class="box box-front">
-                <h2>1front</h2>
-            </div>
-            <div class="box box-right">
-                <h2>2right</h2>
-            </div>
-            <div class="box box-back">
-                <h2>삼back</h2>
-            </div>
-            <div class="box box-left">
-                <h2>4left</h2>
-            </div>
-            <div class="box box-top">
-                <h2>5top</h2>
-            </div>
-            <div class="box box-bottom">
-                <h2>6bottom</h2>
-            </div>
+          <div class="box box-front">
+            <h2>1front</h2>
+          </div>
+          <div class="box box-right">
+            <h2>2right</h2>
+          </div>
+          <div class="box box-back">
+            <h2>삼back</h2>
+          </div>
+          <div class="box box-left">
+            <h2>4left</h2>
+          </div>
+          <div class="box box-top">
+            <h2>5top</h2>
+          </div>
+          <div class="box box-bottom">
+            <h2>6bottom</h2>
+          </div>
         </div>
-    </div>
+        <div class="button">
+          <div class="rotate-x-button">
+            <button class="rotate-x-top" onclick="rotateXAxis(-1)">
+              <i class="fas fa-sort-up"></i>
+            </button>
+            <button class="rotate-x-bottom" onclick="rotateXAxis(1)">
+              <i class="fas fa-sort-down"></i>
+            </button>
+          </div>
+          <div class="rotate-y-button">
+            <button class="rotate-y-left" onclick="rotateYAxis(1)">
+              <i class="fas fa-caret-left"></i>
+            </button>
+            <button class="rotate-y-right" onclick="rotateYAxis(-1)">
+              <i class="fas fa-caret-right"></i>
+            </button>
+          </div>
+          <div class="front" onclick="front()">reset</div>
+        </div>
+      </div>
+      <div class="cube2">
+        <div class="box-area2">
+          <div class="box box-front2">
+            <h2>1front</h2>
+          </div>
+          <div class="box box-right2">
+            <h2>2right</h2>
+          </div>
+          <div class="box box-back2">
+            <h2>삼back</h2>
+          </div>
+          <div class="box box-left2">
+            <h2>4left</h2>
+          </div>
+          <div class="box box-top2">
+            <h2>5top</h2>
+          </div>
+          <div class="box box-bottom2">
+            <h2>6bottom</h2>
+          </div>
+        </div>
+        <div class="button">
+          <div class="rotate-x-button">
+            <button class="rotate-x-top" onclick="rotateXAxis2(-1)">
+              <i class="fas fa-sort-up"></i>
+            </button>
+            <button class="rotate-x-bottom" onclick="rotateXAxis2(1)">
+              <i class="fas fa-sort-down"></i>
+            </button>
+          </div>
+          <div class="rotate-y-button">
+            <button class="rotate-y-left" onclick="rotateYAxis2(1)">
+              <i class="fas fa-caret-left"></i>
+            </button>
+            <button class="rotate-y-right" onclick="rotateYAxis2(-1)">
+              <i class="fas fa-caret-right"></i>
+            </button>
+          </div>
+          <div class="front2" onclick="front2()">reset</div>
+        </div>
+      </div>
 
-    <div class="button">
-        <div class="rotate-x-button">
-            <button class="rotate-x-top" onclick="rotateXAxis(-1)">위</button>
-            <button class="rotate-x-bottom" onclick="rotateXAxis(1)">아래</button>
-        </div>
-        <div class="rotate-y-button">
-            <button class="rotate-y-left" onclick="rotateYAxis(1)">좌</button>
-            <button class="rotate-y-right" onclick="rotateYAxis(-1)">우</button>
-        </div>
-        <div class="front" onclick="front()">정면</div>
-    </div>
     </section>
 
     <section id="section3">
-      
-  </section>
+      <div class="section_text">
+        <h1 class="sec_tit">Hobby</h1>
+        <div class="clock">
+          <div class="time_box">
+            <span class="txt_lg" id="hours2">00</span>
+            <span class="mark">:</span>
+            <span class="txt_lg" id="min2">00</span>
+            <span class="mark">:</span>
+            <span class="txt_sm" id="sec2">00</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="section4">
+      <div class="section_text">
+        <h1 class="sec_tit">Skill</h1>
+        <div class="clock">
+          <div class="time_box">
+            <span class="txt_lg" id="hours3">00</span>
+            <span class="mark">:</span>
+            <span class="txt_lg" id="min3">00</span>
+            <span class="mark">:</span>
+            <span class="txt_sm" id="sec3">00</span>
+          </div>
+        </div>
+      </div>
+      <div class="w">
+      </div>
+    </section>
+
+    <section id="section5">
+      <div class="section_text">
+        <h1 class="sec_tit">Awards</h1>
+        <div class="clock">
+          <div class="time_box">
+            <span class="txt_lg" id="hours4">00</span>
+            <span class="mark">:</span>
+            <span class="txt_lg" id="min4">00</span>
+            <span class="mark">:</span>
+            <span class="txt_sm" id="sec4">00</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section6">
+      <div class="section_text">
+        <h1 class="sec_tit">Credential</h1>
+        <div class="clock">
+          <div class="time_box">
+            <span class="txt_lg" id="hours5">00</span>
+            <span class="mark">:</span>
+            <span class="txt_lg" id="min5">00</span>
+            <span class="mark">:</span>
+            <span class="txt_sm" id="sec5">00</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section7"></section>
   </div>
 
 
