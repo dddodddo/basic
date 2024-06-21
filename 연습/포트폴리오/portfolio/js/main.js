@@ -147,7 +147,6 @@ function front() {
   cube.style.transform = `rotateX(0deg) rotateY(0deg)`;
 }
 
-// 마우스 이벤트 리스너 추가
 cube.addEventListener("mousemove", (event) => {
   mouseX = event.clientX - cube.offsetLeft;
   mouseY = event.clientY - cube.offsetTop;
@@ -183,7 +182,6 @@ function front2() {
   cube2.style.transform = `rotateX(0deg) rotateY(0deg)`;
 }
 
-// 마우스 이벤트 리스너 추가
 cube2.addEventListener("mousemove", (event) => {
   mouseX = event.clientX - cube.offsetLeft;
   mouseY = event.clientY - cube.offsetTop;
