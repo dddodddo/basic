@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class IdolModel {
+        constructor(name, year) {
+          this.name = name;
+          this.year = year;
+        }
+        static returnGroupName() {
+          return "아이유";
+        }
+      }
+      const yuJin = new IdolModel("안유진", 2002);
+
+      //console.log(yuJin.returnGroupName()); //아이유
+      console.log(IdolModel.returnGroupName()); //아이유
+    </script>
+  </body>
+</html>

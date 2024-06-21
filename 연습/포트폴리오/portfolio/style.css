@@ -487,23 +487,23 @@ body {
   height: 100vh;
   overflow: hidden;
 }
-.svg1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.svg {
   width: 131px;
   height: 193px;
   cursor: pointer;
 }
-.svg1-1 {
+.svg:hover .svgimg {
+  width: 151px;
+  height: 243px;
+  filter: brightness(0.4);
+}
+.svgimg {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 131px;
   height: 193px;
-  background: url(img/dog.jpg) no-repeat center/100%;
   box-shadow: -11px 7px 15px 0px rgba(255, 255, 255, 0.2);
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
@@ -511,13 +511,62 @@ body {
   border-bottom-right-radius: 150px;
   transition: 0.3s;
 }
-.svg1:hover .svg1-1 {
-  background-size: 120%;
-  width: 151px;
-  height: 243px;
-  filter: brightness(0.4);
+
+.svg1 {
+  position: absolute;
+  top: 27%;
+  left: 12%;
+  transform: translate(-50%, -50%);
 }
-.svg1 .svg_txt {
+.svg1-1 {
+  background: url(img/swimming-170608_1280.jpg) no-repeat center/230%;
+}
+.svg1:hover .svg1-1 {
+  background-size: 250%;
+}
+
+.svg2 {
+  position: absolute;
+  top: 61%;
+  left: 22%;
+  transform: translate(-50%, -50%);
+}
+.svg1-2 {
+  background: url(img/jjs.jpg) no-repeat center/230%;
+}
+.svg2:hover .svg1-2 {
+  background-size: 250%;
+}
+
+.svg1-3 {
+  background: url(img/running.jpg) no-repeat center/230%;
+}
+.svg3:hover .svg1-3 {
+  background-size: 250%;
+}
+
+.svg1-4 {
+  background: url(img/music.jpg) no-repeat center/230%;
+}
+.svg4:hover .svg1-4 {
+  background-size: 250%;
+}
+
+.svg1-5 {
+  background: url(img/drawing.jpg) no-repeat center/230%;
+}
+.svg5:hover .svg1-5 {
+  background-size: 250%;
+}
+
+.svg1-6 {
+  background: url(img/active.jpg) no-repeat center/230%;
+}
+.svg6:hover .svg1-6 {
+  background-size: 250%;
+}
+
+.svg .svg_txt {
   position: absolute;
   top: 50%;
   left: 48%;
@@ -527,7 +576,7 @@ body {
   text-align: center;
   display: none;
 }
-.svg1:hover .svg_txt {
+.svg:hover .svg_txt {
   color: var(--main-white-color);
   display: inline-block;
 }

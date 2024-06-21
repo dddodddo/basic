@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //상속
+
+      class IdolModel {
+        constructor(name, year) {
+          this.name = name;
+          this.year = year;
+        }
+      }
+
+      class FemaleIdolMedel extends IdolModel {
+        dance() {
+          return "춤을 추다";
+        }
+      }
+      class MaleIdolModel extends IdolModel {
+        sing() {
+          return "노래 하다";
+        }
+      }
+
+      const yuJin = new FemaleIdolMedel("안유진", 2003);
+      console.log(yuJin);
+      const jimin = new MaleIdolModel("지민", 2006);
+      console.log(jimin);
+
+      //Super  override
+
+      class Person {
+        constructor(name, year) {
+          this.name = name;
+          this.year = year;
+        }
+        sayName() {
+          return `안녕하세요 ${this.name}입니다`;
+        }
+      }
+
+      class FemalePerson extends Person {
+        constructor(name, year, part) {
+          super(name, year);
+          this.part = part;
+        }
+        sayName() {
+          return `${super.sayName()} 반갑습니다.${this.part}를 담당합니다.`;
+        }
+      }
+
+      const 신사임당 = new FemalePerson("신사임당", 2003, "그림");
+      console.log(신사임당.sayName());
+
+      const 심청이 = new Person("심청이", 2006);
+      console.log(심청이.sayName());
+    </script>
+  </body>
+</html>
