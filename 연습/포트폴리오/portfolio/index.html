@@ -61,37 +61,9 @@
           <div class="border_right"></div>
         </div>
       </div>
-    </section>
-
-    <section id="section2">
-      <video muted autoplay loop>
-        <source src="img/untitled (1).mp4" type="video/mp4" />
-      </video>
-
-      <div class="section_text">
-        <h1 class="sec_tit">About me</h1>
-        <div class="clock">
-          <div class="time_box">
-            <span class="txt_lg" id="hours1">00</span>
-            <span class="mark">:</span>
-            <span class="txt_lg" id="min1">00</span>
-            <span class="mark">:</span>
-            <span class="txt_sm" id="sec1">00</span>
-          </div>
-        </div>
+      <div class="canvas-cont">
+        <canvas id="canvas3d"></canvas>
       </div>
-
-      <section class="call">
-        <span class="circle"></span>
-        <span class="circle2" stroke="blue" ></span>
-        <div class="textBox">
-          <p>
-            +82 10 - 9218 - 1934<br>
-            99pdh@naver.com<br>
-          </p>
-        </div>
-      </section>
-
       <div class="cube">
         <div class="box-area">
           <div class="box box-front">
@@ -133,47 +105,38 @@
           <div class="front" onclick="front()">reset</div>
         </div>
       </div>
-      <div class="cube2">
-        <div class="box-area2">
-          <div class="box box-front2">
-            <h2>1front</h2>
+    </section>
+
+    <section id="section2">
+  
+      <div class="canvas-cont2">
+        <canvas id="canvas3d2"></canvas>
+      </div>
+
+      <div class="section_text">
+        <h1 class="sec_tit">About me</h1>
+        <div class="clock">
+          <div class="time_box">
+            <span class="txt_lg" id="hours1">00</span>
+            <span class="mark">:</span>
+            <span class="txt_lg" id="min1">00</span>
+            <span class="mark">:</span>
+            <span class="txt_sm" id="sec1">00</span>
           </div>
-          <div class="box box-right2">
-            <h2>2right</h2>
-          </div>
-          <div class="box box-back2">
-            <h2>삼back</h2>
-          </div>
-          <div class="box box-left2">
-            <h2>4left</h2>
-          </div>
-          <div class="box box-top2">
-            <h2>5top</h2>
-          </div>
-          <div class="box box-bottom2">
-            <h2>6bottom</h2>
-          </div>
-        </div>
-        <div class="button">
-          <div class="rotate-x-button">
-            <button class="rotate-x-top" onclick="rotateXAxis2(-1)">
-              <i class="fas fa-sort-up"></i>
-            </button>
-            <button class="rotate-x-bottom" onclick="rotateXAxis2(1)">
-              <i class="fas fa-sort-down"></i>
-            </button>
-          </div>
-          <div class="rotate-y-button">
-            <button class="rotate-y-left" onclick="rotateYAxis2(1)">
-              <i class="fas fa-caret-left"></i>
-            </button>
-            <button class="rotate-y-right" onclick="rotateYAxis2(-1)">
-              <i class="fas fa-caret-right"></i>
-            </button>
-          </div>
-          <div class="front2" onclick="front2()">reset</div>
         </div>
       </div>
+
+      <section class="call">
+        <span class="circle"></span>
+        <span class="circle2" stroke="blue" ></span>
+        <div class="textBox">
+          <p>
+            +82 10 - 9218 - 1934<br>
+            99pdh@naver.com<br>
+          </p>
+        </div>
+      </section>
+
 
     </section>
 
@@ -276,8 +239,9 @@
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
   <script src="js/ripple-effect.min.js"></script>
+  <script src="js/jquery.js"></script>
+  <script type="module" src="js/module.js"></script>
   <script src="js/main.js"></script>
 </body>
 

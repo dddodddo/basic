@@ -15,6 +15,19 @@ gsap.ticker.add((time) => {
 gsap.ticker.lagSmoothing(0);
 
 /////////////////////////////////////////////////////////
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: "#section1",
+      start: "30% 20%",
+      end: "50% 20%",
+      scrub: 1,
+      // markers: true,
+    },
+  })
+  .to(".box-area", { top: 900, scale: 0.2 })
+  .to(".button", { opacity: 0 }, 0);
+/////////////////////////////////////////////////////////
 
 var ripple6 = new RippleEffect({
   parent: document.querySelector(".div5"),
@@ -29,35 +42,6 @@ document.querySelector(".start").addEventListener("click", ripple6.start);
 document.querySelector(".start").click();
 document.querySelector(".stop").addEventListener("click", ripple6.stop);
 
-/////////////////////////////////////////////////////////
-$(function () {
-  $(".sec1_name .p").mouseover(function () {
-    $(".bg1").addClass("on");
-    $(".park>span").addClass("on");
-  });
-  $(".sec1_name .p").mouseout(function () {
-    $(".bg1").removeClass("on");
-    $(".park>span").removeClass("on");
-  });
-
-  $(".sec1_name .d").mouseover(function () {
-    $(".bg2").addClass("on");
-    $(".do>span").addClass("on");
-  });
-  $(".sec1_name .d").mouseout(function () {
-    $(".bg2").removeClass("on");
-    $(".do>span").removeClass("on");
-  });
-
-  $(".sec1_name .h").mouseover(function () {
-    $(".bg3").addClass("on");
-    $(".hyeon>span").addClass("on");
-  });
-  $(".sec1_name .h").mouseout(function () {
-    $(".bg3").removeClass("on");
-    $(".hyeon>span").removeClass("on");
-  });
-});
 /////////////////////////////////////////////////////////
 gsap.to(".border_top", { height: 80 + "px", duration: 2, opacity: 0 });
 gsap.to(".sec1_2024", { top: 3 + "%", duration: 2 });
@@ -100,10 +84,10 @@ gsap
   .timeline({
     scrollTrigger: {
       trigger: ".call",
-      start: "top 40%",
+      start: "top 30%",
       end: "30% 20%",
       scrub: 2,
-      markers: true,
+      // markers: true,
     },
   })
   .fromTo(
@@ -128,16 +112,16 @@ let content = document.querySelector(".box-back");
 function rotateXAxis(n) {
   rotationX = rotationX + 90 * n;
   rotationY = 0;
-  console.log(rotationX);
-  content.style.transform = `rotateX(180deg) rotateY(0deg) translateZ(150px)`;
+  // console.log(rotationX);
+  content.style.transform = `rotateX(180deg) rotateY(0deg) translateZ(100px)`;
   cube.style.transform = `rotateX(${rotationX}deg) rotateY(0deg)`;
 }
 
 function rotateYAxis(n) {
   rotationY = rotationY + 90 * n;
   rotationX = 0;
-  console.log(rotationY);
-  content.style.transform = `rotateX(0deg) rotateY(180deg) translateZ(150px)`;
+  // console.log(rotationY);
+  content.style.transform = `rotateX(0deg) rotateY(180deg) translateZ(100px)`;
   cube.style.transform = `rotateX(0deg) rotateY(${rotationY}deg)`;
 }
 
@@ -156,41 +140,6 @@ cube.addEventListener("mousemove", (event) => {
 
   cube.style.transform = `rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
 });
-/////////////////////////////////////////////////////////////
-let cube2 = document.querySelector(".box-area2");
-let content2 = document.querySelector(".box-back2");
-
-function rotateXAxis2(n) {
-  rotationX = rotationX + 90 * n;
-  rotationY = 0;
-  console.log(rotationX);
-  content2.style.transform = `rotateX(180deg) rotateY(0deg) translateZ(150px)`;
-  cube2.style.transform = `rotateX(${rotationX}deg) rotateY(0deg)`;
-}
-
-function rotateYAxis2(n) {
-  rotationY = rotationY + 90 * n;
-  rotationX = 0;
-  console.log(rotationY);
-  content2.style.transform = `rotateX(0deg) rotateY(180deg) translateZ(150px)`;
-  cube2.style.transform = `rotateX(0deg) rotateY(${rotationY}deg)`;
-}
-
-function front2() {
-  rotationX = 0;
-  rotationY = 0;
-  cube2.style.transform = `rotateX(0deg) rotateY(0deg)`;
-}
-
-cube2.addEventListener("mousemove", (event) => {
-  mouseX = event.clientX - cube.offsetLeft;
-  mouseY = event.clientY - cube.offsetTop;
-
-  rotationY = (mouseX / cube.offsetWidth - 0.5) * 180;
-  rotationX = (mouseY / cube.offsetHeight - 0.5) * -360;
-
-  cube2.style.transform = `rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
-});
 ///////////////////////////
 function spline(el) {
   this.el = el;
@@ -198,7 +147,7 @@ function spline(el) {
   this.elPos();
 }
 
-console.log(spline.prototype);
+// console.log(spline.prototype);
 spline.prototype.elPos = function () {
   this.x = this.el.getBoundingClientRect().left;
   this.y = this.el.getBoundingClientRect().top;
@@ -259,3 +208,4 @@ window.addEventListener("resize", function () {
     }
   }, 200);
 });
+///////////////////////////

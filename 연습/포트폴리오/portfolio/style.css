@@ -42,7 +42,22 @@ body {
   overflow: hidden;
   position: relative;
 }
-
+.canvas-cont {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.canvas-cont2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
 .div5 {
   width: 100vw;
   height: 100vh;
@@ -58,6 +73,7 @@ body {
   transform: translate(-50%, -50%);
   display: flex;
   gap: 20px;
+  z-index: 10;
 }
 
 .control {
@@ -300,8 +316,8 @@ body {
 
 .cube {
   position: absolute;
-  top: 40%;
-  left: 30%;
+  top: 25%;
+  left: 14%;
   transform: translate(-50%, -50%);
   perspective: 1500px;
 }
@@ -309,16 +325,16 @@ body {
 .box-area {
   position: relative;
   transform-style: preserve-3d;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   transition: 0.5s;
   transform: rotateX(0deg) rotateY(0deg);
 }
 
 .box-area .box {
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   transform-style: preserve-3d;
   display: flex;
   justify-content: center;
@@ -332,32 +348,38 @@ body {
 
 .box-area .box-front {
   background: url(img/img1.jpg) center/cover no-repeat;
-  transform: translateZ(150px);
+  filter: grayscale(600);
+  transform: translateZ(100px);
 }
 
 .box-area .box-right {
   background: url(img/img2.jpg) center/cover no-repeat;
-  transform: rotateY(90deg) translateZ(150px);
+  filter: grayscale(600);
+  transform: rotateY(90deg) translateZ(100px);
 }
 
 .box-area .box-back {
   background: url(img/img3.jpg) center/cover no-repeat;
-  transform: rotateY(180deg) translateZ(150px);
+  filter: grayscale(600);
+  transform: rotateY(180deg) translateZ(100px);
 }
 
 .box-area .box-left {
   background: url(img/img4.jpg) center/cover no-repeat;
-  transform: rotateY(-90deg) translateZ(150px);
+  filter: grayscale(600);
+  transform: rotateY(-90deg) translateZ(100px);
 }
 
 .box-area .box-top {
   background: url(img/img5.jpg) center/cover no-repeat;
-  transform: rotateX(90deg) translateZ(150px);
+  filter: grayscale(600);
+  transform: rotateX(90deg) translateZ(100px);
 }
 
 .box-area .box-bottom {
   background: url(img/img6.jpg) center/cover no-repeat;
-  transform: rotateX(-90deg) translateZ(150px);
+  filter: grayscale(600);
+  transform: rotateX(-90deg) translateZ(100px);
 }
 
 .button {
@@ -375,25 +397,25 @@ body {
 
 .button .rotate-x-top {
   position: absolute;
-  top: -270px;
+  top: -180px;
 }
 .button .rotate-x-bottom {
   position: absolute;
-  bottom: -270px;
+  bottom: -180px;
   width: 25px;
 }
 .button .rotate-y-left {
   position: absolute;
-  left: -270px;
+  left: -180px;
 }
 .button .rotate-y-right {
   position: absolute;
-  right: -270px;
+  right: -180px;
 }
 
 .button .front {
-  left: -285px;
-  top: -206px;
+  left: -189px;
+  top: -140px;
   cursor: pointer;
   font-weight: 500;
   padding: 10px;
@@ -402,81 +424,6 @@ body {
   border-radius: 50%;
 }
 .button .front:hover {
-  background-color: var(--main-black-color);
-  color: var(--main-white-color);
-}
-
-.cube2 {
-  position: absolute;
-  top: 65%;
-  right: 14%;
-  transform: translate(-50%, -50%);
-  perspective: 1500px;
-}
-.box-area2 {
-  position: relative;
-  transform-style: preserve-3d;
-  width: 300px;
-  height: 300px;
-  transition: 0.5s;
-  transform: rotateX(0deg) rotateY(0deg);
-}
-
-.box-area2 .box {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  transform-style: preserve-3d;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.box-area2 .box h2 {
-  font-size: 25px;
-  color: var(--main-white-color);
-}
-
-.box-area2 .box-front2 {
-  background: url(img/img1.jpg) center/cover no-repeat;
-  transform: translateZ(150px);
-}
-
-.box-area2 .box-right2 {
-  background: url(img/img2.jpg) center/cover no-repeat;
-  transform: rotateY(90deg) translateZ(150px);
-}
-
-.box-area2 .box-back2 {
-  background: url(img/img3.jpg) center/cover no-repeat;
-  transform: rotateY(180deg) translateZ(150px);
-}
-
-.box-area2 .box-left2 {
-  background: url(img/img4.jpg) center/cover no-repeat;
-  transform: rotateY(-90deg) translateZ(150px);
-}
-
-.box-area2 .box-top2 {
-  background: url(img/img5.jpg) center/cover no-repeat;
-  transform: rotateX(90deg) translateZ(150px);
-}
-
-.box-area2 .box-bottom2 {
-  background: url(img/img6.jpg) center/cover no-repeat;
-  transform: rotateX(-90deg) translateZ(150px);
-}
-.button .front2 {
-  right: -285px;
-  bottom: -206px;
-  cursor: pointer;
-  font-weight: 500;
-  padding: 10px;
-  background-color: var(--main-white-color);
-  color: var(--main-black-color);
-  border-radius: 50%;
-}
-.button .front2:hover {
   background-color: var(--main-black-color);
   color: var(--main-white-color);
 }
