@@ -1,0 +1,17 @@
+.first {
+  text-align: center;
+  width: 200px;
+  margin: 100px auto;
+}
+
+.box {
+  width: 100%;
+  margin-bottom: 30px;
+  border: 1px solid #ccc;
+}
+.photo {
+  width: 200px;
+}
+.photo img {
+  width: 100%;
+}
