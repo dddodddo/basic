@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fffbf2;
+  color: #303030;
+  font-family: "Noto Sans KR", sans-serif;
+}
+a{text-decoration: none; color: #303030;}
+
+/* wrap */
+#wrap {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+/* loading */
+#loading {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+}
+.Svg {
+  width: 100%;
+  height: 100vh;
+}
+.dSvg {
+  position: absolute;
+  top: 50%;
+  left: 0vw;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.dSvg_left {
+  position: absolute;
+  width: 40.3%;
+  height: 100vh;
+  background-color: #fffbf2;
+  opacity: 0;
+  z-index: 1;
+}
+.oSvg {
+  position: absolute;
+  top: 47%;
+  left: 28%;
+  scale: 0.5;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+
+/* header */
+#header{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  z-index: 100;
+}
+.logo{
+}
+.menu{
+}
+
+
+/* section1 */
+#section1{
+  width: 100%;
+  height: 100vh;
+}
