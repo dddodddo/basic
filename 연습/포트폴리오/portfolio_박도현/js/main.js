@@ -77,7 +77,7 @@ gsap.timeline({
   .to(".Svg", {
     scale: 0.1,
     x: -900,
-    y: -500,
+    y: -441,
     position: "fixed"
   })
 
@@ -98,11 +98,6 @@ gsap.timeline({
   .to("#header .menu", {
     opacity: 1
   },"-=5")
-  // .to(".circle",{width:"200px", height:"200px",duration:2,ease: "power3.in",})
-  .to(".circle1",{top:"27%",width:"200px", height:"200px",ease: "power3.in",},"+=-5")
-  .to(".circle2",{top:"38%",left:"63%",width:"200px", height:"200px",ease: "power3.in",},"+=-5")
-  .to(".circle3",{top:"62%",left:"63%",width:"200px", height:"200px",ease: "power3.in",},"+=-5")
-  .to(".circle4",{top:"75%",width:"200px", height:"200px",ease: "power3.in",},"+=-5")
-  .to(".circle5",{top:"62%",left:"37%",width:"200px", height:"200px",ease: "power3.in",},"+=-5")
-  .to(".circle6",{top:"38%",left:"37%",width:"200px", height:"200px",ease: "power3.in",},"+=-5")
+  .to(".container",{opacity:1,duration:2},"-=")
+
 ////////////////////////////////////////

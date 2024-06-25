@@ -1,6 +1,6 @@
 /* cursor */
 
-c.cursor {
+.cursor {
   pointer-events: none;
   position: fixed;
   display: block;
@@ -365,6 +365,7 @@ nav .close img {
   }
 }
 
+
 /* skills */
 .skills .discription {
   color: var(--light);
@@ -454,8 +455,7 @@ nav .close img {
   }
 }/*# sourceMappingURL=Skills.css.map */
 
-
-/* Feel Our Vibe */
+/* Feel Our Vibe  */
 .feelOurVibe .fov_title {
   color: var(--light);
   font-size: 40px;
@@ -675,59 +675,62 @@ nav .close img {
     width: 100%;
   }
 }/*# sourceMappingURL=Mission.css.map */
+
+
 /* feel the reel */
 .feelTheReel {
-  width: 100%;
-  padding: 0 1.5rem;
+width: 100%;
+padding: 0 1.5rem;
 }
 
 .feelTheReel h1 {
-  text-align: center;
-  font-size: 50px;
-  font-weight: 500;
+text-align: center;
+font-size: 50px;
+font-weight: 500;
 }
 
 .feelTheReel p {
-  text-align: center;
-  font-size: 25px;
-  margin: 2rem 0;
+text-align: center;
+font-size: 25px;
+margin: 2rem 0;
 }
 
 .video {
-  position: relative;
+position: relative;
 }
 
 .video-added {
-  overflow: hidden;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio (9 / 16 = 0.5625) */
-  height: 0;
+overflow: hidden;
+padding-bottom: 56.25%; /* 16:9 aspect ratio (9 / 16 = 0.5625) */
+height: 0;
 }
 
 .video iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 2rem;
-  background-color: var(--dark);
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+border-radius: 2rem;
+background-color: var(--dark);
 }
 
 .video img:last-child {
-  position: absolute;
+position: absolute;
 }
 
 .video img:first-child {
-  width: 100%;
-  border-radius: 2rem;
+width: 100%;
+border-radius: 2rem;
 }
 
 /* ********** Responsive ************* */
 @media screen and (max-width: 640px) {
-  .feelTheReel {
-    margin-top: 5rem;
-  }
+.feelTheReel {
+  margin-top: 5rem;
+}
 }/*# sourceMappingURL=FeelTheReel.css.map */
+
 /* experts */
 .experts h1 {
   text-align: center;
@@ -1062,4 +1065,4 @@ footer .animation_wrapper img:last-child {
   footer p {
     margin-bottom: 1rem;
   }
-}
+}/*# sourceMappingURL=Footer.css.map */

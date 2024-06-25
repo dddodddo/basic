@@ -1,3 +1,6 @@
+:root {
+  --rotation-increment: calc(360deg / 6);
+}
 * {
   margin: 0;
   padding: 0;
@@ -125,51 +128,157 @@ body::-webkit-scrollbar-thumb {
   position: relative;
   background-color: #fff;
 }
-.circleWrap{
-  height: 100vh;
-  /* animation: cirRo 30s linear Infinite; */
+
+.container {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 25%;
+  width: 100%;
+  opacity: 0;
 }
-.circle{
+
+.circleWrap {
+  width: 448px;
+  height: 448px;
+  position: relative;
+  animation: spin 10s linear infinite;
+}
+
+.circle {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
-  width: 0px;
-  height: 0px;
   border-radius: 50%;
+  transform-origin: center;
+  width: 80px;
+  height: 80px;
+  background-color: #f3f4f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
 }
-@keyframes cirRo {
-  0%{rotate: 0deg;}
-  100%{rotate: 360deg;}
+.circle:hover{
+  width: 150px;
+  height: 150px;
 }
-.circle.circle1{
+
+.circle:nth-child(1) {
+  --rotation: calc(0 * var(--rotation-increment));
+  transform: translate(-50%, -50%) rotate(var(--rotation)) translate(180px) rotate(calc(-1 * var(--rotation)));
+}
+
+.circle:nth-child(2) {
+  --rotation: calc(1 * var(--rotation-increment));
+  transform: translate(-50%, -50%) rotate(var(--rotation)) translate(180px) rotate(calc(-1 * var(--rotation)));
+}
+
+.circle:nth-child(3) {
+  --rotation: calc(2 * var(--rotation-increment));
+  transform: translate(-50%, -50%) rotate(var(--rotation)) translate(180px) rotate(calc(-1 * var(--rotation)));
+}
+
+.circle:nth-child(4) {
+  --rotation: calc(3 * var(--rotation-increment));
+  transform: translate(-50%, -50%) rotate(var(--rotation)) translate(180px) rotate(calc(-1 * var(--rotation)));
+}
+
+.circle:nth-child(5) {
+  --rotation: calc(4 * var(--rotation-increment));
+  transform: translate(-50%, -50%) rotate(var(--rotation)) translate(180px) rotate(calc(-1 * var(--rotation)));
+}
+
+.circle:nth-child(6) {
+  --rotation: calc(5 * var(--rotation-increment));
+  transform: translate(-50%, -50%) rotate(var(--rotation)) translate(180px) rotate(calc(-1 * var(--rotation)));
+}
+
+.circle_img1{
+  animation: spin 10s linear infinite reverse;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
   background: url(img/1.jpg) no-repeat center/cover;
-  /* top: 27%; */
+  
 }
-.circle.circle2{
+.circle .circle_img{
+  filter: blur(1px);
+}
+.circle:hover .circle_img{
+  filter: blur(0px);
+}
+.circle_img2{
+  animation: spin 10s linear infinite reverse;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
   background: url(img/2.jpg) no-repeat center/cover;
-  /* top: 38%;
-  left: 63%; */
 }
-.circle.circle3{
+.circle_img3{
+  animation: spin 10s linear infinite reverse;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
   background: url(img/3.jpg) no-repeat center/cover;
-  /* top: 62%;
-  left: 63%; */
 }
-.circle.circle4{
+.circle_img4{
+  animation: spin 10s linear infinite reverse;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
   background: url(img/4.jpg) no-repeat center/cover;
-  /* top: 75%; */
 }
-.circle.circle5{
+.circle_img5{
+  animation: spin 10s linear infinite reverse;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
   background: url(img/5.jpg) no-repeat center/cover;
-  /* top: 62%;
-  left: 37%; */
 }
-.circle.circle6{
+.circle_img6{
+  animation: spin 10s linear infinite reverse;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
   background: url(img/6.jpg) no-repeat center/cover;
-  /* top: 38%;
-  left: 37%; */
 }
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.user {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 176px;
+  height: 176px;
+  background-color: var(--color-tertiary);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.user img {
+  opacity: 1;
+  transition: opacity 500ms ease 0s;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+
 
 /* section2 */
 #section2{
