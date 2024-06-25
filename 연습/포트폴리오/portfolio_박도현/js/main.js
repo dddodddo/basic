@@ -15,8 +15,8 @@ gsap.ticker.add((time) => {
 gsap.ticker.lagSmoothing(0);
 
 ////////////////////////////////////////
- //Mouse cursor
- gsap.set(".cursor", {
+//Mouse cursor
+gsap.set(".cursor", {
   xPercent: -50,
   yPercent: -50
 })
@@ -77,7 +77,7 @@ gsap.timeline({
   .to(".Svg", {
     scale: 0.1,
     x: -900,
-    y: -441,
+    y: -320,
     position: "fixed"
   })
 
@@ -87,9 +87,9 @@ gsap.timeline({
       start: "top top",
       end: "+=2000",
       scrub: 2,
-      markers: true,
+      // markers: true,
       // duration: 2,
-      pin:true
+      pin: true
     }
   })
   .to("#header img", {
@@ -97,7 +97,64 @@ gsap.timeline({
   })
   .to("#header .menu", {
     opacity: 1
-  },"-=5")
-  .to(".container",{opacity:1,duration:2},"-=")
-
+  }, "-=5")
+  .to(".container", {
+    opacity: 1,
+    duration: 2
+  },"-=" )
+  .to(".web_portfolio",{opacity:1,duration:2},"-=3")
+  .to(".call",{opacity:1,duration:2},"-=3")
 ////////////////////////////////////////
+let pTag1 = document.querySelector('.sec1_txt');
+
+let textArr1 = '2024 web portfolio 2024 web portfolio 2024 web portfolio'.split(" ");
+
+let count1 = 0;
+
+initTexts(pTag1, textArr1)
+
+function initTexts(element, textArray) {
+  textArray.push(...textArray)
+  for (let i = 0; i < textArray.length; i++) {
+    //자바스크립트에서 띄어쓰기는 &nbsp;
+    //자바스크립트에서 공백은 \u00A0
+    element.innerHTML += `${textArray[i]}&nbsp`
+  }
+}
+
+function animate() {
+  count1++;
+
+  count1 = marqueeText(count1, pTag1, -1)
+  requestAnimationFrame(animate)
+}
+
+
+function marqueeText(count, element, direction) {
+  //scrollHeight --> 보이지 않는 공간까지 공간의 높이값
+  //scrollWidth
+  if (count > element.scrollWidth / 2) {
+    count = 0;
+    element.style.transform = `translate(0,0)`;
+  }
+  element.style.transform = `translate(${count * direction}px,0)`;
+  return count;
+}
+
+function scrollHandler() {
+  count1 += 10;
+}
+window.addEventListener("scroll", scrollHandler)
+animate();
+//////////////////////////////////////////////
+gsap.timeline({
+  scrollTrigger: {
+    trigger: '#section2',
+    start: "top top",
+    end: "+=2000",
+    scrub: 2,
+    markers: true,
+    pin: true
+  }
+})
+.to(".sec2_img1", {bottom: "50%",scale:0.8})

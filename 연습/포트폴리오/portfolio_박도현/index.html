@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>portfolio_박도현</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet" />
-  
+
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -32,7 +32,19 @@
       <a href="#" class="logo">
         <img src="img/logo.png" alt="">
       </a>
-      <div class="menu">menu</div>
+      <div class="menu_img"></div>
+      
+      <input type="checkbox" id="active">
+      <label for="active" class="menu-btn">menu</label>
+      <label for="active" class="menu-close">close</label>
+      <div class="wrapper">
+        <ul>
+          <li><a href="#section1" data-text="Aboutme">About me</a></li>
+          <li><a href="#" data-text="Skills">Skills</a></li>
+          <li><a href="#" data-text="Awards">Awards</a></li>
+          <li><a href="#" data-text="Projects">Projects</a></li>
+        </ul>
+      </div>
     </header>
     <section id="section1">
       <div class="container">
@@ -46,7 +58,7 @@
           <div class="circle">
             <div class="circle_img3 circle_img"></div>
           </div>
-          <div class="circle" >
+          <div class="circle">
             <div class="circle_img4 circle_img"></div>
           </div>
           <div class="circle">
@@ -55,16 +67,32 @@
           <div class="circle">
             <div class="circle_img6 circle_img"></div>
           </div>
-      
+
         </div>
         <div class="user">
-          <img src="https://www.datocms-assets.com/108466/1707409010-amra-homepage-head.jpg?ar64=MTox&dpr=0.25&fit=crop&fm=webp 250w,https://www.datocms-assets.com/108466/1707409010-amra-homepage-head.jpg?ar64=MTox&dpr=0.5&fit=crop&fm=webp 500w,https://www.datocms-assets.com/108466/1707409010-amra-homepage-head.jpg?ar64=MTox&dpr=0.75&fit=crop&fm=webp 750w,https://www.datocms-assets.com/108466/1707409010-amra-homepage-head.jpg?ar64=MTox&fit=crop&fm=webp 1000w" />
+          <img src="img/user.jpg" />
         </div>
       </div>
-
-      <div class="sec1_txt">2024 web portfolio</div>
+      <div class="sec1txt_cover">
+        <div class="sec1_txt"></div>
+      </div>
+      <div class="web_portfolio">2024 web portfolio</div>
+      <div class="call">
+        <div class="phone">+82 10-9218-1934</div>
+        <div class="email">99pdh@naver.com</div>
+      </div>
     </section>
-    <section id="section2"></section>
+    <section id="section2">
+      <div class="sec2_imgWrap">
+        <div class="sec2_img1"></div>
+        <div class="sec2_img2"></div>
+      </div>
+      <div class="sec2_txtWrap">
+        <div class="sec2_name">박도현</div>
+        <div class="sec2_year">1999</div>
+      </div>
+      <div class="sec2_cards"></div>
+    </section>
     <section id="section3"></section>
   </div>
 
@@ -72,6 +100,7 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script type="module" src="js/module.js"></script>
   <script src="js/jquery.js"></script>
   <script src="js/main.js"></script>
 </body>

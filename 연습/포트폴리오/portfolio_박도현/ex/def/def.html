@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta name="csrf-token" content="e9JFikb3khpZn2LsSx3aETpvry0ufzyEiQ0wESPj">
+  <meta name="format-detection" content="telephone=no">
+  <title>DEF</title>
+
+
+  <meta property="og:title" content="DEF">
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.defprojetos.com/images/capa-face.png">
+  <meta property="og:image:width" content="800">
+  <meta property="og:image:height" content="800">
+  <meta property="og:image:type" content="image/png">
+
+
+
+
+
+
+
+
+
+  <meta name="robots" content="index, follow">
+
+
+  <link rel="canonical" href="https://www.defprojetos.com">
+
+
+  <meta property="og:type" content="website" />
+
+  <meta property="og:url" content="https://www.defprojetos.com" />
+  <meta name="creator" content="JARCOS + Programatório">
+  <meta name="author" content="DEF Urbanismo + Arquitetura">
+  <meta property="og:site_name" content="DEF Urbanismo + Arquitetura">
+  <meta property="og:locale" content="pt-BR">
+
+  <link rel="icon" type="image/png" href="https://www.defprojetos.com/images/favicon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.19/fancybox/fancybox.min.css"
+    integrity="sha512-VthxJ3UyM7Fvho+wIknikk6dJ5IchO6dl+VO1Xgq1M9g24/Cntuj3y8m7v6j6pBsvXvYXY6L+kZJLP0NyiRgWQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="preload" as="style" href="https://www.defprojetos.com/build/assets/utils-fb968eb2.css" />
+  <link rel="preload" as="style" href="https://www.defprojetos.com/build/assets/app-be44a3b6.css" />
+  <link rel="modulepreload" href="https://www.defprojetos.com/build/assets/loader-f17fc4ff.js" />
+  <link rel="modulepreload" href="https://www.defprojetos.com/build/assets/lottie-abfc99cb.js" />
+  <link rel="modulepreload" href="https://www.defprojetos.com/build/assets/_commonjsHelpers-725317a4.js" />
+  <link rel="modulepreload" href="https://www.defprojetos.com/build/assets/app-92e77833.js" />
+  <link rel="modulepreload" href="https://www.defprojetos.com/build/assets/modal-99962b9b.js" />
+  <link rel="stylesheet" href="https://www.defprojetos.com/build/assets/utils-fb968eb2.css" />
+  <link rel="stylesheet" href="https://www.defprojetos.com/build/assets/app-be44a3b6.css" />
+  <script type="module" src="https://www.defprojetos.com/build/assets/loader-f17fc4ff.js"></script>
+  <script type="module" src="https://www.defprojetos.com/build/assets/app-92e77833.js"></script>
+
+
+</head>
+
+<body data-scroll-direction="initial" data-load="first-loading">
+
+
+  <div id="loader">
+
+    <div class="flex-center align-self-center w-100">
+      <div class="container-lottie">
+        <lottie-player src="https://www.defprojetos.com/images/loader-loop.json" speed="1.2" autoplay></lottie-player>
+      </div>
+    </div>
+
+  </div>
+  <div class="cursor-wrapper" id="wrapper-cursor">
+    <div></div>
+  </div>
+
+  <header id="header" data-get-section>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-2 col-tablet-3 col-3 column-logo">
+          <a href="https://www.defprojetos.com" class="logo" data-pjax aria-label="DEF Urbanismo + Arquitetura"
+            data-menu-close data-lottie>
+            <span class="hide">DEF Urbanismo + Arquitetura</span>
+            <div class="container-logo" data-lottie-hover data-loop data-cursor-style="off">
+              <lottie-player src="https://www.defprojetos.com/images/def-logo.json" speed="1" loop renderer="svg">
+              </lottie-player>
+              <lottie-player class="logo-white" src="https://www.defprojetos.com/images/def-logo-white.json" speed="1"
+                loop renderer="svg"></lottie-player>
+
+
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-2 offset-lg-6 col-tablet-5 col-6 column-slogan">
+          <div class="slogan-img">
+            <svg width="235" height="14" viewBox="0 0 235 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path id="Vector"
+                d="M1.9662 0.204782V7.1235C1.9662 8.81488 2.9395 9.76843 4.81751 9.76843C6.69553 9.76843 7.67863 8.81175 7.67863 7.1235V0.204782H9.64483V7.18602C9.64483 9.74029 8.01504 11.4004 4.82078 11.4004C1.62652 11.4004 0 9.74029 0 7.18602V0.204782H1.9662ZM21.2036 3.39996C21.2036 5.18826 19.9559 6.31376 18.287 6.567L21.2428 10.9877V11.2159H19.2145L16.2358 6.64516H13.7928V11.2159H11.8527V0.204782H17.5488C19.5869 0.204782 21.2069 1.3678 21.2069 3.39996H21.2036ZM17.2483 5.10385C18.4535 5.10385 19.2864 4.53797 19.2864 3.4281C19.2864 2.31823 18.4568 1.75235 17.2483 1.75235H13.7895V5.10072H17.2483V5.10385ZM31.7825 2.95601C31.7825 4.71305 30.5839 5.2883 29.9372 5.43212V5.55405C30.6721 5.71349 32.0308 6.27312 32.0308 8.17709C32.0308 10.2124 30.352 11.2128 28.2453 11.2128H22.9085V0.204782H28.1637C30.2246 0.204782 31.7825 1.09268 31.7825 2.95914V2.95601ZM27.8828 4.85061C29.0423 4.85061 29.9045 4.44418 29.9045 3.30617C29.9045 2.16816 29.0423 1.75235 27.8828 1.75235H24.8486V4.84748H27.8828V4.85061ZM27.9775 9.659C29.2088 9.659 30.094 9.22443 30.094 8.03015C30.094 6.83587 29.2088 6.4013 27.9775 6.4013H24.8453V9.659H27.9775ZM39.2619 0.204782L43.3282 10.9846V11.2128H41.3457L40.3006 8.33654H35.6692L34.6241 11.2128H32.6905V10.9846L36.7536 0.204782H39.2619ZM39.7747 6.75146L38.0502 2.01809H37.9228L36.1983 6.75146H39.778H39.7747ZM46.872 0.204782L52.2317 8.41782H52.359V0.204782H54.237V11.2159H52.0096L46.6564 3.00291H46.529V11.2159H44.651V0.204782H46.872ZM58.4797 0.204782V11.2159H56.507V0.204782H58.4797ZM64.8617 0.0297043C67.713 0.0297043 69.3918 1.27714 69.5355 3.38745V3.61568H67.6836C67.6118 2.06186 66.4131 1.50536 64.8813 1.50536C63.3495 1.50536 62.3501 2.06186 62.3501 3.08107C62.3501 4.10027 63.196 4.48794 64.5939 4.71617L65.9036 4.92251C68.2454 5.30393 69.6172 6.1168 69.6172 8.11144C69.6172 10.1061 68.0102 11.391 65.0969 11.391C62.1835 11.391 60.2957 10.0998 60.152 7.95824V7.73002H61.9875C62.1541 9.31197 63.441 9.91537 65.0707 9.91537C66.7005 9.91537 67.7 9.31197 67.7 8.2021C67.7 7.09223 66.805 6.7327 65.368 6.50447L64.0583 6.29188C61.7426 5.91671 60.4394 4.98504 60.4394 3.11858C60.4394 1.25213 62.0104 0.0297043 64.8617 0.0297043ZM73.7292 0.204782L77.7727 9.22131H77.9L81.9402 0.204782H84.2657V11.2159H82.4595V3.26552H82.3321L78.7688 11.2191H76.8516L73.2883 3.26552H73.1609V11.2191H71.3645V0.204782H73.7292ZM91.8855 -0.0078125C95.4554 -0.0078125 97.758 2.09625 97.758 5.71037C97.758 9.32448 95.4586 11.4285 91.8855 11.4285C88.3124 11.4285 86.0229 9.32448 86.0229 5.71037C86.0229 2.09625 88.3157 -0.0078125 91.8855 -0.0078125ZM91.8855 9.83408C94.2665 9.83408 95.7428 8.33654 95.7428 5.71349C95.7428 3.09045 94.2665 1.5929 91.8855 1.5929C89.5045 1.5929 88.0282 3.09045 88.0282 5.71349C88.0282 8.33654 89.5045 9.83408 91.8855 9.83408ZM125.778 0.204782L129.844 10.9846V11.2128H127.862L126.817 8.33654H122.185L121.14 11.2128H119.207V10.9846L123.27 0.204782H125.778ZM126.291 6.75146L124.566 2.01809H124.439L122.714 6.75146H126.294H126.291ZM140.521 3.40309C140.521 5.19138 139.277 6.31689 137.605 6.57012L140.56 10.9908V11.2191H138.532L135.553 6.64828H133.11V11.2191H131.17V0.204782H136.866C138.904 0.204782 140.524 1.3678 140.524 3.39996L140.521 3.40309ZM136.566 5.10697C137.771 5.10697 138.604 4.54109 138.604 3.43122C138.604 2.32135 137.774 1.75547 136.566 1.75547H133.107V5.10385H136.566V5.10697ZM147.488 -0.0078125C151.058 -0.0078125 153.36 2.09625 153.36 5.71037C153.36 9.02122 151.437 11.0628 148.37 11.3848V12.4634L148.497 12.5853H150.734V13.9922H148.873C147.452 13.9922 146.603 13.2887 146.603 11.9444V11.3879C143.542 11.0659 141.625 9.02435 141.625 5.71349C141.625 2.09625 143.918 -0.0046861 147.488 -0.0046861V-0.0078125ZM147.488 9.83408C149.869 9.83408 151.345 8.33654 151.345 5.71349C151.345 3.09045 149.869 1.5929 147.488 1.5929C145.107 1.5929 143.631 3.09045 143.631 5.71349C143.631 8.33654 145.11 9.83408 147.488 9.83408ZM156.94 0.204782V7.1235C156.94 8.81488 157.913 9.76843 159.791 9.76843C161.669 9.76843 162.652 8.81175 162.652 7.1235V0.204782H164.619V7.18602C164.619 9.74029 162.989 11.4004 159.795 11.4004C156.6 11.4004 154.977 9.74029 154.977 7.18602V0.204782H156.943H156.94ZM168.806 0.204782V11.2159H166.833V0.204782H168.806ZM180.133 0.204782V1.818H176.115V11.2159H174.143V1.818H170.132V0.204782H180.133ZM189.64 0.204782V1.7586H183.435V4.885H188.843V6.43569H183.435V9.66213H189.751V11.2128H181.475V0.204782H189.64ZM200.748 0.204782V1.818H196.731V11.2159H194.758V1.818H190.747V0.204782H200.748ZM204.034 0.204782V7.1235C204.034 8.81488 205.007 9.76843 206.885 9.76843C208.763 9.76843 209.746 8.81175 209.746 7.1235V0.204782H211.713V7.18602C211.713 9.74029 210.083 11.4004 206.889 11.4004C203.694 11.4004 202.071 9.74029 202.071 7.18602V0.204782H204.037H204.034ZM223.271 3.39996C223.271 5.18826 222.024 6.31376 220.355 6.567L223.311 10.9877V11.2159H221.282L218.304 6.64516H215.861V11.2159H213.921V0.204782H219.617C221.655 0.204782 223.275 1.3678 223.275 3.39996H223.271ZM219.316 5.10385C220.521 5.10385 221.354 4.53797 221.354 3.4281C221.354 2.31823 220.525 1.75235 219.316 1.75235H215.857V5.10072H219.316V5.10385ZM230.934 0.201656L235 10.9815V11.2097H233.021L231.972 8.33341H227.341L226.296 11.2097H224.362V10.9815L228.429 0.201656H230.937H230.934ZM231.446 6.74833L229.722 2.01497H229.595L227.87 6.74833H231.45H231.446ZM114.438 5.31957H109.006V0.126623H107.922V5.32269H102.771V6.36066H107.922V11.2941H109.006V6.36066H114.438V5.32269V5.31957Z"
+                fill="var(--color, #212121)" />
+            </svg>
+
+          </div>
+        </div>
+        <div class="col-lg-2 col-tablet-4 col-3 column-bt">
+          <button href="javascript:void(0)" id="bt-menu" aria-label="Menu" data-cursor-style="hovered">
+
+            <span class="close-text">fechar</span>
+            <span class="menu-text">menu</span>
+          </button>
+
+          <nav class="menu">
+            <div class="menu--wrapper">
+              <div class="container-lottie">
+
+
+                <lottie-player src="https://www.defprojetos.com/images/loader-loop.json" loop></lottie-player>
+              </div>
+
+              <ul class="menu--list fs--header">
+                <li>
+                  <a href="https://www.defprojetos.com/sobre" data-menu-close data-pg-active="pg-home"
+                    data-cursor-style="hovered">
+                    <span data-letter="Sobre">Sobre</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://www.defprojetos.com/projetos" data-menu-close data-pg-active="pg-projetos"
+                    data-cursor-style="hovered">
+                    <span data-letter="Projetos">Projetos</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://www.defprojetos.com/contato" data-menu-close data-pg-active="pg-contato"
+                    data-cursor-style="hovered">
+                    <span data-letter="Contato">Contato</span>
+                  </a>
+                </li>
+              </ul>
+
+              <div class="social-list container-fluid">
+                <div class="row">
+                  <div class="mail-wrapper col-lg-8 pb-mobile-10">
+                    <a href="mailto:contato@defprojetos.com" class="mail-link btn-underline" target="_blank"
+                      rel="noopener noreferrer" data-cursor-style="hovered">
+                      <span>contato@defprojetos.com</span>
+                      <i class="icon-arrow-diagonal"></i>
+                    </a>
+                  </div>
+
+                  <div class="phone-wrapper col-lg-4">
+                    <a href="tel:+552125416687" class="phone-link btn-underlined" target="_blank"
+                      rel="noopener noreferrer" data-cursor-style="hovered">
+                      <span>RJ +55 21 2541 6687</span>
+                    </a>
+                    <a href="tel:+551135443000" class="phone-link btn-underlined" target="_blank"
+                      rel="noopener noreferrer" data-cursor-style="hovered">
+                      <span>SP +55 11 3544 3000</span>
+                    </a>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </nav>
+        </div>
+
+      </div>
+    </div>
+  </header>
+  <!-- /header -->
+  <div id="main-transition">
+    <div class="page-enter-transition"></div>
+    <div class="page-leave-transition"></div>
+    <div class="wrapper" id="pg-home" data-scroll-container>
+
+      <main>
+        <section class="home-intro">
+          <div class="marquee-section">
+            <div class="img-marquee-wrapper" data-aos="scaleOut">
+              <div class="container-img">
+                <img src="https://www.defprojetos.com/images/uploads/posts/mobile/cidade-center-norte05_1702250970.webp"
+                  class=" media" data-aos="d:loop">
+
+
+
+
+
+
+              </div>
+
+              <div class="marquee-wrapper" data-aos>
+                <div class="marquee-trigger">
+                  <div class="marquee" data-marquee-speed="1.2" data-marquee-speed-hover="1.2">
+                    <span class="marquee-item font-1 fs--213 white-1 text-uppercase d-block pr-100 split-words">
+                      <span>
+                        URBANISMO + ARQUITETURA
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="marquee-wrapper" data-aos>
+              <div class="marquee-trigger">
+                <div class="marquee" data-marquee-speed="1.2" data-marquee-speed-hover="1.2">
+                  <span class="marquee-item font-1 fs--213 black-1 text-uppercase d-block pr-100 split-words">
+                    <span>
+                      URBANISMO + ARQUITETURA
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg-4 offset-lg-8 pb-mobile-50">
+                <p class="paragraph-24 black-1 home-description"
+                  data-aos="fadeIn .8s ease-in-out-cubic .8s, d:loop, trigger:.home-intro">
+                  Do urbanismo à arquitetura, trabalhamos<br> com criatividade e pragmatismo, com foco na construção
+                  de soluções estratégicas, singulares e viáveis, que geram valor de maneira ampla e profunda.
+                </p>
+              </div>
+            </div>
+            <div class="row social-list pt-lg-90" data-aos="d:loop">
+              <div class="mail-wrapper col-lg-8 pb-mobile-10">
+                <a href="mailto:contato@defprojetos.com" class="mail-link btn-underline black-1" target="_blank"
+                  data-cursor-style="hovered" rel="noopener noreferrer">
+                  <span>contato@defprojetos.com</span>
+                  <i class="icon-arrow-diagonal"></i>
+                </a>
+              </div>
+
+              <div class="phone-wrapper col-lg-4">
+
+                <a href="tel:+552125416687" class="phone-link btn-underlined black-1" target="_blank"
+                  data-cursor-style="hovered" rel="noopener noreferrer">
+                  <span>RJ +55 21 2541 6687</span>
+                </a>
+                <a href="tel:+551135443000" class="phone-link btn-underlined black-1" target="_blank"
+                  data-cursor-style="hovered" rel="noopener noreferrer">
+                  <span>SP +55 11 3544 3000</span>
+                </a>
+
+
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+
+
+        <!-- home-history 💛🧡❤💛🧡💛🧡💛🧡❤💛🧡💛🧡💛🧡❤💛🧡💛🧡💛🧡❤💛🧡💛🧡 -->
+        <section class="home-history bg-white-1" data-set-section="">
+          <div class="container-sticky" data-sticky data-trigger="parent">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-lg-7 col-tablet-6 column-number">
+                  <div class="number-transition">
+                    <span class="number-19">
+                      <span class="number-left">1</span>
+                      <span class="number-right">9</span>
+                    </span>
+                    <span class="number-86">
+                      <span class="number-left">8</span>
+                      <span class="number-right">6</span>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-tablet-6 col-12 pt-phone-20 column-img-transition">
+                  <div class="img-transition border-12">
+                    <div class="container-img first-img ">
+                      <img src="https://www.defprojetos.com/images/uploads/posts/desktop/fotodef-4_1710173683.webp"
+                        class=" media">
+
+
+
+
+
+                    </div>
+
+                    <div class="container-img second-img ">
+                      <img src="https://www.defprojetos.com/images/uploads/posts/desktop/fotodef-5_1710173688.webp"
+                        class=" media">
+
+
+
+
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row mt-lg-335 pb-lg-170 pt-tablet-150 pt-phone-100 pb-mobile-50" data-speed="1.5">
+                <div class="col-lg-3">
+                  <span class="title-36 black-1 split-words" data-aos="d:loop">Nossa trajetória começou em
+                    1986.</span>
+                </div>
+
+                <div class="col-lg-5 offset-lg-4 pt-mobile-20 column-trigger">
+                  <p class="title-48 black-1"
+                    data-aos="fadeInUp .8s ease-out-cubic 0s, d:loop, trigger: .column-trigger">
+                    Desde então, desenvolvemos mais de 250 milhões de metros quadrados em diversos empreendimentos
+                    de grande relevância e sucesso no Brasil e no exterior.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+<!-- home-history end💛🧡❤💛🧡💛🧡💛🧡❤💛🧡💛🧡💛🧡❤💛🧡💛🧡💛🧡❤💛🧡💛🧡 -->
+
+
+
+
+        <section class="home-imersao">
+          <div class="container-sticky" data-sticky data-trigger="parent">
+            <div class="container-fluid">
+              <div class="row pos-relative z-2">
+
+                <div class="col-lg-7 column-imersao">
+                  <div class="text-imersao fs--72 fw-500 lh-115 white-1">
+                    <div class="gradiente-2"></div>
+
+                    <div class="inner-container">
+                      <p class="pt-100">
+                        A imersão profunda nos desafios e a soma <br>de expertises são o ponto de partida para criar
+                        conceitos claros, impacto real e resultados consistentes.
+
+                        Colaboramos com quem gera valor de maneira ampla e profunda, formando parcerias de longo
+                        prazo, negócios de alto impacto e rendimento, e lugares que melhoram o nosso futuro.
+                      </p>
+
+                      <a href="https://www.defprojetos.com/sobre" class="btn-1 btn-light mt-40"
+                        data-cursor-style="hovered">
+                        <div class="btn-content">
+                          <span>Conheça a DEF</span><i></i>
+                        </div>
+                        <div class="btn-content hover" aria-hidden="true">
+                          <span>Conheça a DEF</span><i></i>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="gradiente"></div>
+                  </div>
+                </div>
+
+                <div class="col-lg-5 d-flex">
+                  <div class="white-circle"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-color"></div>
+          </div>
+        </section>
+        <section class="home-portfolio prev-section" data-set-section="dark">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12 column-portfolio">
+                <div class="container-portfolio">
+                  <div
+                    class="container-text fs-lg-178 fs-tablet-65 fs-phone-36 lh-90 fw-500 white-1 text-uppercase text-center split-chars"
+                    data-aos="d:loop">
+                    CRIAMOS PROJETOS<br>COM VALOR-ES
+                  </div>
+
+                  <div class="container-img border-12">
+                    <img src="https://www.defprojetos.com/images/uploads/posts/desktop/hog-cay03_1710294567.webp"
+                      class=" media">
+
+
+
+
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 d-flex-center column-btn">
+                <a href="https://www.defprojetos.com/projetos"
+                  class="btn-1 btn-light mt-lg-85 mt-mobile-50 btn-portfolio" data-cursor-style="hovered">
+                  <div class="btn-content">
+                    <span>Veja nosso portfólio</span><i></i>
+                  </div>
+                  <div class="btn-content hover" aria-hidden="true">
+                    <span>Veja nosso portfólio</span><i></i>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+
+      <footer id="footer">
+        <div class="container-fluid">
+          <div class="row row-map row-opacity">
+            <div class="col-lg-2 col-tablet-6 column-footer-logo pb-phone-20">
+              <a href="https://www.defprojetos.com" class="paragraph-footer btn-underline"
+                data-cursor-style="hovered-small">
+                <span>Def projetos</span>
+              </a>
+            </div>
+
+            <div class="col-lg-3 offset-lg-1 col-tablet-6 column-footer-slogan">
+              <div class="paragraph-footer">
+                <span>URBANISMO + ARQUITETURA</span>
+              </div>
+            </div>
+
+            <div class="col-lg-4 offset-lg-2 col-tablet-6 pt-tablet-20">
+              <ul class="footer-site-map">
+                <li>
+                  <a href="https://www.defprojetos.com/sobre" class="btn-underline" data-cursor-style="hovered-small">
+                    <span>Sobre</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://www.defprojetos.com/projetos" class="btn-underline"
+                    data-cursor-style="hovered-small">
+                    <span>Projetos</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://www.defprojetos.com/contato" class="btn-underline" data-cursor-style="hovered-small">
+                    <span>Contato</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-12 col-tablet-6 pt-lg-100 pt-tablet-20 column-policy">
+              <a href="https://www.defprojetos.com/privacidade-e-termos" class="paragraph-footer btn-underline"
+                data-cursor-style="hovered-small">
+                <span>Privacidade & termos</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="row row-social row-opacity">
+            <div class="col-lg-3 col-tablet-6 pb-phone-20 order-phone-0">
+              <a href="mailto:contato@defprojetos.com" target="_blank" rel="noopener noreferrer"
+                class="mail-link paragraph-footer paragraph-footer-small btn-underline"
+                data-cursor-style="hovered-small">
+                <span>contato@defprojetos.com</span>
+                <i class="icon-arrow-diagonal"></i>
+              </a>
+            </div>
+
+            <div class="col-lg-2 col-tablet-6 order-phone-1">
+              <ul class="phone-list">
+
+                <li class="pb-16 ">
+                  <a href="tel:+552125416687" target="_blank" rel="noopener noreferrer"
+                    class="paragraph-footer paragraph-footer-small btn-underline" data-cursor-style="hovered-small">
+                    <span>RJ +55 21 2541 6687</span>
+                  </a>
+                </li>
+                <li class="">
+                  <a href="tel:+551135443000" target="_blank" rel="noopener noreferrer"
+                    class="paragraph-footer paragraph-footer-small btn-underline" data-cursor-style="hovered-small">
+                    <span>SP +55 11 3544 3000</span>
+                  </a>
+                </li>
+
+              </ul>
+            </div>
+
+            <div class="col-lg-4 offset-lg-3 column-rights order-phone-3">
+              <span class="paragraph-footer paragraph-footer-small">
+                DESDE 1986 © TODOS OS DIREITOS RESERVADOS
+              </span>
+
+
+              <div class="assinaturas text-uppercase">
+                <a href="https://where.consulting/" target="_blank" rel="noopener noreferrer" class="btn-underline">
+                  <span>Branding: Where.</span>
+                </a>
+
+                <a href="https://www.behance.net/jarcoswork" target="_blank" rel="noopener noreferrer"
+                  class="btn-underline">
+                  <span>Design: jarcos.work</span>
+                </a>
+
+                <a href="https://programatorio.com" target="_blank" rel="noopener noreferrer" class="btn-underline">
+                  <span>Dev: programatório</span>
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="row row-logo">
+            <div class="col-12">
+              <div class="container-img footer-logo">
+                <?xml version="1.0" encoding="utf-8"?>
+                <!-- Generator: Adobe Illustrator 27.8.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                <svg version="1.1" id="Camada_1" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 229 89"
+                  style="enable-background:new 0 0 229 89;" xml:space="preserve">
+                  <style type="text/css">
+                    .st0 {
+                      fill: var(--logo-color);
+                    }
+                  </style>
+                  <g>
+                    <polygon id="E" class="st0" points="89,0 154.1,0 154.1,14.4 105.3,14.4 105.3,35.7 150.7,35.7 150.7,50.1 105.3,50.1 105.3,74.2 
+		154.7,74.2 154.7,88.6 89,88.6 89,0 	" />
+                    <polygon id="F" class="st0" points="163.4,0 229,0 229,14.4 179.7,14.4 179.7,36.3 225.6,36.3 225.6,50.9 179.7,50.9 179.7,88.6 
+		163.4,88.6 	" />
+                    <path id="D" class="st0" d="M38.9,0.1H0V89h38.9c23.6,0,42.7-19.9,42.7-44.4C81.6,20,62.5,0.1,38.9,0.1z M39.9,71.8
+		c-14.6,0-26.5-12.4-26.5-27.6s11.9-27.6,26.5-27.6c14.6,0,26.5,12.4,26.5,27.6S54.5,71.8,39.9,71.8z" />
+                  </g>
+                </svg>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-color"></div>
+      </footer>
+    </div>
+
+  </div>
+  <div class="container-cookies d-none" data-aos="reveal-up .8s ease-out-cubic 1s" data-cursor-style="default">
+    <div class="utilizamos-cookies">
+
+      <p class="font-1 fs--13 text-cookies lh-150">
+        Este site usa cookies para fornecer a funcionalidade necessária do site, melhorar sua experiência e analisar
+        nosso tráfego. Ao usar nosso site, você concorda com nossa <a class="btn-underline black-1"
+          href="https://www.defprojetos.com/privacidade-e-termos" data-cursor-style="hovered-small"><span>Política de
+            Privacidade</span></a> e uso de cookies.
+      </p>
+
+      <div class="container-btn">
+        <button class="btn-cookies accept font-1 fs--12 black-1 btn-underline text-uppercase" data-close-cookies
+          data-cursor-style="hovered-small">
+          <span>Aceitar</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="scripts">
+
+
+
+
+  </div>
+
+  <script type="text/javascript">
+    window.VARS = {
+      contactURL: "https://www.defprojetos.com/contact/send",
+      analytics: "",
+      env: "production",
+      contactSent: "Sua mensagem foi enviada com sucesso!",
+      contactSending: "Enviando...",
+      contactSend: "Enviar",
+      contactError: "Algo deu errado. Tente novamente.",
+
+    }
+  </script>
+
+</body>
+
+</html>
