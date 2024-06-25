@@ -104,6 +104,7 @@ gsap.timeline({
   },"-=" )
   .to(".web_portfolio",{opacity:1,duration:2},"-=3")
   .to(".call",{opacity:1,duration:2},"-=3")
+  .to(".dSvg_left",{opacity:0})
 ////////////////////////////////////////
 let pTag1 = document.querySelector('.sec1_txt');
 
@@ -158,3 +159,4 @@ gsap.timeline({
   }
 })
 .to(".sec2_img1", {bottom: "50%",scale:0.8})
+//////////////////////////////////////////////

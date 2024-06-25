@@ -6239,7 +6239,7 @@ var rO = U_((cO, Fl) => {
   }
   et.registerPlugin(pe, eg);
   const LS = "home";
-
+  // <!-- home-history end💛🧡❤💛🧡💛🧡💛🧡❤💛🧡💛🧡💛🧡❤💛🧡💛🧡💛🧡❤💛🧡💛🧡 -->
   function RS() {
     if (document.body.dataset.load == "first-done" ? setTimeout(() => {
         bd()
@@ -6359,6 +6359,8 @@ var rO = U_((cO, Fl) => {
         duration: 1,
         ease: "none"
       }, "<+.2");
+      
+
       let i = et.timeline({
         scrollTrigger: {
           trigger: ".home-imersao",
@@ -6551,6 +6553,9 @@ var rO = U_((cO, Fl) => {
       scale: 1
     })
   }
+// <!-- home-history end💛🧡❤💛🧡💛🧡💛🧡❤💛🧡💛🧡💛🧡❤💛🧡💛🧡💛🧡❤💛🧡💛🧡 -->
+
+
   const IS = new xa({
     pageName: LS,
     main: RS
