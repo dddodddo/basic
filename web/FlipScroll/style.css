@@ -174,6 +174,7 @@ a:hover {
 
 /* 두번째 이미지 갤러리(첫번째) */
 .gallery-wrap {
+    position: relative;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -188,7 +189,7 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    
     gap: 2rem;
     --size-factor: 1.25;
     --item-height: 20vh;
@@ -243,19 +244,342 @@ a:hover {
 
 }
 
+
 .gallery--switch.gallery--row .gallery__item--m,
 .gallery--switch.gallery--row .gallery__item--l {
-   height: var(--item-height);
+	height: var(--item-height);
 }
 
 .gallery--switch.gallery--row .caption {
-   bottom: 0;
-   opacity: 1;
+	bottom: 0;
+	opacity: 1;
 }
 
 .gallery--switch .gallery__item--center {
-   height: 100vh;
-   width: 100vw;
-   aspect-ratio: auto;
-   filter: brightness(0.5);
+	height: 100vh;
+	width: 100vw;
+	aspect-ratio: auto;
+	filter: brightness(0.5);
 }
+
+/* //네번째 영역//두번째 겔러리 */
+.gallery {
+    position: relative; 
+    width: 100%;
+    height: 100%; 
+    flex: none;
+}
+.gallery-wrap--large {
+   height: 110vh;
+}
+
+.gallery--grid {
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    row-gap: 2.5vw;
+    column-gap: 3vw;
+}
+.gallery--grid .gallery__item {
+    height: 33vh;
+    width: 33vw;
+}
+.gallery--switch.gallery--grid {
+   gap: 0;
+}
+.gallery--breakout {/* //자식의 공간이 넓어지면 따라서 넓어진다 */
+    width: min-content;
+}
+.gallery--switch.gallery--grid .gallery__item {
+   /* 최종적으로 화면의 넓이보다 더 커진다 */
+   height: 110vh;
+   width: 110vw;
+   filter: brightness(0.65);
+}
+.gallery__item-cut { 
+   overflow: hidden;
+   display: grid;
+   place-items: center;
+}
+.gallery__item-inner {
+    width: 100%;
+    height: 100%;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.gallery--grid .caption {
+   position: absolute;
+   width: 100vw;
+   height: 100vh;
+   padding: 0;
+   top: 50%;
+   left: 50%;
+   margin-top: 50vh;
+   margin-left: -50vw;
+   display: grid;
+   place-items: center;
+   max-width: none;
+   opacity: 0;
+}
+
+.gallery--switch.gallery--grid .caption {
+   margin-top: -40vh;
+   opacity: 1;
+}
+
+.gallery--grid .caption p {
+   padding: 50vh 30vw 10vh 10vw;
+}
+
+.gallery--switch.gallery--grid .caption p {
+   margin-top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 글자만 있는 영역 */
+.project {
+   padding: 1rem;
+   max-width: 1000px;
+   margin: 20vh auto;
+   display: grid;
+   grid-column-gap: 7vw;
+   grid-row-gap: 0.5rem;
+}
+
+.project--intro {
+   grid-template-columns: 1fr;
+   /* grid-template-areas: 'label-name' 
+                   'name' 
+                   'label-date' 
+                   'date'
+                   'title'
+                   'label-mission' 
+                   'mission'; */
+   
+}
+
+.project--details {
+   grid-template-areas: 'label-default' 'paragraph';
+   grid-template-columns: 1fr;
+}
+
+.project--left {
+   justify-content: start;
+}
+
+.project--right {
+   justify-content: end;
+}
+
+.project--details p {
+   grid-area: paragraph;
+   max-width: 400px;
+}
+
+.project__label--default {
+   grid-area: label-default;
+}
+
+.project p {
+   line-height: 1.4;
+   margin: 0;
+   color: var(--color-text-alt);
+}
+
+.project__label {
+   color: var(--color-label);
+}
+
+.project__label--name {
+   grid-area: label-name;
+}
+
+.project__label--date {
+   grid-area: label-date;
+}
+
+.project__label--mission {
+   grid-area: label-mission;
+}
+
+.project__name {
+   grid-area: name;
+}
+
+.project__date {
+   grid-area: date;
+}
+
+.project__mission {
+   grid-area: mission;
+   line-height: 1.4;
+}
+
+.project__mission p:first-child {
+   grid-area: p1;
+}
+
+.project__mission p:child {
+   grid-area: p2;
+}
+
+.project__mission p {
+   color: var(--color-text-alt);
+}
+
+.project__title {
+   grid-area: title;
+   font-size: clamp(2rem, 13vw, 8rem);
+   font-weight: 400;
+   margin: 10vh 0;
+   line-height: 1;
+}
+
+.project__heading {
+   color: var(--color-label);
+   font-weight: inherit;
+   font-size: inherit;
+   margin: 0;
+}
+
+/* 3번째 영역의 문장  글자영역*/
+.project {
+    padding: 1rem;
+    max-width: 1000px;
+    margin: 20vh auto;
+    display: grid;
+    grid-column-gap: 7vw;
+    grid-row-gap: 0.5rem;
+ }
+ 
+ .project--intro {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'label-name' 
+                    'name' 
+                    'label-date' 
+                    'date'
+                    'title'
+                    'label-mission' 
+                    'mission';
+    
+ }
+ 
+ .project--details {
+     grid-template-areas: 'label-default paragraph';
+     grid-template-columns: auto auto;
+ }
+ 
+ 
+ @media screen and (max-width: 53em){
+    .project--details {
+       grid-template-areas:
+          'label-default'
+          'paragraph';
+       grid-template-columns: 1fr;
+    }
+ }
+ .project--left {
+    justify-content: start;
+ }
+ 
+ .project--right {
+    justify-content: end;
+ }
+ 
+ .project--details p {
+    grid-area: paragraph;
+    max-width: 400px;
+ }
+ 
+ .project__label--default {
+    grid-area: label-default;
+ }
+ 
+ .project p {
+    line-height: 1.4;
+    margin: 0;
+    color: var(--color-text-alt);
+ }
+ 
+ .project__label {
+    color: var(--color-label);
+ }
+ 
+ .project__label--name {
+    grid-area: label-name;
+ }
+ 
+ .project__label--date {
+    grid-area: label-date;
+ }
+ 
+ .project__label--mission {
+    grid-area: label-mission;
+ }
+ 
+ .project__name {
+    grid-area: name;
+ }
+ 
+ .project__date {
+    grid-area: date;
+ }
+ 
+ .project__mission {
+    grid-area: mission;
+    line-height: 1.4;
+ }
+ 
+ .project__mission p:first-child {
+    grid-area: p1;
+ }
+ 
+ .project__mission p:child {
+    grid-area: p2;
+ }
+ 
+ .project__mission p {
+    color: var(--color-text-alt);
+ }
+ 
+ .project__title {
+    grid-area: title;
+    font-size: clamp(2rem, 13vw, 8rem);
+    font-weight: 400;
+    margin: 10vh 0;
+    line-height: 1;
+ }
+ 
+ .project__heading {
+    color: var(--color-label);
+    font-weight: inherit;
+    font-size: inherit;
+    margin: 0;
+ }
+ /* //글자영역 */ 

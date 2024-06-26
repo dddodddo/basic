@@ -68,7 +68,7 @@ button {
 }
 
 /* animation */
-/* p, h1, h2, h3, a, button {
+p, h1, h2, h3, a, button {
   transform: translateY(50%);
   opacity: 0;
   filter: blur(5px);
@@ -79,4 +79,4 @@ button {
   transform: translateY(0);
   opacity: 1;
   filter: blur(0);
-} */
+}

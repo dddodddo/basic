@@ -76,10 +76,10 @@ let triggerFlipOnScroll=(galleryEl, option)=>{
 
 
 
-
 let scroll=()=>{
     let galleries=[
-        {id:"#gallery-1",options:{flip:{absoluteOnLeave:true,scale:false}}}
+        {id:"#gallery-1",options:{flip:{absoluteOnLeave:true,scale:false}}},
+        {id:"#gallery-2",options:{flip:{absoluteOnLeave:true,scale:false}}},
     ]
     galleries.forEach((gallery)=>{
         let galleryElement=document.querySelector(gallery.id);

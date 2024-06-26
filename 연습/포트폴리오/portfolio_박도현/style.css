@@ -474,12 +474,13 @@ ul li:nth-child(6n + 4) a:before {
   width: 100%;
   height: 100vh;
   position: relative;
+  background-color: #ffb4b4;
 
 }
 
-.sec2_sticky {
-  position: sticky;
-  top: 0;
+.sec2_relative {
+  position: relative;
+  top: 80%;
   left: 0;
   display: flex;
   justify-content: center;
@@ -491,11 +492,13 @@ ul li:nth-child(6n + 4) a:before {
   font-size: 250px;
   font-weight: 500;
   overflow: hidden;
+  right: -36%;
+  opacity: 0;
 }
 
 .sec2_name {
   position: relative;
-  z-index: 0
+  z-index: 0;
 }
 
 .sec2_year {
@@ -504,14 +507,17 @@ ul li:nth-child(6n + 4) a:before {
   right: auto;
   bottom: auto;
   left: 0;
-  z-index: 2
+  z-index: 2;
+  opacity: 0;
 }
 
 
 .sec2_imgs {
-  position: relative;
+  position: sticky;
   border-radius: 50px;
-  overflow: hidden
+  overflow: hidden;
+  scale: 1.6;
+  z-index: 10;
 }
 
 .sec2_img {
@@ -530,6 +536,8 @@ ul li:nth-child(6n + 4) a:before {
 .sec2_imgs img{
   object-fit: cover;
   object-position: center center;
+  vertical-align: top;
+  
 }
 
 .sec2_firstimg {

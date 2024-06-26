@@ -80,7 +80,7 @@ gsap.timeline({
     y: -320,
     position: "fixed"
   })
-
+  
 gsap.timeline({
     scrollTrigger: {
       trigger: '#section1',
@@ -92,6 +92,9 @@ gsap.timeline({
       pin: true
     }
   })
+  .to(".dSvg_left", {
+    opacity: 0
+  },0)
   .to("#header img", {
     pointerEvents: "auto"
   })
@@ -104,7 +107,7 @@ gsap.timeline({
   },"-=" )
   .to(".web_portfolio",{opacity:1,duration:2},"-=3")
   .to(".call",{opacity:1,duration:2},"-=3")
-  .to(".dSvg_left",{opacity:0})
+  
 ////////////////////////////////////////
 let pTag1 = document.querySelector('.sec1_txt');
 
@@ -151,12 +154,20 @@ animate();
 gsap.timeline({
   scrollTrigger: {
     trigger: '#section2',
-    start: "top top",
+    start: "top 40%",
     end: "+=2000",
     scrub: 2,
+    duration:2,
     markers: true,
     pin: true
   }
 })
-.to(".sec2_img1", {bottom: "50%",scale:0.8})
+.to(".sec2_relative", {top:'-20%',duration:2.5})
+.to(".sec2_imgs", {scale:1,ease: "power3.out",duration:2.5})
+.to(".sec2_img1",{top:'-505px',ease: "power3.in",duration:2.5})
+.fromTo(".sec2_firstimg",
+  {scale:1.5,ease: "power2.inOut",duration:2.5},
+  {scale:1,ease: "power2.inOut",duration:2.5},0)
+
+// .to("")
 //////////////////////////////////////////////
