@@ -87,7 +87,7 @@ gsap.timeline({
       start: "top top",
       end: "+=2000",
       scrub: 2,
-      // markers: true,
+      markers: true,
       // duration: 2,
       pin: true
     }
@@ -98,7 +98,7 @@ gsap.timeline({
   .to("#header img", {
     pointerEvents: "auto"
   })
-  .to("#header .menu", {
+  .to("#header .menu-btn", {
     opacity: 1
   }, "-=5")
   .to(".container", {
@@ -158,16 +158,21 @@ gsap.timeline({
     end: "+=2000",
     scrub: 2,
     duration:2,
-    markers: true,
+    // markers: true,
     pin: true
   }
 })
 .to(".sec2_relative", {top:'-20%',duration:2.5})
 .to(".sec2_imgs", {scale:1,ease: "power3.out",duration:2.5})
+.to(".sec2_txt", {ease: "power3.out",duration:2.5,right:0,opacity:1},"-=1.7")
 .to(".sec2_img1",{top:'-505px',ease: "power3.in",duration:2.5})
+.to(".sec2_name",{scale:2,opacity:0,ease: "power3.in",duration:2.5},"-=2")
 .fromTo(".sec2_firstimg",
   {scale:1.5,ease: "power2.inOut",duration:2.5},
-  {scale:1,ease: "power2.inOut",duration:2.5},0)
-
-// .to("")
+  {scale:1,ease: "power2.inOut",duration:2.5}
+,0)
+.fromTo(".sec2_job",
+  {scale:0.8,opacity:0,ease: "power3.in",duration:2.5},
+  {scale:1,opacity:1,ease: "power3.in",duration:2.5}
+  ,"-=2")
 //////////////////////////////////////////////

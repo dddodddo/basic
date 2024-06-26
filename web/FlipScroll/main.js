@@ -43,6 +43,7 @@ let triggerFlipOnScroll=(galleryEl, option)=>{
 
     let galleryCaption=galleryEl.querySelector(".caption");
     let galleryItems=galleryEl.querySelectorAll(".gallery__item");
+    
 
 
     //L:최종상태를 캡처
@@ -62,6 +63,7 @@ let triggerFlipOnScroll=(galleryEl, option)=>{
         absoluteOnLeave:settings.flip.absoluteOnLeave,
         scale:settings.flip.scale,
         simple:settings.flip.simple,
+        stagger:settings.stagger,//여섯번째 영역 이미지가 순서대로 모임
         scrollTrigger:{
             trigger:galleryEl,
             start:settings.scrollTrigger.start,
@@ -76,10 +78,20 @@ let triggerFlipOnScroll=(galleryEl, option)=>{
 
 
 
+
 let scroll=()=>{
     let galleries=[
         {id:"#gallery-1",options:{flip:{absoluteOnLeave:true,scale:false}}},
-        {id:"#gallery-2",options:{flip:{absoluteOnLeave:true,scale:false}}},
+        {id:"#gallery-2"},
+        {id:"#gallery-3",options:{flip:{absolute:true,scale:false},scrollTrigger:{
+            end:"+=400%"
+        },stagger:0.05}},
+        {id:"#gallery-4"},
+        {id:"#gallery-5"},
+        {id:"#gallery-6"},
+        {id:"#gallery-7"},
+        {id:"#gallery-8",options:{flip:{scale:false}}},
+        {id:"#gallery-9"},
     ]
     galleries.forEach((gallery)=>{
         let galleryElement=document.querySelector(gallery.id);
@@ -88,7 +100,6 @@ let scroll=()=>{
 
 }
 scroll()
-
 
 
 //1)
