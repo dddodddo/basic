@@ -560,9 +560,6 @@ ul li:nth-child(6n + 4) a:before {
   opacity: 0.5;
 }
 .sec2_imgCopy img{
-  /* object-fit: cover;
-  object-position: center center;
-  vertical-align: top; */
   border-radius: 50px;
 }
 
@@ -580,14 +577,21 @@ ul li:nth-child(6n + 4) a:before {
 
 .sec3_cards{
   position: relative;
-  top: 14%;
-  display: flex;
+  top: 17%;
+  text-align: center;
+  /* display: flex;
   gap: 10px;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
-.card{}
+.card{
+  width: 500px;
+  height: 700px;
+  display: inline-block;
+  position: relative;
+  margin-right: 15px;
+}
 .card .front{}
 .card .front img{
   border-radius: 50px;
@@ -604,3 +608,33 @@ ul li:nth-child(6n + 4) a:before {
 
 .card3{}
 .card1 .back .certificate{}
+
+
+/* section4 */
+#section4 {
+  width: 100%;
+  height: 100vh;
+  background-color: #982f2f;
+  position: relative;
+}
+/* section5 */
+#section5 {
+  width: 100%;
+  height: 100vh;
+  background-color: #edbb27;
+  position: relative;
+}
+/* section6 */
+#section6 {
+  width: 100%;
+  height: 100vh;
+  background-color: #2f9849;
+  position: relative;
+}
+/* section7 */
+#section7 {
+  width: 100%;
+  height: 100vh;
+  background-color: #2f7198;
+  position: relative;
+}

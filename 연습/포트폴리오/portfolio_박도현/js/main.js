@@ -185,23 +185,26 @@ gsap.timeline({
     end: "+=1000",
     scrub: 2,
     duration:2,
-    markers: true,
+    // markers: true,
     // pinSpacing: false,
     // pin: true
-  }
+  }    
 })
-.to(".sec2_imgCopy", {top: '255%', left: '10.2%',duration:2})
+.to(".sec2_imgCopy", {top: '193%', left: '9.2%',duration:2,})
 .fromTo(".sec3_cards",
-  {top:'30%',ease: "power3.out",},
-  {top:'14%',ease: "power3.out",}
+  {top:'30%',ease: "power3.out",duration:2.5,},
+  {top:'14%',ease: "power3.out",duration:2.5,}
 )
-.to(".sec2_secondimgCopy",{height:'700px'})
+.to(".sec2_secondimgCopy",{height:'700px',ease: "power3.out"},"-=2")
+.to(".sec2_imgCopy",{opacity:0},"-=1.9")
+.to(".card1",{opacity:1})
+
 //////////////////////////////////////////////
 // gsap.timeline({
 //   scrollTrigger: {
 //     trigger: '#section3',
-//     start: "40% 60%",
-//     end: "bottom top",
+//     start: "top top",
+//     end: "+=1000",
 //     scrub: 2,
 //     // duration:2,
 //     markers: true,
@@ -209,4 +212,6 @@ gsap.timeline({
 //     pin: true
 //   }
 // })
-// .to(".")
+// .fromTo(".card1",
+//   {opacity:0,ease: "power3.out"},
+//   {opacity:1,ease: "power3.out"},"-=5")
