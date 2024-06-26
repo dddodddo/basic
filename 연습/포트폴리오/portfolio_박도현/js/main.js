@@ -53,9 +53,7 @@ tl.to(".dSvg", {
   ease: "power3.inOut",
   opacity: 1,
 }, 0);
-tl.to(".dSvg_left", {
-  opacity: 1
-}, 2.5);
+tl.to(".dSvg_left", {opacity: 1}, 2.5);
 tl.to(".oSvg", {
   x: 20 + "vw",
   scale: 1,
@@ -63,6 +61,7 @@ tl.to(".oSvg", {
   ease: "power3.in",
   display: "block"
 });
+tl.to(".dSvg_left", {opacity: 0}, "+=1");
 
 
 gsap.timeline({
@@ -87,14 +86,10 @@ gsap.timeline({
       start: "top top",
       end: "+=2000",
       scrub: 2,
-      markers: true,
-      // duration: 2,
+      // markers: true,
       pin: true
     }
   })
-  .to(".dSvg_left", {
-    opacity: 0
-  },0)
   .to("#header img", {
     pointerEvents: "auto"
   })
@@ -154,15 +149,17 @@ animate();
 gsap.timeline({
   scrollTrigger: {
     trigger: '#section2',
-    start: "top 40%",
+    // start: "top 40%",
+    start: "top top",
     end: "+=2000",
     scrub: 2,
     duration:2,
     // markers: true,
-    pin: true
+    // pinSpacing: false,
+    pin: true // 시작을 top에서 시작해야 위에 section과 공간이 안생김
   }
 })
-.to(".sec2_relative", {top:'-20%',duration:2.5})
+.to(".sec2_relative", {top:'25%',duration:2.5})
 .to(".sec2_imgs", {scale:1,ease: "power3.out",duration:2.5})
 .to(".sec2_txt", {ease: "power3.out",duration:2.5,right:0,opacity:1},"-=1.7")
 .to(".sec2_img1",{top:'-505px',ease: "power3.in",duration:2.5})
@@ -174,5 +171,42 @@ gsap.timeline({
 .fromTo(".sec2_job",
   {scale:0.8,opacity:0,ease: "power3.in",duration:2.5},
   {scale:1,opacity:1,ease: "power3.in",duration:2.5}
-  ,"-=2")
+,"-=2")
+.to(".sec2_img2",{opacity:0,duration:1},"-=0.7")
+.fromTo(".sec2_imgCopy",
+  {opacity:0},
+  {opacity:1,zIndex:10}
+  ,"-=1.25")
 //////////////////////////////////////////////
+gsap.timeline({
+  scrollTrigger: {
+    trigger: '#section2',
+    start: "80% 60%",
+    end: "+=1000",
+    scrub: 2,
+    duration:2,
+    markers: true,
+    // pinSpacing: false,
+    // pin: true
+  }
+})
+.to(".sec2_imgCopy", {top: '255%', left: '10.2%',duration:2})
+.fromTo(".sec3_cards",
+  {top:'30%',ease: "power3.out",},
+  {top:'14%',ease: "power3.out",}
+)
+.to(".sec2_secondimgCopy",{height:'700px'})
+//////////////////////////////////////////////
+// gsap.timeline({
+//   scrollTrigger: {
+//     trigger: '#section3',
+//     start: "40% 60%",
+//     end: "bottom top",
+//     scrub: 2,
+//     // duration:2,
+//     markers: true,
+//     // pinSpacing: false,
+//     pin: true
+//   }
+// })
+// .to(".")

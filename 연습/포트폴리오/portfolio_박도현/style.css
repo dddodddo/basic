@@ -15,6 +15,11 @@ a {
   text-decoration: none;
   color: #303030;
 }
+img{
+  object-fit: cover;
+  object-position: center center;
+  vertical-align: top;
+}
 
 body {
   background-color: #fffbf2;
@@ -104,7 +109,6 @@ body::-webkit-scrollbar-thumb {
   width: 40.3%;
   height: 100vh;
   background-color: #fffbf2;
-  opacity: 0;
   z-index: 1;
 }
 
@@ -279,6 +283,7 @@ ul li:nth-child(6n + 4) a:before {
   height: 100vh;
   position: relative;
   overflow: hidden;
+  background-color: #bd5151;
 }
 
 .container {
@@ -472,12 +477,12 @@ ul li:nth-child(6n + 4) a:before {
   width: 100%;
   height: 100vh;
   position: relative;
-
+  background-color: #74beb8;
 }
 
 .sec2_relative {
   position: relative;
-  top: 80%;
+  top: 50%;
   left: 0;
   display: flex;
   justify-content: flex-end;
@@ -486,9 +491,8 @@ ul li:nth-child(6n + 4) a:before {
 
 .sec2_txt {
   position: relative;
-  font-size: 250px;
+  font-size: 103px;
   font-weight: 500;
-  overflow: hidden;
   right: -26%;
   opacity: 0;
   z-index: 10;
@@ -504,8 +508,8 @@ ul li:nth-child(6n + 4) a:before {
 
 .sec2_job {
   position: absolute;
-  top: 10%;
-  right: 10%;
+  top: 27%;
+  right: 7%;
   bottom: auto;
   left: 0;
   z-index: 2;
@@ -515,7 +519,7 @@ ul li:nth-child(6n + 4) a:before {
 
 
 .sec2_imgs {
-  position: sticky;
+  position: relative;
   border-radius: 50px;
   overflow: hidden;
   scale: 1.6;
@@ -528,20 +532,14 @@ ul li:nth-child(6n + 4) a:before {
   width: 100%;
   transform-origin: top
 }
-/* 
-.sec2_img:before {
-  content: "";
-  width: 100%;
-  padding-top: 100%;
-  display: block
-} */
 
-.sec2_imgs img{
+
+/* .sec2_imgs img{
   object-fit: cover;
   object-position: center center;
   vertical-align: top;
   
-}
+} */
 
 .sec2_firstimg {
   position: absolute;
@@ -549,14 +547,60 @@ ul li:nth-child(6n + 4) a:before {
   right: auto;
   bottom: auto;
   left: 0;
-  z-index: 2
+  z-index: 3
 }
 .sec2_secondimg {
-  z-index: 0
+  z-index: 2
 }
+
+.sec2_imgCopy{
+  position: absolute;
+  z-index: 100;
+  margin-right: 20%;
+  opacity: 0.5;
+}
+.sec2_imgCopy img{
+  /* object-fit: cover;
+  object-position: center center;
+  vertical-align: top; */
+  border-radius: 50px;
+}
+
+
+
 
 /* section3 */
 #section3 {
   width: 100%;
   height: 100vh;
+  background-color: #f89999;
+  position: relative;
+  z-index: -1;
 }
+
+.sec3_cards{
+  position: relative;
+  top: 14%;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.card{}
+.card .front{}
+.card .front img{
+  border-radius: 50px;
+}
+.card .back{}
+
+.card1{
+  opacity: 0;
+}
+.card1 .back .profile{}
+
+.card2{}
+.card1 .back .major{}
+
+.card3{}
+.card1 .back .certificate{}
