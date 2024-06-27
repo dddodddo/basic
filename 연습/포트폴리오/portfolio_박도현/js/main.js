@@ -61,7 +61,7 @@ tl.to(".oSvg", {
   ease: "power3.in",
   display: "block"
 });
-tl.to(".dSvg_left", {opacity: 0}, "+=1");
+tl.to(".dSvg_left", {opacity: 0}, "+=0.5");
 
 
 gsap.timeline({
@@ -161,9 +161,9 @@ gsap.timeline({
 })
 .to(".sec2_relative", {top:'25%',duration:2.5})
 .to(".sec2_imgs", {scale:1,ease: "power3.out",duration:2.5})
-.to(".sec2_txt", {ease: "power3.out",duration:2.5,right:0,opacity:1},"-=1.7")
+.to(".sec2_txt", {ease: "power3.out",duration:2.5,right:"3%",opacity:1},"-=1.7")
 .to(".sec2_img1",{top:'-505px',ease: "power3.in",duration:2.5})
-.to(".sec2_name",{scale:2,opacity:0,ease: "power3.in",duration:2.5},"-=2")
+.to(".sec2_name",{scale:1.5,opacity:0, right:"4%",ease: "power3.in",duration:2.5},"-=2")
 .fromTo(".sec2_firstimg",
   {scale:1.5,ease: "power2.inOut",duration:2.5},
   {scale:1,ease: "power2.inOut",duration:2.5}
@@ -172,11 +172,11 @@ gsap.timeline({
   {scale:0.8,opacity:0,ease: "power3.in",duration:2.5},
   {scale:1,opacity:1,ease: "power3.in",duration:2.5}
 ,"-=2")
-.to(".sec2_img2",{opacity:0,duration:1},"-=0.7")
+.to(".sec2_img2",{opacity:0},"-=0.7")
 .fromTo(".sec2_imgCopy",
   {opacity:0},
   {opacity:1,zIndex:10}
-  ,"-=1.25")
+  ,"-=1")
 //////////////////////////////////////////////
 gsap.timeline({
   scrollTrigger: {
@@ -185,7 +185,7 @@ gsap.timeline({
     end: "+=900",
     scrub: 2,
     duration:2,
-    markers: true,
+    // markers: true,
     // pinSpacing: false,
     // pin: true
   }    
@@ -196,19 +196,42 @@ gsap.timeline({
   {top:'14%',ease: "power3.out",duration:2.5,}
 )
 .to(".sec2_secondimgCopy",{height:'700px',ease: "power3.out"},"-=2")
-.to(".sec2_imgCopy",{opacity:0,duration:1},"-=1.2")
-.to(".card1",{opacity:1},"-=1.5")
+// .to(".sec2_imgCopy",{opacity:0},"-=1")
+// .to(".sec2_imgCopy",{opacity:0},"+=0.1")
+//////////////////////////////////////////////
+gsap.timeline({
+  scrollTrigger: {
+    trigger: '#section2',
+    start: "80% top",
+    end: "bottom 5%",
+    scrub: 2,
+    // markers: true,
+    // pinSpacing: false,
+    // pin: true
+  }    
+})
+.to(".sec2_imgCopy",{opacity:0},"-=0.1")
+.to(".card1",{opacity:1},"-=0.6")
 
 //////////////////////////////////////////////
 gsap.timeline({
   scrollTrigger: {
     trigger: '#section3',
     start: "top top",
-    end: "+=1000",
+    end: "+=2500",
     scrub: 2,
-    // duration:2,
+    duration:3,
     markers: true,
     // pinSpacing: false,
     pin: true
   }
 })
+.to(".card1 .front",{rotationY: 180, duration:2.5})
+.to(".card1 .back",{rotationY: 0, duration:3},"-=2")
+
+.to(".card2 .front",{rotationY: 180, duration:4},"+=15")
+.to(".card2 .back",{rotationY: 0, duration:3},"-=1")
+
+.to(".card3 .front",{rotationY: 180, duration:4},"+=15")
+.to(".card3 .back",{rotationY: 0, duration:3},"-=1")
+.to(".sec3_cards", {top:'10px',duration:30})
