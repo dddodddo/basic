@@ -221,7 +221,7 @@ gsap.timeline({
     end: "+=2500",
     scrub: 2,
     duration:3,
-    markers: true,
+    // markers: true,
     // pinSpacing: false,
     pin: true
   }
@@ -381,88 +381,199 @@ gsap.timeline({
 // // Render the scene
 // window.requestAnimationFrame(render);
 ///////////////////////////////////////////////////////////
-const canvas = document.getElementById('globe');
-const ctx = canvas.getContext('2d');
+// const canvas = document.getElementById('globe');
+// const ctx = canvas.getContext('2d');
 
-canvas.width = canvas.clientWidth;
-canvas.height = canvas.clientHeight;
+// canvas.width = canvas.clientWidth;
+// canvas.height = canvas.clientHeight;
 
-const DOTS_AMOUNT = 1000;
-const DOT_RADIUS = 3;
-let GLOBE_RADIUS = canvas.width * 1.5;
-let GLOBE_CENTER_Z = -GLOBE_RADIUS * 1.5;
-let PROJECTION_CENTER_X = canvas.width / 2;
-let PROJECTION_CENTER_Y = canvas.height / 2;
-let FIELD_OF_VIEW = canvas.width * 0.8;
+// const DOTS_AMOUNT = 1000;
+// const DOT_RADIUS = 3;
+// let GLOBE_RADIUS = canvas.width * 1.5;
+// let GLOBE_CENTER_Z = -GLOBE_RADIUS * 1.5;
+// let PROJECTION_CENTER_X = canvas.width / 2;
+// let PROJECTION_CENTER_Y = canvas.height / 2;
+// let FIELD_OF_VIEW = canvas.width * 0.8;
 
-class Dot {
-  constructor(x, y, z) {
-    this.x = x;
-    this.y = y;
-    this.z = z;
-    this.xProject = 0;
-    this.yProject = 0;
-    this.sizeProjection = 0;
-    this.alpha = 0.8; // Fixed alpha value
-  }
+// class Dot {
+//   constructor(x, y, z) {
+//     this.x = x;
+//     this.y = y;
+//     this.z = z;
+//     this.xProject = 0;
+//     this.yProject = 0;
+//     this.sizeProjection = 0;
+//     this.alpha = 0.8; // Fixed alpha value
+//   }
 
-  project(sin, cos) {
-    const rotX = cos * this.x + sin * (this.z - GLOBE_CENTER_Z);
-    const rotZ = -sin * this.x + cos * (this.z - GLOBE_CENTER_Z) + GLOBE_CENTER_Z;
-    this.sizeProjection = FIELD_OF_VIEW / (FIELD_OF_VIEW - rotZ);
-    this.xProject = rotX * this.sizeProjection + PROJECTION_CENTER_X;
-    this.yProject = this.y * this.sizeProjection + PROJECTION_CENTER_Y;
-  }
+//   project(sin, cos) {
+//     const rotX = cos * this.x + sin * (this.z - GLOBE_CENTER_Z);
+//     const rotZ = -sin * this.x + cos * (this.z - GLOBE_CENTER_Z) + GLOBE_CENTER_Z;
+//     this.sizeProjection = FIELD_OF_VIEW / (FIELD_OF_VIEW - rotZ);
+//     this.xProject = rotX * this.sizeProjection + PROJECTION_CENTER_X;
+//     this.yProject = this.y * this.sizeProjection + PROJECTION_CENTER_Y;
+//   }
 
-  draw(sin, cos) {
-    this.project(sin, cos);
-    ctx.beginPath();
-    ctx.arc(this.xProject, this.yProject, DOT_RADIUS * this.sizeProjection, 0, Math.PI * 2);
-    ctx.closePath();
-    ctx.fillStyle = `rgba(179, 101, 0, ${this.alpha})`; // Use fixed alpha value
-    ctx.fill();
-  }
+//   draw(sin, cos) {
+//     this.project(sin, cos);
+//     ctx.beginPath();
+//     ctx.arc(this.xProject, this.yProject, DOT_RADIUS * this.sizeProjection, 0, Math.PI * 2);
+//     ctx.closePath();
+//     ctx.fillStyle = `rgba(179, 101, 0, ${this.alpha})`; // Use fixed alpha value
+//     ctx.fill();
+//   }
+// }
+
+
+// function createDots() {
+//   const dots = [];
+//   for (let i = 0; i < DOTS_AMOUNT; i++) {
+//     const theta = Math.random() * 2 * Math.PI;
+//     const phi = Math.acos(Math.random() * 2 - 1);
+//     const x = GLOBE_RADIUS * Math.sin(phi) * Math.cos(theta);
+//     const y = GLOBE_RADIUS * Math.sin(phi) * Math.sin(theta);
+//     const z = GLOBE_RADIUS * Math.cos(phi) + GLOBE_CENTER_Z;
+//     dots.push(new Dot(x, y, z));
+//   }
+//   return dots;
+// }
+
+// function render(a) {
+//   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+//   // Adjust rotation speed here
+//   const rotationSpeed = -0.0001;
+  
+//   const rotation = a * rotationSpeed;
+//   const sineRotation = Math.sin(rotation);
+//   const cosineRotation = Math.cos(rotation);
+  
+//   dots.forEach(dot => dot.draw(sineRotation, cosineRotation));
+  
+//   requestAnimationFrame(render);
+// }
+
+// let dots = createDots();
+// window.addEventListener('resize', () => {
+//   canvas.width = canvas.clientWidth;
+//   canvas.height = canvas.clientHeight;
+//   GLOBE_RADIUS = canvas.width * 0.4;
+//   PROJECTION_CENTER_X = canvas.width / 2;
+//   PROJECTION_CENTER_Y = canvas.height / 2;
+//   FIELD_OF_VIEW = canvas.width * 0.8;
+//   dots = createDots();
+// });
+// requestAnimationFrame(render);
+
+//////////////////////////////////////////////////////
+const getGrid = selector => {//1)
+	let elements = gsap.utils.toArray(selector),
+		bounds,
+		getSubset = (axis, dimension, alternating, merge) => {
+		  	let a = [], 
+			  	subsets = {},
+			  	onlyEven = alternating === "even",
+			  	p;
+			bounds.forEach((b, i) => {
+				let position = Math.round(b[axis] + b[dimension] / 2),
+					subset = subsets[position];
+				subset || (subsets[position] = subset = []);
+				subset.push(elements[i]);
+			});
+			for (p in subsets) {
+				a.push(subsets[p]);
+			}
+			if (onlyEven || alternating === "odd") {
+				a = a.filter((el, i) => !(i % 2) === onlyEven);
+			}
+		  	if (merge) {
+				let a2 = [];
+				a.forEach(subset => a2.push(...subset));
+				return a2;
+		  	}
+		  	return a;
+		};
+	elements.refresh = () => bounds = elements.map(el => el.getBoundingClientRect());
+	elements.columns = (alternating, merge) => getSubset("left", "width", alternating, merge);
+	elements.rows = (alternating, merge) => getSubset("top", "height", alternating, merge);
+	elements.refresh();
+
+	return elements;
 }
 
 
-function createDots() {
-  const dots = [];
-  for (let i = 0; i < DOTS_AMOUNT; i++) {
-    const theta = Math.random() * 2 * Math.PI;
-    const phi = Math.acos(Math.random() * 2 - 1);
-    const x = GLOBE_RADIUS * Math.sin(phi) * Math.cos(theta);
-    const y = GLOBE_RADIUS * Math.sin(phi) * Math.sin(theta);
-    const z = GLOBE_RADIUS * Math.cos(phi) + GLOBE_CENTER_Z;
-    dots.push(new Dot(x, y, z));
-  }
-  return dots;
+
+const grids = document.querySelectorAll('.grid');
+
+const applyAnimation = (grid, animationType) => {
+	const gridWrap = grid.querySelector('.grid-wrap');
+	const gridItems = grid.querySelectorAll('.grid__item');
+	const gridItemsInner = [...gridItems].map(item => item.querySelector('.grid__item-inner'));
+	
+	const timeline = gsap.timeline({
+	  	defaults: { ease: 'none' },
+	  	scrollTrigger: {
+			trigger: gridWrap,
+			start: 'top bottom+=8%',
+			end: 'bottom top-=5%',
+			scrub: true,
+      markers:true
+	  	}
+    })
+	switch(animationType) {
+		
+		case 'type1':
+
+			// Set some CSS related style values
+			grid.style.setProperty('--perspective', '1000px');
+			grid.style.setProperty('--grid-inner-scale', '0.5');
+
+			timeline
+			.set(gridWrap, {
+				rotationY: 25
+			})
+			.set(gridItems, {
+				z: () => gsap.utils.random(-1600,200)
+			})
+			.fromTo(gridItems, {
+				xPercent: () => gsap.utils.random(-1000,-500)
+			}, {
+				xPercent: () => gsap.utils.random(500,1000)
+			}, 0)
+			.fromTo(gridItemsInner, {
+				scale: 2
+			}, {
+				scale: .5
+			}, 0)
+			
+			break;
+		default:
+			console.error('Unknown animation type.');
+			break;
+	}
 }
 
-function render(a) {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  
-  // Adjust rotation speed here
-  const rotationSpeed = -0.0001;
-  
-  const rotation = a * rotationSpeed;
-  const sineRotation = Math.sin(rotation);
-  const cosineRotation = Math.cos(rotation);
-  
-  dots.forEach(dot => dot.draw(sineRotation, cosineRotation));
-  
-  requestAnimationFrame(render);
+// Apply animations to each grid
+const scroll = () => {
+	grids.forEach((grid, i) => {
+		// Determine animation type
+		let animationType;
+		switch (i % 6) {
+			case 0:
+				animationType = 'type1';
+				break;
+		}
+		applyAnimation(grid, animationType);
+	});
 }
 
-let dots = createDots();
-window.addEventListener('resize', () => {
-  canvas.width = canvas.clientWidth;
-  canvas.height = canvas.clientHeight;
-  GLOBE_RADIUS = canvas.width * 0.4;
-  PROJECTION_CENTER_X = canvas.width / 2;
-  PROJECTION_CENTER_Y = canvas.height / 2;
-  FIELD_OF_VIEW = canvas.width * 0.8;
-  dots = createDots();
+// Preload images, initialize smooth scrolling, apply scroll-triggered animations, and remove loading class from body
+window.addEventListener("load",() => {
+	scroll();
+	document.body.classList.remove('loading');
 });
-requestAnimationFrame(render);
+
+
+///////////////////////////////////////////////////////////////////////
 
 
