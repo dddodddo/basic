@@ -47,38 +47,27 @@ gsap.ticker.add(function () {
 })
 ////////////////////////////////////////
 let tl = gsap.timeline();
-tl.to(".dSvg", {
-  x: 40 + "vw",
-  duration: 2.5,
-  ease: "power3.inOut",
-  opacity: 1,
-}, 0);
+tl.to(".dSvg", {x: 60 + "px",duration: 2.5,ease: "power3.inOut",opacity: 1,}, 0);
 tl.to(".dSvg_left", {opacity: 1}, 2.5);
-tl.to(".oSvg", {
-  x: 20 + "vw",
-  scale: 1,
-  duration: 1,
-  ease: "power3.in",
-  display: "block"
-});
+tl.to(".oSvg", {x: 46 + "px",scale: 1.8,duration: 1,ease: "power3.in",opacity:1});
 tl.to(".dSvg_left", {opacity: 0}, "+=0.5");
 
 
-gsap.timeline({
-    scrollTrigger: {
-      trigger: '#loading',
-      start: "65% 50%",
-      end: "bottom 35%",
-      scrub: 2,
-      duration: 2
-    }
-  })
-  .to(".Svg", {
-    scale: 0.1,
-    x: -900,
-    y: -320,
-    position: "fixed"
-  })
+// gsap.timeline({
+//     scrollTrigger: {
+//       trigger: '#loading',
+//       start: "65% 50%",
+//       end: "bottom 35%",
+//       scrub: 2,
+//       duration: 2
+//     }
+//   })
+//   .to(".Svg", {
+//     scale: 0.1,
+//     x: -900,
+//     y: -320,
+//     position: "fixed"
+//   })
   
 gsap.timeline({
     scrollTrigger: {
