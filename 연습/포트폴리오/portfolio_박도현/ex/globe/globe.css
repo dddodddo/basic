@@ -1,0 +1,20 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.globe-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #111;
+}
+
+#globe {
+  width: 80vmin;
+  height: 80vmin;
+  border-radius: 50%;
+  background-color: #000;
+}

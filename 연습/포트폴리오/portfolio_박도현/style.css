@@ -583,7 +583,6 @@ ul li:nth-child(6n + 4) a:before {
 #section3 {
   width: 100%;
   height: 100vh;
-  background-color: #f89999;
   position: relative;
   z-index: -1;
 }
@@ -793,10 +792,30 @@ ul li:nth-child(6n + 4) a:before {
 #section4 {
   width: 100%;
   height: 100vh;
-  background-color: #982f2f;
   position: relative;
+  display: flex;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: rgb(179, 101, 0);
+}
+/* canvas {
+  width:98vmin;
+  height:98vmin;
+} */
+.globe-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
+#globe {
+  width: 80vmin;
+  height: 80vmin;
+  border-radius: 50%;
+}
 /* section5///////////////////////////////////////////////////////////////////// */
 #section5 {
   width: 100%;
