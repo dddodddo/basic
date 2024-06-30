@@ -52,28 +52,12 @@ tl.to(".dSvg_left", {opacity: 1}, 2.5);
 tl.to(".oSvg", {x: 46 + "px",scale: 1.8,duration: 1,ease: "power3.in",opacity:1});
 tl.to(".dSvg_left", {opacity: 0}, "+=0.5");
 
-
-// gsap.timeline({
-//     scrollTrigger: {
-//       trigger: '#loading',
-//       start: "65% 50%",
-//       end: "bottom 35%",
-//       scrub: 2,
-//       duration: 2
-//     }
-//   })
-//   .to(".Svg", {
-//     scale: 0.1,
-//     x: -900,
-//     y: -320,
-//     position: "fixed"
-//   })
   
 gsap.timeline({
     scrollTrigger: {
       trigger: '#section1',
       start: "top top",
-      end: "+=2000",
+      end: "+=1500",
       scrub: 2,
       // markers: true,
       pin: true
@@ -135,86 +119,36 @@ function scrollHandler() {
 window.addEventListener("scroll", scrollHandler)
 animate();
 //////////////////////////////////////////////
+ // pin 시작을 top에서 시작해야 위에 section과 공간이 안생김
+
 gsap.timeline({
   scrollTrigger: {
     trigger: '#section2',
-    // start: "top 40%",
     start: "top top",
-    end: "+=2000",
+    end: "+=5500",
     scrub: 2,
-    duration:2,
-    // markers: true,
-    // pinSpacing: false,
-    pin: true // 시작을 top에서 시작해야 위에 section과 공간이 안생김
+    duration:10,
+    pin: true
   }
 })
-.to(".sec2_relative", {top:'25%',duration:2.5})
-.to(".sec2_imgs", {scale:1,ease: "power3.out",duration:2.5})
-.to(".sec2_txt", {ease: "power3.out",duration:2.5,right:"3%",opacity:1},"-=1.7")
-.to(".sec2_img1",{top:'-505px',ease: "power3.in",duration:2.5})
-.to(".sec2_name",{scale:1.5,opacity:0, right:"4%",ease: "power3.in",duration:2.5},"-=2")
+.from(".sec2_relative",{top:'65%',duration:5})
+.fromTo(".sec2_imgs",
+  {scale:1.6,duration:5},
+  {scale:1,duration:5}
+)
+.to(".sec2_txt", {ease: "power3.out",duration:8,left:"0%",opacity:1},"-=1.7")
+.to(".sec2_img1",{top:'-505px',ease: "power3.in",duration:5})
+.to(".sec2_name",{scale:1.5,opacity:0, right:"4%",ease: "power3.in",duration:5},"-=2")
 .fromTo(".sec2_firstimg",
-  {scale:1.5,ease: "power2.inOut",duration:2.5},
-  {scale:1,ease: "power2.inOut",duration:2.5}
+    {scale:1.5,ease: "power2.inOut",duration:5},
+    {scale:1,ease: "power2.inOut",duration:5}
 ,0)
 .fromTo(".sec2_job",
   {scale:0.8,opacity:0,ease: "power3.in",duration:2.5},
   {scale:1,opacity:1,ease: "power3.in",duration:2.5}
 ,"-=2")
-.to(".sec2_img2",{opacity:0},"-=0.7")
-.fromTo(".sec2_imgCopy",
-  {opacity:0},
-  {opacity:1,zIndex:10}
-  ,"-=1")
-//////////////////////////////////////////////
-gsap.timeline({
-  scrollTrigger: {
-    trigger: '#section2',
-    start: "80% 60%",
-    end: "+=900",
-    scrub: 2,
-    duration:2,
-    // markers: true,
-    // pinSpacing: false,
-    // pin: true
-  }    
-})
-.to(".sec2_imgCopy", {top: '170%', left: '9.35%',duration:3})
-.fromTo(".sec3_cards",
-  {top:'30%',ease: "power3.out",duration:2.5,},
-  {top:'14%',ease: "power3.out",duration:2.5,}
-)
-.to(".sec2_secondimgCopy",{height:'700px',ease: "power3.out"},"-=2")
-// .to(".sec2_imgCopy",{opacity:0},"-=1")
-// .to(".sec2_imgCopy",{opacity:0},"+=0.1")
-//////////////////////////////////////////////
-gsap.timeline({
-  scrollTrigger: {
-    trigger: '#section2',
-    start: "80% top",
-    end: "bottom 5%",
-    scrub: 2,
-    // markers: true,
-    // pinSpacing: false,
-    // pin: true
-  }    
-})
-.to(".sec2_imgCopy",{opacity:0},"-=0.1")
-.to(".card1",{opacity:1},"-=0.6")
-
-//////////////////////////////////////////////
-gsap.timeline({
-  scrollTrigger: {
-    trigger: '#section3',
-    start: "top top",
-    end: "+=2500",
-    scrub: 2,
-    duration:3,
-    // markers: true,
-    // pinSpacing: false,
-    pin: true
-  }
-})
+.to(".sec2_relative",{y:-1000,duration:10})
+.to(".sec2_cards",{y:-1100,duration:10},"-=5")
 .to(".card1 .front",{rotationY: 180, duration:2.5})
 .to(".card1 .back",{rotationY: 0, duration:3},"-=2")
 
@@ -223,7 +157,8 @@ gsap.timeline({
 
 .to(".card3 .front",{rotationY: 180, duration:4},"+=15")
 .to(".card3 .back",{rotationY: 0, duration:3},"-=1")
-.to(".sec3_cards", {top:'10px',duration:30})
+
+.to(".sec2_cards",{top:"900x",duration:15})
 ///////////////////////////////////////////////////////
 // console.clear();
 
