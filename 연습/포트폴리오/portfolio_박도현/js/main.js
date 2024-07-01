@@ -148,7 +148,7 @@ gsap.timeline({
   {scale:1,opacity:1,ease: "power3.in",duration:2.5}
 ,"-=2")
 .to(".sec2_relative",{y:-1000,duration:10})
-.to(".sec2_cards",{y:-1100,duration:10},"-=5")
+.to(".sec2_cards",{y:-1000,duration:10},"-=5")
 .to(".card1 .front",{rotationY: 180, duration:2.5})
 .to(".card1 .back",{rotationY: 0, duration:3},"-=2")
 
@@ -390,112 +390,7 @@ gsap.timeline({
 // requestAnimationFrame(render);
 
 //////////////////////////////////////////////////////
-const getGrid = selector => {//1)
-	let elements = gsap.utils.toArray(selector),
-		bounds,
-		getSubset = (axis, dimension, alternating, merge) => {
-		  	let a = [], 
-			  	subsets = {},
-			  	onlyEven = alternating === "even",
-			  	p;
-			bounds.forEach((b, i) => {
-				let position = Math.round(b[axis] + b[dimension] / 2),
-					subset = subsets[position];
-				subset || (subsets[position] = subset = []);
-				subset.push(elements[i]);
-			});
-			for (p in subsets) {
-				a.push(subsets[p]);
-			}
-			if (onlyEven || alternating === "odd") {
-				a = a.filter((el, i) => !(i % 2) === onlyEven);
-			}
-		  	if (merge) {
-				let a2 = [];
-				a.forEach(subset => a2.push(...subset));
-				return a2;
-		  	}
-		  	return a;
-		};
-	elements.refresh = () => bounds = elements.map(el => el.getBoundingClientRect());
-	elements.columns = (alternating, merge) => getSubset("left", "width", alternating, merge);
-	elements.rows = (alternating, merge) => getSubset("top", "height", alternating, merge);
-	elements.refresh();
 
-	return elements;
-}
-
-
-
-const grids = document.querySelectorAll('.grid');
-
-const applyAnimation = (grid, animationType) => {
-	const gridWrap = grid.querySelector('.grid-wrap');
-	const gridItems = grid.querySelectorAll('.grid__item');
-	const gridItemsInner = [...gridItems].map(item => item.querySelector('.grid__item-inner'));
-	
-	const timeline = gsap.timeline({
-	  	defaults: { ease: 'none' },
-	  	scrollTrigger: {
-			trigger: gridWrap,
-			start: 'top bottom+=8%',
-			end: 'bottom top-=5%',
-			scrub: true,
-      markers:true
-	  	}
-    })
-	switch(animationType) {
-		
-		case 'type1':
-
-			// Set some CSS related style values
-			grid.style.setProperty('--perspective', '1000px');
-			grid.style.setProperty('--grid-inner-scale', '0.5');
-
-			timeline
-			.set(gridWrap, {
-				rotationY: 25
-			})
-			.set(gridItems, {
-				z: () => gsap.utils.random(-1600,200)
-			})
-			.fromTo(gridItems, {
-				xPercent: () => gsap.utils.random(-1000,-500)
-			}, {
-				xPercent: () => gsap.utils.random(500,1000)
-			}, 0)
-			.fromTo(gridItemsInner, {
-				scale: 2
-			}, {
-				scale: .5
-			}, 0)
-			
-			break;
-		default:
-			console.error('Unknown animation type.');
-			break;
-	}
-}
-
-// Apply animations to each grid
-const scroll = () => {
-	grids.forEach((grid, i) => {
-		// Determine animation type
-		let animationType;
-		switch (i % 6) {
-			case 0:
-				animationType = 'type1';
-				break;
-		}
-		applyAnimation(grid, animationType);
-	});
-}
-
-// Preload images, initialize smooth scrolling, apply scroll-triggered animations, and remove loading class from body
-window.addEventListener("load",() => {
-	scroll();
-	document.body.classList.remove('loading');
-});
 
 
 ///////////////////////////////////////////////////////////////////////
