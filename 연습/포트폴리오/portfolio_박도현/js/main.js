@@ -245,7 +245,7 @@ gsap
     duration: 30
   })
   .to(".sec2_cards", {
-    y: -1000,
+    y: -1050,
     duration: 20
   }, "-=25")
   .to(".card1 .front", {
@@ -321,24 +321,24 @@ gsap
   )
   .to(
     ".content1", {
-      marginTop: "25vh",
+      marginTop: "20vh",
       duration: 2,
       ease: "power3.inOut"
     },
     "-=1.8"
   )
 ///////////////////////////////////////////////////////////////////////
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: "#section4",
-      start: "top top",
-      end: "+=2500",
-      scrub: 2,
-      duration: 2,
-      pin: true,
-    },
-  })
-  .fromTo(".awardsSvg",
-    {top:'50%',duration:2.5,scale:1.2,ease: "power1.inOut",},
-    {top:'20%',duration:2.5,scale:1,ease: "power1.inOut",})
+// gsap
+//   .timeline({
+//     scrollTrigger: {
+//       trigger: "#section4",
+//       start: "top top",
+//       end: "+=2500",
+//       scrub: 2,
+//       duration: 2,
+//       pin: true,
+//     },
+//   })
+//   .fromTo(".awardsSvg",
+//     {top:'50%',duration:2.5,scale:1.2,ease: "power1.inOut",},
+//     {top:'20%',duration:2.5,scale:1,ease: "power1.inOut",})
