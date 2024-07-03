@@ -6,17 +6,6 @@ body {
   /* overflow-x: hidden; */
 }
 
-/* section {
-  padding: 10vw;
-  height: 100%;
-  min-height: 500vh;
-  overflow: visible;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow-y: visible;
-} */
-
 * {
   margin: 0;
   padding: 0;
@@ -40,26 +29,27 @@ body {
 #section1 {
   width: 100%;
   height: 100vh;
-  overflow: hidden;
   position: relative;
-  z-index: -1;
+  overflow: hidden;
 }
 
-.heart{
+.heart {
   position: absolute;
   top: 35%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   filter: grayscale(0.2);
   z-index: 1000;
 }
-.scrollIcon{
+
+.scrollIcon {
   position: absolute;
   top: 35%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   z-index: 1000;
 }
+
 #section1 h1 {
   font-weight: 800;
   margin: 2rem auto;
@@ -85,7 +75,7 @@ body {
   justify-content: center;
   width: 100%;
   height: 100%;
-  position: fixed;
+  position: relative;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -118,7 +108,7 @@ body {
   filter: saturate(1);
 }
 
-img {
+.image img {
   transition: 0.3s ease-out;
   overflow: hidden;
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
@@ -135,7 +125,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 50px;
   z-index: 1000;
   backdrop-filter: blur(10px);
@@ -260,81 +250,33 @@ img {
   width: 5px;
   height: 5px;
 }
-/* .container {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
 .weather-container {
-  width: 300px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #f0f0f0;
-  border-radius: 8px;
-  text-align: center;
+  color: #fff;
+  margin-right: 10px;
 }
 
-.weather-info {
-  margin-top: 20px;
-}
-
-.weather-info p {
+.weather-box p {
   font-size: 18px;
 }
 
-.weather-info .temperature {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.weather-info .description {
-  margin-top: 10px;
-  font-style: italic;
-} */
-
-.weather {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-}
-
-.location {
-  color: white;
-  font-size: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.temperature {
-  display: flex;
-  align-items: flex-start;
-  color: white;
-  font-size: 100px;
-  font-weight: 600;
-}
-
-.temperature sup {
-  font-size: 55px;
-  line-height: 0.7;
-}
-
-.details {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
-}
-
-
-.details .info {
-  color: white;
+#location {
   margin-bottom: 10px;
-  font-size: 17px;
+}
+
+#temperature {
+  font-size: 33px;
+  font-weight: 700;
+}
+
+.weather-box img {
+  width: 147px;
+  height: 147px;
+  margin-block: -10px;
+}
+
+#time {
+  font-size: 15px;
 }
 
 /* ////////////////////////////// */
@@ -344,14 +286,79 @@ img {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background-color: #af5959;
+  background-color: rgb(234, 234, 234);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 380px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 20px;
+  cursor: grab;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 5px 10px,
+    rgba(0, 0, 0, 0.23) 0px 3px 3px;
+  user-select: none;
+  transition: transform 0.25s;
+}
+
+.card.active {
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 30px 50px,rgba(0, 0, 0, 0.1) 0px 40px 40px;
+  cursor: grabbing;
+}
+
+.card1 {
+  top: 383.5px;
+  left: 309px;
+  transform: rotate(10deg);
+}
+
+.card2 {
+  top: 632px;
+  left: 229px;
+  transform: rotate(341deg);
+}
+
+.card3 {
+  top: 692px;
+  left: 665px;
+}
+
+.card_img {
+  position: absolute;
+  top: 0;
+  width: 260px;
+  height: 284px;
+  margin-top: 21px;
+  background-color: #000;
+}
+
+.card span {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ////////////////////////////// */
 #section3 {
   width: 100%;
   height: 100vh;
   overflow: hidden;
   background-color: #59af60;
 }
+
 #section4 {
   width: 100%;
   height: 100vh;

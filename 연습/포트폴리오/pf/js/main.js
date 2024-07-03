@@ -14,7 +14,7 @@ gsap.ticker.add((time) => {
 
 gsap.ticker.lagSmoothing(0);
 
-// ////////////////////////////////////////
+//sec1 _ imgani ////////////////////////////////////////
 console.clear();
 
 gsap.registerPlugin(ScrollTrigger);
@@ -84,7 +84,7 @@ const imagesScrollerTrigger = ScrollTrigger.create({
     }
   }
 });
-///////////////////////////////////////////////////////////
+//clock/////////////////////////////////////////////////////////
 
 let points = document.querySelector(".points");
 j = 12;
@@ -137,17 +137,8 @@ const interval = setInterval(() => {
   minutesPoint.style.transform = `rotate(${minPosition - 180}deg)`;
   hoursPoint.style.transform = `rotate(${hourPosition - 180}deg)`;
 });
-//////////////////////////////////////////////////////////
-document.addEventListener('DOMContentLoaded', function() {
-  const images = document.querySelectorAll('.image img');
 
-  images.forEach(image => {
-    // Generate a random saturate value between 0.5 and 1.5
-    const randomSaturate = Math.random() * (1.5 - 0.5) + 0.5;
-    image.style.filter = `saturate(${randomSaturate})`;
-  });
-});
-//////////////////////////////////////////////////////////
+//lottie////////////////////////////////////////////////////////
 gsap.registerPlugin(ScrollTrigger);
 LottieScrollTrigger({
   target: "#animationWindow",
@@ -207,73 +198,97 @@ function LottieScrollTrigger(vars) {
   });
   return animation;
 }
-//////////////////////////////////////////////////////////
-document.addEventListener('DOMContentLoaded', function() {
-  const images = document.querySelectorAll('.image img');
+//weather////////////////////////////////////////////////////////
+document.addEventListener("DOMContentLoaded", function() {
+  const apiKey = "8582ffda1c1390cabd3fd5d75d5e5847"; // 여기에 OpenWeatherMap API 키를 입력하세요.
+  const weatherContainer = document.querySelector(".weather-container");
 
-  images.forEach(image => {
-    // Generate a random saturate value between 0.5 and 1.5
-    const randomSaturate = Math.random() * (1.5 - 0.5) + 0.5;
-    image.style.filter = `saturate(${randomSaturate})`;
-  });
+  if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+          // const lat = position.coords.latitude;
+          // const lon = position.coords.longitude;
+          const lat = 37.5665;
+          const lon = 126.9780
+
+          fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=kr`)
+              .then(response => response.json())
+              .then(data => {
+                  document.getElementById("location").textContent = `${data.name}`;
+                  document.getElementById("temperature").textContent = `${data.main.temp} °C`;
+                  // document.getElementById("description").textContent = `날씨: ${data.weather[0].description}`;
+                  const iconUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+                  document.getElementById("icon").src = iconUrl;
+                  document.getElementById("icon").alt = data.weather[0].description;
+
+                  const timezoneOffset = 9 * 60; // 서울 시간대는 UTC+9
+                  const localTime = new Date((data.dt + data.timezone + timezoneOffset * 60) * 1000);
+                  const options = {
+                      timeZone: 'Asia/Seoul',
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                      // hour: '2-digit',
+                      // minute: '2-digit',
+                      // second: '2-digit'
+                  };
+                  const formatter = new Intl.DateTimeFormat('ko-KR', options);
+                  document.getElementById("time").textContent = `${formatter.format(localTime)}`;
+              })
+              .catch(error => {
+                  weatherContainer.innerHTML = `<p>날씨 정보를 불러오는 데 실패했습니다.</p>`;
+                  console.error("Error fetching weather data: ", error);
+              });
+      });
+  } else {
+      weatherContainer.innerHTML = `<p>위치 정보를 사용할 수 없습니다.</p>`;
+  }
 });
 //////////////////////////////////////////////////////////
-    gsap.registerPlugin(ScrollTrigger)
+document.querySelectorAll(".card").forEach(card => {
+  let moving = false;
+  let offsetX, offsetY, prevX, prevTime;
 
-    LottieScrollTrigger({
-      target: "#animationWindow",
-      path: "./lottie/Animation_heart.json",
-      speed: "medium",
-      scrub: 2,
-    });
+  card.addEventListener("mousedown", (e) => {
+    moving = true;
+    card.style.transformOrigin = e.clientX + ", " + e.clientY;
+    offsetX = e.clientX - card.getBoundingClientRect().left;
+    offsetY = e.clientY - card.getBoundingClientRect().top;
+    card.classList.add("active");
+    card.style.cursor = "grabbing";
 
-    //함수는 한번만 있으면 됨.
-    function LottieScrollTrigger(vars) {
-      let playhead = {
-          frame: 0
-        },
-        target = gsap.utils.toArray(vars.target)[0],
-        speeds = {
-          slow: "+=2000",
-          medium: "+=1000",
-          fast: "+=500"
-        },
-        st = {
-          trigger: target,
-          pin: true,
-          start: "top top",
-          end: speeds[vars.speed] || "+=1000",
-          scrub: 1,
-        },
-        ctx = gsap.context && gsap.context(),
-        animation = lottie.loadAnimation({
-          container: target,
-          renderer: vars.renderer || "svg",
-          loop: false,
-          autoplay: false,
-          path: vars.path,
-          rendererSettings: vars.rendererSettings || {
-            preserveAspectRatio: "xMidYMid slice",
-          },
-        });
-      for (let p in vars) {
-        // let users override the ScrollTrigger defaults
-        st[p] = vars[p];
+    prevX = e.clientX;
+    prevTime = Date.now();
+  });
+
+  document.addEventListener("mousemove", (e) => {
+    if (moving) {
+      card.style.top = e.clientY - offsetY + "px";
+      card.style.left = e.clientX - offsetX + "px";
+
+      const currentTime = Date.now();
+      const deltaTime = currentTime - prevTime;
+      const deltaX = e.clientX - prevX;
+      const velocity = Math.abs(deltaX / deltaTime);
+      const maxTilt = 20;
+      const tiltAngle = Math.min(velocity * maxTilt, maxTilt);
+
+      if (deltaX > 0) {
+        card.style.transform = `rotate(${tiltAngle}deg)`;
+      } else {
+        card.style.transform = `rotate(-${tiltAngle}deg)`;
       }
-      animation.addEventListener("DOMLoaded", function () {
-        let createTween = function () {
-          animation.frameTween = gsap.to(playhead, {
-            frame: animation.totalFrames - 1,
-            ease: "none",
-            onUpdate: () => animation.goToAndStop(playhead.frame, true),
-            scrollTrigger: st,
-          });
-          return () => animation.destroy && animation.destroy();
-        };
-        ctx && ctx.add ? ctx.add(createTween) : createTween();
-        // in case there are any other ScrollTriggers on the page and the loading of this Lottie asset caused layout changes
-        ScrollTrigger.sort();
-        ScrollTrigger.refresh();
-      });
-      return animation;
+
+      prevX = e.clientX;
+      prevTime = currentTime;
     }
+  });
+
+  document.addEventListener("mouseup", () => {
+    if (moving) {
+      moving = false;
+      card.classList.remove("active");
+      card.style.cursor = "grab";
+      card.style.transform = "none";
+    }
+  });
+});
