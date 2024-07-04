@@ -6,7 +6,7 @@ gsap.registerPlugin(SplitText);
 select = e => document.querySelector(e);
 selectAll = e => document.querySelectorAll(e);
 
-let txt = selectAll('.txt'),
+let txt = select('.txt'),
 	tContent = txt.textContent,
 	tl = gsap.timeline(),
 	ntContent = '',
@@ -53,3 +53,7 @@ function animateText() {
 duplicateContent();
 initLongText();
 animateText();
+
+
+
+
