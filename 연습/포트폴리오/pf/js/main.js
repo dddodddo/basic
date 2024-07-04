@@ -292,4 +292,117 @@ document.querySelectorAll(".card").forEach(card => {
     }
   });
 });
-////////////////////////////////////////////////////////////////////'
+////////////////////////////////////////////////////////////////////
+let progressText = document.querySelector(".value");
+      let progressBar = document.querySelector(".progress");
+      let pseudoElement = window.getComputedStyle(progressBar, "::before");
+      let progress = 0;
+
+      function updateProgress() {
+        if (progress < 100) {
+          progress = pseudoElement.getPropertyValue("width");
+          progress = progress.slice(0, -2);
+          progress = Number(progress) / progressBar.clientWidth;
+          progressText.textContent = Math.round(progress * 100) + "%";
+          setTimeout(updateProgress, 50);
+        }
+      }
+
+      updateProgress();
+////////////////////////////////////////////////////////////////////
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: "#section2",
+      start: "top top",
+      end: "+=1300",
+      scrub: 2,
+      duration:2,
+      pin:true,
+      markers: true,
+    },
+  })
+  .to(".card1",{ top: '16%',duration:3,ease: "power2.out"})
+  .to(".card2",{ top: '47%',duration:3,ease: "power2.out"},"-=2")
+  .to(".card3",{ top: '51%',duration:3,ease: "power2.out"},"-=2")
+  .fromTo(".color1",{ color:'#333',duration:3,ease: "power2.out"},{ color:'#437fc4',duration:3,ease: "power2.out"})
+  .fromTo(".color2",{ color:'#333',duration:3,ease: "power2.out"},{ color:'#43c46a',duration:3,ease: "power2.out"})
+  .fromTo(".color3",{ color:'#333',duration:3,ease: "power2.out"},{ color:'#ffae00',duration:3,ease: "power2.out"})
+  .fromTo(".color4",{ color:'#333',duration:3,ease: "power2.out"},{ color:'#7f43c4',duration:3,ease: "power2.out"})
+  .fromTo(".color5",{ color:'#333',duration:3,ease: "power2.out"},{ color:'#43a6c4',duration:3,ease: "power2.out"})
+////////////////////////////////////////////////////////////////////
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: "#section3",
+      start: "top top",
+      end: "+=3500",
+      scrub: 2,
+      duration: 2,
+      pin: true,
+    },
+  })
+  .to(
+    ".tilte__left", {
+      paddingRight: "300px",
+      duration: 2.5,
+      ease: "power3.inOut"
+    },
+    "-=5"
+  )
+  .to(
+    ".tilte__right", {
+      paddingLeft: "500px",
+      duration: 2.5,
+      ease: "power3.inOut"
+    },
+    "-=5"
+  )
+  .to(".tiles__wrap",{translateX:"-15%",translateZ:'-1503px', rotateX:'45deg', rotateZ:'0deg',duration: 2.5,ease: "power1.in",},"-=3")
+  
+  
+  .to(
+    ".tiles__title", {
+      top: "-7vh",
+      duration: 2,
+      ease: "power3.inOut"
+    },
+    "-=2"
+  )
+  .to(
+    ".content1", {
+      marginTop: "20vh",
+      duration: 2,
+      ease: "power3.inOut"
+    },
+    "-=1.8"
+  )
+////////////////////////////////////////////////////////////////////
+// Select all tiles__line-img elements
+const images = document.querySelectorAll('.tiles__line-img');
+
+// Function to toggle grayscale
+function toggleGrayscale() {
+  images.forEach(image => {
+    // Generate a random number between 0 and 1
+    const random = Math.random();
+
+    // Add class 'gray' or 'color' based on random number
+    if (random < 0.5) {
+      image.classList.add('gray');
+      image.classList.remove('color');
+    } else {
+      image.classList.remove('gray');
+      image.classList.add('color');
+    }
+  });
+}
+
+// Initial call to toggle grayscale
+toggleGrayscale();
+
+// Set interval to toggle grayscale every 3 seconds (adjust interval as needed)
+setInterval(toggleGrayscale, 3000);
+
+////////////////////////////////////////////////////////////////////
+

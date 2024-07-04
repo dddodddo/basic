@@ -8,6 +8,10 @@
   <link rel='stylesheet' href='https://use.typekit.net/skn8ash.css'>
   <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
+      rel="stylesheet"
+    />
   <link rel="stylesheet" href="./style.css">
 
 </head>
@@ -207,6 +211,9 @@
   </section>
 
   <section id="section2">
+    <div class="canvas-cont">
+      <canvas id="canvas3d"></canvas>
+    </div>
     <div class="cards">
       <div class="card card1">
         <div class="card_img card1_img"></div>
@@ -276,10 +283,96 @@
           <div class="pro_name color5">#@ddd_445</div>
         </div>
       </div>
+      <div class="file-transfer">
+        <div class="head">
+          <div class="left">
+            <img src="http://127.0.0.1:5500/snippetsdevelop.github.io-master/images/files.png" alt="" />
+            <span class="title">정보 업데이트</span>
+          </div>
+  
+          <div class="icons">
+            <span class="material-icons-round"> remove </span>
+            <span class="material-icons-round"> check_box_outline_blank </span>
+            <span class="material-icons-round"> close </span>
+          </div>
+        </div>
+  
+        <div class="details">
+          <div class="percentage"><span class="value">50%</span> Complete</div>
+          <div class="controls">
+            <span class="material-icons-round"> pause </span>
+            <span class="material-icons-round"> close </span>
+          </div>
+        </div>
+  
+        <div class="progress"></div>
+        <div class="note">Estimated 20 Seconds Remaining...</div>
+      </div>
     </div>
+
+    
   </section>
 
-  <section id="section3"></section>
+  <section id="section3">
+    <div class="sec3Wrap">
+      <section class="tiles tiles--perspective tiles--darker">
+        <div class="tiles__wrap">
+          <div class="tiles__line tilte__left" data-scroll data-scroll-speed="2" data-scroll-direction="horizontal">
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/1.jpg)"></div>
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/2.jpg)"></div>
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/3.jpg)"></div>
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/4.jpg)"></div>
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/5.jpg)"></div>
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/6.jpg)"></div>
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/7.jpg)"></div>
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/8.jpg)"></div>
+          </div>
+          <div class="tiles__line tilte__right" data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal">
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/7.jpg)"></div>
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/8.jpg)"></div>
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/9.jpg)"></div>
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/10.jpg)"></div>
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/11.jpg)"></div>
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/12.jpg)"></div>
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/13.jpg)"></div>
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/14.jpg)"></div>
+          </div>
+          <div class="tiles__line tilte__left" data-scroll data-scroll-speed="2" data-scroll-direction="horizontal">
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/13.jpg)"></div>
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/14.jpg)"></div>
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/15.jpg)"></div>
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/16.jpg)"></div>
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/17.jpg)"></div>
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/18.jpg)"></div>
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/19.jpg)"></div>
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/20.jpg)"></div>
+          </div>
+          <div class="tiles__line tilte__right" data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal">
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/19.jpg)"></div>
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/20.jpg)"></div>
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/21.jpg)"></div>
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/22.jpg)"></div>
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/23.jpg)"></div>
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/24.jpg)"></div>
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/25.jpg)"></div>
+            <div class="tiles__line-img" style="background-image: url(imgcopy/demo1/26.jpg)"></div>
+          </div>
+        </div>
+        <h2 class="tiles__title tiles__title--intro" data-scroll data-scroll-speed="4">
+          Hobby
+        </h2>
+        <section class="content1">
+          <p class="content1__text" data-scroll data-scroll-speed="2">
+            저의 취미는 새로운 도전을 통해 세상을 넓히는 것으로<br>
+            주짓수, 수영, 마라톤 대회 참가, 서핑, 스노우보드 등 다양한 활동을 경험해 왔습니다.<br><br>
+            이를 통해 활발하고 움직이는 삶을 사랑하는 성향을 깨달았고,<br>
+            이제는 하나의 운동을 선택해 꾸준히 즐기며 일상 속에서도 활기를 불어넣고 있습니다.
+          </p>
+        </section>
+      </section>
+      <div class="imgslide">imgslide</div>
+    </div>
+  </section>
   <section id="section4"></section>
 
 
@@ -296,7 +389,8 @@
 
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <!-- <script src="js/jquery.js"></script> -->
-  <script src="js/path.js"></script>
+   <script type="module" src="js/spline.js"></script>
+  <!-- <script src="js/path.js"></script> -->
   <script src="js/main.js"></script>
 
 </body>

@@ -328,6 +328,33 @@ gsap
     "-=1.8"
   )
 ///////////////////////////////////////////////////////////////////////
+// Select all tiles__line-img elements
+const images = document.querySelectorAll('.tiles__line-img');
+
+// Function to toggle grayscale
+function toggleGrayscale() {
+  images.forEach(image => {
+    // Generate a random number between 0 and 1
+    const random = Math.random();
+
+    // Add class 'gray' or 'color' based on random number
+    if (random < 0.5) {
+      image.classList.add('gray');
+      image.classList.remove('color');
+    } else {
+      image.classList.remove('gray');
+      image.classList.add('color');
+    }
+  });
+}
+
+// Initial call to toggle grayscale
+toggleGrayscale();
+
+// Set interval to toggle grayscale every 3 seconds (adjust interval as needed)
+setInterval(toggleGrayscale, 3000);
+
+///////////////////////////////////////////////////////////////////////
 // gsap
 //   .timeline({
 //     scrollTrigger: {
