@@ -1,4 +1,4 @@
-// gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
 const lenis = new Lenis();
 
@@ -15,12 +15,10 @@ gsap.ticker.add((time) => {
 gsap.ticker.lagSmoothing(0);
 
 //sec1 _ imgani ////////////////////////////////////////
-console.clear();
-
-gsap.registerPlugin(ScrollTrigger);
+// console.clear();
 
 const additionalY = {
-  val: 0
+  val: 0,
 };
 let additionalYAnim;
 let offset = 0;
@@ -56,8 +54,8 @@ cols.forEach((col, i) => {
           }
 
           return y;
-        })
-      }
+        }),
+      },
     });
   });
 });
@@ -72,18 +70,20 @@ const imagesScrollerTrigger = ScrollTrigger.create({
       if (additionalYAnim) additionalYAnim.kill();
       additionalY.val = -velocity / 5000;
       additionalYAnim = gsap.to(additionalY, {
-        val: 0
+        val: 0,
       });
     }
     if (velocity < 0) {
       if (additionalYAnim) additionalYAnim.kill();
       additionalY.val = -velocity / 6000;
       additionalYAnim = gsap.to(additionalY, {
-        val: 0
+        val: 0,
       });
     }
-  }
+  },
 });
+ScrollTrigger.sort();
+ScrollTrigger.refresh();
 //clock/////////////////////////////////////////////////////////
 
 let points = document.querySelector(".points");
@@ -139,25 +139,23 @@ const interval = setInterval(() => {
 });
 
 //lottie////////////////////////////////////////////////////////
-gsap.registerPlugin(ScrollTrigger);
-LottieScrollTrigger({
-  target: "#animationWindow",
-  path: "./lottie/Animation_heart.json",
-  speed: "medium",
-  scrub: 2,
-});
-
+// LottieScrollTrigger({
+//   target: "#animationWindow",
+//   path: "./lottie/Animation_heart.json",
+//   speed: "medium",
+//   scrub: 2,
+// });
 
 //함수는 한번만 있으면 됨.
 function LottieScrollTrigger(vars) {
   let playhead = {
-      frame: 0
+      frame: 0,
     },
     target = gsap.utils.toArray(vars.target)[0],
     speeds = {
       slow: "+=2000",
       medium: "+=1000",
-      fast: "+=500"
+      fast: "+=500",
     },
     st = {
       trigger: target,
@@ -199,52 +197,60 @@ function LottieScrollTrigger(vars) {
   return animation;
 }
 //weather////////////////////////////////////////////////////////
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const apiKey = "8582ffda1c1390cabd3fd5d75d5e5847"; // 여기에 OpenWeatherMap API 키를 입력하세요.
   const weatherContainer = document.querySelector(".weather-container");
 
   if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(position => {
-          // const lat = position.coords.latitude;
-          // const lon = position.coords.longitude;
-          const lat = 37.5665;
-          const lon = 126.9780
+    navigator.geolocation.getCurrentPosition((position) => {
+      // const lat = position.coords.latitude;
+      // const lon = position.coords.longitude;
+      const lat = 37.5665;
+      const lon = 126.978;
 
-          fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=kr`)
-              .then(response => response.json())
-              .then(data => {
-                  document.getElementById("location").textContent = `${data.name}`;
-                  document.getElementById("temperature").textContent = `${data.main.temp} °C`;
-                  // document.getElementById("description").textContent = `날씨: ${data.weather[0].description}`;
-                  const iconUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-                  document.getElementById("icon").src = iconUrl;
-                  document.getElementById("icon").alt = data.weather[0].description;
+      fetch(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=kr`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          document.getElementById("location").textContent = `${data.name}`;
+          document.getElementById(
+            "temperature"
+          ).textContent = `${data.main.temp} °C`;
+          // document.getElementById("description").textContent = `날씨: ${data.weather[0].description}`;
+          const iconUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+          document.getElementById("icon").src = iconUrl;
+          document.getElementById("icon").alt = data.weather[0].description;
 
-                  const timezoneOffset = 9 * 60; // 서울 시간대는 UTC+9
-                  const localTime = new Date((data.dt + data.timezone + timezoneOffset * 60) * 1000);
-                  const options = {
-                      timeZone: 'Asia/Seoul',
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric',
-                      // hour: '2-digit',
-                      // minute: '2-digit',
-                      // second: '2-digit'
-                  };
-                  const formatter = new Intl.DateTimeFormat('ko-KR', options);
-                  document.getElementById("time").textContent = `${formatter.format(localTime)}`;
-              })
-              .catch(error => {
-                  weatherContainer.innerHTML = `<p>날씨 정보를 불러오는 데 실패했습니다.</p>`;
-                  console.error("Error fetching weather data: ", error);
-              });
-      });
+          const timezoneOffset = 9 * 60; // 서울 시간대는 UTC+9
+          const localTime = new Date(
+            (data.dt + data.timezone + timezoneOffset * 60) * 1000
+          );
+          const options = {
+            timeZone: "Asia/Seoul",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+            // hour: '2-digit',
+            // minute: '2-digit',
+            // second: '2-digit'
+          };
+          const formatter = new Intl.DateTimeFormat("ko-KR", options);
+          document.getElementById("time").textContent = `${formatter.format(
+            localTime
+          )}`;
+        })
+        .catch((error) => {
+          weatherContainer.innerHTML = `<p>날씨 정보를 불러오는 데 실패했습니다.</p>`;
+          console.error("Error fetching weather data: ", error);
+        });
+    });
   } else {
-      weatherContainer.innerHTML = `<p>위치 정보를 사용할 수 없습니다.</p>`;
+    weatherContainer.innerHTML = `<p>위치 정보를 사용할 수 없습니다.</p>`;
   }
 });
 //////////////////////////////////////////////////////////
-document.querySelectorAll(".card").forEach(card => {
+document.querySelectorAll(".card").forEach((card) => {
   let moving = false;
   let offsetX, offsetY, prevX, prevTime;
 
@@ -294,21 +300,21 @@ document.querySelectorAll(".card").forEach(card => {
 });
 ////////////////////////////////////////////////////////////////////
 let progressText = document.querySelector(".value");
-      let progressBar = document.querySelector(".progress");
-      let pseudoElement = window.getComputedStyle(progressBar, "::before");
-      let progress = 0;
+let progressBar = document.querySelector(".progress");
+let pseudoElement = window.getComputedStyle(progressBar, "::before");
+let progress = 0;
 
-      function updateProgress() {
-        if (progress < 100) {
-          progress = pseudoElement.getPropertyValue("width");
-          progress = progress.slice(0, -2);
-          progress = Number(progress) / progressBar.clientWidth;
-          progressText.textContent = Math.round(progress * 100) + "%";
-          setTimeout(updateProgress, 50);
-        }
-      }
+function updateProgress() {
+  if (progress < 100) {
+    progress = pseudoElement.getPropertyValue("width");
+    progress = progress.slice(0, -2);
+    progress = Number(progress) / progressBar.clientWidth;
+    progressText.textContent = Math.round(progress * 100) + "%";
+    setTimeout(updateProgress, 50);
+  }
+}
 
-      updateProgress();
+updateProgress();
 ////////////////////////////////////////////////////////////////////
 gsap
   .timeline({
@@ -317,19 +323,39 @@ gsap
       start: "top top",
       end: "+=1300",
       scrub: 2,
-      duration:2,
-      pin:true,
+      duration: 2,
+      pin: true,
       markers: true,
     },
   })
-  .to(".card1",{ top: '16%',duration:5,ease: "power2.out"})
-  .to(".card2",{ top: '47%',duration:5,ease: "power2.out"},"-=2")
-  .to(".card3",{ top: '51%',duration:5,ease: "power2.out"},"-=2")
-  .fromTo(".color1",{ color:'#333',duration:3,ease: "power2.out"},{ color:'#437fc4',duration:3,ease: "power2.out"})
-  .fromTo(".color2",{ color:'#333',duration:3,ease: "power2.out"},{ color:'#43c46a',duration:3,ease: "power2.out"})
-  .fromTo(".color3",{ color:'#333',duration:3,ease: "power2.out"},{ color:'#ffae00',duration:3,ease: "power2.out"})
-  .fromTo(".color4",{ color:'#333',duration:3,ease: "power2.out"},{ color:'#7f43c4',duration:3,ease: "power2.out"})
-  .fromTo(".color5",{ color:'#333',duration:3,ease: "power2.out"},{ color:'#43a6c4',duration:3,ease: "power2.out"})
+  .to(".card1", { top: "16%", duration: 5, ease: "power2.out" })
+  .to(".card2", { top: "47%", duration: 5, ease: "power2.out" }, "-=2")
+  .to(".card3", { top: "51%", duration: 5, ease: "power2.out" }, "-=2")
+  .fromTo(
+    ".color1",
+    { color: "#333", duration: 3, ease: "power2.out" },
+    { color: "#437fc4", duration: 3, ease: "power2.out" }
+  )
+  .fromTo(
+    ".color2",
+    { color: "#333", duration: 3, ease: "power2.out" },
+    { color: "#43c46a", duration: 3, ease: "power2.out" }
+  )
+  .fromTo(
+    ".color3",
+    { color: "#333", duration: 3, ease: "power2.out" },
+    { color: "#ffae00", duration: 3, ease: "power2.out" }
+  )
+  .fromTo(
+    ".color4",
+    { color: "#333", duration: 3, ease: "power2.out" },
+    { color: "#7f43c4", duration: 3, ease: "power2.out" }
+  )
+  .fromTo(
+    ".color5",
+    { color: "#333", duration: 3, ease: "power2.out" },
+    { color: "#43a6c4", duration: 3, ease: "power2.out" }
+  );
 ////////////////////////////////////////////////////////////////////
 gsap
   .timeline({
@@ -342,60 +368,83 @@ gsap
       pin: true,
     },
   })
+  .to("#section3", { background: "#353535", duration: 3 }, "-=5")
   .to(
-    ".tilte__left", {
+    ".tilte__left",
+    {
       paddingRight: "300px",
       duration: 2.5,
-      ease: "power3.inOut"
+      ease: "power3.inOut",
     },
     "-=5"
   )
   .to(
-    ".tilte__right", {
+    ".tilte__right",
+    {
       paddingLeft: "500px",
       duration: 2.5,
-      ease: "power3.inOut"
+      ease: "power3.inOut",
     },
     "-=5"
   )
-  .to(".tiles__wrap",{translateX:"-15%",translateZ:'-1503px', rotateX:'45deg', rotateZ:'0deg',duration: 2.5,ease: "power1.in",},"-=3")
-  
-  
   .to(
-    ".tiles__title", {
-      color:"#333",
+    ".content1",
+    {
+      color: "#fff",
+      duration: 2,
+      ease: "power3.inOut",
+    },
+    "-=4"
+  )
+  .to(
+    ".tiles__wrap",
+    {
+      translateX: "-15%",
+      translateZ: "-1503px",
+      rotateX: "45deg",
+      rotateZ: "0deg",
+      duration: 2.5,
+      ease: "power1.in",
+    },
+    "-=3"
+  )
+
+  .to(
+    ".tiles__title",
+    {
+      color: "#fff",
       top: 0,
       duration: 2,
-      ease: "power3.inOut"
+      ease: "power3.inOut",
     },
     "-=2"
   )
   .to(
-    ".content1", {
+    ".content1",
+    {
       marginTop: "30vh",
-      color:"#fff",
       duration: 2,
-      ease: "power3.inOut"
+      ease: "power3.inOut",
     },
     "-=1.8"
-  )
+  );
 ////////////////////////////////////////////////////////////////////
 // Select all tiles__line-img elements
-const images = document.querySelectorAll('.tiles__line-img');
+const images = document.querySelectorAll(".tiles__line-img");
 
 // Function to toggle grayscale
 function toggleGrayscale() {
-  images.forEach(image => {
+  images.forEach((image) => {
     // Generate a random number between 0 and 1
     const random = Math.random();
 
     // Add class 'gray' or 'color' based on random number
     if (random < 0.5) {
-      image.classList.add('gray');
-      image.classList.remove('color');
+      image.classList.add("gray");
+      image.classList.remove("color");
     } else {
-      image.classList.remove('gray');
-      image.classList.add('color');
+      image.classList.remove("gray");
+      image.classList.add("color");
     }
   });
 }
@@ -406,79 +455,204 @@ toggleGrayscale();
 // Set interval to toggle grayscale every 3 seconds (adjust interval as needed)
 setInterval(toggleGrayscale, 3000);
 
-
 ////////////////////////////////////////////////////////////////////
-window.addEventListener("DOMContentLoaded",() => {
-	const ctl = new CollapsibleTimeline("#timeline");
+window.addEventListener("DOMContentLoaded", () => {
+  const ctl = new CollapsibleTimeline("#timeline");
 });
 
 class CollapsibleTimeline {
-	constructor(el) {
-		this.el = document.querySelector(el);
+  constructor(el) {
+    this.el = document.querySelector(el);
 
-		this.init();
-	}
-	init() {
-		this.el?.addEventListener("click",this.itemAction.bind(this));
-	}
-	animateItemAction(button,ctrld,contentHeight,shouldCollapse) {
-		const expandedClass = "timeline__item-body--expanded";
-		const animOptions = {
-			duration: 300,
-			easing: "cubic-bezier(0.65,0,0.35,1)"
-		};
+    this.init();
+  }
+  init() {
+    this.el?.addEventListener("click", this.itemAction.bind(this));
+  }
+  animateItemAction(button, ctrld, contentHeight, shouldCollapse) {
+    const expandedClass = "timeline__item-body--expanded";
+    const animOptions = {
+      duration: 300,
+      easing: "cubic-bezier(0.65,0,0.35,1)",
+    };
 
-		if (shouldCollapse) {
-			button.ariaExpanded = "false";
-			ctrld.ariaHidden = "true";
-			ctrld.classList.remove(expandedClass);
-			animOptions.duration *= 2;
-			this.animation = ctrld.animate([
-				{ height: `${contentHeight}px` },
-				{ height: `${contentHeight}px` },
-				{ height: "0px" }
-			],animOptions);
-		} else {
-			button.ariaExpanded = "true";
-			ctrld.ariaHidden = "false";
-			ctrld.classList.add(expandedClass);
-			this.animation = ctrld.animate([
-				{ height: "0px" },
-				{ height: `${contentHeight}px` }
-			],animOptions);
-		}
-	}
-	itemAction(e) {
-		const { target } = e;
-		const action = target?.getAttribute("data-action");
-		const item = target?.getAttribute("data-item");
+    if (shouldCollapse) {
+      button.ariaExpanded = "false";
+      ctrld.ariaHidden = "true";
+      ctrld.classList.remove(expandedClass);
+      animOptions.duration *= 2;
+      this.animation = ctrld.animate(
+        [
+          { height: `${contentHeight}px` },
+          { height: `${contentHeight}px` },
+          { height: "0px" },
+        ],
+        animOptions
+      );
+    } else {
+      button.ariaExpanded = "true";
+      ctrld.ariaHidden = "false";
+      ctrld.classList.add(expandedClass);
+      this.animation = ctrld.animate(
+        [{ height: "0px" }, { height: `${contentHeight}px` }],
+        animOptions
+      );
+    }
+  }
+  itemAction(e) {
+    const { target } = e;
+    const action = target?.getAttribute("data-action");
+    const item = target?.getAttribute("data-item");
 
-		if (action) {
-			const targetExpanded = action === "expand" ? "false" : "true";
-			const buttons = Array.from(this.el?.querySelectorAll(`[aria-expanded="${targetExpanded}"]`));
-			const wasExpanded = action === "collapse";
+    if (action) {
+      const targetExpanded = action === "expand" ? "false" : "true";
+      const buttons = Array.from(
+        this.el?.querySelectorAll(`[aria-expanded="${targetExpanded}"]`)
+      );
+      const wasExpanded = action === "collapse";
 
-			for (let button of buttons) {
-				const buttonID = button.getAttribute("data-item");
-				const ctrld = this.el?.querySelector(`#item${buttonID}-ctrld`);
-				const contentHeight = ctrld.firstElementChild?.offsetHeight;
+      for (let button of buttons) {
+        const buttonID = button.getAttribute("data-item");
+        const ctrld = this.el?.querySelector(`#item${buttonID}-ctrld`);
+        const contentHeight = ctrld.firstElementChild?.offsetHeight;
 
-				this.animateItemAction(button,ctrld,contentHeight,wasExpanded);
-			}
+        this.animateItemAction(button, ctrld, contentHeight, wasExpanded);
+      }
+    } else if (item) {
+      const button = this.el?.querySelector(`[data-item="${item}"]`);
+      const expanded = button?.getAttribute("aria-expanded");
 
-		} else if (item) {
-			const button = this.el?.querySelector(`[data-item="${item}"]`);
-			const expanded = button?.getAttribute("aria-expanded");
+      if (!expanded) return;
 
-			if (!expanded) return;
+      const wasExpanded = expanded === "true";
+      const ctrld = this.el?.querySelector(`#item${item}-ctrld`);
+      const contentHeight = ctrld.firstElementChild?.offsetHeight;
 
-			const wasExpanded = expanded === "true";
-			const ctrld = this.el?.querySelector(`#item${item}-ctrld`);
-			const contentHeight = ctrld.firstElementChild?.offsetHeight;
-
-			this.animateItemAction(button,ctrld,contentHeight,wasExpanded);
-		}
-	}
+      this.animateItemAction(button, ctrld, contentHeight, wasExpanded);
+    }
+  }
 }
 ////////////////////////////////////////////////////////////////////
+let container = document.querySelector(".main-wrapper");
+let section = container.querySelectorAll("section");
 
+let tl = gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: container,
+      scrub: 1,
+      pin: true,
+      start: "top top",
+      end: "+=3300",
+    },
+  })
+  .to(container, {
+    x: () =>
+      -(container.scrollWidth - document.documentElement.clientWidth - 95) +
+      "px",
+    ease: "none",
+    duration: 1,
+  })
+  .to({}, { duration: 1 / (section.length + 1) });
+
+// gsap.to(".col-1", {
+//   y: -250,
+//   ease: "none",
+//   duration: 2,
+//   scrollTrigger: {
+//     trigger: ".image-gallery",
+//     start: "top center",
+//     end: "+=3000",
+//     scrub: true,
+//   },
+// });
+// gsap.to(".col-2", {
+//   y: 250,
+//   ease: "none",
+//   duration: 2,
+//   scrollTrigger: {
+//     trigger: ".image-gallery",
+//     start: "top center",
+//     end: "+=3000",
+//     scrub: true,
+//   },
+// });
+// gsap.to(".col-3", {
+//   y: -250,
+//   ease: "none",
+//   duration: 2,
+//   scrollTrigger: {
+//     trigger: ".image-gallery",
+//     start: "top center",
+//     end: "+=3000",
+//     scrub: true,
+//   },
+// });
+
+
+
+gsap.to(".num", {
+  x: 600,
+  duration: 2,
+  scrollTrigger: {
+    trigger: ".num",
+    start: "right left",
+  },
+});
+
+////////////////////////////////////////////////////////////////////
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: ".section-3",
+      start: "top top",
+      end: "+=800",
+      scrub: 2,
+      duration: 2.5,
+      pin: true,
+      toggleActions: "play pause reverse reverse",
+    },
+  })
+.from(".row-2", {
+  height: "0%",
+  duration: 1,
+  delay: 0.5,
+
+})
+
+.from(".row li", {
+  y: 200,
+  opacity: 0,
+  ease: "none",
+  delay: 2,
+  duration: 10,
+  stagger: {
+    amount: 1,
+  },
+
+});
+////////////////////////////////////////////////////////////////////
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: "#book",
+      start: "top top",
+      end: "+=3500",
+      scrub: 2,
+      duration: 2,
+      pin: true,
+    },
+  })
+
+//     rotateY: `-=${180 - index / 2}`,
+//     z: index === 0 ? -13 : index
+
+.to(".page0",{rotateY: `-=${180 - 0 / 2}`,z: 0 === 0 ? -13 : 0})
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////
