@@ -368,7 +368,7 @@ gsap
       pin: true,
     },
   })
-  .to("#section3", { background: "#353535", duration: 3 }, "-=5")
+  .to("#section3", { background: "#353535", duration: 3 }, "-=3")
   .to(
     ".tilte__left",
     {
@@ -555,42 +555,6 @@ let tl = gsap
   })
   .to({}, { duration: 1 / (section.length + 1) });
 
-// gsap.to(".col-1", {
-//   y: -250,
-//   ease: "none",
-//   duration: 2,
-//   scrollTrigger: {
-//     trigger: ".image-gallery",
-//     start: "top center",
-//     end: "+=3000",
-//     scrub: true,
-//   },
-// });
-// gsap.to(".col-2", {
-//   y: 250,
-//   ease: "none",
-//   duration: 2,
-//   scrollTrigger: {
-//     trigger: ".image-gallery",
-//     start: "top center",
-//     end: "+=3000",
-//     scrub: true,
-//   },
-// });
-// gsap.to(".col-3", {
-//   y: -250,
-//   ease: "none",
-//   duration: 2,
-//   scrollTrigger: {
-//     trigger: ".image-gallery",
-//     start: "top center",
-//     end: "+=3000",
-//     scrub: true,
-//   },
-// });
-
-
-
 gsap.to(".num", {
   x: 600,
   duration: 2,
@@ -632,27 +596,60 @@ gsap
 
 });
 ////////////////////////////////////////////////////////////////////
+// let contentHolderHeight=document.querySelector('.content-holder').offsetHeight;
+// let imgHolderHeight=window.innerHeight;
+// let additionalScrollHeight=window.innerHeight;
+
+// let totalBodyHeight=contentHolderHeight + imgHolderHeight + additionalScrollHeight;
+// document.body.style.height=`${totalBodyHeight}px`;
+
+// ScrollTrigger.create({
+//     trigger:'.website-content',
+//     start:"bottom top",
+//     end:"+=500% bottom",
+//     markers:true,
+//     onEnter:()=>{
+//         gsap.set(".website-content",{position:"absolute",top:"195%"})
+//     },
+//     onLeaveBack:()=>{
+//         gsap.set(".website-content",{position:"fixed",top:"0"})
+//     }
+
+// });
+
+// gsap.to(".img-holder",{
+//     rotation:0,
+//     clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+//     scrollTrigger:{
+//         start:'top top',
+//         end:`+=200%`,
+//         scrub:1,
+//         //markers:true
+//     }
+// },"<")
+// gsap.to(".img-holder img",{
+//     scale:1,
+//     ease: "power2.inOut",
+//     scrollTrigger:{
+//         start:'top top',
+//         end:`+=200%`,
+//         scrub:1,
+//         //markers:true
+//     }
+// },"<")
 gsap
   .timeline({
     scrollTrigger: {
-      trigger: "#book",
+      trigger: "#section5",
       start: "top top",
-      end: "+=3500",
+      end: "+=1800",
       scrub: 2,
-      duration: 2,
+      duration: 2.5,
       pin: true,
     },
   })
+.to(".header .letters:first-child", {x:() => -innerWidth *3,scale:10,ease: "power2.inOut",duration:2.5})
+.to(".header .letters:last-child", {x:() => innerWidth *3,scale:10,ease: "power2.inOut",duration:2.5},"-=2.5")
+.to(".img-holder", {rotation:0,clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",duration:2.5},"-=2.3")
+.to(".img-holder img", {scale:1,ease: "power2.inOut"})
 
-//     rotateY: `-=${180 - index / 2}`,
-//     z: index === 0 ? -13 : index
-
-.to(".page0",{rotateY: `-=${180 - 0 / 2}`,z: 0 === 0 ? -13 : 0})
-
-
-
-
-
-
-
-////////////////////////////////////////////////////////////////////
