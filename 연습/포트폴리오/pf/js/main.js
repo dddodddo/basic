@@ -596,60 +596,52 @@ gsap
 
 });
 ////////////////////////////////////////////////////////////////////
-// let contentHolderHeight=document.querySelector('.content-holder').offsetHeight;
-// let imgHolderHeight=window.innerHeight;
-// let additionalScrollHeight=window.innerHeight;
 
-// let totalBodyHeight=contentHolderHeight + imgHolderHeight + additionalScrollHeight;
-// document.body.style.height=`${totalBodyHeight}px`;
-
-// ScrollTrigger.create({
-//     trigger:'.website-content',
-//     start:"bottom top",
-//     end:"+=500% bottom",
-//     markers:true,
-//     onEnter:()=>{
-//         gsap.set(".website-content",{position:"absolute",top:"195%"})
-//     },
-//     onLeaveBack:()=>{
-//         gsap.set(".website-content",{position:"fixed",top:"0"})
-//     }
-
-// });
-
-// gsap.to(".img-holder",{
-//     rotation:0,
-//     clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-//     scrollTrigger:{
-//         start:'top top',
-//         end:`+=200%`,
-//         scrub:1,
-//         //markers:true
-//     }
-// },"<")
-// gsap.to(".img-holder img",{
-//     scale:1,
-//     ease: "power2.inOut",
-//     scrollTrigger:{
-//         start:'top top',
-//         end:`+=200%`,
-//         scrub:1,
-//         //markers:true
-//     }
-// },"<")
 gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: "#section5",
-      start: "top top",
-      end: "+=1800",
-      scrub: 2,
-      duration: 2.5,
-      pin: true,
-    },
-  })
+.timeline({
+  scrollTrigger: {
+    trigger: "#section6",
+    start: "top top",
+    end: "+=1800",
+    scrub: 2,
+    duration: 2.5,
+    pin: true,
+  },
+})
 .to(".header .letters:first-child", {x:() => -innerWidth *3,scale:10,ease: "power2.inOut",duration:2.5})
 .to(".header .letters:last-child", {x:() => innerWidth *3,scale:10,ease: "power2.inOut",duration:2.5},"-=2.5")
 .to(".img-holder", {rotation:0,clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",duration:2.5},"-=2.3")
 .to(".img-holder img", {scale:1,ease: "power2.inOut"})
 
+////////////////////////////////////////////////////////////////////
+gsap.registerPlugin(ScrollTrigger);
+
+let MAX = 100
+let circleProgressInstances = []
+document.querySelectorAll(".progress2").forEach((progressEle, index) => {
+    let initialValue = document.querySelectorAll(".value-input")[index].value
+    let classText = document.querySelectorAll(".skill h3")[index].innerHTML
+    let cp = new CircleProgress(progressEle, {
+        max: MAX,
+        value: 0,
+        animationDuration:1500,
+        // textFormat: (val)=>val+"%",
+        textFormat: (val)=>val,
+    });
+
+    circleProgressInstances.push(cp)
+
+    ScrollTrigger.create({
+        trigger:".skill",
+        start:"top 70%",
+        scrub:1,
+        onEnter:()=>{
+            cp.value=initialValue;
+        },
+        onLeaveBack:()=>{
+            cp.value=0;
+        }
+    })
+
+})
+////////////////////////////////////////////////////////////////////
