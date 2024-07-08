@@ -338,17 +338,17 @@ gsap
   .fromTo(
     ".color2",
     { color: "#333", duration: 3, ease: "power2.out" },
-    { color: "#43c46a", duration: 3, ease: "power2.out" }
+    { color: "#2D9596", duration: 3, ease: "power2.out" }
   )
   .fromTo(
     ".color3",
     { color: "#333", duration: 3, ease: "power2.out" },
-    { color: "#ffae00", duration: 3, ease: "power2.out" }
+    { color: "#75A47F", duration: 3, ease: "power2.out" }
   )
   .fromTo(
     ".color4",
     { color: "#333", duration: 3, ease: "power2.out" },
-    { color: "#7f43c4", duration: 3, ease: "power2.out" }
+    { color: "#4F709C", duration: 3, ease: "power2.out" }
   )
   .fromTo(
     ".color5",
@@ -533,7 +533,7 @@ class CollapsibleTimeline {
 }
 ////////////////////////////////////////////////////////////////////
 let container = document.querySelector(".main-wrapper");
-let section = container.querySelectorAll("section");
+let section = container.querySelectorAll("#section4 section");
 
 let tl = gsap
   .timeline({
@@ -554,11 +554,11 @@ let tl = gsap
   })
   .to({}, { duration: 1 / (section.length + 1) });
 
-gsap.to(".num", {
+gsap.to(".list", {
   x: 600,
   duration: 2,
   scrollTrigger: {
-    trigger: ".num",
+    trigger: ".list",
     start: "right left",
   },
 });

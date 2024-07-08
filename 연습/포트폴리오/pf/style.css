@@ -468,25 +468,8 @@ a {
   font-size: 23px;
   color: #414141;
 }
-
-#section2 .pro_box:hover .color1 {
-  color: #437fc4;
-}
-
-#section2 .pro_box:hover .color2 {
-  color: #43c46a;
-}
-
-#section2 .pro_box:hover .color3 {
-  color: #ffae00;
-}
-
-#section2 .pro_box:hover .color4 {
-  color: #7f43c4;
-}
-
-#section2 .pro_box:hover .color5 {
-  color: #43a6c4;
+#section2 .pro_name.color{
+  font-weight: 600;
 }
 
 #section2 .file-transfer {
@@ -903,7 +886,6 @@ a {
 #section4 p {
   font-size: 80px;
 }
-
 #section4 .line-1 {
   display: flex;
   justify-content: space-between;
@@ -917,9 +899,41 @@ a {
   position: relative;
 }
 
-#section4 .num {
+#section4 .list {
   text-align: left;
   width: 100%;
+}
+#section4 .line_list{
+  background-color: #fff;
+  padding: 45px 35px;
+  margin-left: 30px;
+}
+#section4 .line_list h5{
+  font-size: 20px;
+  font-weight: 600;
+}
+#section4 .line_list .border{
+  border: 0.5px solid #888888;
+  margin-block: 20px 30px;
+}
+#section4 .line_list_cer{
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+#section4 .cer_imgs{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 20px;
+}
+#section4 .cer_imgs img{
+  width: 18%;
+  height: auto;
+  margin-right: 10px;
 }
 
 #section4 .loop {
@@ -957,8 +971,8 @@ a {
 
 #section4 .right {
   width: 35%;
+  position: relative;
 }
-
 #section4 .animate-text {
   height: 120px;
   background-color: #353535;
@@ -969,7 +983,7 @@ a {
 }
 
 #section4 .animate-text span {
-  animation: loop 10s linear infinite;
+  animation: loop 30s linear infinite;
   display: inline-block;
 }
 
@@ -983,8 +997,27 @@ a {
 #section4 .img-container img {
   width: 100%;
   object-fit: cover;
+  opacity: 0.5;
 }
 
+#section4 .edu_list{
+  position: absolute;
+  top: 36%;
+  left: 38%;
+  transform: translate(-50%,-50%);
+  z-index: 2;
+  color: #fff;
+}
+#section4 .edu_list h5{
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+#section4 .edu_list .edu_txt{
+  font-size: 17px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
 #section4 .rows {
   display: flex;
   flex-direction: column;
