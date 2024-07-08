@@ -613,8 +613,6 @@ gsap
 .to(".img-holder img", {scale:1,ease: "power2.inOut"})
 
 ////////////////////////////////////////////////////////////////////
-gsap.registerPlugin(ScrollTrigger);
-
 let MAX = 100
 let circleProgressInstances = []
 document.querySelectorAll(".progress2").forEach((progressEle, index) => {
@@ -634,7 +632,6 @@ document.querySelectorAll(".progress2").forEach((progressEle, index) => {
         trigger:".skill",
         start:"top 70%",
         scrub:1,
-        markers:true,
         onEnter:()=>{
             cp.value=initialValue;
         },
@@ -642,6 +639,32 @@ document.querySelectorAll(".progress2").forEach((progressEle, index) => {
             cp.value=0;
         }
     })
-
 })
+document.querySelectorAll(".progress3").forEach((progressEle, index) => {
+  let initialValue = document.querySelectorAll(".value-input")[index].value
+  let classText = document.querySelectorAll(".skill h3")[index].innerHTML
+  let cp = new CircleProgress(progressEle, {
+      max: MAX,
+      value: 0,
+      animationDuration:1500,
+      // textFormat: (val)=>val+"%",
+      textFormat: (val)=>val,
+  });
+
+  circleProgressInstances.push(cp)
+
+  ScrollTrigger.create({
+      trigger:".sec7_skill",
+      start:"top 70%",
+      scrub:1,
+      onEnter:()=>{
+          cp.value=initialValue;
+      },
+      onLeaveBack:()=>{
+          cp.value=0;
+      }
+  })
+})
+////////////////////////////////////////////////////////////////////
+
 ////////////////////////////////////////////////////////////////////
