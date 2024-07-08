@@ -1,4 +1,4 @@
-gsap.registerPlugin(ScrollTrigger,Flip); 
+﻿gsap.registerPlugin(ScrollTrigger,Flip); 
 
 let lenis;
 
@@ -39,42 +39,48 @@ let triggerFlipOnScroll=(galleryEl, option)=>{
     }
 
     settings=Object.assign({},settings,option)//1)
-    //console.log(settings)
+    console.log(settings)
 
     let galleryCaption=galleryEl.querySelector(".caption");
     let galleryItems=galleryEl.querySelectorAll(".gallery__item");
-    
+   
 
 
     //L:최종상태를 캡처
     galleryEl.classList.add("gallery--switch");
 
     //F:초기상태를 캡처
+
+    //수업  getState 오타/////
     let flipstate=Flip.getState([galleryItems,galleryCaption],{props:'filter,opacity'})
 
     //초기 상태로 되돌리려면 최종 클래스를 제거합니다, 최종상태를 파악하게만하고 클래스명은 바로 제거한다
     galleryEl.classList.remove("gallery--switch");
 
 
-    //뒤집기 애니메이션, 타임라인 만들기
+    //뒤집기 애니메이션 , 타임라인 만들기
     let tl=Flip.to(flipstate,{
         ease:"none",
         absolute:settings.flip.absolute,
         absoluteOnLeave:settings.flip.absoluteOnLeave,
         scale:settings.flip.scale,
         simple:settings.flip.simple,
-        stagger:settings.stagger,//여섯번째 영역 이미지가 순서대로 모임
+        stagger:settings.stagger,
         scrollTrigger:{
             trigger:galleryEl,
             start:settings.scrollTrigger.start,
             end:settings.scrollTrigger.end,
-            pin:galleryEl.parentNode,//영역을 부모에게 pin을 줘야 다음 영역이 안올라옴
+            pin:galleryEl.parentNode,
             scrub:1
         }
 
     })
 
 }
+
+
+
+
 
 
 
@@ -100,6 +106,15 @@ let scroll=()=>{
 
 }
 scroll()
+
+
+
+
+
+
+
+
+
 
 
 //1)

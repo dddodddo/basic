@@ -38,6 +38,11 @@ a:hover {
     color: var(--color-link-hover);
     outline: none;
 }
+main {  /* 수정 */
+	position: relative;
+	width: 100%;
+	/* overflow: hidden; */
+}
 
 .frame {
     display: flex;
@@ -195,11 +200,12 @@ a:hover {
     --item-height: 20vh;
 }
 
-.gallery__item {
+.gallery__item { 
     background-position: 50% 50%;
     background-size: cover;
     border-radius: 6px;
-    filter: brightness(1)
+    filter: brightness(1);
+    flex-shrink:0;
 }
 
 .gallery--row .gallery__item {
@@ -255,7 +261,7 @@ a:hover {
 	opacity: 1;
 }
 
-.gallery--switch .gallery__item--center {
+.gallery--switch.gallery--row .gallery__item--center {
 	height: 100vh;
 	width: 100vw;
 	aspect-ratio: auto;
