@@ -776,9 +776,11 @@ button {
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.1);
   }
+
   100% {
     transform: scale(1);
   }
@@ -968,7 +970,7 @@ button {
 
 #section4 .img-container {
   width: 100%;
-  height: 780px;
+  /* height: 780px; */
   padding: 0.5rem;
   background-color: #353535;
 }
@@ -985,6 +987,7 @@ button {
   justify-content: center;
   height: 100%;
   gap: 0.5rem;
+  align-items: flex-end;
 }
 
 #section4 .row {
@@ -1048,23 +1051,58 @@ button {
   height: 100vh;
   display: grid;
   align-items: center;
+  align-content: center;
+  gap: 119px;
 }
 
 #section5 .skill_wrap .skill {
   display: flex;
   gap: 30px;
   margin: 0 auto;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  width: 68%;
 }
 
-#section5 .skill_wrap .skill>div {
+#section5 .skill.skill1 {
+  margin-left: 5vw;
+}
+
+#section5 .skill.skill2 {
+  margin-right: 4.8vw;
+}
+
+#section5 .s_circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 15px;
+  padding-top: 40px;
+  padding-inline: 40px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
   position: relative;
-  width: 30%;
+  /* animation: memoScale 2s ease-in-out infinite; */
+}
+
+#section5 .s_circle::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 12%;
+  background-color: #353535;
+  opacity: 0.4;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 #section5 .skill_wrap .skill>div h3 {
   color: orange;
-  font-size: 15px;
+  font-size: 1vw;
+  font-weight: bold;
   text-align: center;
   margin-top: 20px;
 }
@@ -1072,7 +1110,12 @@ button {
 #section5 .progress2 {
   --color: orange;
 }
-#section5 .circle-progress{width: 100%; height: auto;}
+
+#section5 .circle-progress {
+  /* width: 100%;
+  height: auto; */
+}
+
 #section5 .circle-progress-value {
   stroke-width: 6px;
   stroke: var(--color);
@@ -1081,7 +1124,7 @@ button {
 
 #section5 .circle-progress-circle {
   stroke-width: 6px;
-  stroke: #17181c;
+  /* stroke: #17181c; */
 }
 
 #section5 .circle-progress-text {
@@ -1093,10 +1136,7 @@ button {
   display: none;
 }
 
-.skill_1{
-  top: 0;
-  left: 0;
-}
+
 /* //////////////////////////////////////////////// */
 
 #section6 {
@@ -1121,7 +1161,8 @@ button {
   display: flex;
   text-transform: uppercase;
 }
-.letters > div {
+
+.letters>div {
   flex: 1;
   font-size: 12vw;
   font-weight: 400;
@@ -1136,6 +1177,7 @@ button {
   width: 100%;
   min-height: 100vh;
 }
+
 .img-holder {
   position: relative;
   top: 0;
@@ -1143,12 +1185,20 @@ button {
   height: 100vh;
   background: #666;
   clip-path: polygon(37.5% 20%, 62.5% 20%, 62.5% 80%, 37.5% 80%);
-  transform: rotate(30deg); 
+  transform: rotate(30deg);
 }
 
 .img-holder img {
   object-fit: cover;
   width: 100%;
   position: relative;
-  transform: scale(2); 
+  transform: scale(2);
+}
+
+/* //////////////////////////////////////////////// */
+#section7 {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
 }

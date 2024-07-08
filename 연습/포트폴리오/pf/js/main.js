@@ -325,7 +325,6 @@ gsap
       scrub: 2,
       duration: 2,
       pin: true,
-      markers: true,
     },
   })
   .to(".card1", { top: "16%", duration: 5, ease: "power2.out" })
@@ -635,6 +634,7 @@ document.querySelectorAll(".progress2").forEach((progressEle, index) => {
         trigger:".skill",
         start:"top 70%",
         scrub:1,
+        markers:true,
         onEnter:()=>{
             cp.value=initialValue;
         },
