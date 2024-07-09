@@ -645,9 +645,9 @@ gsap
   },
 })
 .to(".header .letters:first-child", {x:() => -innerWidth *3,scale:10,ease: "power2.inOut",duration:2.5})
-.to(".header .letters:last-child", {x:() => innerWidth *3,scale:10,ease: "power2.inOut",duration:2.5},"-=2.5")
-.to(".img-holder", {rotation:0,clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",duration:2.5},"-=2.3")
-.to(".img-holder img", {scale:1,ease: "power2.inOut"})
+.to(".header .letters:last-child", {x:() => innerWidth *3,scale:10,ease: "power2.inOut",duration:3.5},"-=2.7")
+.to(".img-holder", {rotation:0,clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",duration:2.5},"-=2.8")
+.to(".img-holder img", {scale:1,duration:2.5,ease: "power2.inOut"})
 
 ////////////////////////////////////////////////////////////////////
 let MAX = 100
@@ -702,6 +702,16 @@ document.querySelectorAll(".progress3").forEach((progressEle, index) => {
       }
   })
 })
+////////////////////////////////////////////////////////////////////
+const video = document.getElementById('video');
+
+video.addEventListener('mouseover', () => {
+    video.play();
+});
+
+video.addEventListener('mouseout', () => {
+    video.pause();
+});
 ////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////////////////
