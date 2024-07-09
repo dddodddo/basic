@@ -595,6 +595,43 @@ gsap
 
 });
 ////////////////////////////////////////////////////////////////////
+// slide_cir1 요소에 대한 애니메이션
+const animation1 = gsap.to(".slide_cir1", {
+  backgroundSize:'120%',
+  duration: 2,
+  ease: "power2.out"
+});
+
+// slide_cir2 요소에 대한 애니메이션
+const animation2 = gsap.to(".slide_cir2", {
+  backgroundSize:'120%',
+  duration: 2,
+  ease: "power2.out"
+});
+
+// slide_model 요소에 대한 애니메이션
+const animation3 = gsap.to(".slide_model", {
+  backgroundSize:'50%',
+  top:'18vh',
+  filter:`grayscale(0)`,
+  duration: 2.5,
+  ease: "power2.out"
+});
+// Timeline 생성 및 애니메이션 추가
+const timeline = gsap.timeline();
+timeline.add(animation1)
+       .add(animation2, "-=2") // 0.5초 지연 후 애니메이션 실행
+       .add(animation3, "-=2") // 0.5초 지연 후 애니메이션 실행
+
+       // ScrollTrigger를 사용하여 #section5에 도달했을 때 Timeline 실행
+ScrollTrigger.create({
+  trigger: "#section5",
+  start: "top 50%",
+  end: "bottom top",
+  animation: timeline,
+  once: true
+});
+////////////////////////////////////////////////////////////////////
 
 gsap
 .timeline({
