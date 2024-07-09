@@ -1374,11 +1374,10 @@ input[type="range"] {
 #section7 .computerwrap {
   position: relative;
   top: 47%;
-  transform: translate(-50%, -50%);
   left: 60%;
+  transform: translate(-50%, -50%);
   width: 95%;
   height: 67%;
-
 }
 
 #section7 .computer {
@@ -1400,27 +1399,38 @@ input[type="range"] {
   transform: translate(-50%, -50%);
   width: 569px;
   height: 331px;
-  /* overflow-y: hidden; */
   z-index: 1;
 }
 
-/* .com_site:hover {
-  scroll-behavior: 100%;
-} */
-
-#section7 .computerwrap.com_site:hover {}
-
-#section7 .tablet {
+#section7 .tabletwrap {
   position: relative;
   top: -7%;
-  transform: translate(-50%, -50%);
   left: 89%;
+  transform: translate(-50%, -50%);
   background: url(img/tablet.png) no-repeat center / cover;
   width: 51%;
   height: 31%;
   z-index: 3;
 }
-
+#section7 .tablet {
+  position: relative;
+  top: -46%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: url(img/tablet.png) no-repeat center / cover;
+  width: 356px;
+  height: 231px;
+  z-index: 3;
+}
+#section7 .tabletwrap .tab_img {
+  position: relative;
+  top: -59%;
+  left: 56%;
+  transform: translate(-50%, -50%);
+  width: 480px;
+  height: 290px;
+  z-index: 4;
+}
 #section7 .phone {
   position: relative;
   top: -39%;
