@@ -638,12 +638,14 @@ gsap
   scrollTrigger: {
     trigger: "#section6",
     start: "top top",
-    end: "+=1800",
+    end: "+=2200",
     scrub: 2,
     duration: 2.5,
     pin: true,
   },
 })
+.to("#section6",{background:"#333", duration:1})
+.to(".header .letters",{color:"#fff", duration:1.5},"-=0.5")
 .to(".header .letters:first-child", {x:() => -innerWidth *3,scale:10,ease: "power2.inOut",duration:2.5})
 .to(".header .letters:last-child", {x:() => innerWidth *3,scale:10,ease: "power2.inOut",duration:2.5},"-=2.5")
 .to(".img-holder", {rotation:0,clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",duration:2.5},"-=2.8")
