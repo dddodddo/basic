@@ -645,7 +645,7 @@ gsap
   },
 })
 .to(".header .letters:first-child", {x:() => -innerWidth *3,scale:10,ease: "power2.inOut",duration:2.5})
-.to(".header .letters:last-child", {x:() => innerWidth *3,scale:10,ease: "power2.inOut",duration:3.5},"-=2.7")
+.to(".header .letters:last-child", {x:() => innerWidth *3,scale:10,ease: "power2.inOut",duration:2.5},"-=2.5")
 .to(".img-holder", {rotation:0,clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",duration:2.5},"-=2.8")
 .to(".img-holder img", {scale:1,duration:2.5,ease: "power2.inOut"})
 
@@ -654,7 +654,6 @@ let MAX = 100
 let circleProgressInstances = []
 document.querySelectorAll(".progress2").forEach((progressEle, index) => {
     let initialValue = document.querySelectorAll(".value-input")[index].value
-    let classText = document.querySelectorAll(".skill h3")[index].innerHTML
     let cp = new CircleProgress(progressEle, {
         max: MAX,
         value: 0,
@@ -666,8 +665,9 @@ document.querySelectorAll(".progress2").forEach((progressEle, index) => {
     circleProgressInstances.push(cp)
 
     ScrollTrigger.create({
-        trigger:".skill",
-        start:"top 70%",
+        trigger:"#section5",
+        start:"top 20%",
+        markers: true,
         scrub:1,
         onEnter:()=>{
             cp.value=initialValue;
@@ -677,41 +677,156 @@ document.querySelectorAll(".progress2").forEach((progressEle, index) => {
         }
     })
 })
-document.querySelectorAll(".progress3").forEach((progressEle, index) => {
-  let initialValue = document.querySelectorAll(".value-input")[index].value
-  let classText = document.querySelectorAll(".skill h3")[index].innerHTML
-  let cp = new CircleProgress(progressEle, {
-      max: MAX,
-      value: 0,
-      animationDuration:1500,
-      // textFormat: (val)=>val+"%",
-      textFormat: (val)=>val,
-  });
 
-  circleProgressInstances.push(cp)
 
-  ScrollTrigger.create({
-      trigger:".sec7_skill",
-      start:"top 70%",
-      scrub:1,
-      onEnter:()=>{
-          cp.value=initialValue;
+// 기존에 생성된 CircleProgress 인스턴스들을 저장할 배열
+let circleProgressInstances2 = [];
+
+// 스킬바 초기화 및 ScrollTrigger 설정 함수
+function setupSkills() {
+  document.querySelectorAll(".progress3").forEach((progressEle, index) => {
+    let initialValue = document.querySelectorAll(".value-input")[index].value;
+    let cp = new CircleProgress(progressEle, {
+      max: MAX, // 적절한 최대 값 설정
+      value: 0, // 초기 값은 0으로 설정
+      animationDuration: 1500,
+      textFormat: (val) => val, // 텍스트 포맷 설정 (옵션)
+    });
+
+    // CircleProgress 인스턴스를 배열에 추가
+    circleProgressInstances2.push(cp);
+
+    // ScrollTrigger 생성
+    ScrollTrigger.create({
+      trigger: ".sec7_skill",
+      start: "top 70%",
+      scrub: 1,
+      onEnter: () => {
+        // 스크롤이 화면에 진입했을 때 초기 값으로 설정
+        cp.value = initialValue;
       },
-      onLeaveBack:()=>{
-          cp.value=0;
-      }
-  })
-})
-////////////////////////////////////////////////////////////////////
-const video = document.getElementById('video');
+      onLeaveBack: () => {
+        // 스크롤이 화면을 벗어날 때 다시 초기화
+        cp.value = 0;
+      },
+    });
+  });
+}
 
-video.addEventListener('mouseover', () => {
-    video.play();
+// 모든 [data-to-view] 속성을 가진 요소들에 클릭 이벤트 리스너 추가
+document.querySelectorAll('[data-to-view]').forEach((element) => {
+  element.addEventListener('click', () => {
+    // 기존에 생성된 CircleProgress 인스턴스들을 초기화
+    circleProgressInstances2.forEach(cp => {
+      cp.value = 0; // 값 초기화
+    });
+    circleProgressInstances2 = []; // 배열 비우기
+
+    // 새로운 스킬바 설정 함수 호출
+    setupSkills();
+  });
 });
 
-video.addEventListener('mouseout', () => {
-    video.pause();
-});
-////////////////////////////////////////////////////////////////////
+// 페이지 로드 시 스킬바 설정 함수 호출
+window.addEventListener('load', setupSkills);
+
+
+
 
 ////////////////////////////////////////////////////////////////////
+const videos = document.querySelectorAll('video'); // 모든 video 요소 선택
+
+videos.forEach(video => {
+    video.addEventListener('mouseover', () => {
+        video.play();
+    });
+
+    video.addEventListener('mouseout', () => {
+        video.pause();
+    });
+});
+////////////////////////////////////////////////////////////////////
+var nav = {
+  
+  init: function(){
+    this._bindEvents();
+    this._openInitView();
+  },
+  
+  _openInitView: function(){
+    //open intial view
+    var el = document.querySelector('[data-view-initial]');
+    el.classList.add('view--block');
+    el.classList.add('view--visible');
+  },
+  
+  _bindEvents: function(){
+    var self = this,
+        triggers = document.querySelectorAll('[data-to-view]');
+    
+    //add click event listeners
+    //to all view triggers
+    [].forEach.call(triggers, function(el){
+      el.addEventListener('click', function(){
+        var selector = this.getAttribute('data-to-view');
+        self._toView(selector);
+      }, false);
+    });
+  },
+  
+  _toView: function(elSelector){
+    var newViewEl = document.querySelector(elSelector),
+        currOpenViewEl = document.querySelector('.view--visible'),
+        self = this;
+    
+    //check if new view is the
+    //view that is currently open
+    if(newViewEl === currOpenViewEl) return;
+    
+    //close currently open view
+    this._closeView(currOpenViewEl, function(done){
+      //open new view
+      //pass close view done method as callback
+      self._openView(newViewEl, done);
+    });
+  },
+  
+  _closeView: function(el, callback){
+    //move the view to the "up" position
+    el.classList.add('view--up');
+    el.classList.remove('view--visible');
+    
+    //trigger the callback x sec into the animation
+    setTimeout(function(){
+      callback(function(){
+        el.classList.remove('view--block');
+        el.classList.remove('view--up');
+      });
+    }, 100);
+  },
+  
+  _openView: function(el, callback){
+    //display block the view so its loaded
+    //and move the view to the "down" position
+    el.classList.add('view--block');
+    el.classList.add('view--down');
+    
+    setTimeout(function(){
+      //when the classes are added
+      //start the animation by adding the
+      //visible class and pulling the view up
+      el.classList.add('view--visible');
+      
+      setTimeout(function(){
+        //animation is done
+        el.classList.remove('view--down');
+        callback();
+      }, 600);  
+    }, 50);
+  }
+  
+};
+
+nav.init();
+////////////////////////////////////////////////////////////////////
+

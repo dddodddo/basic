@@ -1352,14 +1352,72 @@ input[type="range"] {
   position: relative;
 }
 
-
 #section7 .pro {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  background-color: #cfcfcf;
+}
+#section7 .pro .pro_btns{
+  position: absolute;
+  top: 86%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 30px;
+  z-index: 100;
+}
+#section7 .pro .pro_btns>a {
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 9px;
+}
+#section7 .pro .pro_btns>a:hover{
+  font-weight: 700;
+  padding-bottom: 7px;
+  border-bottom: 2px solid #000000;
+  color: #000;
+}
+.view {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  perspective: 1200px;
+  display: none;
+}
+
+.view--block {
+  display: block;
+}
+
+.view--visible .view__inner {
+  transform: rotate(0deg) !important;
+  opacity: 1 !important;
+}
+
+.view--up .view__inner {
+  transform: rotateX(-90deg);
+  transform-origin: 50% 0%;
+  opacity: 0;
+}
+
+.view--down .view__inner {
+  transform: rotateX(90deg);
+  transform-origin: 50% 100%;
+  opacity: 0;
+}
+
+.view__inner {
   position: relative;
+  width: 100%;
+  height: 100%;
+  transition: opacity .6s ease, transform .6s ease;
 }
 
 #section7 .pro .pro_left {
@@ -1436,11 +1494,14 @@ input[type="range"] {
   height: 100%;
   position: relative;
 }
-
+#section7 .pro_num{
+  font-size: 20px;
+  font-weight: 700;
+}
 #section7 .pro .pro_right_wrap {
   position: absolute;
   top: 45%;
-  left: 42%;
+  left: 47%;
   transform: translate(-50%, -50%);
 }
 
@@ -1523,4 +1584,13 @@ input[type="range"] {
 
 #section7 .view_button a .fas {
   margin-left: 10px;
+}
+
+
+/* //////////////////////////////////////////////// */
+#section8 {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
 }
