@@ -90,7 +90,7 @@ let tl_img = gsap.timeline({
       start: "top 70%",
       end: "+=330%",
       scrub: 1,
-      marks: true
+      // marks: true
     }
   })
   .to(animeCard, {

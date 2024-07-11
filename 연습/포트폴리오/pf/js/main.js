@@ -831,10 +831,10 @@ var nav = {
 
 nav.init();
 ////////////////////////////////////////////////////////////////////
-let imageSources = [
-  "img/hanacard.png",
-  "img/3.jpg",
-  "img/4.jpg",
+let videoSources = [
+  "video/hanacard.mp4",
+  "video/sushi.mp4",
+  "video/ops.mp4",
   "img/5.jpg",
   "img/6.jpg"
 ];
@@ -860,7 +860,7 @@ menuItem.forEach(function (item, index) {
   // 마우스 오버 시 애니메이션을 추가합니다.
   item.addEventListener("mouseover", function () {
     mouseoverAnimation(item);
-    appendImages(imageSources[index]);
+    appendVideo(videoSources[index]);
     gsap.to(anchorCopy, { // 복제된 <a> 태그에 애니메이션을 적용합니다.
       top: "0%", // top 위치를 이동시킵니다.
       duration: 0.3
@@ -886,37 +886,43 @@ menuItem.forEach(function (item, index) {
 });
 
 // 이미지 추가 함수는 그대로 사용합니다.
-function appendImages(src) {
-  let preview1 = document.querySelector(".preview-img-1");
-  let preview2 = document.querySelector(".preview-img-2");
+function appendVideo(src) {
+  let preview1 = document.querySelector(".preview-vid-1");
+  // let preview2 = document.querySelector(".preview-img-2");
 
-  let img1 = document.createElement("img");
-  let img2 = document.createElement("img");
+  let video1 = document.createElement("video");
+  // let img2 = document.createElement("img");
+  video1.src = src;
+  video1.autoplay = true;
+  video1.loop = true;
+  video1.muted = true; // 음소거 설정
+  video1.playsInline = true; // 모바일 재생 설정
 
-  img1.src = src;
-  img2.src = src;
-  img1.style.clipPath = "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)";
-  img2.style.clipPath = "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)";
 
-  preview1.appendChild(img1);
-  preview2.appendChild(img2);
 
-  gsap.to([img1, img2], {
+  // img2.src = src;
+  video1.style.clipPath = "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)";
+  // img2.style.clipPath = "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)";
+
+  preview1.appendChild(video1);
+  // preview2.appendChild(img2);
+
+  gsap.to([video1], {
     clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
     duration: 1,
     onComplete: function () {
-      removeExtraImages(preview1);
-      removeExtraImages(preview2);
+      removeExtraVideo(preview1);
+      // removeExtraImages(preview2);
     }
   });
 }
 
 // 이미지 삭제 함수는 그대로 사용합니다.
-function removeExtraImages(container) {
-  while (container.children.length > 10) {
-    container.removeChild(container.firstChild);
-  }
-}
+// function removeExtraImages(container) {
+//   while (container.children.length > 10) {
+//     container.removeChild(container.firstChild);
+//   }
+// }
 
 // 마우스 오버 애니메이션 함수 수정 없이 그대로 사용합니다.
 function mouseoverAnimation(elem) {
@@ -952,7 +958,7 @@ function mouseOutAnimation(elem) {
 
 // 기존의 마우스 이벤트 함수는 그대로 사용하되, 이미지 애니메이션은 복제된 <a> 태그에 적용하도록 수정합니다.
 document.querySelector(".hoverWrap").addEventListener("mouseout", function () {
-  gsap.to(".preview-img img", {
+  gsap.to(".preview-vid video", {
     clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
     ease: "power3.out",
   });
@@ -962,7 +968,7 @@ document.querySelector(".hoverWrap").addEventListener("mousemove", function (e) 
   let preview = document.querySelector(".preview");
   gsap.to(preview, {
     x: e.clientX,
-    y: e.clientY,
+    y: e.clientY/1.2,
     ease: "power3.out",
   });
 });

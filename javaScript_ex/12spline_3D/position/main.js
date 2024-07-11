@@ -43,7 +43,7 @@ app
         duration:10,
         repeat:-1,
         ease:"none",
-        markers:true,
+        // markers:true,
     })
 
     let tl=gsap.timeline
@@ -53,7 +53,7 @@ app
             start:"top 100%",
             end:"top top",
             scrub:1,
-            markers:true,
+            // markers:true,
             onEnter:()=>{
                 stopRotation.pause() //stopRotation 애니메이션 멈춤
             },
@@ -75,7 +75,7 @@ app
             start:"top 100%",
             end:"top top",
             scrub:1,
-            markers:true,
+            // markers:true,
         }
     })
     .to(car.rotation,{x:Math.PI*0.2,y:-Math.PI*2.8,z:0},0)
@@ -88,7 +88,7 @@ app
             start:"top 100%",
             end:"top top",
             scrub:1,
-            markers:true,
+            // markers:true,
         }
     })
     .to(car.rotation,{x:Math.PI*0.2,y:-Math.PI*1.7,z:0},0)
@@ -101,7 +101,7 @@ app
             start:"top 100%",
             end:"top top",
             scrub:1,
-            markers:true,
+            // markers:true,
         }
     })
     .to(car.rotation,{x:Math.PI*2.0,y:-Math.PI*2,z:0},0)
@@ -115,7 +115,7 @@ app
             start:"top 100%",
             end:"top top",
             scrub:1,
-            markers:true,
+            // markers:true,
         }
     })
     .to(car.rotation,{x:Math.PI*2.2,y:-Math.PI*3,z:0},0)

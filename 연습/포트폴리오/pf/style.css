@@ -1698,13 +1698,14 @@ input[type="range"] {
   position: relative;
 }
 
-#section8 img{width: 100%; height: 100%;}
+#section8 video{width: 100%; height: 100%;}
 
 #section8 .hoverWrap{height: 100vh; position: relative; padding: 20em 0;}
 #section8 .menu-item{
     width: 100%; padding: 0 2em;
     display: flex; align-items: center;
     margin-bottom: 2em;
+
 }
     
 #section8 .menu-item p{position: absolute; top: 0; width: 100%;
@@ -1742,15 +1743,18 @@ line-height: 0.8;
 
 #section8 .preview{
     position: absolute; top: 0; left: 0;
-    width: 225px; height: 275px;
+    width: 275px; height: 225px;
     z-index: 10;
     pointer-events: none;
 }
-#section8 .preview .preview-img{
+#section8 .preview .preview-vid{
     position: absolute; top: 0;left: 0;
     width: 100%; height: 100%;
 }
-#section8 .preview .preview-img-2{top: 20px; left: 20px;}
-#section8 .preview-img img{
+#section8 .preview-vid img{
     position: absolute; top: 0; left: 0;
+}
+#section8 .preview-vid video{
+  position: absolute; top: 0; left: 0;
+  width: 475px; height: 425px;
 }
