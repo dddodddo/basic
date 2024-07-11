@@ -632,6 +632,19 @@ ScrollTrigger.create({
   once: true
 });
 ////////////////////////////////////////////////////////////////////
+gsap
+.timeline({
+  scrollTrigger: {
+    trigger: "#section5",
+    start: "top top",
+    end: "+=500",
+    scrub: 2,
+    duration: 2.5,
+    pin: true,
+  },
+})
+.to("#section5",{background:"#333", duration:1})
+////////////////////////////////////////////////////////////////////
 
 gsap
 .timeline({
@@ -652,6 +665,7 @@ gsap
 .to(".img-holder img", {scale:1,duration:2.5,ease: "power2.inOut"})
 
 ////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
 let MAX = 100
 let circleProgressInstances = []
 document.querySelectorAll(".progress2").forEach((progressEle, index) => {
@@ -669,7 +683,7 @@ document.querySelectorAll(".progress2").forEach((progressEle, index) => {
     ScrollTrigger.create({
         trigger:"#section5",
         start:"top 20%",
-        markers: true,
+        // markers: true,
         scrub:1,
         onEnter:()=>{
             cp.value=initialValue;
@@ -831,6 +845,19 @@ var nav = {
 
 nav.init();
 ////////////////////////////////////////////////////////////////////
+gsap
+.timeline({
+  scrollTrigger: {
+    trigger: "#section7",
+    start: "top top",
+    end: "+=500",
+    scrub: 2,
+    duration: 2.5,
+    pin: true,
+  },
+})
+.to("#section7 .pro",{background:"#cfcfcf", duration:2.5})
+////////////////////////////////////////////////////////////////////
 let videoSources = [
   "video/hanacard.mp4",
   "video/sushi.mp4",
@@ -888,41 +915,33 @@ menuItem.forEach(function (item, index) {
 // 이미지 추가 함수는 그대로 사용합니다.
 function appendVideo(src) {
   let preview1 = document.querySelector(".preview-vid-1");
-  // let preview2 = document.querySelector(".preview-img-2");
 
   let video1 = document.createElement("video");
-  // let img2 = document.createElement("img");
   video1.src = src;
   video1.autoplay = true;
   video1.loop = true;
-  video1.muted = true; // 음소거 설정
-  video1.playsInline = true; // 모바일 재생 설정
+  video1.muted = true;
+  video1.playsInline = true;
 
-
-
-  // img2.src = src;
   video1.style.clipPath = "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)";
-  // img2.style.clipPath = "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)";
 
   preview1.appendChild(video1);
-  // preview2.appendChild(img2);
 
   gsap.to([video1], {
     clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
     duration: 1,
     onComplete: function () {
-      removeExtraVideo(preview1);
-      // removeExtraImages(preview2);
+      removeExtraVideo(preview1); // Correct placement of removeExtraVideo call
     }
   });
 }
 
 // 이미지 삭제 함수는 그대로 사용합니다.
-// function removeExtraImages(container) {
-//   while (container.children.length > 10) {
-//     container.removeChild(container.firstChild);
-//   }
-// }
+function removeExtraVideo(container) {
+  while (container.children.length > 10) {
+    container.removeChild(container.firstChild);
+  }
+}
 
 // 마우스 오버 애니메이션 함수 수정 없이 그대로 사용합니다.
 function mouseoverAnimation(elem) {
@@ -968,10 +987,95 @@ document.querySelector(".hoverWrap").addEventListener("mousemove", function (e) 
   let preview = document.querySelector(".preview");
   gsap.to(preview, {
     x: e.clientX,
-    y: e.clientY/1.2,
+    y: e.clientY/1.1,
     ease: "power3.out",
   });
 });
 
+////////////////////////////////////////////////////
+gsap
+.timeline({
+  scrollTrigger: {
+    trigger: "#section8",
+    start: "top top",
+    end: "+=500",
+    scrub: 2,
+    duration: 2.5,
+    pin: true,
+  },
+})
+.to("#section8",{background:"#eee", duration:2.5})
+////////////////////////////////////////////////////
+/* -- Glow effect -- */
+
+const blob = document.getElementById("blob");
+
+window.onpointermove = event => { 
+  const { clientX, clientY } = event;
+  
+  blob.animate({
+    left: `${clientX}px`,
+    top: `${clientY}px`
+  }, { duration: 3000, fill: "forwards" });
+}
+
+////////////////////////////////////////////////////
+// Split text by lines and chars
+new SplitText('[split-lines]', { type: 'lines', linesClass: "split-line" })
+
+document.addEventListener('DOMContentLoaded', () => {
+  const aboutHover = document.querySelectorAll('.about-hover');
+
+  aboutHover.forEach((element) => {
+    element.classList.add('unhover');
+
+    element.addEventListener('mouseover', () => {
+      element.classList.remove('unhover');
+    });
+
+    element.addEventListener('mouseleave', () => {
+      element.classList.add('unhover');
+    });
+  });
+
+  window.addEventListener('load', () => {
+    gsap
+      .timeline({
+        defaults: {
+          ease: 'none',
+        },
+      })
+      .to(".about-subtitle", {
+        opacity: 0.7,
+        ease: "none",
+        duration: 0.4
+      }, '>0.5')
+      .to(".about-text", {
+        opacity: 1,
+        ease: "none",
+        duration: 0
+      }, '<')
+      .fromTo(".about-text .split-line", {
+        y: '100%'
+      }, {
+        y: 0,
+        opacity: 1,
+        ease: "sine.out",
+        transformOrigin: "top",
+        stagger: 0.1,
+        duration: 1.2
+      }, '<0.4')
+      .to(".about-down", {
+        opacity: 1,
+        ease: "sine.out",
+        transformOrigin: "top",
+        stagger: 0.1,
+        duration: 0.4
+      }, '>')
+      .call(() => {
+        document.querySelector('body').classList.remove('overflow-hidden');
+      });
+  })
+});
 ////////////////////////////////////////////////////
 
