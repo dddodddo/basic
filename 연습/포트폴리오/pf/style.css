@@ -1697,3 +1697,60 @@ input[type="range"] {
   overflow: hidden;
   position: relative;
 }
+
+#section8 img{width: 100%; height: 100%;}
+
+#section8 .hoverWrap{height: 100vh; position: relative; padding: 20em 0;}
+#section8 .menu-item{
+    width: 100%; padding: 0 2em;
+    display: flex; align-items: center;
+    margin-bottom: 2em;
+}
+    
+#section8 .menu-item p{position: absolute; top: 0; width: 100%;
+text-transform: uppercase; letter-spacing: -0.02em;
+line-height: 0.8;
+}
+#section8 .menu-item a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+#section8 .menu-item .info,
+#section8 .menu-item .name,
+#section8 .menu-item .tag{position: relative; overflow: hidden;}
+
+#section8 .menu-item .info,
+#section8 .menu-item .tag{flex: 1; height: 14px; line-height: 14px;}
+
+#section8 .menu-item .name{flex: 4; height: 60px; font-size: 60px; text-align: center;
+    line-height: 1;
+}
+#section8 .menu-item .tag{text-align: right;}
+
+#section8 .menu .info p:nth-child(2),
+#section8 .menu:hover .name a:nth-child(2) p,
+#section8 .menu .tag p:nth-child(2){
+   /* top: 100%;  */color: #000;}
+
+
+#section8 .menu:hover .info p:nth-child(1),
+#section8 .menu:hover .name p:nth-child(1),
+#section8 .menu:hover .tag p:nth-child(1)
+{color: rgb(165, 165, 165);}
+
+#section8 .preview{
+    position: absolute; top: 0; left: 0;
+    width: 225px; height: 275px;
+    z-index: 10;
+    pointer-events: none;
+}
+#section8 .preview .preview-img{
+    position: absolute; top: 0;left: 0;
+    width: 100%; height: 100%;
+}
+#section8 .preview .preview-img-2{top: 20px; left: 20px;}
+#section8 .preview-img img{
+    position: absolute; top: 0; left: 0;
+}

@@ -831,4 +831,141 @@ var nav = {
 
 nav.init();
 ////////////////////////////////////////////////////////////////////
+let imageSources = [
+  "img/hanacard.png",
+  "img/3.jpg",
+  "img/4.jpg",
+  "img/5.jpg",
+  "img/6.jpg"
+];
+
+let menuItem = document.querySelectorAll(".menu-item");
+
+menuItem.forEach(function (item, index) {
+  let copyElements = item.querySelectorAll(".info, .tag");
+
+  copyElements.forEach(function (div) {
+    let copy = div.querySelector("p");
+    let duplicateCopy = document.createElement("p");
+    duplicateCopy.textContent = copy.textContent;
+    div.appendChild(duplicateCopy);
+  });
+
+  // Copy <a> tag content as well
+  let anchor = item.querySelector(".name a");
+  let anchorCopy = anchor.cloneNode(true); // <a> 태그를 복제합니다.
+  let anchorContainer = item.querySelector(".name"); // 복제할 위치를 찾습니다.
+  anchorContainer.appendChild(anchorCopy); // 복제된 <a> 태그를 추가합니다.
+
+  // 마우스 오버 시 애니메이션을 추가합니다.
+  item.addEventListener("mouseover", function () {
+    mouseoverAnimation(item);
+    appendImages(imageSources[index]);
+    gsap.to(anchorCopy, { // 복제된 <a> 태그에 애니메이션을 적용합니다.
+      top: "0%", // top 위치를 이동시킵니다.
+      duration: 0.3
+    });
+    gsap.to(anchor, { // 복제된 <a> 태그에 애니메이션을 적용합니다.
+      top: "-100%", // top 위치를 이동시킵니다.
+      duration: 0.3
+    });
+  });
+
+  // 마우스 아웃 시 애니메이션을 추가합니다.
+  item.addEventListener("mouseout", function () {
+    mouseOutAnimation(item);
+    gsap.to(anchorCopy, { // 복제된 <a> 태그에 애니메이션을 적용합니다.
+      top: "0%", // top 위치를 이동시킵니다.
+      duration: 0.3
+    });
+    gsap.to(anchor, { // 복제된 <a> 태그에 애니메이션을 적용합니다.
+      top: "-100%", // top 위치를 이동시킵니다.
+      duration: 0.3
+    });
+  });
+});
+
+// 이미지 추가 함수는 그대로 사용합니다.
+function appendImages(src) {
+  let preview1 = document.querySelector(".preview-img-1");
+  let preview2 = document.querySelector(".preview-img-2");
+
+  let img1 = document.createElement("img");
+  let img2 = document.createElement("img");
+
+  img1.src = src;
+  img2.src = src;
+  img1.style.clipPath = "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)";
+  img2.style.clipPath = "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)";
+
+  preview1.appendChild(img1);
+  preview2.appendChild(img2);
+
+  gsap.to([img1, img2], {
+    clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
+    duration: 1,
+    onComplete: function () {
+      removeExtraImages(preview1);
+      removeExtraImages(preview2);
+    }
+  });
+}
+
+// 이미지 삭제 함수는 그대로 사용합니다.
+function removeExtraImages(container) {
+  while (container.children.length > 10) {
+    container.removeChild(container.firstChild);
+  }
+}
+
+// 마우스 오버 애니메이션 함수 수정 없이 그대로 사용합니다.
+function mouseoverAnimation(elem) {
+  gsap.to(elem.querySelectorAll("p:nth-child(1)"), {
+    top: "-100%",
+    duration: 0.3
+  });
+  gsap.to(elem.querySelectorAll("p:nth-child(2)"), {
+    top: "0%",
+    duration: 0.3
+  });
+  gsap.to(elem.querySelectorAll(".name a:nth-child(2) p"), {
+    top: "0%",
+    duration: 0.3
+  });
+}
+
+// 마우스 아웃 애니메이션 함수 수정 없이 그대로 사용합니다.
+function mouseOutAnimation(elem) {
+  gsap.to(elem.querySelectorAll("p:nth-child(1)"), {
+    top: "0%",
+    duration: 0.3
+  });
+  gsap.to(elem.querySelectorAll("p:nth-child(2)"), {
+    top: "100%",
+    duration: 0.3
+  });
+  gsap.to(elem.querySelectorAll(".name a:nth-child(2) p"), {
+    top: "100%",
+    duration: 0.3
+  });
+}
+
+// 기존의 마우스 이벤트 함수는 그대로 사용하되, 이미지 애니메이션은 복제된 <a> 태그에 적용하도록 수정합니다.
+document.querySelector(".hoverWrap").addEventListener("mouseout", function () {
+  gsap.to(".preview-img img", {
+    clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+    ease: "power3.out",
+  });
+});
+
+document.querySelector(".hoverWrap").addEventListener("mousemove", function (e) {
+  let preview = document.querySelector(".preview");
+  gsap.to(preview, {
+    x: e.clientX,
+    y: e.clientY,
+    ease: "power3.out",
+  });
+});
+
+////////////////////////////////////////////////////
 
