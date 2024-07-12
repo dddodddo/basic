@@ -1020,23 +1020,28 @@ window.onpointermove = event => {
 }
 
 ////////////////////////////////////////////////////
+// 섹션이 뷰포트에 들어오면 애니메이션 실행
 ScrollTrigger.create({
   trigger: "#section9",
-  start: "top top",
-  end: "+=2000", // 섹션의 하단에 도달할 때까지 핀 유지
-  pin: true,
+  start: "top top", // 스크롤 위치 설정
   onEnter: () => {
+    // 각 span 요소에 애니메이션 적용
     const spans = document.querySelectorAll("#section9 span");
     spans.forEach((span, index) => {
-      gsap.to(span, {
-        opacity: 1,
-        filter: "blur(0)",
-        duration: 2,
-        delay: index * 0.1,
-        ease: "power1.out",
-      });
+      gsap.fromTo(span, 
+        { opacity: 0, filter: "blur(4px)", scale: 0.9 }, 
+        {
+          opacity: 1,
+          filter: "blur(0)",
+          scale: 1,
+          duration: 0.8,
+          delay: index * 0.1,
+          ease: "power1.out"
+        }
+      );
     });
-  },
+  }
 });
+
 ////////////////////////////////////////////////////
 
