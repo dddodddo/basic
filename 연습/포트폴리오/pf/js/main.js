@@ -1080,6 +1080,8 @@ ScrollTrigger.create({
     });
     gsap.to(video3, { opacity: 0, duration: 1 }, "+=1");
     gsap.to(sec9Img, { opacity: 0.3, filter:"blur(3px)", duration: 2.5 }, "-=1");
+    gsap.to("#background-wrap", { opacity: 1, duration: 2.5 }, "-=1");
+    gsap.to(".sec9_txt_col", { color: "#fff",textShadow: "pink 2px 6px 2px",fontSize:"2.8vw",duration:1}, "-=1");
 
   },
 });
