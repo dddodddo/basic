@@ -862,7 +862,7 @@ let videoSources = [
   "video/hanacard.mp4",
   "video/sushi.mp4",
   "video/ops.mp4",
-  "img/5.jpg",
+  "video/zara.mp4",
   "img/6.jpg"
 ];
 
@@ -1020,48 +1020,23 @@ window.onpointermove = event => {
 }
 
 ////////////////////////////////////////////////////
-document.addEventListener('DOMContentLoaded', () => {
-  const aboutHover = document.querySelectorAll('.about-hover');
-
-  aboutHover.forEach((element) => {
-    element.classList.add('unhover');
-
-    element.addEventListener('mouseover', () => {
-      element.classList.remove('unhover');
-    });
-
-    element.addEventListener('mouseleave', () => {
-      element.classList.add('unhover');
-    });
-  });
-
-  window.addEventListener('load', () => {
-    gsap
-      .timeline({
-        defaults: {
-          ease: 'none',
-          duration:2.5,
-        },
-      })
-      .to(".about-subtitle", {
-        opacity: 0.7,
-        ease: "none",
-        duration: 0.4
-      }, '>0.5')
-      .to(".about-text", {
+ScrollTrigger.create({
+  trigger: "#section9",
+  start: "top top",
+  end: "+=2000", // 섹션의 하단에 도달할 때까지 핀 유지
+  pin: true,
+  onEnter: () => {
+    const spans = document.querySelectorAll("#section9 span");
+    spans.forEach((span, index) => {
+      gsap.to(span, {
         opacity: 1,
-        ease: "none",
-        duration: 0
-      }, '<')
-
-      .to(".about-down", {
-        opacity: 1,
-        ease: "sine.out",
-        transformOrigin: "top",
-        stagger: 0.1,
-        duration: 0.4
-      }, '>')
-  })
+        filter: "blur(0)",
+        duration: 2,
+        delay: index * 0.1,
+        ease: "power1.out",
+      });
+    });
+  },
 });
 ////////////////////////////////////////////////////
 
