@@ -1021,11 +1021,49 @@ window.onpointermove = event => {
 
 ////////////////////////////////////////////////////
 // 섹션이 뷰포트에 들어오면 애니메이션 실행
+// ScrollTrigger.create({
+//   trigger: "#section9",
+//   start: "top 80%", // 스크롤 위치 설정
+//   onEnter: () => {
+//     // 각 span 요소에 애니메이션 적용
+//     const spans = document.querySelectorAll("#section9 span");
+//     spans.forEach((span, index) => {
+//       gsap.fromTo(span, 
+//         { opacity: 0, filter: "blur(4px)", scale: 0.9, duration:0.8 }, 
+//         {
+//           opacity: 1,
+//           filter: "blur(0)",
+//           scale: 1,
+//           duration: 1,
+//           delay: index * 0.1,
+//           ease: "power1.in",
+//         }
+//       );
+//     });
+//   }
+// });
+
+////////////////////////////////////////////////////
+
+const video3 = document.querySelector("#section9 video");
+const sec9Img = document.querySelector("#section9 img");
+const sec9Text = document.querySelectorAll("#section9 span");
+
+// 비디오 초기 상태 설정
+video3.style.opacity = 0;
+sec9Img.style.opacity = 0;
+
+// ScrollTrigger 설정
 ScrollTrigger.create({
   trigger: "#section9",
-  start: "top top", // 스크롤 위치 설정
+  markers: true,
+  start: "top top",
+  pin: true,
   onEnter: () => {
-    // 각 span 요소에 애니메이션 적용
+    video3.play(); // 비디오 재생
+    gsap.to(video3, { opacity: 0.3, duration: 2.5 }); // 비디오 불투명도 증가
+    gsap.to(sec9Img, { opacity: 0});
+
     const spans = document.querySelectorAll("#section9 span");
     spans.forEach((span, index) => {
       gsap.fromTo(span, 
@@ -1034,14 +1072,32 @@ ScrollTrigger.create({
           opacity: 1,
           filter: "blur(0)",
           scale: 1,
-          duration: 0.8,
+          duration: 1,
           delay: index * 0.1,
-          ease: "power1.out"
+          ease: "power1.in",
         }
       );
     });
-  }
+    gsap.to(video3, { opacity: 0, duration: 1 }, "+=1");
+    gsap.to(sec9Img, { opacity: 0.3, filter:"blur(3px)", duration: 2.5 }, "-=1");
+
+  },
 });
+
+// gsap
+// .timeline({
+//   scrollTrigger: {
+//     trigger: "#section7",
+//     start: "top top",
+//     end: "+=500",
+//     scrub: 2,
+//     duration: 2.5,
+//     pin: true,
+//   },
+// })
+// .to("#section7 .pro",{background:"#cfcfcf", duration:2.5})
+
+
 
 ////////////////////////////////////////////////////
 
