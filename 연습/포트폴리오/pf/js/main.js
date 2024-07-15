@@ -1019,90 +1019,39 @@ window.onpointermove = event => {
   }, { duration: 3000, fill: "forwards" });
 }
 
-////////////////////////////////////////////////////
-// 섹션이 뷰포트에 들어오면 애니메이션 실행
-// ScrollTrigger.create({
-//   trigger: "#section9",
-//   start: "top 80%", // 스크롤 위치 설정
-//   onEnter: () => {
-//     // 각 span 요소에 애니메이션 적용
-//     const spans = document.querySelectorAll("#section9 span");
-//     spans.forEach((span, index) => {
-//       gsap.fromTo(span, 
-//         { opacity: 0, filter: "blur(4px)", scale: 0.9, duration:0.8 }, 
-//         {
-//           opacity: 1,
-//           filter: "blur(0)",
-//           scale: 1,
-//           duration: 1,
-//           delay: index * 0.1,
-//           ease: "power1.in",
-//         }
-//       );
-//     });
-//   }
-// });
 
 ////////////////////////////////////////////////////
 
-const video3 = document.querySelector("#section9 video");
-const sec9Img = document.querySelector("#section9 img");
-const sec9Text = document.querySelectorAll("#section9 span");
-
-// 비디오 초기 상태 설정
-video3.style.opacity = 0;
-sec9Img.style.opacity = 0;
-
-// ScrollTrigger 설정
-ScrollTrigger.create({
-  trigger: "#section9",
-  markers: true,
-  start: "top top",
-  // pin:true,
-  onEnter: () => {
-    video3.play(); // 비디오 재생
-    gsap.to(video3, { width:"100vw",height:"100vh", opacity: 0.3, duration: 2.5 }); // 비디오 불투명도 증가
-    gsap.to(sec9Img, {opacity: 0});
-
-    const spans = document.querySelectorAll("#section9 span");
-    spans.forEach((span, index) => {
-      gsap.fromTo(span, 
-        { opacity: 0, filter: "blur(4px)", scale: 0.9 }, 
-        {
-          opacity: 1,
-          filter: "blur(0)",
-          scale: 1,
-          duration: 1,
-          delay: index * 0.1,
-          ease: "power1.in",
-        }
-      );
-    });
-    gsap.to(video3, {opacity: 0, duration: 1.8 }, "+=1");
-    gsap.to(sec9Img, {  width:"100vw",height:"100vh",opacity: 0.3, filter:"blur(3px)", duration: 2.5 }, "-=1");
-    // gsap.to("#background-wrap", { opacity: 1, duration: 2.5 }, "-=1");
-    gsap.to(video3,{width:"30vw",height:"20vh"},"-=1")
-    gsap.to(sec9Img,{width:"30vw",height:"20vh",filter:"blur(0px)",ease: "power2.in",duration:2.5}, "-=0.7" )
-    gsap.to(sec9Text,{opacity:0,ease: "power2.in",display:"none",duration:2}, "-=2.9" )
-    // gsap.to("#section9",{background:"#333",ease: "power2.in",duration:2.5}, "-=2.5" )
-    gsap.fromTo(".sec9_tk",{fontSize:"3vw",opacity:0,ease:"power2.in",duration:2.5},{fontSize:"6vw",opacity:1,ease:"power2.in",duration:2.5}, "-=2.1" )
-    gsap.fromTo("#section9",{height:"100vh",ease: "power2.in",duration:2.5},{height:"30vh",ease: "power2.in",duration:2.5}, "-=1" )
-
+const tl2 = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#section9",
+    start: "top top",
+    end: "+=3000",
+    scrub: 2,
+    pin: true,
   },
 });
 
-// gsap
-// .timeline({
-//   scrollTrigger: {
-//     trigger: "#section7",
-//     start: "top top",
-//     end: "+=500",
-//     scrub: 2,
-//     duration: 2.5,
-//     pin: true,
-//   },
-// })
-// .to("#section7 .pro",{background:"#cfcfcf", duration:2.5})
+// Animate images with stagger
+const images2 = document.querySelectorAll("#section9 .sec9_u_img");
+images2.forEach((img, index) => {
+  tl2.to(img, { opacity: 0, duration: 2 },); // Overlapping each image fade
+  tl2.to(".sec_fin_img",{opacity:0.5,duration: 2.5 })
+});
+
+// Animate spans
+const spans = document.querySelectorAll("#section9 span");
+spans.forEach((span, index) => {
+  tl2.fromTo(span, 
+    { opacity: 0, filter: "blur(4px)", scale: 0.9, duration: 2.5, }, 
+    { opacity: 1, filter: "blur(0)", scale: 1, duration: 2.5, delay: index * 3, ease: "power1.in" }, 
+    `-=100` // Starts with images fading
+  );
+});
+
+
+// Animate sec9Img
+// tl2.
 
 
 
