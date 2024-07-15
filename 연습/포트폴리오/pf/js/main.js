@@ -1058,7 +1058,7 @@ ScrollTrigger.create({
   trigger: "#section9",
   markers: true,
   start: "top top",
-  pin:true,
+  // pin:true,
   onEnter: () => {
     video3.play(); // 비디오 재생
     gsap.to(video3, { width:"100vw",height:"100vh", opacity: 0.3, duration: 2.5 }); // 비디오 불투명도 증가
@@ -1081,11 +1081,13 @@ ScrollTrigger.create({
     gsap.to(video3, {opacity: 0, duration: 1.8 }, "+=1");
     gsap.to(sec9Img, {  width:"100vw",height:"100vh",opacity: 0.3, filter:"blur(3px)", duration: 2.5 }, "-=1");
     // gsap.to("#background-wrap", { opacity: 1, duration: 2.5 }, "-=1");
-    gsap.to(video3,{width:"50vw",height:"50vh"},"-=1")
-    gsap.to(sec9Img,{width:"50vw",height:"50vh",filter:"blur(0px)",ease: "power2.in",duration:2.5}, "-=0.7" )
-    gsap.to(sec9Text,{opacity:0,ease: "power2.in",display:"none",duration:2.5}, "-=2.8" )
+    gsap.to(video3,{width:"30vw",height:"20vh"},"-=1")
+    gsap.to(sec9Img,{width:"30vw",height:"20vh",filter:"blur(0px)",ease: "power2.in",duration:2.5}, "-=0.7" )
+    gsap.to(sec9Text,{opacity:0,ease: "power2.in",display:"none",duration:2}, "-=2.9" )
     // gsap.to("#section9",{background:"#333",ease: "power2.in",duration:2.5}, "-=2.5" )
     gsap.fromTo(".sec9_tk",{fontSize:"3vw",opacity:0,ease:"power2.in",duration:2.5},{fontSize:"6vw",opacity:1,ease:"power2.in",duration:2.5}, "-=2.1" )
+    gsap.to("#section9",{height:"30vh",ease: "power2.in",duration:2.5}, "-=1" )
+
   },
 });
 
