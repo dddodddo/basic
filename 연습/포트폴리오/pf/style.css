@@ -2021,9 +2021,46 @@ input[type="range"] {
 }
 /* //////////////////////////////////////////////////////////////////// */
 #section10 {
-  width: 100vw;
-  height: 50vh;
-  overflow: hidden;
-  position: relative;
-  background-color: #c3ffa9;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.portfolio-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-family: 'Arial', sans-serif;
+}
+.contact-info, .about-me {
+  width: 45%;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #333;
+}
+h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #555;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  margin-bottom: 8px;
+}
+a {
+  text-decoration: none;
+  color: #007BFF;
+  transition: color 0.3s;
+}
+a:hover {
+  color: #0056b3;
 }

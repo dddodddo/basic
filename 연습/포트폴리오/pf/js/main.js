@@ -1086,7 +1086,7 @@ ScrollTrigger.create({
     gsap.to(sec9Text,{opacity:0,ease: "power2.in",display:"none",duration:2}, "-=2.9" )
     // gsap.to("#section9",{background:"#333",ease: "power2.in",duration:2.5}, "-=2.5" )
     gsap.fromTo(".sec9_tk",{fontSize:"3vw",opacity:0,ease:"power2.in",duration:2.5},{fontSize:"6vw",opacity:1,ease:"power2.in",duration:2.5}, "-=2.1" )
-    gsap.to("#section9",{height:"30vh",ease: "power2.in",duration:2.5}, "-=1" )
+    gsap.fromTo("#section9",{height:"100vh",ease: "power2.in",duration:2.5},{height:"30vh",ease: "power2.in",duration:2.5}, "-=1" )
 
   },
 });
