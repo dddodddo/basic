@@ -1005,6 +1005,18 @@ gsap
   },
 })
 .to("#section8",{background:"#eee", duration:2.5})
+gsap
+.timeline({
+  scrollTrigger: {
+    trigger: "#section8",
+    start: "top top",
+    duration: 2.5,
+  },
+})
+gsap.fromTo("#section8 svg text",
+  {fill:"rgba(72,138,20,0)", stroke:"#787878",strokeDashoffset:"25%",strokeDasharray:"0 70%",strokeWidth:2},
+  {fill:'#333', stroke:"#787878",strokeDashoffset:"-25%",strokeDasharray:"70% 0",strokeWidth:0},
+)
 ////////////////////////////////////////////////////
 /* -- Glow effect -- */
 
@@ -1022,11 +1034,14 @@ window.onpointermove = event => {
 
 ////////////////////////////////////////////////////
 
+
+////////////////////////////////////////////////////
+
 const tl2 = gsap.timeline({
   scrollTrigger: {
     trigger: "#section9",
     start: "top top",
-    end: "+=3000",
+    end: "+=4000",
     scrub: 2,
     pin: true,
   },
@@ -1048,12 +1063,15 @@ spans.forEach((span, index) => {
     `-=100` // Starts with images fading
   );
 });
+tl2.to(spans,{opacity:0,duration:3.5,fontSize:"2vw"},"+=1")
+tl2.fromTo("#section10",{height:"-10vh",opacity:0,ease: "power1.inOut",duration:10},
+  {height:"50vh",opacity:1,ease: "power1.inOut",duration:10},"-=2")
+tl2.to("#section9 .sec9_bg img",{height:"90vh",duration:10},"-=2")
+tl2.to("#section9 .animated-title",{opacity:1, duration:2.5})
+tl2.to("#section9 .animated-title2",{opacity:1, duration:2.5})
+tl2.to("#section9 .sec9_bg_wh",{opacity:0.3, duration:2.5})
 
-
-// Animate sec9Img
-// tl2.
-
-
+////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////
 
