@@ -1397,7 +1397,7 @@ input[type="range"] {
 
 #section7 .pro .pro_btns {
   position: absolute;
-  top: 86%;
+  top: 88%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -1405,21 +1405,65 @@ input[type="range"] {
   z-index: 100;
 }
 
-#section7 .pro .pro_btns>a {
+#section7 .pro a{
   cursor: pointer;
   font-size: 18px;
   font-weight: 600;
-  padding-bottom: 9px;
+  padding: 14px 27px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.271);
+  border: 2px solid rgba(255, 255, 255, 0.271);
+  transition: 0.3s;
+}
+#section7 .pro a:hover{
+  border: 2px solid #fff;
+  background-color: #ffffff00;
+  color: #fff;
+}
+@keyframes pointAni{
+  0% {transform: translateY(11px);}
+  100% {transform: translateY(23px);}
+}
+#section7 .pro .fa-hand-point-up{
+  position: absolute;
+  display: inline-block;
+  font-size: 1.8vw;
+  animation: pointAni 1s cubic-bezier(0.4, 0, 1, 1) infinite alternate;
+  bottom: -31px;
+
+}
+#section7 #view-1 .fa-hand-point-up {
+  left: 53px;
 }
 
-#section7 .pro .pro_btns>a:hover {
-  font-weight: 700;
-  padding-bottom: 7px;
-  border-bottom: 2px solid #ffffff;
-  color: #ffffff;
+#section7 #view-2 .fa-hand-point-up {
+  left: 224px;
 }
 
+#section7 #view-3 .fa-hand-point-up {
+  left: 399px;
+}
 
+#section7 #view-4 .fa-hand-point-up {
+  left: 572px;
+}
+
+#section7 #view-5 .fa-hand-point-up {
+  left: 746px;
+}
+
+#section7 #view-6 .fa-hand-point-up {
+  left: 920px;
+}
+
+#section7 .pro1 .fa-hand-point-up{
+  position: absolute;
+  display: inline-block;
+  font-size: 1.8vw;
+  animation: pointAni 1s cubic-bezier(0.4, 0, 1, 1) infinite alternate;
+  bottom: -31px;
+  left: 53px;
+}
 .view {
   position: absolute;
   top: 0;
@@ -2046,6 +2090,7 @@ input[type="range"] {
     transform: translateX(-50%);
   }
 }
+
 /* 
 @media (hover: hover) and (min-width: 700px) {
   .animated-title .content {
@@ -2053,7 +2098,7 @@ input[type="range"] {
     transform: translateY(calc(100% - 8rem));
   }
 } */
-#section9 .animated-title2{
+#section9 .animated-title2 {
   font-size: 4vw;
   font-weight: 700;
   position: absolute;
@@ -2061,26 +2106,27 @@ input[type="range"] {
   height: auto;
   overflow-x: hidden;
   overflow-y: hidden;
-  line-height: 1.1;
+  /* line-height: 1.1; */
   color: #fff;
   /* opacity: 0; */
-  padding: 10vh 0;
-  top: -10vh;
+  padding: 12vh 0;
+  top: -14vh;
   opacity: 0;
 }
 
 #section9 .animated-title2 .content {
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
-	/* 여기로 배경이미지 코드를 옮겨주세요 */
-	background: url(img/goal_img.jpg) no-repeat center/cover;
-  background-position: 50% 50%; /* 가로 50%, 세로 50% */
-	background-clip: text;
-	color: transparent;
+  background: url(img/goal_img.jpg) no-repeat center / cover;
+  background-position: 50% 25%;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.5;
 }
+
 /* //////////////////////////////////////////////////////////////////// */
 #section10 {
   position: absolute;
@@ -2089,54 +2135,99 @@ input[type="range"] {
   transform: translateX(-50%);
   width: 99vw;
   height: 50vh;
-  padding: 100px;
+  padding: 2vw;
   background-color: rgba(249, 249, 249, 0.7);
-  backdrop-filter: blur(1px);
-  border-radius: 22px 22px 0px 0px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+  border-radius: 50px 50px 0px 0px;
+  box-shadow: 0px -14px 14px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
 }
 
+#section10 .sec10_bg {
+  position: absolute;
+  font-size: 13.2vw;
+  z-index: -1;
+  opacity: 0.1;
+  font-weight: 800;
+  margin-top: 7vh;
+  animation: textAni3 5s linear infinite alternate;
+}
+@keyframes textAni3{
+  0%{opacity: 0.5;}
+  100%{opacity: 0.1;}
+}
 #section10 .portfolio-footer {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  font-family: 'Arial', sans-serif;
-
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  gap: 7vw;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#section10 .contact-info{
+  margin-bottom: 7px;
+  line-height: 0.8;
+}
+#section10 .contact-info h2 {
+  font-size: 2.8vw;
+  font-weight: 600;
+  margin-bottom: 2vh;
 }
 
-#section10 .contact-info,
-.about-me {
-  width: 45%;
-  padding: 10px;
-}
-
-#section10 h2 {
-  font-size: 24px;
-  margin-bottom: 15px;
-  color: #333;
-}
-
-#section10 h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #555;
+#section10 .contact-info h3 {
+  font-size: 0.9vw;
+  margin-left: 0.3vw;
 }
 
 #section10 ul {
   list-style-type: none;
   padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 2vw;
+  font-weight: 700;
+}
+
+#section10 ul span {
+  font-weight: normal;
 }
 
 #section10 li {
   margin-bottom: 8px;
+  line-height: 1.8;
+  font-size: 0.9vw;
+}
+#section10 .contact-info-sub li {
+  line-height: 2.6;
+}
+#section10 a {
+  display: flex;
+  align-items: center;
+  font-size: 1vw;
+  text-decoration: none;
+  color: #387e37;
+  position: relative; /* 부모 요소로 설정하여 가상 요소의 위치 기준을 잡습니다 */
+  transition: color 0.3s;
+  width: 150px;
+  padding-bottom: 5px;
 }
 
-#section10 a {
-  text-decoration: none;
-  color: #007BFF;
-  transition: color 0.3s;
+#section10 a::before {
+  content: ''; /* 가상 요소에 내용을 추가합니다 */
+  position: absolute;
+  bottom: 0;
+  left: 0; /* 왼쪽에서 시작하도록 설정합니다 */
+  width: 0%;
+  height: 2px; /* 선의 두께 설정 */
+  background-color: rgb(20, 63, 19);
+  transition: width 0.3s ease; /* 선이 나타나는 트랜지션 설정 */
+}
+
+#section10 a:hover::before {
+  width: 100%; /* 마우스 호버 시 선의 길이를 100%로 확장하여 나타나게 합니다 */
 }
 
 #section10 a:hover {
-  color: #0056b3;
+  color: rgb(20, 63, 19);
 }

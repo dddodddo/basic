@@ -1065,7 +1065,7 @@ spans.forEach((span, index) => {
 });
 tl2.to(spans,{opacity:0,duration:3.5,fontSize:"2vw"},"+=1")
 tl2.fromTo("#section10",{height:"-10vh",opacity:0,ease: "power1.inOut",duration:10},
-  {height:"50vh",opacity:1,ease: "power1.inOut",duration:10},"-=2")
+  {height:"30vh",opacity:1,ease: "power1.inOut",duration:10},"-=2")
 tl2.to("#section9 .sec9_bg img",{height:"90vh",duration:10},"-=2")
 tl2.to("#section9 .animated-title",{opacity:1, duration:2.5})
 tl2.to("#section9 .animated-title2",{opacity:1, duration:2.5})
