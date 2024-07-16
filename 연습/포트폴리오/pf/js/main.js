@@ -562,6 +562,27 @@ gsap.to(".list", {
     start: "right left",
   },
 });
+gsap.timeline({
+  scrollTrigger: {
+    trigger: ".line-1",
+    start: "right left",
+  },
+})
+.fromTo(".line-1 p", 
+  { transform: "translateY(30px)", duration: 1, ease: "power2.inOut" }, 
+  { 
+    transform: "translateY(0px)", 
+    duration: 1, 
+    ease: "power2.inOut", 
+    stagger: {
+      amount: 0.3, 
+      from: "start", 
+      // 각각의 p 태그에 다른 딜레이를 줄 수 있습니다
+      amount: 0.3,
+      stagger: (index) => index * 0.2 // index에 따라 딜레이 설정
+    }
+  }
+);
 
 ////////////////////////////////////////////////////////////////////
 gsap
@@ -651,7 +672,7 @@ gsap
   scrollTrigger: {
     trigger: "#section6",
     start: "top top",
-    end: "+=2200",
+    end: "+=2500",
     scrub: 2,
     duration: 2.5,
     pin: true,
@@ -662,7 +683,8 @@ gsap
 .to(".header .letters:first-child", {x:() => -innerWidth *3,scale:10,ease: "power2.inOut",duration:2.5})
 .to(".header .letters:last-child", {x:() => innerWidth *3,scale:10,ease: "power2.inOut",duration:2.5},"-=2.5")
 .to(".img-holder", {rotation:0,clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",duration:2.5},"-=2.8")
-.to(".img-holder img", {scale:1,duration:2.5,ease: "power2.inOut"})
+.to(".img-holder img", {scale:1,duration:5,ease: "power2.inOut"})
+.to(".img-holder img", {scale:0.9,duration:5,ease: "power2.in"})
 
 ////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////
