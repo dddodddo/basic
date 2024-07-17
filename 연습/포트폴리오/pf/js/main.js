@@ -320,7 +320,7 @@ gsap
     scrollTrigger: {
       trigger: "#section2-2",
       start: "top top",
-      end: "+=2000",
+      end: "+=1500",
       scrub: 2,
       duration: 2,
       pin: true,
@@ -377,7 +377,7 @@ imgBoxs.forEach(function(imgBox){//item은 배열안에 각각요소를 순서�
             end:'center center',
             containerAnimation:scrollTween,
             scrub:true,
-            markers:true
+            // markers:true
         }
     })
     .to(imgBox,{'clip-path':'inset(0%)',ease:"none",duration:1},0)
@@ -393,7 +393,7 @@ imgBoxs.forEach(function(imgBox){//item은 배열안에 각각요소를 순서�
             end:'center left',
             containerAnimation:scrollTween,
             scrub:true,
-            markers:true
+            // markers:true
         }
     })
     .to(imgBox,{'clip-path':'inset(30%)',ease:"none",duration:1},0)
@@ -407,7 +407,7 @@ txtBoxs.forEach(function(txtBox){
             end:'center 40%',
             containerAnimation:scrollTween,
             scrub:true,
-            markers:true
+            // markers:true
         }
     })
     .to(txtBox,{opacity:1,x:-100},0)
@@ -419,7 +419,7 @@ txtBoxs.forEach(function(txtBox){
             end:'center 20%',
             containerAnimation:scrollTween,
             scrub:true,
-            markers:true
+            // markers:true
         }
     })
     .to(txtBox,{opacity:0},0)
@@ -563,6 +563,7 @@ gsap
       pin: true,
     },
   })
+  .to(".sec3_txt_wrap",{top:"0vh",duration:2.5},"-=13")
   .to("#section3", { background: "#353535", duration: 3 }, "-=3")
   .to(
     ".tilte__left",
@@ -1283,7 +1284,7 @@ spans.forEach((span, index) => {
 });
 tl2.to(spans,{opacity:0,duration:3.5,fontSize:"2vw"},"+=1")
 tl2.fromTo("#section10",{height:"-10vh",opacity:0,ease: "power1.inOut",duration:10},
-  {height:"30vh",opacity:1,ease: "power1.inOut",duration:10},"-=2")
+  {height:"77vh",opacity:1,ease: "power1.inOut",duration:10},"-=2")
 tl2.to("#section9 .sec9_bg img",{height:"90vh",duration:10},"-=2")
 tl2.to("#section9 .animated-title",{opacity:1, duration:2.5})
 tl2.to("#section9 .animated-title2",{opacity:1, duration:2.5})
