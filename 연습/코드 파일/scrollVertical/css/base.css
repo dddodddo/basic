@@ -43,7 +43,7 @@ body {
 
 .demo-3 {
 	--color-text: #905348;
-	--color-bg: #120605;
+	/* --color-bg: #120605; */
 	--color-link: #8f8f76;
 	--color-link-hover: #fff;
 	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;

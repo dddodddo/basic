@@ -17,6 +17,8 @@
   <link
     href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
     rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
   <link rel="stylesheet" href="./style.css">
 
 </head>
@@ -24,10 +26,7 @@
 <body>
   <div class="noise"></div>
   <!-- partial:index.partial.html -->
-  <section id="section1">
-    <lottie-player class="heart" src="./lottie/Animation_heart.json" background="transparent" speed="1"
-      style="width: 300px; height: 300px" direction="1" mode="normal" loop autoplay></lottie-player>
-
+  <section id="section1" class="sticky">
     <h1>2024 Park Dohyeon<br>web portfolio</h1>
     <div class="gallery">
       <div class="col">
@@ -154,94 +153,84 @@
     </div>
     </div>
   </section>
+  <section id="section2" class="con-scale demo-1 loading website-content">
+    <main data-scroll-container>
+			<div class="content">
+				<h2 class="content__title" data-text-rep>About me</h2>
+			</div>
+		</main>
 
-  <section id="section2">
-    <div class="canvas-cont">
-      <canvas id="canvas3d"></canvas>
-    </div>
-    <div class="cards">
-      <div class="card card1">
-        <div class="card_img card1_img"></div>
-        <span>Drag me!</span>
-      </div>
-      <div class="card card2">
-        <div class="card_img card2_img"></div>
-        <span>Drag me!</span>
-      </div>
-      <div class="card card3">
-        <div class="card_img card3_img"></div>
-        <span>Drag me!</span>
+    <div class="section-images">
+      <div class="row">
+        <img src="img/10.jpg" alt="" />
+        <img src="img/29.jpg" alt="" />
+        <img src="img/9.jpg" alt="" />
+        <img src="img/4.jpg" alt="" />
       </div>
     </div>
+  </section>
 
-
+  <section id="section2-2">  
     <div class="sec2_txt">
-      <div class="wrapper">
-        <div class="typing">
-          안녕하세요!
-        </div>
-        <i class="fas fa-search"></i>
-      </div>
-      <div class="profile">
-        <div class="pro_box pro1">
-          <div class="pro_name">#이름</div>
-        </div>
-        <div class="pro_box pro2">
-          <div class="pro_name color1 color">#박도현</div>
-        </div>
-        <div class="pro_box pro3">
-          <div class="pro_name">#생년월일</div>
-        </div>
-        <div class="pro_box pro4">
-          <div class="pro_name color2 color">#1999_09_14</div>
-        </div>
-        <div class="pro_box pro5">
-          <div class="pro_name">#전화번호</div>
-        </div>
-        <div class="pro_box pro6">
-          <div class="pro_name color3 color">#010_9218_1934</div>
-        </div>
-        <div class="pro_box pro7">
-          <div class="pro_name">#이메일</div>
-        </div>
-        <div class="pro_box pro8">
-          <div class="pro_name color4 color">#99pdh@naver.com</div>
-        </div>
-        <div class="pro_box pro9">
-          <div class="pro_name">#SNS</div>
-        </div>
-        <div class="pro_box pro10">
-          <div class="pro_name color5 color">#@ddd_445</div>
-        </div>
-      </div>
-      <div class="file-transfer">
-        <div class="head">
-          <div class="left">
-            <img src="img/files.png" alt="" />
-            <span class="title">[박도현]에 대한 정보 업데이트</span>
-          </div>
-
-          <div class="icons">
-            <span class="material-icons-round"> remove </span>
-            <span class="material-icons-round"> check_box_outline_blank </span>
-            <span class="material-icons-round"> close </span>
-          </div>
-        </div>
-
-        <div class="details">
-          <div class="percentage"><span class="value">50% </span>완료</div>
-          <div class="controls">
-            <span class="material-icons-round"> pause </span>
-            <span class="material-icons-round"> close </span>
-          </div>
-        </div>
-
-        <div class="progress"></div>
-        <div class="note">약 30초뒤 업데이트 완료...</div>
-      </div>
+      <span>안녕하세요,</span> <span>실용적이고</span> <span>효율적인</span> <span>웹</span> <span>개발을</span> <span>추구하는</span> <span>웹개발자</span> <span>박도현입니다.</span>
     </div>
-
-
+  </section>
+  <section id="section2-3" class="work">
+      <ul>
+          <li>
+            <div class="imgBox">
+                <img src="img/104.jpg" alt="work1">
+            </div>
+            <div class="textBox">
+                <p class="title">99.09.14</p>
+                <p class="text">1999년 9월 가을 창원에서 태어나,</p>
+            </div>
+          </li>
+          <li>
+              <a href="#">
+                  <div class="imgBox">
+                      <img src="img/40.jpg" alt="work2">
+                  </div>
+                  <div class="textBox">
+                      <p class="title">김해시</p>
+                      <p class="text">17년전 김해로 이사와 현재 김해에서 거주중입니다.</p>
+                  </div>
+              </a>
+          </li>
+          <li>
+              <a href="#">
+                  <div class="imgBox">
+                      <img src="img/51.jpg" alt="work3">
+                  </div>
+                  <div class="textBox">
+                      <p class="title">멀티미디어학과</p>
+                      <p class="text">디자인 분야에 관심이 많아 여러 디자인 전공을 배웠고</p>
+                  </div>
+              </a>
+          </li>
+          <li>
+              <a href="#">
+                  <div class="imgBox">
+                      <img src="img/61.jpg" alt="work4">
+                  </div>
+                  <div class="textBox">
+                      <p class="title">웹개발자</p>
+                      <p class="text">지금은 그 경험을 살려 웹개발자 준비를 하며,</p>
+                  </div>
+              </a>
+          </li>
+          <li>
+              <a href="#">
+                  <div class="imgBox">
+                      <img src="img/69.jpg" alt="work5">
+                  </div>
+                  <div class="textBox">
+                      <p class="title">웹퍼블리셔 수료</p>
+                      <p class="text">UI/UX웹디자인&웹퍼블리셔 웹콘텐츠개발자 수강까지 수료했습니다.</p>
+                  </div>
+              </a>
+          </li>
+      </ul>
   </section>
 
   <section id="section3">
@@ -1191,7 +1180,7 @@
       <img src="img/u14.jpg" alt="" class="u14 sec9_u_img" style="z-index: 3;">
       <img src="img/u15.jpg" alt="" class="u15 sec9_u_img" style="z-index: 2;">
       <img src="img/u16.jpg" alt="" class="u16 sec9_u_img" style="z-index: 1;">
-      
+
       <img src="img/goal_img.jpg" alt="" class="sec_fin_img" style="z-index: 0;">
     </div>
     <div class="sec9_tit">
@@ -1236,12 +1225,22 @@
 
     <div class="animated-title">
       <div class="track">
-        <div class="content">&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you</div>
+        <div class="content">&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank
+          you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank
+          you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank
+          you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank
+          you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you
+        </div>
       </div>
     </div>
     <div class="animated-title2">
       <div class="track">
-        <div class="content">&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you</div>
+        <div class="content">&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank
+          you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank
+          you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank
+          you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank
+          you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you&nbsp;&nbsp;Thank you
+        </div>
       </div>
     </div>
 
@@ -1301,9 +1300,6 @@
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/MotionPathPlugin.min.js"></script>
-
-  <!-- <script src='https://assets.codepen.io/16327/ScrollSmoother.min.js'></script> -->
-  <!-- <script src='https://assets.codepen.io/16327/SplitText3.min.js'></script> -->
 
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script type="module" src="js/spline.js"></script>

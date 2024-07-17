@@ -250,111 +250,307 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 //////////////////////////////////////////////////////////
-document.querySelectorAll(".card").forEach((card) => {
-  let moving = false;
-  let offsetX, offsetY, prevX, prevTime;
+// 첫번째 영역
+let sticky = document.querySelector('.sticky')
+gsap.to(sticky, {
+  scrollTrigger: {
+    trigger: sticky,
+    start: "top top",
+    end: "+=150%",
+    scrub: 1,
+  },
+  y: 300,
+  scale: 0.75,
+  // rotation: -15,
+  ease: "power3.out"
+})
 
-  card.addEventListener("mousedown", (e) => {
-    moving = true;
-    card.style.transformOrigin = e.clientX + ", " + e.clientY;
-    offsetX = e.clientX - card.getBoundingClientRect().left;
-    offsetY = e.clientY - card.getBoundingClientRect().top;
-    card.classList.add("active");
-    card.style.cursor = "grabbing";
+// 두번째 영역
+let conScale = document.querySelector('.con-scale')
 
-    prevX = e.clientX;
-    prevTime = Date.now();
-  });
+gsap.fromTo(conScale, {
+  y: 100,
+  scale: 0.7,
+  // rotation: 15
+}, {
+  scrollTrigger: {
+    trigger: conScale,
+    start: "top 80%",
+    end: "top 20%",
+    scrub: 2,
+  },
+  y: 0,
+  scale: 1,
+  duration: 1,
+  // rotation: 0,
+  ease: "power3.out"
+})
+//두번째 영역의 각각의 이미지 애니
+let secImgs = document.querySelectorAll("#section2 .section-images")
 
-  document.addEventListener("mousemove", (e) => {
-    if (moving) {
-      card.style.top = e.clientY - offsetY + "px";
-      card.style.left = e.clientX - offsetX + "px";
 
-      const currentTime = Date.now();
-      const deltaTime = currentTime - prevTime;
-      const deltaX = e.clientX - prevX;
-      const velocity = Math.abs(deltaX / deltaTime);
-      const maxTilt = 20;
-      const tiltAngle = Math.min(velocity * maxTilt, maxTilt);
+secImgs.forEach(function (secImg) {
+  let imgs = secImg.querySelectorAll("#section2 img")
+  let secImgParent=secImg.parentNode //secImg의 부모태그 부르기
 
-      if (deltaX > 0) {
-        card.style.transform = `rotate(${tiltAngle}deg)`;
-      } else {
-        card.style.transform = `rotate(-${tiltAngle}deg)`;
-      }
-
-      prevX = e.clientX;
-      prevTime = currentTime;
-    }
-  });
-
-  document.addEventListener("mouseup", () => {
-    if (moving) {
-      moving = false;
-      card.classList.remove("active");
-      card.style.cursor = "grab";
-      card.style.transform = "none";
-    }
-  });
-});
-////////////////////////////////////////////////////////////////////
-let progressText = document.querySelector(".value");
-let progressBar = document.querySelector(".progress");
-let pseudoElement = window.getComputedStyle(progressBar, "::before");
-let progress = 0;
-
-function updateProgress() {
-  if (progress < 100) {
-    progress = pseudoElement.getPropertyValue("width");
-    progress = progress.slice(0, -2);
-    progress = Number(progress) / progressBar.clientWidth;
-    progressText.textContent = Math.round(progress * 100) + "%";
-    setTimeout(updateProgress, 50);
-  }
-}
-
-updateProgress();
+  imgs.forEach(function (img, index) {
+    let imgDey = index * 0.8
+    gsap.set(img, {
+      y: 400
+    })
+    gsap.timeline({
+        scrollTrigger: {
+          trigger: secImgParent,
+          start: "top 55%",
+          end: "top top",
+          scrub: 2,
+        }
+      })
+      .to(img, {
+        y: 0,
+        duration: 2,
+        delay: imgDey,
+        ease: "power3.out"
+      })
+  })
+})
 ////////////////////////////////////////////////////////////////////
 gsap
   .timeline({
     scrollTrigger: {
-      trigger: "#section2",
+      trigger: "#section2-2",
       start: "top top",
-      end: "+=1300",
+      end: "+=2000",
       scrub: 2,
       duration: 2,
       pin: true,
     },
   })
-  .to(".card1", { top: "16%", duration: 5, ease: "power2.out" })
-  .to(".card2", { top: "47%", duration: 5, ease: "power2.out" }, "-=2")
-  .to(".card3", { top: "51%", duration: 5, ease: "power2.out" }, "-=2")
-  .fromTo(
-    ".color1",
-    { color: "#333", duration: 3, ease: "power2.out" },
-    { color: "#437fc4", duration: 3, ease: "power2.out" }
-  )
-  .fromTo(
-    ".color2",
-    { color: "#333", duration: 3, ease: "power2.out" },
-    { color: "#2D9596", duration: 3, ease: "power2.out" }
-  )
-  .fromTo(
-    ".color3",
-    { color: "#333", duration: 3, ease: "power2.out" },
-    { color: "#75A47F", duration: 3, ease: "power2.out" }
-  )
-  .fromTo(
-    ".color4",
-    { color: "#333", duration: 3, ease: "power2.out" },
-    { color: "#4F709C", duration: 3, ease: "power2.out" }
-  )
-  .fromTo(
-    ".color5",
-    { color: "#333", duration: 3, ease: "power2.out" },
-    { color: "#43a6c4", duration: 3, ease: "power2.out" }
-  );
+  .to("#section2-2 span:nth-child(1)", { transform: "rotateX(0deg)",opacity:1, duration: 2.5,ease: "power1.out",},"-=2")
+  .to("#section2-2 span:nth-child(2)", { transform: "rotateX(0deg)",opacity:1, duration: 2.5,ease: "power1.out",})
+  .to("#section2-2 span:nth-child(3)", { transform: "rotateX(0deg)",opacity:1, duration: 2.5,ease: "power1.out",})
+  .to("#section2-2 span:nth-child(4)", { transform: "rotateX(0deg)",opacity:1, duration: 2.5,ease: "power1.out",})
+  .to("#section2-2 span:nth-child(5)", { transform: "rotateX(0deg)",opacity:1, duration: 2.5,ease: "power1.out",})
+  .to("#section2-2 span:nth-child(6)", { transform: "rotateX(0deg)",opacity:1, duration: 2.5,ease: "power1.out",})
+  .to("#section2-2 span:nth-child(7)", { transform: "rotateX(0deg)",opacity:1, duration: 2.5,ease: "power1.out",})
+  .to("#section2-2 span:nth-child(8)", { transform: "rotateX(0deg)",opacity:1, duration: 2.5,ease: "power1.out",})
+
+  .to("#section2-2 .sec2_txt",{scale:0.8,duration:2.5})
+////////////////////////////////////////////////////////////////////
+gsap.registerPlugin(ScrollTrigger)
+
+gsap.from(".visual .subtitle",{
+    y:50 ,opacity:0, ease:"expo.out", duration:1, delay:0.5
+})
+gsap.from(".visual .text",{
+    y:50 ,opacity:0, ease:"expo.out", duration:1, delay:1
+})
+
+// slide
+let list=document.querySelectorAll(".work ul li")
+console.log(list)
+let imgBoxs=document.querySelectorAll(".imgBox")
+console.log(imgBoxs)
+let txtBoxs=document.querySelectorAll(".textBox")
+
+//가로 스크롤 
+let scrollTween=gsap.to(list,{
+    xPercent:-100*(list.length - 1),
+    ease:"none",
+    scrollTrigger:{
+        trigger:".work",
+        start:"center center",
+        scrub:1,
+        end:"+=300%",
+        pin:true
+    }
+})
+
+//배열안에 요소를 하나씩 가져와서 어떤 일을 시킨다
+imgBoxs.forEach(function(imgBox){//item은 배열안에 각각요소를 순서대로 받는다
+
+    
+    gsap.timeline({
+        scrollTrigger:{
+            trigger:imgBox,
+            start:"center right",
+            end:'center center',
+            containerAnimation:scrollTween,
+            scrub:true,
+            markers:true
+        }
+    })
+    .to(imgBox,{'clip-path':'inset(0%)',ease:"none",duration:1},0)
+    
+    
+    
+    
+    //왼쪽으로 사라질때 이미지를 작게 
+    gsap.timeline({
+        scrollTrigger:{
+            trigger:imgBox,
+            start:"center center",
+            end:'center left',
+            containerAnimation:scrollTween,
+            scrub:true,
+            markers:true
+        }
+    })
+    .to(imgBox,{'clip-path':'inset(30%)',ease:"none",duration:1},0)
+})
+
+txtBoxs.forEach(function(txtBox){
+    gsap.timeline({
+        scrollTrigger:{
+            trigger:txtBox,
+            start:"center 70%",
+            end:'center 40%',
+            containerAnimation:scrollTween,
+            scrub:true,
+            markers:true
+        }
+    })
+    .to(txtBox,{opacity:1,x:-100},0)
+    
+    gsap.timeline({
+        scrollTrigger:{
+            trigger:txtBox,
+            start:"center 30%",
+            end:'center 20%',
+            containerAnimation:scrollTween,
+            scrub:true,
+            markers:true
+        }
+    })
+    .to(txtBox,{opacity:0},0)
+})
+////////////////////////////////////////////////////////////////////
+const getHeight = el => {
+  const computedStyle = getComputedStyle(el);
+
+  let elementHeight = el.clientHeight;  // height with padding
+  elementHeight -= parseFloat(computedStyle.paddingTop) + parseFloat(computedStyle.paddingBottom);
+  return elementHeight;
+}
+class RepeatTextScrollFx {
+  // DOM elements
+DOM = {
+  // main element ([data-text-rep])
+  el: null,
+      // all text spans except the last one (this will be the centered one and doesn't translate
+      words: null,
+}
+totalWords = 9;
+  tyIncrement = 12;
+delayIncrement = 0.1;
+  scrollTimeline;
+  observer;
+
+  constructor(Dom_el) {
+    this.DOM.el = Dom_el;
+    this.isLoaded = false;  // 추가된 부분
+    this.layout();
+    this.setBoundaries();
+    this.createScrollTimeline();
+    this.createObserver();
+
+    window.addEventListener('resize', () => this.setBoundaries());
+}
+
+layout() {
+  const halfWordsCount = Math.floor(this.totalWords / 2);
+  let innerHTML = '';
+
+  for (let i = 0; i < this.totalWords; ++i) {
+      let ty;
+      let delay;
+
+      if (i === this.totalWords - 1) {
+          ty = 0;
+          delay = 0;
+      } else if (i < halfWordsCount) {
+          ty = halfWordsCount * this.tyIncrement - this.tyIncrement * i;
+          delay = this.delayIncrement * (halfWordsCount - i) - this.delayIncrement;
+      } else {
+          ty = -1 * (halfWordsCount * this.tyIncrement - (i - halfWordsCount) * this.tyIncrement);
+          delay = this.delayIncrement * (halfWordsCount - (i - halfWordsCount)) - this.delayIncrement;
+      }
+
+      innerHTML += `<span data-delay="${delay}" data-ty="${ty}">${this.DOM.el.innerHTML}</span>`;
+  }
+
+  this.DOM.el.innerHTML = innerHTML;
+  this.DOM.el.classList.add('text-rep');
+  this.DOM.words = [...this.DOM.el.querySelectorAll('span')].slice(0, -1);
+}
+
+
+  setBoundaries() {
+      // Set up the margin top and padding bottom values
+      const paddingBottomMarginTop = getHeight(this.DOM.el) * Math.floor(this.totalWords/2) * this.tyIncrement/100;
+  gsap.set(this.DOM.el, {
+    marginTop: paddingBottomMarginTop,
+    paddingBottom: paddingBottomMarginTop
+  });
+  }
+ 
+  createScrollTimeline() {
+    this.scrollTimeline = gsap.timeline({paused: true})
+    gsap.to(this.DOM.words, {
+      duration: 1,
+      ease: 'power1',
+      yPercent: (_, target) => target.dataset.ty,
+      delay: (_, target) => target.dataset.delay
+    });
+  };
+
+  
+  createObserver() {
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px',
+        threshold: 0
+    };
+
+    this.observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (!this.isLoaded) {
+                    this.isLoaded = true;
+                }
+                gsap.ticker.add(this.progressTween);
+            } else {
+                if (this.isLoaded) {
+                    gsap.ticker.remove(this.progressTween);
+                } else {
+                    this.isLoaded = true;
+                    gsap.ticker.add(this.progressTween, true);
+                    gsap.ticker.remove(this.progressTween);
+                }
+            }
+        });
+    }, observerOptions);
+
+    this.progressTween = () => {
+        const scrollPosition = (window.scrollY + window.innerHeight);
+        const elPosition = (scrollPosition - this.DOM.el.offsetTop);
+        const durationDistance = (window.innerHeight + this.DOM.el.offsetHeight);
+        const currentProgress = (elPosition / durationDistance);
+        this.scrollTimeline.progress(currentProgress);
+    };
+
+    this.observer.observe(this.DOM.el);
+}
+
+}
+
+window.addEventListener("load", () => {
+  document.querySelectorAll('[data-text-rep]').forEach(textEl => {
+      new RepeatTextScrollFx(textEl);
+  });
+});
+
+
 ////////////////////////////////////////////////////////////////////
 gsap
   .timeline({
