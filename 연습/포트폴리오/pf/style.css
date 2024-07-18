@@ -612,33 +612,99 @@ a {
   height: 100vh;
   object-fit: cover;
 }
-#section4 .sec4_con_1{
+#section4 .sec4_con_1,
+#section4 .sec4_con_2,
+#section4 .sec4_con_3,
+#section4 .sec4_con_4{
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
 }
-#section4 .sec4_con_year{
-  position: absolute;
-  top: 49%;
+#section4 .sec4_con_txt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  gap: 50px;
+  opacity: 0;
+  z-index: 2;
+}
+#section4 .sec4_con_num{
   font-size: 13vw;
   font-weight: 600;
-  opacity: 0;
-  scale:0.2
+  z-index: 2;
 }
-#section4 .sec4_con_txt{
+#section4 .sec4_con_name{
+  text-align: center;
+  font-size: 2vw;
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  line-height: 1.2;
+}
+#section4 .sec4_con_name span{
+  font-size: 1vw;
+  font-weight: 400;
+}
+#section4 .sec4_con_img{
+  width: 10vw;
+  height: 30vh;
 
-}
-#section4 .sec4_con_img1{
-  width: 360px;
-  height: 500px;
-  background: url(img/a16.jpg) no-repeat center/cover;
   position: absolute;
-  top: 16%;
-  left: 32%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  scale: 0;
+  opacity: 0;
+}
+#section4 .sec4_con_1 .sec4_con_img{background: url(img/a16.jpg) no-repeat center/cover;}
+#section4 .sec4_con_2 .sec4_con_img{background: url(img/a17.png) no-repeat center/cover;}
+#section4 .sec4_con_3 .sec4_con_img{background: url(img/a1.jpg) no-repeat center/cover;}
+#section4 .sec4_con_4 .sec4_con_img{background: url(img/a9.jpg) no-repeat center/cover;}
+
+#section4 .sec5_tit{
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  bottom: -100vh;
+  /* margin-bottom: -100vh; */
+  position: relative;
+  overflow: hidden;
+}
+#section4 .rows{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 0.5rem;
+}
+#section4 .row{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  height: 33.33%;
+  color: #fff;
+}
+#section4 .row-2 {
+  background-color: #fff;
+  color: black;
+}
+#section4 .row li{
+  font-size: 10vw;
 }
 /* //////////////////////////////////////////////// */
 

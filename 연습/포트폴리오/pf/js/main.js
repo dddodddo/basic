@@ -598,18 +598,40 @@ gsap
     scrollTrigger: {
       trigger: "#section4",
       start: "top top",
-      end: "+=3500",
+      end: "+=6500",
       scrub: 2,
       duration: 2.5,
       pin: true,
     },
   })
   .set(".sec4_con_year",{transform:"translate(-50%,-50%)"})
+  .set(".sec4_con_img",{transform:"translate(-50%,-50%)"})
   .to(".sec4_tit_bg",{scale:2.5,display:"none",duration:2.5})
-  .to(".sec4_tit h3",{scale:20,y:-10,opacity:0,display:"none", duration:2.5},"-=2.5")
-  .to(".sec4_con_year",{opacity:1,duration:2.5,scale:1.2})
+  .to(".sec4_tit h3",{scale:20,opacity:0,display:"none", duration:2.5},"-=2.5")
 
+  .to(".sec4_con_1 .sec4_con_txt",{opacity:1,duration:2.5},"-=2")
+  .to(".sec4_con_1 .sec4_con_img",{opacity:1,scale:4,duration:2.5},"-=1")
+  .to(".sec4_con_1 .sec4_con_img",{opacity:0})
+  .to(".sec4_con_1 .sec4_con_txt",{opacity:0,duration:2.5},"-=1")
 
+  .to(".sec4_con_2 .sec4_con_txt",{opacity:1,duration:2.5},"-=2")
+  .to(".sec4_con_2 .sec4_con_img",{opacity:1,scale:4,duration:2.5},"-=1")
+  .to(".sec4_con_2 .sec4_con_img",{opacity:0})
+  .to(".sec4_con_2 .sec4_con_txt",{opacity:0,duration:2.5},"-=1")
+
+  .to(".sec4_con_3 .sec4_con_txt",{opacity:1,duration:2.5},"-=2")
+  .to(".sec4_con_3 .sec4_con_img",{opacity:1,scale:4,duration:2.5},"-=1")
+  .to(".sec4_con_3 .sec4_con_img",{opacity:0})
+  .to(".sec4_con_3 .sec4_con_txt",{opacity:0,duration:2.5},"-=1")
+
+  .to(".sec4_con_4 .sec4_con_txt",{opacity:1,duration:2.5},"-=2")
+  .to(".sec4_con_4 .sec4_con_img",{opacity:1,scale:4,duration:2.5},"-=1")
+  .to(".sec4_con_4 .sec4_con_img",{opacity:0})
+  .to(".sec4_con_4 .sec4_con_txt",{opacity:0,duration:2.5},"-=1")
+  
+  .to("#section4 .sec5_tit",{bottom:"0vh",duration:2.5},"-=1")
+  .from(".row-2", {height: "0%",duration: 2.5,})
+  .from(".row li", {y: 200,opacity: 0,ease: "none",duration: 2});
 //section5 skill//////////////////////////////////////////////////////////////////
 const animation1 = gsap.to(".slide_cir1", {
   backgroundSize:'120%',
