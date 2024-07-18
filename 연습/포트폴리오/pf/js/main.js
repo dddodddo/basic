@@ -138,64 +138,7 @@ const interval = setInterval(() => {
   hoursPoint.style.transform = `rotate(${hourPosition - 180}deg)`;
 });
 
-//lottie////////////////////////////////////////////////////////
-// LottieScrollTrigger({
-//   target: "#animationWindow",
-//   path: "./lottie/Animation_heart.json",
-//   speed: "medium",
-//   scrub: 2,
-// });
 
-//함수는 한번만 있으면 됨.
-function LottieScrollTrigger(vars) {
-  let playhead = {
-      frame: 0,
-    },
-    target = gsap.utils.toArray(vars.target)[0],
-    speeds = {
-      slow: "+=2000",
-      medium: "+=1000",
-      fast: "+=500",
-    },
-    st = {
-      trigger: target,
-      pin: true,
-      start: "top top",
-      end: speeds[vars.speed] || "+=1000",
-      scrub: 1,
-    },
-    ctx = gsap.context && gsap.context(),
-    animation = lottie.loadAnimation({
-      container: target,
-      renderer: vars.renderer || "svg",
-      loop: false,
-      autoplay: false,
-      path: vars.path,
-      rendererSettings: vars.rendererSettings || {
-        preserveAspectRatio: "xMidYMid slice",
-      },
-    });
-  for (let p in vars) {
-    // let users override the ScrollTrigger defaults
-    st[p] = vars[p];
-  }
-  animation.addEventListener("DOMLoaded", function () {
-    let createTween = function () {
-      animation.frameTween = gsap.to(playhead, {
-        frame: animation.totalFrames - 1,
-        ease: "none",
-        onUpdate: () => animation.goToAndStop(playhead.frame, true),
-        scrollTrigger: st,
-      });
-      return () => animation.destroy && animation.destroy();
-    };
-    ctx && ctx.add ? ctx.add(createTween) : createTween();
-    // in case there are any other ScrollTriggers on the page and the loading of this Lottie asset caused layout changes
-    ScrollTrigger.sort();
-    ScrollTrigger.refresh();
-  });
-  return animation;
-}
 //weather////////////////////////////////////////////////////////
 document.addEventListener("DOMContentLoaded", function () {
   const apiKey = "8582ffda1c1390cabd3fd5d75d5e5847"; // 여기에 OpenWeatherMap API 키를 입력하세요.
@@ -249,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
     weatherContainer.innerHTML = `<p>위치 정보를 사용할 수 없습니다.</p>`;
   }
 });
-//////////////////////////////////////////////////////////
+//section1 & section2////////////////////////////////////////////////////////
 // 첫번째 영역
 let sticky = document.querySelector('.sticky')
 gsap.to(sticky, {
@@ -314,7 +257,7 @@ secImgs.forEach(function (secImg) {
       })
   })
 })
-////////////////////////////////////////////////////////////////////
+//section2-2//////////////////////////////////////////////////////////////////
 gsap
   .timeline({
     scrollTrigger: {
@@ -336,9 +279,7 @@ gsap
   .to("#section2-2 span:nth-child(8)", { transform: "rotateX(0deg)",opacity:1, duration: 2.5,ease: "power1.out",})
 
   .to("#section2-2 .sec2_txt",{scale:0.8,duration:2.5})
-////////////////////////////////////////////////////////////////////
-gsap.registerPlugin(ScrollTrigger)
-
+//section2-3//////////////////////////////////////////////////////////////////
 gsap.from(".visual .subtitle",{
     y:50 ,opacity:0, ease:"expo.out", duration:1, delay:0.5
 })
@@ -424,7 +365,7 @@ txtBoxs.forEach(function(txtBox){
     })
     .to(txtBox,{opacity:0},0)
 })
-////////////////////////////////////////////////////////////////////
+//section2 About me//////////////////////////////////////////////////////////////////
 const getHeight = el => {
   const computedStyle = getComputedStyle(el);
 
@@ -551,7 +492,7 @@ window.addEventListener("load", () => {
 });
 
 
-////////////////////////////////////////////////////////////////////
+//section3//////////////////////////////////////////////////////////////////
 gsap
   .timeline({
     scrollTrigger: {
@@ -624,7 +565,7 @@ gsap
     },
     "-=1.8"
   );
-////////////////////////////////////////////////////////////////////
+//section3 이미지 색상 //////////////////////////////////////////////////////////////////
 // Select all tiles__line-img elements
 const images = document.querySelectorAll(".tiles__line-img");
 
@@ -651,183 +592,39 @@ toggleGrayscale();
 // Set interval to toggle grayscale every 3 seconds (adjust interval as needed)
 setInterval(toggleGrayscale, 3000);
 
-////////////////////////////////////////////////////////////////////
-window.addEventListener("DOMContentLoaded", () => {
-  const ctl = new CollapsibleTimeline("#timeline");
-});
-
-class CollapsibleTimeline {
-  constructor(el) {
-    this.el = document.querySelector(el);
-
-    this.init();
-  }
-  init() {
-    this.el?.addEventListener("click", this.itemAction.bind(this));
-  }
-  animateItemAction(button, ctrld, contentHeight, shouldCollapse) {
-    const expandedClass = "timeline__item-body--expanded";
-    const animOptions = {
-      duration: 300,
-      easing: "cubic-bezier(0.65,0,0.35,1)",
-    };
-
-    if (shouldCollapse) {
-      button.ariaExpanded = "false";
-      ctrld.ariaHidden = "true";
-      ctrld.classList.remove(expandedClass);
-      animOptions.duration *= 2;
-      this.animation = ctrld.animate(
-        [
-          { height: `${contentHeight}px` },
-          { height: `${contentHeight}px` },
-          { height: "0px" },
-        ],
-        animOptions
-      );
-    } else {
-      button.ariaExpanded = "true";
-      ctrld.ariaHidden = "false";
-      ctrld.classList.add(expandedClass);
-      this.animation = ctrld.animate(
-        [{ height: "0px" }, { height: `${contentHeight}px` }],
-        animOptions
-      );
-    }
-  }
-  itemAction(e) {
-    const { target } = e;
-    const action = target?.getAttribute("data-action");
-    const item = target?.getAttribute("data-item");
-
-    if (action) {
-      const targetExpanded = action === "expand" ? "false" : "true";
-      const buttons = Array.from(
-        this.el?.querySelectorAll(`[aria-expanded="${targetExpanded}"]`)
-      );
-      const wasExpanded = action === "collapse";
-
-      for (let button of buttons) {
-        const buttonID = button.getAttribute("data-item");
-        const ctrld = this.el?.querySelector(`#item${buttonID}-ctrld`);
-        const contentHeight = ctrld.firstElementChild?.offsetHeight;
-
-        this.animateItemAction(button, ctrld, contentHeight, wasExpanded);
-      }
-    } else if (item) {
-      const button = this.el?.querySelector(`[data-item="${item}"]`);
-      const expanded = button?.getAttribute("aria-expanded");
-
-      if (!expanded) return;
-
-      const wasExpanded = expanded === "true";
-      const ctrld = this.el?.querySelector(`#item${item}-ctrld`);
-      const contentHeight = ctrld.firstElementChild?.offsetHeight;
-
-      this.animateItemAction(button, ctrld, contentHeight, wasExpanded);
-    }
-  }
-}
-////////////////////////////////////////////////////////////////////
-let container = document.querySelector(".main-wrapper");
-let section = container.querySelectorAll("#section4 section");
-
-let tl = gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: container,
-      scrub: 1,
-      pin: true,
-      start: "top top",
-      end: "+=3300",
-    },
-  })
-  .to(container, {
-    x: () =>
-      -(container.scrollWidth - document.documentElement.clientWidth - 95) +
-      "px",
-    ease: "none",
-    duration: 1,
-  })
-  .to({}, { duration: 1 / (section.length + 1) });
-
-gsap.to(".list", {
-  x: 600,
-  duration: 2,
-  scrollTrigger: {
-    trigger: ".list",
-    start: "right left",
-  },
-});
-gsap.timeline({
-  scrollTrigger: {
-    trigger: ".line-1",
-    start: "right left",
-  },
-})
-.fromTo(".line-1 p", 
-  { transform: "translateY(30px)", duration: 1, ease: "power2.inOut" }, 
-  { 
-    transform: "translateY(0px)", 
-    duration: 1, 
-    ease: "power2.inOut", 
-    stagger: {
-      amount: 0.3, 
-      from: "start", 
-      // 각각의 p 태그에 다른 딜레이를 줄 수 있습니다
-      amount: 0.3,
-      stagger: (index) => index * 0.2 // index에 따라 딜레이 설정
-    }
-  }
-);
-
-////////////////////////////////////////////////////////////////////
+//section4 tit//////////////////////////////////////////////////////////////////
 gsap
   .timeline({
     scrollTrigger: {
-      trigger: ".section-3",
+      trigger: "#section4",
       start: "top top",
-      end: "+=800",
+      end: "+=3500",
       scrub: 2,
       duration: 2.5,
       pin: true,
-      toggleActions: "play pause reverse reverse",
     },
   })
-.from(".row-2", {
-  height: "0%",
-  duration: 1,
-  delay: 0.5,
+  .set(".sec4_con_year",{transform:"translate(-50%,-50%)"})
+  .to(".sec4_tit_bg",{scale:2.5,display:"none",duration:2.5})
+  .to(".sec4_tit h3",{scale:20,y:-10,opacity:0,display:"none", duration:2.5},"-=2.5")
+  .to(".sec4_con_year",{opacity:1,duration:2.5,scale:1.2})
 
-})
 
-.from(".row li", {
-  y: 200,
-  opacity: 0,
-  ease: "none",
-  delay: 2,
-  duration: 10,
-  stagger: {
-    amount: 1,
-  },
-
-});
-////////////////////////////////////////////////////////////////////
-// slide_cir1 요소에 대한 애니메이션
+//section5 skill//////////////////////////////////////////////////////////////////
 const animation1 = gsap.to(".slide_cir1", {
   backgroundSize:'120%',
   duration: 2,
   ease: "power2.out"
 });
 
-// slide_cir2 요소에 대한 애니메이션
+
 const animation2 = gsap.to(".slide_cir2", {
   backgroundSize:'120%',
   duration: 2,
   ease: "power2.out"
 });
 
-// slide_model 요소에 대한 애니메이션
+
 const animation3 = gsap.to(".slide_model", {
   backgroundSize:'50%',
   top:'18vh',
@@ -835,13 +632,12 @@ const animation3 = gsap.to(".slide_model", {
   duration: 2.5,
   ease: "power2.out"
 });
-// Timeline 생성 및 애니메이션 추가
+
 const timeline = gsap.timeline();
 timeline.add(animation1)
-       .add(animation2, "-=2") // 0.5초 지연 후 애니메이션 실행
-       .add(animation3, "-=2") // 0.5초 지연 후 애니메이션 실행
+       .add(animation2, "-=2")
+       .add(animation3, "-=2") 
 
-       // ScrollTrigger를 사용하여 #section5에 도달했을 때 Timeline 실행
 ScrollTrigger.create({
   trigger: "#section5",
   start: "top 50%",
@@ -849,7 +645,7 @@ ScrollTrigger.create({
   animation: timeline,
   once: true
 });
-////////////////////////////////////////////////////////////////////
+//section5 bg color//////////////////////////////////////////////////////////////////
 gsap
 .timeline({
   scrollTrigger: {
@@ -862,29 +658,9 @@ gsap
   },
 })
 .to("#section5",{background:"#333", duration:1})
-////////////////////////////////////////////////////////////////////
 
-gsap
-.timeline({
-  scrollTrigger: {
-    trigger: "#section6",
-    start: "top top",
-    end: "+=2500",
-    scrub: 2,
-    duration: 2.5,
-    pin: true,
-  },
-})
-.to("#section6",{background:"#333", duration:1})
-.to(".header .letters",{color:"#fff", duration:1.5},"-=0.5")
-.to(".header .letters:first-child", {x:() => -innerWidth *3,scale:10,ease: "power2.inOut",duration:2.5})
-.to(".header .letters:last-child", {x:() => innerWidth *3,scale:10,ease: "power2.inOut",duration:2.5},"-=2.5")
-.to(".img-holder", {rotation:0,clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",duration:2.5},"-=2.8")
-.to(".img-holder img", {scale:1,duration:5,ease: "power2.inOut"})
-.to(".img-holder img", {scale:0.9,duration:5,ease: "power2.in"})
 
-////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////
+//section5 progress//////////////////////////////////////////////////////////////////
 let MAX = 100
 let circleProgressInstances = []
 document.querySelectorAll(".progress2").forEach((progressEle, index) => {
@@ -966,10 +742,28 @@ document.querySelectorAll('[data-to-view]').forEach((element) => {
 window.addEventListener('load', setupSkills);
 
 
+//section6//////////////////////////////////////////////////////////////////
 
-
-////////////////////////////////////////////////////////////////////
-const videos = document.querySelectorAll('video'); // 모든 video 요소 선택
+gsap
+.timeline({
+  scrollTrigger: {
+    trigger: "#section6",
+    start: "top top",
+    end: "+=2500",
+    scrub: 2,
+    duration: 2.5,
+    pin: true,
+  },
+})
+.to("#section6",{background:"#333", duration:1})
+.to(".header .letters",{color:"#fff", duration:1.5},"-=0.5")
+.to(".header .letters:first-child", {x:() => -innerWidth *3,scale:10,ease: "power2.inOut",duration:2.5})
+.to(".header .letters:last-child", {x:() => innerWidth *3,scale:10,ease: "power2.inOut",duration:2.5},"-=2.5")
+.to(".img-holder", {rotation:0,clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",duration:2.5},"-=2.8")
+.to(".img-holder img", {scale:1,duration:5,ease: "power2.inOut"})
+.to(".img-holder img", {scale:0.9,duration:5,ease: "power2.in"})
+//section7 vdo//////////////////////////////////////////////////////////////////
+const videos = document.querySelectorAll('#section7 video'); // 모든 video 요소 선택
 
 videos.forEach(video => {
     video.addEventListener('mouseover', () => {
@@ -980,7 +774,7 @@ videos.forEach(video => {
         video.pause();
     });
 });
-////////////////////////////////////////////////////////////////////
+//section7 btn//////////////////////////////////////////////////////////////////
 var nav = {
   
   init: function(){
@@ -1063,7 +857,7 @@ var nav = {
 };
 
 nav.init();
-////////////////////////////////////////////////////////////////////
+//section7 bg color//////////////////////////////////////////////////////////////////
 gsap
 .timeline({
   scrollTrigger: {
@@ -1076,7 +870,7 @@ gsap
   },
 })
 .to("#section7 .pro",{background:"#cfcfcf", duration:2.5})
-////////////////////////////////////////////////////////////////////
+//section8//////////////////////////////////////////////////////////////////
 let videoSources = [
   "video/hanacard.mp4",
   "video/sushi.mp4",
@@ -1211,7 +1005,7 @@ document.querySelector(".hoverWrap").addEventListener("mousemove", function (e) 
   });
 });
 
-////////////////////////////////////////////////////
+//section8//////////////////////////////////////////////////
 gsap
 .timeline({
   scrollTrigger: {
@@ -1224,19 +1018,8 @@ gsap
   },
 })
 .to("#section8",{background:"#eee", duration:2.5})
-gsap
-.timeline({
-  scrollTrigger: {
-    trigger: "#section8",
-    start: "top top",
-    duration: 2.5,
-  },
-})
-gsap.fromTo("#section8 svg text",
-  {fill:"rgba(72,138,20,0)", stroke:"#787878",strokeDashoffset:"25%",strokeDasharray:"0 70%",strokeWidth:2},
-  {fill:'#333', stroke:"#787878",strokeDashoffset:"-25%",strokeDasharray:"70% 0",strokeWidth:0},
-)
-////////////////////////////////////////////////////
+
+//section8 bg//////////////////////////////////////////////////
 /* -- Glow effect -- */
 
 const blob = document.getElementById("blob");
@@ -1249,12 +1032,7 @@ window.onpointermove = event => {
     top: `${clientY}px`
   }, { duration: 3000, fill: "forwards" });
 }
-
-
-////////////////////////////////////////////////////
-
-
-////////////////////////////////////////////////////
+//section9//////////////////////////////////////////////////
 
 const tl2 = gsap.timeline({
   scrollTrigger: {
