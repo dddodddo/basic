@@ -362,128 +362,136 @@ txtBoxs.forEach(function(txtBox){
 //section2 About me//////////////////////////////////////////////////////////////////
 const getHeight = el => {
   const computedStyle = getComputedStyle(el);
-
-  let elementHeight = el.clientHeight;  // height with padding
+  let elementHeight = el.clientHeight; // height with padding
   elementHeight -= parseFloat(computedStyle.paddingTop) + parseFloat(computedStyle.paddingBottom);
   return elementHeight;
 }
+
 class RepeatTextScrollFx {
-  // DOM elements
-DOM = {
-  // main element ([data-text-rep])
-  el: null,
-      // all text spans except the last one (this will be the centered one and doesn't translate
-      words: null,
-}
-totalWords = 9;
+  DOM = {
+    el: null,
+    words: null,
+  }
+  totalWords = 9;
   tyIncrement = 12;
-delayIncrement = 0.1;
+  delayIncrement = 0.1;
   scrollTimeline;
   observer;
+  isLoaded = false; // Track loading state
 
   constructor(Dom_el) {
     this.DOM.el = Dom_el;
-    this.isLoaded = false;  // 추가된 부분
     this.layout();
     this.setBoundaries();
     this.createScrollTimeline();
     this.createObserver();
 
     window.addEventListener('resize', () => this.setBoundaries());
-}
+  }
 
-layout() {
-  const halfWordsCount = Math.floor(this.totalWords / 2);
-  let innerHTML = '';
+  layout() {
+    const halfWordsCount = Math.floor(this.totalWords / 2);
+    let innerHTML = '';
 
-  for (let i = 0; i < this.totalWords; ++i) {
+    for (let i = 0; i < this.totalWords; ++i) {
       let ty;
       let delay;
 
       if (i === this.totalWords - 1) {
-          ty = 0;
-          delay = 0;
+        ty = 0;
+        delay = 0;
       } else if (i < halfWordsCount) {
-          ty = halfWordsCount * this.tyIncrement - this.tyIncrement * i;
-          delay = this.delayIncrement * (halfWordsCount - i) - this.delayIncrement;
+        ty = halfWordsCount * this.tyIncrement - this.tyIncrement * i;
+        delay = this.delayIncrement * (halfWordsCount - i) - this.delayIncrement;
       } else {
-          ty = -1 * (halfWordsCount * this.tyIncrement - (i - halfWordsCount) * this.tyIncrement);
-          delay = this.delayIncrement * (halfWordsCount - (i - halfWordsCount)) - this.delayIncrement;
+        ty = -1 * (halfWordsCount * this.tyIncrement - (i - halfWordsCount) * this.tyIncrement);
+        delay = this.delayIncrement * (halfWordsCount - (i - halfWordsCount)) - this.delayIncrement;
       }
 
       innerHTML += `<span data-delay="${delay}" data-ty="${ty}">${this.DOM.el.innerHTML}</span>`;
+    }
+
+    this.DOM.el.innerHTML = innerHTML;
+    this.DOM.el.classList.add('text-rep');
+    this.DOM.words = [...this.DOM.el.querySelectorAll('span')].slice(0, -1);
   }
-
-  this.DOM.el.innerHTML = innerHTML;
-  this.DOM.el.classList.add('text-rep');
-  this.DOM.words = [...this.DOM.el.querySelectorAll('span')].slice(0, -1);
-}
-
 
   setBoundaries() {
-      // Set up the margin top and padding bottom values
-      const paddingBottomMarginTop = getHeight(this.DOM.el) * Math.floor(this.totalWords/2) * this.tyIncrement/100;
-  gsap.set(this.DOM.el, {
-    marginTop: paddingBottomMarginTop,
-    paddingBottom: paddingBottomMarginTop
-  });
+    const paddingBottomMarginTop = getHeight(this.DOM.el) * Math.floor(this.totalWords / 2) * this.tyIncrement / 100;
+    gsap.set(this.DOM.el, {
+      marginTop: paddingBottomMarginTop,
+      paddingBottom: paddingBottomMarginTop
+    });
   }
- 
+
   createScrollTimeline() {
-    this.scrollTimeline = gsap.timeline({paused: true})
+    this.scrollTimeline = gsap.timeline({ paused: true });
     gsap.to(this.DOM.words, {
       duration: 1,
       ease: 'power1',
       yPercent: (_, target) => target.dataset.ty,
       delay: (_, target) => target.dataset.delay,
     });
-  };
+  }
 
-  
   createObserver() {
     const observerOptions = {
-        root: null,
-        rootMargin: '0px 0px',
-        threshold: 0
+      root: null,
+      rootMargin: '0px 0px',
+      threshold: 0
     };
 
     this.observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                if (!this.isLoaded) {
-                    this.isLoaded = true;
-                }
-                gsap.ticker.add(this.progressTween);
-            } else {
-                if (this.isLoaded) {
-                    gsap.ticker.remove(this.progressTween);
-                } else {
-                    this.isLoaded = true;
-                    gsap.ticker.add(this.progressTween, true);
-                    gsap.ticker.remove(this.progressTween);
-                }
-            }
-        });
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (!this.isLoaded) {
+            this.isLoaded = true;
+            gsap.ticker.add(this.progressTween);
+          }
+        } else {
+          if (this.isLoaded) {
+            gsap.ticker.remove(this.progressTween);
+          }
+        }
+      });
     }, observerOptions);
 
     this.progressTween = () => {
-        const scrollPosition = (window.scrollY + window.innerHeight);
-        const elPosition = (scrollPosition - this.DOM.el.offsetTop);
-        const durationDistance = (window.innerHeight + this.DOM.el.offsetHeight);
-        const currentProgress = (elPosition / durationDistance);
-        this.scrollTimeline.progress(currentProgress);
+      const scrollPosition = (window.scrollY + window.innerHeight);
+      const elPosition = (scrollPosition - this.DOM.el.offsetTop);
+      const durationDistance = (window.innerHeight + this.DOM.el.offsetHeight);
+      const currentProgress = (elPosition / durationDistance);
+      this.scrollTimeline.progress(currentProgress);
     };
 
     this.observer.observe(this.DOM.el);
+  }
 }
 
-}
 
-window.addEventListener("load", () => {
-  document.querySelectorAll('[data-text-rep]').forEach(textEl => {
+const section2 = document.querySelector('#section2');
+let hasExecuted = false;
+
+// Scroll 이벤트 리스너 추가
+window.addEventListener('scroll', () => {
+  const rect = section2.getBoundingClientRect();
+  const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+  if (isVisible && !hasExecuted) {
+    hasExecuted = true; // 실행 상태 변경
+
+    // Section 2가 보일 때 실행할 코드
+    console.log('Section 2 is visible');
+
+    // RepeatTextScrollFx를 초기화
+    const textElements = section2.querySelectorAll('[data-text-rep]');
+    textElements.forEach(textEl => {
       new RepeatTextScrollFx(textEl);
-  });
+    });
+  }
 });
+
+
 
 //section3//////////////////////////////////////////////////////////////////
 gsap
@@ -498,6 +506,7 @@ gsap
     },
   })
   .to("#section3",{ background: "#000", duration: 2.5 }, "-=3")
+  .to("#section3 h3",{ color: "#fff", duration: 2.5 }, "-=3")
 
 const getGrid = (selector) => {
   let elements = gsap.utils.toArray(selector),
@@ -549,7 +558,12 @@ if (element) {
 
   // Add new innerHTML using the class 'uzi3'
   element.classList.add('uzi3');
-  element.innerHTML = 'Hobby';
+  element.innerHTML = `Hobby
+<span>저의 취미는 새로운 도전을 통해 세상을 넓히는 것으로<br>
+주짓수, 수영, 마라톤 대회 참가, 서핑, 스노우보드 등 다양한 활동을 경험해 왔습니다.<br><br>
+
+이를 통해 활발하고 움직이는 삶을 사랑하는 성향을 깨달았고,<br>
+이제는 하나의 운동을 선택해 꾸준히 즐기며 일상 속에서도 활기를 불어넣고 있습니다.</span>`
 }
 
 
@@ -659,7 +673,7 @@ gsap
       pin: true,
     },
   })
-  .set(".sec4_con_year",{transform:"translate(-50%,-50%)"})
+  .set(".sec4_con_txt",{transform:"translate(-50%,-50%)"})
   .set(".sec4_con_img",{transform:"translate(-50%,-50%)"})
   .to(".sec4_tit_bg",{scale:2.5,display:"none",duration:2.5})
   .to(".sec4_tit h3",{scale:20,opacity:0,display:"none", duration:2.5},"-=2.5")
