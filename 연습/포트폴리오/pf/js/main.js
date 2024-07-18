@@ -280,12 +280,6 @@ gsap
 
   .to("#section2-2 .sec2_txt",{scale:0.8,duration:2.5})
 //section2-3//////////////////////////////////////////////////////////////////
-gsap.from(".visual .subtitle",{
-    y:50 ,opacity:0, ease:"expo.out", duration:1, delay:0.5
-})
-gsap.from(".visual .text",{
-    y:50 ,opacity:0, ease:"expo.out", duration:1, delay:1
-})
 
 // slide
 let list=document.querySelectorAll(".work ul li")
@@ -441,7 +435,7 @@ layout() {
       duration: 1,
       ease: 'power1',
       yPercent: (_, target) => target.dataset.ty,
-      delay: (_, target) => target.dataset.delay
+      delay: (_, target) => target.dataset.delay,
     });
   };
 
@@ -491,107 +485,168 @@ window.addEventListener("load", () => {
   });
 });
 
-
 //section3//////////////////////////////////////////////////////////////////
 gsap
   .timeline({
     scrollTrigger: {
       trigger: "#section3",
       start: "top top",
-      end: "+=3500",
+      end: "+=1500",
       scrub: 2,
       duration: 2,
       pin: true,
     },
   })
-  .to(".sec3_txt_wrap",{top:"0vh",duration:2.5},"-=13")
-  .to("#section3", { background: "#353535", duration: 3 }, "-=3")
-  .to(
-    ".tilte__left",
-    {
-      paddingRight: "300px",
-      duration: 2.5,
-      ease: "power3.inOut",
-    },
-    "-=5"
-  )
-  .to(
-    ".tilte__right",
-    {
-      paddingLeft: "500px",
-      duration: 2.5,
-      ease: "power3.inOut",
-    },
-    "-=5"
-  )
-  .to(
-    ".content1",
-    {
-      color: "#fff",
-      duration: 2,
-      ease: "power3.inOut",
-    },
-    "-=4"
-  )
-  .to(
-    ".tiles__wrap",
-    {
-      translateX: "-15%",
-      translateZ: "-1503px",
-      rotateX: "45deg",
-      rotateZ: "0deg",
-      duration: 2.5,
-      ease: "power1.in",
-    },
-    "-=3"
-  )
+  .to("#section3",{ background: "#000", duration: 2.5 }, "-=3")
 
-  .to(
-    ".tiles__title",
-    {
-      color: "#fff",
-      top: 0,
-      duration: 2,
-      ease: "power3.inOut",
-    },
-    "-=2"
-  )
-  .to(
-    ".content1",
-    {
-      marginTop: "30vh",
-      duration: 2,
-      ease: "power3.inOut",
-    },
-    "-=1.8"
-  );
-//section3 이미지 색상 //////////////////////////////////////////////////////////////////
-// Select all tiles__line-img elements
-const images = document.querySelectorAll(".tiles__line-img");
+const getGrid = (selector) => {
+  let elements = gsap.utils.toArray(selector),
+    bounds,
+    getSubset = (axis, dimension, alternating, merge) => {
+      let a = [],
+        subsets = {},
+        onlyEven = alternating === "even",
+        p;
+      bounds.forEach((b, i) => {
+        let position = Math.round(b[axis] + b[dimension] / 2),
+          subset = subsets[position];
+        subset || (subsets[position] = subset = []);
+        subset.push(elements[i]);
+      });
+      for (p in subsets) {
+        a.push(subsets[p]);
+      }
+      if (onlyEven || alternating === "odd") {
+        a = a.filter((el, i) => !(i % 2) === onlyEven);
+      }
+      if (merge) {
+        let a2 = [];
+        a.forEach((subset) => a2.push(...subset));
+        return a2;
+      }
+      return a;
+    };
+  elements.refresh = () =>
+    (bounds = elements.map((el) => el.getBoundingClientRect()));
+  elements.columns = (alternating, merge) =>
+    getSubset("left", "width", alternating, merge);
+  elements.rows = (alternating, merge) =>
+    getSubset("top", "height", alternating, merge);
+  elements.refresh();
 
-// Function to toggle grayscale
-function toggleGrayscale() {
-  images.forEach((image) => {
-    // Generate a random number between 0 and 1
-    const random = Math.random();
+  return elements;
+};
 
-    // Add class 'gray' or 'color' based on random number
-    if (random < 0.5) {
-      image.classList.add("gray");
-      image.classList.remove("color");
-    } else {
-      image.classList.remove("gray");
-      image.classList.add("color");
-    }
-  });
+
+
+// Get the element with the class 'uzih3'
+const element = document.querySelector('.uzih3');
+
+// Check if the element is found ..
+if (element) {
+  // Remove existing innerHTML
+  element.innerHTML = '';
+
+  // Add new innerHTML using the class 'uzi3'
+  element.classList.add('uzi3');
+  element.innerHTML = 'Hobby';
 }
 
-// Initial call to toggle grayscale
-toggleGrayscale();
 
-// Set interval to toggle grayscale every 3 seconds (adjust interval as needed)
-setInterval(toggleGrayscale, 3000);
+// All elements with class .grid
+const grids = document.querySelectorAll(".grid");
 
+// Function to apply scroll-triggered animations to a given gallery
+const applyAnimation = (grid, animationType) => {
+  // Child elements of grid
+  const gridWrap = grid.querySelector("#section3 .grid-wrap");
+  const gridItems = grid.querySelectorAll("#section3 .grid__item");
+  const gridItemsInner = [...gridItems].map((item) =>
+    item.querySelector("#section3 .grid__item-inner")
+  );
+
+  // Define GSAP timeline with ScrollTrigger
+  const timeline = gsap.timeline({
+    defaults: { ease: "none" },
+    scrollTrigger: {
+      trigger: gridWrap,
+      start: "top bottom+=5%",
+      end: "bottom top-=5%",
+      scrub: true,
+    }
+  });
+
+  // Apply different animations based on type
+  switch (animationType) {
+    case "type3":
+      // Set some CSS related style values
+      grid.style.setProperty("--grid-width", "105%");
+      grid.style.setProperty("--grid-columns", "8");
+      grid.style.setProperty("--perspective", "1500px");
+      grid.style.setProperty("--grid-inner-scale", "0.5");
+
+      timeline
+        .set(gridItems, {
+          transformOrigin: "50% 0%",
+          z: () => gsap.utils.random(-5000, -2000),
+          rotationX: () => gsap.utils.random(-65, -25),
+          filter: "brightness(0%)"
+        })
+        .to(
+          gridItems,
+          {
+            xPercent: () => gsap.utils.random(-150, 150),
+            yPercent: () => gsap.utils.random(-300, 300),
+            rotationX: 0,
+            filter: "brightness(200%)"
+          },
+          0
+        )
+        .to(
+          gridWrap,
+          {
+            z: 6500
+          },
+          0
+        )
+        .fromTo(
+          gridItemsInner,
+          {
+            scale: 2
+          },
+          {
+            scale: 0.5
+          },
+          0
+        );
+
+      break;
+    default:
+      console.error("Unknown animation type.");
+      break;
+  }
+};
+
+// Apply animations to each grid---
+
+// you can tweek to use the switch case you want😂😂
+
+const scroll = () => {
+  grids.forEach((grid, i) => {
+    // Determine animation type
+    let animationType;
+    switch (i % 2) {
+      case 0:
+        animationType = "type3";
+        break;
+    }
+    applyAnimation(grid, animationType);
+  });
+};
+
+
+scroll();
+document.body.classList.remove("loading");
 //section4 tit//////////////////////////////////////////////////////////////////
 gsap
   .timeline({

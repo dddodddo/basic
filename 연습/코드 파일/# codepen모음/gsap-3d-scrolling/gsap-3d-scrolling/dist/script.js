@@ -95,96 +95,96 @@ const applyAnimation = (grid, animationType) => {
 
   // Apply different animations based on type
   switch (animationType) {
-    case "type1":
-      // Set some CSS related style values
-      grid.style.setProperty("--perspective", "1000px");
-      grid.style.setProperty("--grid-inner-scale", "0.5");
+    // case "type1":
+    //   // Set some CSS related style values
+    //   grid.style.setProperty("--perspective", "1000px");
+    //   grid.style.setProperty("--grid-inner-scale", "0.5");
 
-      timeline
-        .set(gridWrap, {
-          rotationY: 25
-        })
-        .set(gridItems, {
-          z: () => gsap.utils.random(-1600, 200)
-        })
-        .fromTo(
-          gridItems,
-          {
-            xPercent: () => gsap.utils.random(-1000, -500)
-          },
-          {
-            xPercent: () => gsap.utils.random(500, 1000)
-          },
-          0
-        )
-        .fromTo(
-          gridItemsInner,
-          {
-            scale: 2
-          },
-          {
-            scale: 0.5
-          },
-          0
-        );
+    //   timeline
+    //     .set(gridWrap, {
+    //       rotationY: 25
+    //     })
+    //     .set(gridItems, {
+    //       z: () => gsap.utils.random(-1600, 200)
+    //     })
+    //     .fromTo(
+    //       gridItems,
+    //       {
+    //         xPercent: () => gsap.utils.random(-1000, -500)
+    //       },
+    //       {
+    //         xPercent: () => gsap.utils.random(500, 1000)
+    //       },
+    //       0
+    //     )
+    //     .fromTo(
+    //       gridItemsInner,
+    //       {
+    //         scale: 2
+    //       },
+    //       {
+    //         scale: 0.5
+    //       },
+    //       0
+    //     );
 
-      break;
+    //   break;
 
-    case "type2":
-      // Set some CSS related style values
-      grid.style.setProperty("--grid-width", "160%");
-      grid.style.setProperty("--perspective", "2000px");
-      grid.style.setProperty("--grid-inner-scale", "0.5");
-      grid.style.setProperty("--grid-item-ratio", "0.8");
-      grid.style.setProperty("--grid-columns", "6");
-      grid.style.setProperty("--grid-gap", "14vw");
+    // case "type2":
+    //   // Set some CSS related style values
+    //   grid.style.setProperty("--grid-width", "160%");
+    //   grid.style.setProperty("--perspective", "2000px");
+    //   grid.style.setProperty("--grid-inner-scale", "0.5");
+    //   grid.style.setProperty("--grid-item-ratio", "0.8");
+    //   grid.style.setProperty("--grid-columns", "6");
+    //   grid.style.setProperty("--grid-gap", "14vw");
 
-      timeline
-        .set(gridWrap, {
-          rotationX: 20
-        })
-        .set(gridItems, {
-          z: () => gsap.utils.random(-3000, -1000)
-        })
-        .fromTo(
-          gridItems,
-          {
-            yPercent: () => gsap.utils.random(100, 1000),
-            rotationY: -45,
-            filter: "brightness(200%)"
-          },
-          {
-            ease: "power2",
-            yPercent: () => gsap.utils.random(-1000, -100),
-            rotationY: 45,
-            filter: "brightness(0%)"
-          },
-          0
-        )
-        .fromTo(
-          gridWrap,
-          {
-            rotationZ: -5
-          },
-          {
-            rotationX: -20,
-            rotationZ: 10,
-            scale: 1.2
-          },
-          0
-        )
-        .fromTo(
-          gridItemsInner,
-          {
-            scale: 2
-          },
-          {
-            scale: 0.5
-          },
-          0
-        );
+    //   timeline
+    //     .set(gridWrap, {
+    //       rotationX: 20
+    //     })
+    //     .set(gridItems, {
+    //       z: () => gsap.utils.random(-3000, -1000)
+    //     })
+    //     .fromTo(
+    //       gridItems,
+    //       {
+    //         yPercent: () => gsap.utils.random(100, 1000),
+    //         rotationY: -45,
+    //         filter: "brightness(200%)"
+    //       },
+    //       {
+    //         ease: "power2",
+    //         yPercent: () => gsap.utils.random(-1000, -100),
+    //         rotationY: 45,
+    //         filter: "brightness(0%)"
+    //       },
+    //       0
+    //     )
+    //     .fromTo(
+    //       gridWrap,
+    //       {
+    //         rotationZ: -5
+    //       },
+    //       {
+    //         rotationX: -20,
+    //         rotationZ: 10,
+    //         scale: 1.2
+    //       },
+    //       0
+    //     )
+    //     .fromTo(
+    //       gridItemsInner,
+    //       {
+    //         scale: 2
+    //       },
+    //       {
+    //         scale: 0.5
+    //       },
+    //       0
+    //     );
 
-      break;
+    //   break;
 
     case "type3":
       // Set some CSS related style values
@@ -230,137 +230,137 @@ const applyAnimation = (grid, animationType) => {
 
       break;
 
-    case "type4":
-      // Set some CSS related style values
-      grid.style.setProperty("--grid-width", "50%");
-      grid.style.setProperty("--perspective", "3000px");
-      grid.style.setProperty("--grid-item-ratio", "0.8");
-      grid.style.setProperty("--grid-columns", "3");
-      grid.style.setProperty("--grid-gap", "1vw");
+    // case "type4":
+    //   // Set some CSS related style values
+    //   grid.style.setProperty("--grid-width", "50%");
+    //   grid.style.setProperty("--perspective", "3000px");
+    //   grid.style.setProperty("--grid-item-ratio", "0.8");
+    //   grid.style.setProperty("--grid-columns", "3");
+    //   grid.style.setProperty("--grid-gap", "1vw");
 
-      timeline
-        .set(gridWrap, {
-          transformOrigin: "0% 50%",
-          rotationY: 30,
-          xPercent: -75
-        })
-        .set(gridItems, {
-          transformOrigin: "50% 0%"
-        })
-        .to(
-          gridItems,
-          {
-            duration: 0.5,
-            ease: "power2",
-            z: 500,
-            stagger: 0.04
-          },
-          0
-        )
-        .to(
-          gridItems,
-          {
-            duration: 0.5,
-            ease: "power2.in",
-            z: 0,
-            stagger: 0.04
-          },
-          0.5
-        )
-        .fromTo(
-          gridItems,
-          {
-            rotationX: -70,
-            filter: "brightness(120%)"
-          },
-          {
-            duration: 1,
-            rotationX: 70,
-            filter: "brightness(0%)",
-            stagger: 0.04
-          },
-          0
-        );
+    //   timeline
+    //     .set(gridWrap, {
+    //       transformOrigin: "0% 50%",
+    //       rotationY: 30,
+    //       xPercent: -75
+    //     })
+    //     .set(gridItems, {
+    //       transformOrigin: "50% 0%"
+    //     })
+    //     .to(
+    //       gridItems,
+    //       {
+    //         duration: 0.5,
+    //         ease: "power2",
+    //         z: 500,
+    //         stagger: 0.04
+    //       },
+    //       0
+    //     )
+    //     .to(
+    //       gridItems,
+    //       {
+    //         duration: 0.5,
+    //         ease: "power2.in",
+    //         z: 0,
+    //         stagger: 0.04
+    //       },
+    //       0.5
+    //     )
+    //     .fromTo(
+    //       gridItems,
+    //       {
+    //         rotationX: -70,
+    //         filter: "brightness(120%)"
+    //       },
+    //       {
+    //         duration: 1,
+    //         rotationX: 70,
+    //         filter: "brightness(0%)",
+    //         stagger: 0.04
+    //       },
+    //       0
+    //     );
 
-      break;
+    //   break;
 
-    case "type5":
-      // Set some CSS related style values
-      grid.style.setProperty("--grid-width", "120%");
-      grid.style.setProperty("--grid-columns", "8");
-      grid.style.setProperty("--grid-gap", "0");
+    // case "type5":
+    //   // Set some CSS related style values
+    //   grid.style.setProperty("--grid-width", "120%");
+    //   grid.style.setProperty("--grid-columns", "8");
+    //   grid.style.setProperty("--grid-gap", "0");
 
-      const gridObj = getGrid(gridItems);
+    //   const gridObj = getGrid(gridItems);
 
-      timeline
-        .set(gridWrap, {
-          rotationX: 50
-        })
-        .to(gridWrap, {
-          rotationX: 30
-        })
-        .fromTo(
-          gridItems,
-          {
-            filter: "brightness(0%)"
-          },
-          {
-            filter: "brightness(100%)"
-          },
-          0
-        )
-        .to(
-          gridObj.rows("even"),
-          {
-            xPercent: -100,
-            ease: "power1"
-          },
-          0
-        )
-        .to(
-          gridObj.rows("odd"),
-          {
-            xPercent: 100,
-            ease: "power1"
-          },
-          0
-        )
-        .addLabel("rowsEnd", ">-=0.15")
-        .to(
-          gridItems,
-          {
-            ease: "power1",
-            yPercent: () => gsap.utils.random(-100, 200)
-          },
-          "rowsEnd"
-        );
-      break;
+    //   timeline
+    //     .set(gridWrap, {
+    //       rotationX: 50
+    //     })
+    //     .to(gridWrap, {
+    //       rotationX: 30
+    //     })
+    //     .fromTo(
+    //       gridItems,
+    //       {
+    //         filter: "brightness(0%)"
+    //       },
+    //       {
+    //         filter: "brightness(100%)"
+    //       },
+    //       0
+    //     )
+    //     .to(
+    //       gridObj.rows("even"),
+    //       {
+    //         xPercent: -100,
+    //         ease: "power1"
+    //       },
+    //       0
+    //     )
+    //     .to(
+    //       gridObj.rows("odd"),
+    //       {
+    //         xPercent: 100,
+    //         ease: "power1"
+    //       },
+    //       0
+    //     )
+    //     .addLabel("rowsEnd", ">-=0.15")
+    //     .to(
+    //       gridItems,
+    //       {
+    //         ease: "power1",
+    //         yPercent: () => gsap.utils.random(-100, 200)
+    //       },
+    //       "rowsEnd"
+    //     );
+    //   break;
 
-    case "type6":
-      // Set some CSS related style values
-      grid.style.setProperty("--perspective", "2500px");
-      grid.style.setProperty("--grid-width", "100%");
-      grid.style.setProperty("--grid-gap", "6");
-      grid.style.setProperty("--grid-columns", "3");
-      grid.style.setProperty("--grid-item-ratio", "1");
+    // case "type6":
+    //   // Set some CSS related style values
+    //   grid.style.setProperty("--perspective", "2500px");
+    //   grid.style.setProperty("--grid-width", "100%");
+    //   grid.style.setProperty("--grid-gap", "6");
+    //   grid.style.setProperty("--grid-columns", "3");
+    //   grid.style.setProperty("--grid-item-ratio", "1");
 
-      timeline.fromTo(
-        gridItems,
-        {
-          transformOrigin: "50% 200%",
-          rotationX: 0,
-          yPercent: 400
-        },
-        {
-          yPercent: 0,
-          rotationY: 360,
-          opacity: 0.2,
-          scale: 0.8,
-          stagger: 0.03
-        }
-      );
+    //   timeline.fromTo(
+    //     gridItems,
+    //     {
+    //       transformOrigin: "50% 200%",
+    //       rotationX: 0,
+    //       yPercent: 400
+    //     },
+    //     {
+    //       yPercent: 0,
+    //       rotationY: 360,
+    //       opacity: 0.2,
+    //       scale: 0.8,
+    //       stagger: 0.03
+    //     }
+    //   );
 
-      break;
+    //   break;
 
     default:
       console.error("Unknown animation type.");
